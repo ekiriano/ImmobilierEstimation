@@ -15,6 +15,10 @@ const DefaultAppartmentSchema = new Schema({
     type: String,
     required: true
   },
+  surface: {
+    type: Number,
+    required: true
+  },
   nombre_pieces: {
     type: Number,
     required: true
@@ -63,7 +67,11 @@ const DefaultAppartmentSchema = new Schema({
   qualite_toiture: {
     type: String,
     required: true
+  },
+  prix_estimation: {
+    type: Number
   }
+
   // add longtitue latitude
 });
 

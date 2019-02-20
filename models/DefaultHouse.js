@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const DefaultHouseSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "users"
+  },
   rue: {
     type: String,
     required: true
@@ -71,7 +75,11 @@ const DefaultHouseSchema = new Schema({
   qualite_toiture: {
     type: String,
     required: true
+  },
+  prix_estimation: {
+    type: Number
   }
+
   // add longtitue latitude
 });
 

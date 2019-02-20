@@ -89,5 +89,4 @@ Tests to write  :
   all_authenticated_users_can_save_appartment_estimate()
   unauthenticated_users_cannot_save_house_estimate()
   unauthenticated_users_cannot_save_appartment_estimate()
-
 */

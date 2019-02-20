@@ -1,6 +1,13 @@
 const Validator = require("validator");
 const isEmpty = require("./is-empty");
 
+/**
+ * @todo write all validation rules for default house
+ *
+ * @todo In the futur : adress validation must be done by mapbox api and therefore will fill the coordianate fields when submited using geocoding
+ *
+ */
+
 module.exports = function validateDefaultHouseInput(data) {
   let errors = {};
 

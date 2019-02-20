@@ -48,9 +48,15 @@ describe("User", () => {
   /**
    * @test
    * /POST api/users/login
+   * @todo redo user register to log him in
    */
   describe("POST /api/users/login", done => {
     it("a_user_with_valid_form_data_can_login", () => {
+      // register a new user
+
+      // login the new user
+
+      //assert success = true
       const user = {
         email: "johnDoe@test.com",
         password: "secret"
@@ -78,4 +84,6 @@ Tests to write  :
   a_regular_user_cannot_post_to_admin_dashboard() ==> status 401
   a_super_user_can_post_to_superuser_dashboard() ==> status 200
   a_super_user_cannot_post_to_admin_dashboard() ==> status 401
+  ##############################################
+  an_authenticated_user_can_access_his_saved_properties
 */
