@@ -52,6 +52,8 @@ module.exports = function validateDefaultHouseInput(data) {
     errors.rue = "rue field is required";
   }
 
+  // write validation rules
+
   return {
     errors,
     isValid: isEmpty(errors)
