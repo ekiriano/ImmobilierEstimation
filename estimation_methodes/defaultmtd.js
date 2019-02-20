@@ -1,9 +1,3 @@
-// export the mtd
-
-/**
- * @todo Add second argument later $options = null for multiple methods of estimation
- */
-
 module.exports = {
   defaultEstimationHouse: DefaultHouse => {
     // returns house data + estimation field filled

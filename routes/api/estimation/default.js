@@ -1,13 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const keys = require("../../../config/keys");
 const passport = require("passport");
+
 const {
   defaultEstimationHouse,
   defaultEstimationAppartment
 } = require("../../../estimation_methodes/defaultmtd");
+
 // Load Input Validation
 const validateDefaultHouseInput = require("../../../validation/defaultHouse");
 const validateDefaultAppartmentInput = require("../../../validation/defaultAppartment");
