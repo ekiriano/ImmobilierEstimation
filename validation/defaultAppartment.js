@@ -70,7 +70,11 @@ module.exports = function validateDefaultAppartmentInput(data) {
     errors.calme = "calme is required";
   }
   
-    if(Validator.isEmpty(data.qualite_toiture) || Validator.matches(data.qualite_toiture, 'tres_elogoignees', 'eloigne', 'standard', 'proche', 'tres_proche')){
+    if(Validator.isEmpty(data.proximite_transports) || Validator.matches(data.proximite_transports, 'tres_elogoignees', 'eloigne', 'standard', 'proche', 'tres_proche')){
+    errors.proximite_transports = "proximite_transports is required";
+  }
+  
+    if(Validator.isEmpty(data.qualite_toiture) || Validator.matches(data.qualite_toiture, 'a_renover', 'standard', 'refaite_a_neuf')){
     errors.qualite_toiture = "qualite_toiture is required";
   }
   
