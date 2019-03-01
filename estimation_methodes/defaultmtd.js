@@ -1,16 +1,32 @@
 module.exports = {
-  defaultEstimationHouse: DefaultHouse => {
+  defaultEstimationComparaison: DefaultBien => {
     // returns house data + estimation field filled
-    // undefined method so base price  :: 100 000
-    // for testing purpuses
-    DefaultHouse.prix_estimation = 100000;
-    return DefaultHouse;
+
+    // SCRAPPER LE MAX POSSIBLE DE BIENS QUI ONT LES MEME CARACTERISTIQUES AVEC DEFAULTBIEN ET LES METTRE DANS UN TABLEAU D'OBJETS
+    // JAPPELLE LE TABLEAU TAB FOR NOW
+    
+    for(var bien in tab){
+      DefaultBien.prix_estimation += bien.prix_estimation;
+      DefaultBien.prix_estimation = DefaultBien.prix_estimation/tab.length();
+    }
+    return DefaultBien;
   },
-  defaultEstimationAppartment: DefaultAppartment => {
-    // returns appartment data + estimation field filled
-    // undefined method so base price  :: 50 000
-    // for testing purpuses
-    DefaultAppartment.prix_estimation = 50000;
-    return DefaultAppartment;
+  
+  
+  
+  defaultEstimationReference: DefaultBien => {
+    // SCRAPPER UN BIEN QUI EST LE PLUS SIMILAIRE A DEFAULTBIEN ET LE METTRE DANS UNE VARIABLE QUE JAPPELLE objet FOR NOW
+    if(objet.surface === DefaultBien.surface){
+      Defaultbien.prix_estimation= objet.prix_estimation;
+      return DefaultBien;
+    }
+    
+    var a=objet.prix_estimation;
+    var b=objet.surface;
+    var c=DefaultBien.surface;
+    DefaultBien.prix_estimation=(b*c)/a;
+    return DefaultBien;
   }
+  
+  
 };
