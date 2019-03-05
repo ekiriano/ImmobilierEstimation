@@ -1,26 +1,60 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import jwt_decode from "jwt-decode";
+import setAuthToken from "./utilities/setAuthToken";
+import { setCurrentUser, logoutUser } from "./actions/authActions";
+import { Provider } from "react-redux";
+import store from "./store";
+
+//import logo from "./logo.svg";
+import "./App.css";
+
+// Global Components / Pages imports
+//TODO export to an include directive or mixin
+
+// Partials
+import Nav from "./components/partials/Nav";
+import Footer from "./components/partials/Footer";
+
+// Auth
+import Register from "./components/Auth/Register";
+import Login from "./components/Auth/Login";
+
+// HomePage
+import HomePage from "./components/Pages/HomePage";
+
+//SuperUser
+
+//check nd set jwt token
+if (localStorage.jwtToken) {
+  //TODO set to secure cookie
+  setAuthToken(localStorage.jwtToken);
+  const decoded = jwt_decode(localStorage.jwtToken);
+  store.dispatch(setCurrentUser(decoded));
+  const currentTime = Date.now() / 1000;
+  if (decoded.exp < currentTime) {
+    store.dispatch(logoutUser());
+    window.location.href = "/login";
+  }
+}
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Provider store={store}>
+        <Router>
+          <div className="App">
+            <Nav />
+            <div className="container">
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+            </div>
+
+            <Footer />
+          </div>
+        </Router>
+      </Provider>
     );
   }
 }
