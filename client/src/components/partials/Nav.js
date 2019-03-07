@@ -70,14 +70,10 @@ class Nav extends Component {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <Link
-                  to="#"
-                  className="button is-primary"
-                  to="auth/register.html"
-                >
+                <Link to="#" className="button is-primary" to="/register">
                   <strong>Sign up</strong>
                 </Link>
-                <Link to="#" className="button is-light" to="auth/login.html">
+                <Link to="#" className="button is-light" to="/login">
                   Log in
                 </Link>
               </div>
