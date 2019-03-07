@@ -6,62 +6,80 @@ import { connect } from "react-redux";
 class Nav extends Component {
   render() {
     return (
-      <nav>
-        <div className="ui container">
-          <div className="ui secondary inverted menu">
-            <Link to="#" className="toc item">
-              <i className="sidebar icon" />
-              Dev Quick Links
+      <nav className="navbar" role="navigation" aria-label="main navigation">
+        <div className="navbar-brand">
+          <Link className="navbar-item" to="https://bulma.io">
+            <img
+              src="https://bulma.io/images/bulma-logo.png"
+              width="112"
+              height="28"
+              alt="logo"
+            />
+          </Link>
+
+          <Link
+            to="#"
+            role="button"
+            className="navbar-burger burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasicExample"
+          >
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+          </Link>
+        </div>
+
+        <div id="navbarBasicExample" className="navbar-menu">
+          <div className="navbar-start">
+            <Link to="#" className="navbar-item">
+              Home
             </Link>
 
-            <div className="right item">
-              <Link to="#" className="ui inverted button login-trigger">
-                Log in
+            <Link to="#" className="navbar-item">
+              Documentation
+            </Link>
+
+            <div className="navbar-item has-dropdown is-hoverable">
+              <Link to="#" className="navbar-link">
+                More
               </Link>
-              <Link to="#" className="ui pink button sign-up-trigger">
-                Sign Up
-              </Link>
+
+              <div className="navbar-dropdown">
+                <Link to="#" className="navbar-item">
+                  About
+                </Link>
+                <Link to="#" className="navbar-item">
+                  Jobs
+                </Link>
+                <Link to="#" className="navbar-item">
+                  Jobs
+                </Link>
+                <Link to="#" className="navbar-item">
+                  Contact
+                </Link>
+                <hr className="navbar-divider" />
+                <Link to="#" className="navbar-item">
+                  Report an issue
+                </Link>
+              </div>
             </div>
+          </div>
 
-            <div className="right item">
-              <Link to="#" className="ui item">
-                Faire une estimation
-              </Link>
-              <Link to="profile.php" className="ui item">
-                Mon profile
-              </Link>
-              <Link to="#" className="ui item">
-                mes estimations{" "}
-                <div className="floating ui circular pink label">3</div>
-              </Link>
-              <Link to="#" className="ui item logout">
-                deconnecter
-              </Link>
-
-              <div className="compact menu">
-                <div className="ui dropdown item">
-                  <i className="world icon" />
-                  Languages
-                  <i className="dropdown icon" />
-                  <div className="menu">
-                    <div className="item">
-                      <i className="flag gb" />
-                      English
-                    </div>
-                    <div className="item">
-                      <i className="flag fr" />
-                      Français
-                    </div>
-                    <div className="item">
-                      <i className="flag es" />
-                      Español
-                    </div>
-                    <div className="item">
-                      <i className="flag de" />
-                      Deutsch
-                    </div>
-                  </div>
-                </div>
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <div className="buttons">
+                <Link
+                  to="#"
+                  className="button is-primary"
+                  to="auth/register.html"
+                >
+                  <strong>Sign up</strong>
+                </Link>
+                <Link to="#" className="button is-light" to="auth/login.html">
+                  Log in
+                </Link>
               </div>
             </div>
           </div>
