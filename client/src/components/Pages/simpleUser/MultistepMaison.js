@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { submitDefaultMaison } from "../../../actions/defaultMaisonActions";
 import PropTypes from "prop-types";
+
 import { withRouter } from "react-router-dom";
 import classnames from "classnames";
 import { connect } from "react-redux";
-import {submitDefaultMaison} from "../../../actions/defaultMaisonActions";
 
 class MultistepMaison extends Component {
   constructor() {
@@ -14,6 +15,7 @@ class MultistepMaison extends Component {
       code_postal: "",
       ville: "",
       surface_habitable: "",
+      surface_habitable_terrain: "",
       surface_totale_terrain: "",
       surface_habitable_constructible: "",
       nombre_pieces: "",
@@ -69,14 +71,14 @@ class MultistepMaison extends Component {
       qualite_toiture: this.state.qualite_toiture
     };
     this.props.submitDefaultMaison(newDefautMaison);
-   // this.props.registerUser(newDefautMaison, this.props.history);
+    // this.props.registerUser(newDefautMaison, this.props.history);
   }
 
   render() {
     const { errors } = this.state.errors;
 
     return (
-      <div>
+      <div className="form-bg">
         <h1>MultistepMaison</h1>
         <div className="container">
           <form noValidate onSubmit={this.onSubmit}>
@@ -123,7 +125,7 @@ class MultistepMaison extends Component {
                     <div className="control">
                       <input
                         className="input is-medium"
-                        type="number"
+                        type="text"
                         name="surface_habitable"
                         placeholder="surface habitable"
                         value={this.state.surface_habitable}
@@ -135,7 +137,7 @@ class MultistepMaison extends Component {
                     <div className="control">
                       <input
                         className="input is-medium"
-                        type="number"
+                        type="text"
                         name="surface_habitable_terrain"
                         placeholder="surface habitable terrain"
                         value={this.state.surface_habitable_terrain}
@@ -147,7 +149,7 @@ class MultistepMaison extends Component {
                     <div className="control">
                       <input
                         className="input is-medium"
-                        type="number"
+                        type="text"
                         name="surface_habitable_constructible"
                         placeholder="surface habitable constructible"
                         value={this.state.surface_habitable_constructible}
@@ -159,7 +161,7 @@ class MultistepMaison extends Component {
                     <div className="control">
                       <input
                         className="input is-medium"
-                        type="number"
+                        type="text"
                         name="nombre_pieces"
                         placeholder="nombre piece"
                         value={this.state.nombre_pieces}
@@ -171,7 +173,7 @@ class MultistepMaison extends Component {
                     <div className="control">
                       <input
                         className="input is-medium"
-                        type="number"
+                        type="text"
                         name="nombre_salle_bain"
                         placeholder="nombre salle bain"
                         value={this.state.nombre_salle_bain}
@@ -183,7 +185,7 @@ class MultistepMaison extends Component {
                     <div className="control">
                       <input
                         className="input is-medium"
-                        type="number"
+                        type="text"
                         name="nombre_niveaux"
                         placeholder="nombre niveaux"
                         value={this.state.nombre_niveaux}
@@ -291,11 +293,11 @@ class MultistepMaison extends Component {
                     </div>
                   </div>
 
-                  <button className="btn" type="submit">Estimer</button>
-
-
+                  <button className="btn" type="submit">
+                    Estimer
+                  </button>
                 </div>
-              </div>                
+              </div>
             </div>
           </form>
         </div>
@@ -304,4 +306,15 @@ class MultistepMaison extends Component {
   }
 }
 
-export default MultistepMaison;
+MultistepMaison.propTypes = {
+  submitDefaultMaison: PropTypes.func.isRequired
+};
+
+const mapStateProps = state => ({
+  errors: state.errors
+});
+
+export default connect(
+  mapStateProps,
+  { submitDefaultMaison }
+)(MultistepMaison);

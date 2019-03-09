@@ -52,42 +52,42 @@ const DefaultAppartmentSchema = new Schema({
   },
   diagnostic_performance_energetique: {
     type: String,
-    required: true,
-    enum: ["A", "B", "C", "D", "E", "F", "G"]
+    required: true
+    //enum: ["A", "B", "C", "D", "E", "F", "G"]
   },
   etat_bien: {
     type: String,
-    required: true,
-    enum: [
+    required: true
+    /*enum: [
       "standard",
       "rafraichissment_necessaire",
       "travaux_importants_necessaires"
-    ]
+    ]*/
   },
   qualite_maison: {
     type: String,
-    required: true,
-    enum: ["inferieure", "comparable", "suprerieure"]
+    required: true
+    // enum: ["inferieure", "comparable", "suprerieure"]
   },
   luminosite: {
     type: String,
-    required: true,
-    enum: ["sombre", "peu_clair", "standard", "clair", "tres_clair"]
+    required: true
+    // enum: ["sombre", "peu_clair", "standard", "clair", "tres_clair"]
   },
   calme: {
     type: String,
-    required: true,
-    enum: ["tres_bruyant", "bruyant", "standard", "calme", "tres_calme"]
+    required: true
+    // enum: ["tres_bruyant", "bruyant", "standard", "calme", "tres_calme"]
   },
   proximite_transports: {
     type: String,
-    required: true,
-    enum: ["tres_elogoignees", "eloigne", "standard", "proche", "tres_proche"]
+    required: true
+    // enum: ["tres_elogoignees", "eloigne", "standard", "proche", "tres_proche"]
   },
   qualite_toiture: {
     type: String,
-    required: true,
-    enum: ["a_renover", "standard", "refaite_a_neuf"]
+    required: true
+    // enum: ["a_renover", "standard", "refaite_a_neuf"]
   },
   prix_estimation: {
     type: Number,
