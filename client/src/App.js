@@ -25,6 +25,9 @@ import HomePage from "./components/Pages/HomePage";
 
 //SuperUser
 
+//Normal User
+import DefaultForm from "./components/Pages/simpleUser/MultistepMaison";
+
 //check nd set jwt token
 if (localStorage.jwtToken) {
   //TODO set to secure cookie
@@ -49,6 +52,7 @@ class App extends Component {
               <Route exact path="/" component={HomePage} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/default" component={DefaultForm} />
             </div>
 
             <Footer />

@@ -53,9 +53,9 @@ class Login extends Component {
 
     return (
       <div className="login">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 m-auto">
+        <div className="row">
+          <div className="columns">
+            <div className="column">
               <h1 className="display-4 text-center">Log In</h1>
               <p className="lead text-center">Sign in</p>
               <form onSubmit={this.onSubmit}>
@@ -95,6 +95,7 @@ class Login extends Component {
                 />
               </form>
             </div>
+            <div className="column homepage hero" />
           </div>
         </div>
       </div>

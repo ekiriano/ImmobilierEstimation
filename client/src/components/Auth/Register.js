@@ -54,9 +54,9 @@ class Register extends Component {
 
     return (
       <div className="register">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 m-auto">
+        <div className="row">
+          <div className="columns">
+            <div className="column">
               <h1 className="display-4 text-center">Sign Up</h1>
 
               <form noValidate onSubmit={this.onSubmit}>
@@ -123,6 +123,7 @@ class Register extends Component {
                 <input type="submit" className="btn btn-info btn-block mt-4" />
               </form>
             </div>
+            <div className="homepage hero column" />
           </div>
         </div>
       </div>
