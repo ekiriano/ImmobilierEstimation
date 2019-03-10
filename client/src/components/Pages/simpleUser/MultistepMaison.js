@@ -6,7 +6,7 @@ import {
 import PropTypes from "prop-types";
 
 //import { withRouter } from "react-router-dom";
-//import classnames from "classnames";
+import classnames from "classnames";
 import { connect } from "react-redux";
 
 class MultistepMaison extends Component {
@@ -85,7 +85,7 @@ class MultistepMaison extends Component {
   }
 
   render() {
-    const { errors } = this.state.errors;
+    const { errors } = this.state;
 
     return (
       <div className="form-bg">
@@ -98,7 +98,9 @@ class MultistepMaison extends Component {
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className={classnames("input is-medium", {
+                          "is-danger": errors.rue
+                        })}
                         type="text"
                         name="rue"
                         placeholder="rue"
@@ -106,12 +108,15 @@ class MultistepMaison extends Component {
                         onChange={this.onChange}
                         required
                       />
+                      {errors.rue && <p class="help is-danger">{errors.rue}</p>}
                     </div>
                   </div>
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className={classnames("input is-medium", {
+                          "is-danger": errors.code_postal
+                        })}
                         type="text"
                         name="code_postal"
                         placeholder="code postal"
@@ -119,12 +124,17 @@ class MultistepMaison extends Component {
                         onChange={this.onChange}
                         required
                       />
+                      {errors.code_postal && (
+                        <p class="help is-danger">{errors.code_postal}</p>
+                      )}
                     </div>
                   </div>
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className={classnames("input is-medium", {
+                          "is-danger": errors.ville
+                        })}
                         type="text"
                         name="ville"
                         placeholder="ville"
@@ -132,12 +142,17 @@ class MultistepMaison extends Component {
                         onChange={this.onChange}
                         required
                       />
+                      {errors.ville && (
+                        <p class="help is-danger">{errors.ville}</p>
+                      )}
                     </div>
                   </div>
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className={classnames("input is-medium", {
+                          "is-danger": errors.surface_habitable
+                        })}
                         type="text"
                         name="surface_habitable"
                         placeholder="surface habitable"
@@ -145,12 +160,17 @@ class MultistepMaison extends Component {
                         onChange={this.onChange}
                         required
                       />
+                      {errors.surface_habitable && (
+                        <p class="help is-danger">{errors.surface_habitable}</p>
+                      )}
                     </div>
                   </div>
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className={classnames("input is-medium", {
+                          "is-danger": errors.surface_habitable_terrain
+                        })}
                         type="text"
                         name="surface_habitable_terrain"
                         placeholder="surface habitable terrain"
@@ -158,12 +178,19 @@ class MultistepMaison extends Component {
                         onChange={this.onChange}
                         required
                       />
+                      {errors.surface_habitable_terrain && (
+                        <p class="help is-danger">
+                          {errors.surface_habitable_terrain}
+                        </p>
+                      )}
                     </div>
                   </div>
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className={classnames("input is-medium", {
+                          "is-danger": errors.surface_habitable_constructible
+                        })}
                         type="text"
                         name="surface_habitable_constructible"
                         placeholder="surface habitable constructible"
@@ -171,12 +198,19 @@ class MultistepMaison extends Component {
                         onChange={this.onChange}
                         required
                       />
+                      {errors.surface_habitable_constructible && (
+                        <p class="help is-danger">
+                          {errors.surface_habitable_constructible}
+                        </p>
+                      )}
                     </div>
                   </div>
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className={classnames("input is-medium", {
+                          "is-danger": errors.nombre_pieces
+                        })}
                         type="text"
                         name="nombre_pieces"
                         placeholder="nombre piece"
@@ -184,12 +218,17 @@ class MultistepMaison extends Component {
                         onChange={this.onChange}
                         required
                       />
+                      {errors.nombre_pieces && (
+                        <p class="help is-danger">{errors.nombre_pieces}</p>
+                      )}
                     </div>
                   </div>
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className={classnames("input is-medium", {
+                          "is-danger": errors.nombre_salle_bain
+                        })}
                         type="text"
                         name="nombre_salle_bain"
                         placeholder="nombre salle bain"
@@ -197,12 +236,17 @@ class MultistepMaison extends Component {
                         onChange={this.onChange}
                         required
                       />
+                      {errors.nombre_salle_bain && (
+                        <p class="help is-danger">{errors.nombre_salle_bain}</p>
+                      )}
                     </div>
                   </div>
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className={classnames("input is-medium", {
+                          "is-danger": errors.nombre_niveaux
+                        })}
                         type="text"
                         name="nombre_niveaux"
                         placeholder="nombre niveaux"
@@ -210,6 +254,9 @@ class MultistepMaison extends Component {
                         onChange={this.onChange}
                         required
                       />
+                      {errors.nombre_niveaux && (
+                        <p class="help is-danger">{errors.nombre_niveaux}</p>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -218,7 +265,9 @@ class MultistepMaison extends Component {
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className={classnames("input is-medium", {
+                          "is-danger": errors.annee_construction
+                        })}
                         type="text"
                         name="annee_construction"
                         placeholder="annee_construction"
@@ -226,12 +275,19 @@ class MultistepMaison extends Component {
                         onChange={this.onChange}
                         required
                       />
+                      {errors.annee_construction && (
+                        <p class="help is-danger">
+                          {errors.annee_construction}
+                        </p>
+                      )}
                     </div>
                   </div>
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className={classnames("input is-medium", {
+                          "is-danger": errors.diagnostic_performance_energetique
+                        })}
                         type="text"
                         name="diagnostic_performance_energetique"
                         placeholder="diagnostic performance energetique "
@@ -239,12 +295,19 @@ class MultistepMaison extends Component {
                         onChange={this.onChange}
                         required
                       />
+                      {errors.diagnostic_performance_energetique && (
+                        <p class="help is-danger">
+                          {errors.diagnostic_performance_energetique}
+                        </p>
+                      )}
                     </div>
                   </div>
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className={classnames("input is-medium", {
+                          "is-danger": errors.etat_bien
+                        })}
                         type="text"
                         name="etat_bien"
                         placeholder=" etat bien"
@@ -252,12 +315,17 @@ class MultistepMaison extends Component {
                         onChange={this.onChange}
                         required
                       />
+                      {errors.etat_bien && (
+                        <p class="help is-danger">{errors.etat_bien}</p>
+                      )}
                     </div>
                   </div>
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className={classnames("input is-medium", {
+                          "is-danger": errors.qualite_maison
+                        })}
                         type="text"
                         name="qualite_maison"
                         placeholder="qualite maison"
@@ -265,12 +333,17 @@ class MultistepMaison extends Component {
                         onChange={this.onChange}
                         required
                       />
+                      {errors.qualite_maison && (
+                        <p class="help is-danger">{errors.qualite_maison}</p>
+                      )}
                     </div>
                   </div>
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className={classnames("input is-medium", {
+                          "is-danger": errors.luminosite
+                        })}
                         type="text"
                         name="luminosite"
                         placeholder="luminosite"
@@ -278,12 +351,17 @@ class MultistepMaison extends Component {
                         onChange={this.onChange}
                         required
                       />
+                      {errors.luminosite && (
+                        <p class="help is-danger">{errors.luminosite}</p>
+                      )}
                     </div>
                   </div>
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className={classnames("input is-medium", {
+                          "is-danger": errors.calme
+                        })}
                         type="text"
                         name="calme"
                         placeholder="calme"
@@ -291,12 +369,17 @@ class MultistepMaison extends Component {
                         onChange={this.onChange}
                         required
                       />
+                      {errors.calme && (
+                        <p class="help is-danger">{errors.calme}</p>
+                      )}
                     </div>
                   </div>
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className={classnames("input is-medium", {
+                          "is-danger": errors.proximite_transports
+                        })}
                         type="text"
                         name="proximite_transports"
                         placeholder="proximite transports"
@@ -304,12 +387,19 @@ class MultistepMaison extends Component {
                         onChange={this.onChange}
                         required
                       />
+                      {errors.proximite_transports && (
+                        <p class="help is-danger">
+                          {errors.proximite_transports}
+                        </p>
+                      )}
                     </div>
                   </div>
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className={classnames("input is-medium", {
+                          "is-danger": errors.qualite_toiture
+                        })}
                         type="text"
                         name="qualite_toiture"
                         placeholder="qualite toiture"
@@ -317,6 +407,9 @@ class MultistepMaison extends Component {
                         onChange={this.onChange}
                         required
                       />
+                      {errors.qualite_toiture && (
+                        <p class="help is-danger">{errors.qualite_toiture}</p>
+                      )}
                     </div>
                   </div>
 
@@ -335,7 +428,8 @@ class MultistepMaison extends Component {
 
 MultistepMaison.propTypes = {
   submitDefaultMaison: PropTypes.func.isRequired,
-  submitDefaultMaisonSave: PropTypes.func.isRequired
+  submitDefaultMaisonSave: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired
 };
 
 const mapStateProps = state => ({

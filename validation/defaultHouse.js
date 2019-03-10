@@ -224,12 +224,6 @@ module.exports = function validateDefaultHouseInput(data) {
     errors.qualite_toiture = "qualite_toiture is required";
   }
 
-  if (Validator.isEmpty(data.prix_estimation)) {
-    errors.prix_estimation = "prix_estimation is required";
-  }
-
-  // write validation rules
-
   return {
     errors,
     isValid: isEmpty(errors)
