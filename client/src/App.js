@@ -24,6 +24,7 @@ import Login from "./components/Auth/Login";
 import HomePage from "./components/Pages/HomePage";
 
 //SuperUser
+import Dashboard from "./components/Pages/superUser/Dashboard";
 
 //Normal User
 import DefaultForm from "./components/Pages/simpleUser/MultistepMaison";
@@ -53,6 +54,7 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/default" component={DefaultForm} />
+              <Route exact path="/dashboard" component={Dashboard} />
             </div>
 
             <Footer />

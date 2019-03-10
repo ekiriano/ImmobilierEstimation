@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import { submitDefaultMaison } from "../../../actions/defaultMaisonActions";
+import {
+  submitDefaultMaison,
+  submitDefaultMaisonSave
+} from "../../../actions/defaultMaisonActions";
 import PropTypes from "prop-types";
 
 import { withRouter } from "react-router-dom";
@@ -70,8 +73,12 @@ class MultistepMaison extends Component {
       proximite_transports: this.state.proximite_transports,
       qualite_toiture: this.state.qualite_toiture
     };
-    this.props.submitDefaultMaison(newDefautMaison);
-    // this.props.registerUser(newDefautMaison, this.props.history);
+    //TODO: add condition if is logged in then .submitDefaultMaisonSave
+    if (this.props.user.user_type === "regular") {
+      this.props.submitDefaultMaisonSave(newDefautMaison);
+    } else {
+      this.props.submitDefaultMaison(newDefautMaison);
+    }
   }
 
   render() {
@@ -94,6 +101,7 @@ class MultistepMaison extends Component {
                         placeholder="rue"
                         value={this.state.rue}
                         onChange={this.onChange}
+                        required
                       />
                     </div>
                   </div>
@@ -106,6 +114,7 @@ class MultistepMaison extends Component {
                         placeholder="code postal"
                         value={this.state.code_postal}
                         onChange={this.onChange}
+                        required
                       />
                     </div>
                   </div>
@@ -118,6 +127,7 @@ class MultistepMaison extends Component {
                         placeholder="ville"
                         value={this.state.ville}
                         onChange={this.onChange}
+                        required
                       />
                     </div>
                   </div>
@@ -130,6 +140,7 @@ class MultistepMaison extends Component {
                         placeholder="surface habitable"
                         value={this.state.surface_habitable}
                         onChange={this.onChange}
+                        required
                       />
                     </div>
                   </div>
@@ -142,6 +153,7 @@ class MultistepMaison extends Component {
                         placeholder="surface habitable terrain"
                         value={this.state.surface_habitable_terrain}
                         onChange={this.onChange}
+                        required
                       />
                     </div>
                   </div>
@@ -154,6 +166,7 @@ class MultistepMaison extends Component {
                         placeholder="surface habitable constructible"
                         value={this.state.surface_habitable_constructible}
                         onChange={this.onChange}
+                        required
                       />
                     </div>
                   </div>
@@ -166,6 +179,7 @@ class MultistepMaison extends Component {
                         placeholder="nombre piece"
                         value={this.state.nombre_pieces}
                         onChange={this.onChange}
+                        required
                       />
                     </div>
                   </div>
@@ -178,6 +192,7 @@ class MultistepMaison extends Component {
                         placeholder="nombre salle bain"
                         value={this.state.nombre_salle_bain}
                         onChange={this.onChange}
+                        required
                       />
                     </div>
                   </div>
@@ -190,6 +205,7 @@ class MultistepMaison extends Component {
                         placeholder="nombre niveaux"
                         value={this.state.nombre_niveaux}
                         onChange={this.onChange}
+                        required
                       />
                     </div>
                   </div>
@@ -205,6 +221,7 @@ class MultistepMaison extends Component {
                         placeholder="annee_construction"
                         value={this.state.annee_construction}
                         onChange={this.onChange}
+                        required
                       />
                     </div>
                   </div>
@@ -217,6 +234,7 @@ class MultistepMaison extends Component {
                         placeholder="diagnostic performance energetique "
                         value={this.state.diagnostic_performance_energetique}
                         onChange={this.onChange}
+                        required
                       />
                     </div>
                   </div>
@@ -229,6 +247,7 @@ class MultistepMaison extends Component {
                         placeholder=" etat bien"
                         value={this.state.etat_bien}
                         onChange={this.onChange}
+                        required
                       />
                     </div>
                   </div>
@@ -241,6 +260,7 @@ class MultistepMaison extends Component {
                         placeholder="qualite maison"
                         value={this.state.qualite_maison}
                         onChange={this.onChange}
+                        required
                       />
                     </div>
                   </div>
@@ -253,6 +273,7 @@ class MultistepMaison extends Component {
                         placeholder="luminosite"
                         value={this.state.luminosite}
                         onChange={this.onChange}
+                        required
                       />
                     </div>
                   </div>
@@ -265,6 +286,7 @@ class MultistepMaison extends Component {
                         placeholder="calme"
                         value={this.state.calme}
                         onChange={this.onChange}
+                        required
                       />
                     </div>
                   </div>
@@ -277,6 +299,7 @@ class MultistepMaison extends Component {
                         placeholder="proximite transports"
                         value={this.state.proximite_transports}
                         onChange={this.onChange}
+                        required
                       />
                     </div>
                   </div>
@@ -289,6 +312,7 @@ class MultistepMaison extends Component {
                         placeholder="qualite toiture"
                         value={this.state.qualite_toiture}
                         onChange={this.onChange}
+                        required
                       />
                     </div>
                   </div>
@@ -307,14 +331,16 @@ class MultistepMaison extends Component {
 }
 
 MultistepMaison.propTypes = {
-  submitDefaultMaison: PropTypes.func.isRequired
+  submitDefaultMaison: PropTypes.func.isRequired,
+  submitDefaultMaisonSave: PropTypes.func.isRequired
 };
 
 const mapStateProps = state => ({
+  user: state.auth.user,
   errors: state.errors
 });
 
 export default connect(
   mapStateProps,
-  { submitDefaultMaison }
+  { submitDefaultMaison, submitDefaultMaisonSave }
 )(MultistepMaison);

@@ -11,7 +11,7 @@ const isEmpty = require("./is-empty");
 
 module.exports = function validateDefaultAppartmentInput(data) {
   let errors = {};
-
+  /*
   // set empty attr to empty string
 
   if (Validator.isEmpty(data.rue)) {
@@ -176,7 +176,7 @@ module.exports = function validateDefaultAppartmentInput(data) {
   }
 
   // write validation rules
-
+*/
   return {
     errors,
     isValid: isEmpty(errors)
