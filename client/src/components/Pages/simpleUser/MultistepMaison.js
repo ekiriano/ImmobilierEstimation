@@ -5,8 +5,8 @@ import {
 } from "../../../actions/defaultMaisonActions";
 import PropTypes from "prop-types";
 
-import { withRouter } from "react-router-dom";
-import classnames from "classnames";
+//import { withRouter } from "react-router-dom";
+//import classnames from "classnames";
 import { connect } from "react-redux";
 
 class MultistepMaison extends Component {
@@ -37,6 +37,9 @@ class MultistepMaison extends Component {
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+  }
+  componentDidMount() {
+    this.setState({ user: this.props.user });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -73,7 +76,7 @@ class MultistepMaison extends Component {
       proximite_transports: this.state.proximite_transports,
       qualite_toiture: this.state.qualite_toiture
     };
-    //TODO: add condition if is logged in then .submitDefaultMaisonSave
+
     if (this.props.user.user_type === "regular") {
       this.props.submitDefaultMaisonSave(newDefautMaison);
     } else {
