@@ -117,7 +117,7 @@ class MaisonMasterForm extends Component {
     if (currentStep < 5) {
       return (
         <button
-          className="btn btn-primary float-right"
+          className=" next-btn btn btn-primary float-right"
           type="button"
           onClick={this.next}
         >
@@ -140,10 +140,24 @@ class MaisonMasterForm extends Component {
     return null;
   }
 
+  componentDidMount() {
+    this.setState({ user: this.props.user });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
+
   render() {
     return (
       <Fragment>
-        <form noValidate onSubmit={this.onSubmit} className="form-bg">
+        <form
+          noValidate
+          onSubmit={this.onSubmit}
+          className="form-bg form-full-height"
+        >
           {/*Fragments let you group a list of children without adding extra nodes to the DOM.*/}
           <Step1
             currentStep={this.state.currentStep}

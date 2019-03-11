@@ -84,7 +84,7 @@ footer {
   align-items: center;
 }
 
-.form-bg {
+.primary-bg {
   background-color: #f5f6f7;
 }
 .input {
@@ -104,4 +104,31 @@ label {
   font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
+}
+
+.dashboard-main {
+  height: 85vh;
+  background-color: #f5f6f7;
+  margin: 2% 4%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.dashboard-main-header {
+  height: 10vh;
+  background-color: #ffffff;
+}
+
+.dashboard-main-body {
+  background-color: #f5f6f7;
+}
+
+.next-btn {
+  display: absolute;
+  bottom: 0;
+}
+
+.form-full-height {
+  height: 100%;
+  position: relative;
 }

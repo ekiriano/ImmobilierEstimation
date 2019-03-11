@@ -22,6 +22,7 @@ class Step1Maison extends Component {
               onChange={this.props.onChange}
               required
             />
+
             {errors.rue && <p class="help is-danger">{errors.rue}</p>}
           </div>
         </div>

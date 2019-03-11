@@ -12,6 +12,10 @@ class Step2Maison extends Component {
         <h1>Etape 2 - Surface</h1>
         <div className="field">
           <div className="control">
+            <label>
+              {" "}
+              Surface habitable : <br />
+            </label>
             <input
               className={classnames("input is-medium", {
                 "is-danger": errors.surface_habitable
@@ -29,6 +33,10 @@ class Step2Maison extends Component {
           </div>
         </div>
         <div className="field">
+          <label>
+            {" "}
+            Surface habitable terrain : <br />
+          </label>
           <div className="control">
             <input
               className={classnames("input is-medium", {
@@ -47,6 +55,9 @@ class Step2Maison extends Component {
           </div>
         </div>
         <div className="field">
+          <label>
+            Surface habitable constructible : <br />
+          </label>
           <div className="control">
             <input
               className={classnames("input is-medium", {
