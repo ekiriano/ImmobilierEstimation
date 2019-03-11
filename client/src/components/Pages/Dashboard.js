@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MultiStep from "../Pages/simpleUser/maison/MaisonMasterForm";
 import Map from "../Pages/Map";
+import Profile from "../partials/Profile";
 
 // TODO ADD CONDITIONAL RENDERING ++> FACTORIN  USER TYPE AND ESTIMATION TYPE
 
@@ -11,7 +12,7 @@ class Dashboard extends Component {
         <div className="row">
           <div className="columns">
             <div className="column is-2">
-              <h1>Profile</h1>
+              <Profile />
             </div>
             <div className="column is-10">
               <div className="dashboard-main">
