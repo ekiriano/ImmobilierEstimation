@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import MultiStep from "../Pages/simpleUser/maison/MaisonMasterForm";
 import Map from "../Pages/Map";
+
+// TODO ADD CONDITIONAL RENDERING ++> FACTORIN  USER TYPE AND ESTIMATION TYPE
+
 class Dashboard extends Component {
   render() {
     return (

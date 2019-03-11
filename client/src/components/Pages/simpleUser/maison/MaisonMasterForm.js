@@ -99,13 +99,15 @@ class MaisonMasterForm extends Component {
     let currentStep = this.state.currentStep;
     if (currentStep !== 1) {
       return (
-        <button
-          className="btn btn-secondary"
-          type="button"
-          onClick={this.previous}
-        >
-          Previous
-        </button>
+        <div className="bottom-left">
+          <button
+            className="c-btn c-primary"
+            type="button"
+            onClick={this.previous}
+          >
+            Previous
+          </button>
+        </div>
       );
     }
 
@@ -116,13 +118,15 @@ class MaisonMasterForm extends Component {
     let currentStep = this.state.currentStep;
     if (currentStep < 5) {
       return (
-        <button
-          className=" next-btn btn btn-primary float-right"
-          type="button"
-          onClick={this.next}
-        >
-          Next
-        </button>
+        <div className="bottom-right">
+          <button
+            className=" c-btn c-primary"
+            type="button"
+            onClick={this.next}
+          >
+            Next
+          </button>
+        </div>
       );
     }
     return null;
@@ -132,9 +136,11 @@ class MaisonMasterForm extends Component {
 
     if (currentStep === 5) {
       return (
-        <button className="btn" type="submit">
-          Estimer
-        </button>
+        <div className="bottom-right">
+          <button className="c-btn c-primary" type="submit">
+            Estimer
+          </button>
+        </div>
       );
     }
     return null;
@@ -156,7 +162,7 @@ class MaisonMasterForm extends Component {
         <form
           noValidate
           onSubmit={this.onSubmit}
-          className="form-bg form-full-height"
+          className="form-bg form-full-height is-vertical-center "
         >
           {/*Fragments let you group a list of children without adding extra nodes to the DOM.*/}
           <Step1

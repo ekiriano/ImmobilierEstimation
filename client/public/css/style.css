@@ -65,16 +65,6 @@ footer {
   background-color: #ffffff;
 }
 
-.btn {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.02);
-  border-radius: 6px;
-  background-color: #786aff;
-  color: white;
-  font-size: 25px;
-  font-family: "Open Sans", sans-serif;
-  border: none;
-}
-
 .centerall {
   height: 100vh;
   padding: 0;
@@ -107,7 +97,6 @@ label {
 }
 
 .dashboard-main {
-  height: 85vh;
   background-color: #f5f6f7;
   margin: 2% 4%;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -123,12 +112,43 @@ label {
   background-color: #f5f6f7;
 }
 
-.next-btn {
-  display: absolute;
-  bottom: 0;
+.bottom-right {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
 }
 
+.bottom-left {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
 .form-full-height {
   height: 100%;
   position: relative;
+}
+
+.c-btn {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.02);
+  border-radius: 6px;
+
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 600;
+  /* Text style for "Log Out" */
+  font-family: "Segoe UI";
+  font-weight: 600;
+  padding: 13px 28px;
+  border: none;
+}
+
+.c-primary {
+  background-color: #786aff;
+}
+
+.is-vertical-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
