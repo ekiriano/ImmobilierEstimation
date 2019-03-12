@@ -4,6 +4,7 @@ import {
   submitDefaultMaisonSave
 } from "../../../../actions/defaultMaisonActions";
 import PropTypes from "prop-types";
+
 import { connect } from "react-redux";
 
 import Step1 from "./Step1Maison";
@@ -41,6 +42,7 @@ class MaisonMasterForm extends Component {
     this.onChange = this.onChange.bind(this);
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   onChange(e) {
@@ -55,7 +57,7 @@ class MaisonMasterForm extends Component {
       code_postal: this.state.code_postal,
       ville: this.state.ville,
       surface_habitable: this.state.surface_habitable,
-      surface_totale_terrain: this.state.surface_habitable_terrain,
+      surface_totale_terrain: this.state.surface_totale_terrain,
       surface_habitable_constructible: this.state
         .surface_habitable_constructible,
       nombre_pieces: this.state.nombre_pieces,

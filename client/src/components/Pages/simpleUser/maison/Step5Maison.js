@@ -23,7 +23,7 @@ class Step5Maison extends Component {
               required
             />
             {errors.qualite_maison && (
-              <p class="help is-danger">{errors.qualite_maison}</p>
+              <p className="help is-danger">{errors.qualite_maison}</p>
             )}
           </div>
         </div>
@@ -41,7 +41,7 @@ class Step5Maison extends Component {
               required
             />
             {errors.luminosite && (
-              <p class="help is-danger">{errors.luminosite}</p>
+              <p className="help is-danger">{errors.luminosite}</p>
             )}
           </div>
         </div>
@@ -58,7 +58,7 @@ class Step5Maison extends Component {
               onChange={this.props.onChange}
               required
             />
-            {errors.calme && <p class="help is-danger">{errors.calme}</p>}
+            {errors.calme && <p className="help is-danger">{errors.calme}</p>}
           </div>
         </div>
         <div className="field">
@@ -75,7 +75,7 @@ class Step5Maison extends Component {
               required
             />
             {errors.proximite_transports && (
-              <p class="help is-danger">{errors.proximite_transports}</p>
+              <p className="help is-danger">{errors.proximite_transports}</p>
             )}
           </div>
         </div>
@@ -93,7 +93,7 @@ class Step5Maison extends Component {
               required
             />
             {errors.qualite_toiture && (
-              <p class="help is-danger">{errors.qualite_toiture}</p>
+              <p className="help is-danger">{errors.qualite_toiture}</p>
             )}
           </div>
         </div>
