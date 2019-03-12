@@ -27,7 +27,7 @@ import HomePage from "./components/Pages/HomePage";
 import Dashboard from "./components/Pages/Dashboard";
 
 //Normal User
-import DefaultForm from "./components/Pages/simpleUser/maison/MultistepMaison";
+
 import DefaultMaisonForm from "./components/Pages/simpleUser/maison/MaisonMasterForm";
 
 //check nd set jwt token
@@ -54,12 +54,6 @@ class App extends Component {
               <Route exact path="/" component={HomePage} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/default" component={DefaultForm} />
-              <Route
-                exact
-                path="/estimmer/maison"
-                component={DefaultMaisonForm}
-              />
               <Route exact path="/dashboard" component={Dashboard} />
             </div>
 
