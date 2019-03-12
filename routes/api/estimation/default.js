@@ -14,7 +14,7 @@ const validateDefaultAppartmentInput = require("../../../validation/defaultAppar
 // Load Default House Model
 //const DefaultHouse = require("../../../models/DefaultHouse");
 const DefaultAppartment = require("../../../models/DefaultAppartment");
-
+const DefaultHouse = require("../../../models/DefaultHouse");
 /**
  * @route   POST /routes/api/estimation/default/house
  * @desc    Estimate default house without  saving it

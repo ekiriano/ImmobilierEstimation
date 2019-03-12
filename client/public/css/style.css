@@ -59,6 +59,9 @@ footer {
 .mt-1 {
   margin-top: -50px;
 }
+.mb-is-1 {
+  margin-bottom: 50px;
+}
 .customInput {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.02);
   border-radius: 6px;

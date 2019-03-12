@@ -26,10 +26,6 @@ import HomePage from "./components/Pages/HomePage";
 //SuperUser
 import Dashboard from "./components/Pages/Dashboard";
 
-//Normal User
-
-import DefaultMaisonForm from "./components/Pages/simpleUser/maison/MaisonMasterForm";
-
 //check nd set jwt token
 if (localStorage.jwtToken) {
   //TODO set to secure cookie

@@ -180,7 +180,7 @@ class MaisonMasterForm extends Component {
             onChange={this.onChange}
             errors={this.state.errors}
             surface_habitable={this.state.surface_habitable}
-            surface_habitable_terrain={this.state.surface_habitable_terrain}
+            surface_totale_terrain={this.state.surface_totale_terrain}
             surface_habitable_constructible={
               this.state.surface_habitable_constructible
             }

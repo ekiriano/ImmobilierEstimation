@@ -40,17 +40,17 @@ class Step2Maison extends Component {
           <div className="control">
             <input
               className={classnames("input is-medium", {
-                "is-danger": errors.surface_habitable_terrain
+                "is-danger": errors.surface_totale_terrain
               })}
               type="text"
-              name="surface_habitable_terrain"
-              placeholder="surface habitable terrain"
-              value={this.props.surface_habitable_terrain}
+              name="surface_totale_terrain"
+              placeholder="surface totale terrain"
+              value={this.props.surface_totale_terrain}
               onChange={this.props.onChange}
               required
             />
-            {errors.surface_habitable_terrain && (
-              <p class="help is-danger">{errors.surface_habitable_terrain}</p>
+            {errors.surface_totale_terrain && (
+              <p class="help is-danger">{errors.surface_totale_terrain}</p>
             )}
           </div>
         </div>

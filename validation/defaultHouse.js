@@ -12,6 +12,7 @@ module.exports = function validateDefaultHouseInput(data) {
   let errors = {};
 
   // Set empty fields to empty string
+
   data.rue = !isEmpty(data.rue) ? data.rue : "";
   data.code_postal = !isEmpty(data.code_postal) ? data.code_postal : "";
   data.ville = !isEmpty(data.ville) ? data.ville : "";
@@ -55,82 +56,121 @@ module.exports = function validateDefaultHouseInput(data) {
     : "";
   // END OF EMPTY STRING
 
+  // FIELDS MUST BE REQUIRED
   if (Validator.isEmpty(data.rue)) {
     errors.rue = "rue field is required";
   }
 
-  if (
-    !Validator.isLength(data.code_postal, { min: 5, max: 5 }) ||
-    Validator.isEmpty(data.code_postal) ||
-    !Validator.isNumeric(data.code_postal, { no_symbols: true })
-  ) {
-    errors.code_postal =
-      "code postal is required and is 5 digits and is positive";
+  if (Validator.isEmpty(data.code_postal)) {
+    errors.code_postal = "code postal is required";
   }
 
   if (Validator.isEmpty(data.ville)) {
     errors.ville = "ville is required";
   }
 
-  if (
-    Validator.isEmpty(data.surface_habitable) ||
-    !Validator.isNumeric(data.surface_habitable, { no_symbols: true })
-  ) {
-    errors.surface_habitable =
-      "surface_habitable is required and is a positive digit";
+  if (Validator.isEmpty(data.surface_habitable)) {
+    errors.surface_habitable = "surface_habitable is required";
   }
 
+  if (Validator.isEmpty(data.surface_totale_terrain)) {
+    errors.surface_totale_terrain = "surface_totale_terrain is required";
+  }
+  if (Validator.isEmpty(data.surface_habitable_constructible)) {
+    errors.surface_habitable_constructible =
+      "surface_habitable_constructible is required";
+  }
+
+  if (Validator.isEmpty(data.nombre_pieces)) {
+    errors.nombre_pieces = "nombre_pieces is required";
+  }
+  if (Validator.isEmpty(data.nombre_salle_bain)) {
+    errors.nombre_salle_bain = "nombre_salle_bain is required";
+  }
+
+  if (Validator.isEmpty(data.nombre_niveaux)) {
+    errors.nombre_niveaux = "nombre_niveaux is required";
+  }
+
+  if (Validator.isEmpty(data.annee_construction)) {
+    errors.annee_construction = "annee_construction is required";
+  }
+
+  if (Validator.isEmpty(data.diagnostic_performance_energetique)) {
+    errors.diagnostic_performance_energetique =
+      "diagnostic_performance_energetique is required";
+  }
+
+  if (Validator.isEmpty(data.etat_bien)) {
+    errors.etat_bien = "etat_bien is required";
+  }
+
+  if (Validator.isEmpty(data.qualite_maison)) {
+    errors.qualite_maison = "qualite_maison is required";
+  }
+
+  if (Validator.isEmpty(data.luminosite)) {
+    errors.luminosite = "luminosite is required";
+  }
+
+  if (Validator.isEmpty(data.calme)) {
+    errors.calme = "calme is required";
+  }
+
+  if (Validator.isEmpty(data.proximite_transports)) {
+    errors.proximite_transports = "proximite_transports is required";
+  }
+
+  if (Validator.isEmpty(data.qualite_toiture)) {
+    errors.qualite_toiture = "qualite_toiture is required";
+  }
+
+  // END OF REQUIRED FIELDS
+
+  // SPECIFIC RULES FIELDS
+  /*
   if (
-    Validator.isEmpty(data.surface_totale_terrain) ||
-    !Validator.isNumeric(data.surface_totale_terrain, { no_symbols: true })
+    !Validator.isLength(data.code_postal, { min: 5, max: 5 }) ||
+    !Validator.isNumeric(data.code_postal, { no_symbols: true })
   ) {
+    errors.code_postal = "code postal msut be 5 digits and positive";
+  }
+
+  if (!Validator.isNumeric(data.surface_habitable, { no_symbols: true })) {
+    errors.surface_habitable = "surface_habitable must be greater than 0";
+  }
+  if (!Validator.isNumeric(data.surface_totale_terrain, { no_symbols: true })) {
     errors.surface_totale_terrain =
-      "surface_totale_terrain is required and is a positive digit";
+      "surface_totale_terrain  must be greater than 0";
   }
 
   if (
-    Validator.isEmpty(data.surface_habitable_constructible) ||
     !Validator.isNumeric(data.surface_habitable_constructible, {
       no_symbols: true
     })
   ) {
     errors.surface_habitable_constructible =
-      "surface_habitable_constructible is required and is a positive digit";
+      "surface_habitable_constructible must be equal or greater than 0";
   }
 
-  if (
-    Validator.isEmpty(data.nombre_pieces) ||
-    !Validator.isNumeric(data.nombre_pieces, { no_symbols: true })
-  ) {
-    errors.nombre_pieces = "nombre_pieces is required and is a positive digit";
+  if (!Validator.isNumeric(data.nombre_pieces, { no_symbols: true })) {
+    errors.nombre_pieces = "nombre_pieces must be greater than 0";
   }
 
-  if (
-    Validator.isEmpty(data.nombre_salle_bain) ||
-    !Validator.isNumeric(data.nombre_salle_bain, { no_symbols: true })
-  ) {
-    errors.nombre_salle_bain =
-      "nombre_salle_bain is required and is a positive digit";
+  if (!Validator.isNumeric(data.nombre_salle_bain, { no_symbols: true })) {
+    errors.nombre_salle_bain = "nombre_salle_bain must be greater than 0";
   }
 
-  if (
-    Validator.isEmpty(data.nombre_niveaux) ||
-    !Validator.isNumeric(data.nombre_niveaux, { no_symbols: true })
-  ) {
-    errors.nombre_niveaux =
-      "nombre_niveaux is required and is a positive digit";
+  if (!Validator.isNumeric(data.nombre_niveaux, { no_symbols: true })) {
+    errors.nombre_niveaux = "nombre_niveaux must be greater than 0";
   }
 
-  if (
-    Validator.isEmpty(data.annee_construction) ||
-    !Validator.isInt(data.annee_construction, { gt: 1900, lt: 2019 })
-  ) {
+  if (!Validator.isInt(data.annee_construction, { gt: 1900, lt: 2019 })) {
     errors.annee_construction =
-      "annee_construction is required and must be between 1900 and 2019";
+      "annee_construction and must be between 1900 and 2019";
   }
 
   if (
-    Validator.isEmpty(data.diagnostic_performance_energetique) ||
     !Validator.matches(
       data.diagnostic_performance_energetique,
       "A",
@@ -143,11 +183,10 @@ module.exports = function validateDefaultHouseInput(data) {
     )
   ) {
     errors.diagnostic_performance_energetique =
-      "diagnostic_performance_energetique is required";
+      "diagnostic_performance_energetique must match the given elements in the select";
   }
 
   if (
-    Validator.isEmpty(data.etat_bien) ||
     !Validator.matches(
       data.etat_bien,
       "standard",
@@ -155,11 +194,10 @@ module.exports = function validateDefaultHouseInput(data) {
       "travaux_importants_necessaires"
     )
   ) {
-    errors.etat_bien = "etat_bien is required";
+    errors.etat_bien = "etat_bien must match the given elements in the select";
   }
 
   if (
-    Validator.isEmpty(data.qualite_maison) ||
     !Validator.matches(
       data.qualite_maison,
       "inferieure",
@@ -167,11 +205,11 @@ module.exports = function validateDefaultHouseInput(data) {
       "suprerieure"
     )
   ) {
-    errors.qualite_maison = "qualite_maison is required";
+    errors.qualite_maison =
+      "qualite_maison must match the given elements in the select";
   }
 
   if (
-    Validator.isEmpty(data.luminosite) ||
     !Validator.matches(
       data.luminosite,
       "sombre",
@@ -181,11 +219,11 @@ module.exports = function validateDefaultHouseInput(data) {
       "tres_clair"
     )
   ) {
-    errors.luminosite = "luminosite is required";
+    errors.luminosite =
+      "luminosite must match the given elements in the select";
   }
 
   if (
-    Validator.isEmpty(data.calme) ||
     !Validator.matches(
       data.calme,
       "tres_bruyant",
@@ -195,11 +233,10 @@ module.exports = function validateDefaultHouseInput(data) {
       "tres_calme"
     )
   ) {
-    errors.calme = "calme is required";
+    errors.calme = "calme must match the given elements in the select";
   }
 
   if (
-    Validator.isEmpty(data.proximite_transports) ||
     !Validator.matches(
       data.proximite_transports,
       "tres_elogoignees",
@@ -209,11 +246,11 @@ module.exports = function validateDefaultHouseInput(data) {
       "tres_proche"
     )
   ) {
-    errors.proximite_transports = "proximite_transports is required";
+    errors.proximite_transports =
+      "proximite_transports must match the given elements in the select";
   }
 
   if (
-    Validator.isEmpty(data.qualite_toiture) ||
     !Validator.matches(
       data.qualite_toiture,
       "a_renover",
@@ -221,9 +258,10 @@ module.exports = function validateDefaultHouseInput(data) {
       "refaite_a_neuf"
     )
   ) {
-    errors.qualite_toiture = "qualite_toiture is required";
+    errors.qualite_toiture =
+      "qualite_toiture must match the given elements in the select";
   }
-
+*/
   return {
     errors,
     isValid: isEmpty(errors)

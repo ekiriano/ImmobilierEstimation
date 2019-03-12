@@ -1,7 +1,11 @@
 module.exports = {
-  defaultEstimationAppartment: DefaultBien => {
-    DefaultBien.prix_estimation = 10000;
-    return DefaultBien;
+  defaultEstimationAppartment: DefaultAppartement => {
+    DefaultAppartement.prix_estimation = 10000;
+    return DefaultAppartement;
+  },
+  defaultEstimationHouse: DefaultHouse => {
+    DefaultHouse.prix_estimation = 1000000;
+    return DefaultHouse;
   },
   defaultEstimationComparaison: DefaultBien => {
     // returns house data + estimation field filled
