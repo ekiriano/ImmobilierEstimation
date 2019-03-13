@@ -52,54 +52,40 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-<head>
-	   <link rel="stylesheet" href="Register.css">
-	</head>
       <div className="login">
         <div className="row">
           <div className="columns">
             <div className="column">
               <h1 className="display-4 text-center">Log In</h1>
               <form onSubmit={this.onSubmit}>
-                <div1 className="form-group">
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    name="email"
-                  />
-
-                </div1>
-                <br></br>
+                <div className="form-group">
+                  <input type="email" placeholder="Email" name="email" />
+                </div>
+                <br />
                 <p1>Forgot your password?</p1>
-                                <br></br>
+                <br />
 
-                <div2 className="form-group">
+                <div className="form-group">
                   <input
                     type="password"
-
                     placeholder="Password"
                     name="password"
-
                   />
-
-                </div2>
-                <br></br>
+                </div>
+                <br />
                 <input
                   type="submit"
                   value="Sign in"
                   className="btn btn-success btn-block mt-4"
                 />
               </form>
+              <p>Dont have an account?</p>
+              <p4> Sign up now.</p4>
             </div>
             <div className="column homepage hero" />
           </div>
         </div>
       </div>
-      <br></br>
-            <br></br>
-
-      <p>Dont have an account?</p><p4> Sign up now.</p4>
-
     );
   }
 }

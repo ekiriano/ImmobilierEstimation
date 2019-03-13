@@ -23,7 +23,7 @@ class Step4Maison extends Component {
               required
             />
             {errors.annee_construction && (
-              <p class="help is-danger">{errors.annee_construction}</p>
+              <p className="help is-danger">{errors.annee_construction}</p>
             )}
           </div>
         </div>
@@ -41,7 +41,7 @@ class Step4Maison extends Component {
               required
             />
             {errors.diagnostic_performance_energetique && (
-              <p class="help is-danger">
+              <p className="help is-danger">
                 {errors.diagnostic_performance_energetique}
               </p>
             )}
@@ -61,7 +61,7 @@ class Step4Maison extends Component {
               required
             />
             {errors.etat_bien && (
-              <p class="help is-danger">{errors.etat_bien}</p>
+              <p className="help is-danger">{errors.etat_bien}</p>
             )}
           </div>
         </div>
