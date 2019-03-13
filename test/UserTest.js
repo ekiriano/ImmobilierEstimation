@@ -1,17 +1,13 @@
-const chai = require("chai");
 
 const mongoose = require("mongoose");
 const User = require("../models/User");
 
 //require dev Dependencies
 
-const chaiHttp = require("chai-http");
 const server = require("../server");
 const user = require("../routes/api/users");
 
-const assert = chai.assert;
-var expect = chai.expect;
-chai.use(chaiHttp);
+
 
 // Parent Testing Block
 describe("User", () => {
@@ -22,58 +18,103 @@ describe("User", () => {
     });
   });
 
-  /**
+  
    * @test
    * /POST api/users/register
-   */
-  describe("POST /api/users/register", done => {
-    it("a_user_with_valid_form_data_can_register", () => {
-      const user = {
-        name: "johnDoe",
-        email: "johnDoe@test.com",
-        password: "secret",
-        password2: "secret"
-      };
+   
 
-      chai
-        .request(server)
-        .post("/api/users/register")
-        .send(user)
-        .end((err, res) => {
-          expect(res).to.have.status(200);
-        });
-    });
-  });
-
-  /**
-   * @test
-   * /POST api/users/login
-   * @todo redo user register to log him in
-   */
-  describe("POST /api/users/login", done => {
-    it("a_user_with_valid_form_data_can_login", () => {
-      // register a new user
-
-      // login the new user
-
-      //assert success = true
-      const user = {
-        email: "johnDoe@test.com",
-        password: "secret"
-      };
-
-      chai
-        .request(server)
-        .post("/api/users/login")
-        .send(user)
-        .end((err, res) => {
-          expect(res.body).to.have.property("success");
-          expect(res.body.success).to.eql(true);
-          expect(res).to.have.status(200);
-        });
-    });
-  });
+  /////////////////////////////// THE CONST USER=.... IS JUST TEMPORARY FOR TESTING PURPOSES
+  
+  
+import { validateRegisterInput } from '/validation/register';
+       const user = {
+       name: "johnDoe",
+       email: "johnDoe@test.com",
+       password: "secret",
+       password2: "secret"
+     };
+ describe{'validateRegisterInput',() => {
+   it('should output true',() => {
+     expect(validateRegisterInput(user).isValid).toBe('true');
+   });
+ });
+          
+          
+ const User = {
+   name: "johnDoe",
+   email: "johnDoe@test.com",
+   password: "secret",
+ };
+ describe('an_existing_user_can_login', () => {
+  it('should say if a user exists in the database', () => {
+    return user(User)
+    .then(data => {
+      expect(data.statusCode).toBe(200);
+    })
+  })
 });
+          
+ const User = {
+   name: "johnDoe",
+   email: "johnDoe@test.com",
+   password: "secret",
+   user_type: "regular"
+ };
+   describe('a_regular_user_cannot_post_to_superuser_dashboard', () => {
+  it('should say true', () => {
+      expect(User.user_type).toEqual('super');
+      expect(User.user_type).toEqual('admin');
+
+    })
+  })
+});    
+  
+   const User = {
+   name: "johnDoe",
+   email: "johnDoe@test.com",
+   password: "secret",
+   user_type: "regular"
+ };
+   describe('a_regular_user_cannot_post_to_admin_dashboard', () => {
+  it('should say true', () => {
+      expect(User.user_type).toEqual('admin');
+
+    })
+  })
+});
+
+   const User = {
+   name: "johnDoe",
+   email: "johnDoe@test.com",
+   password: "secret",
+   user_type: "regular"
+ };
+   describe('a_super_user_can_post_to_superuser_dashboard', () => {
+  it('should say true', () => {
+      expect(User.user_type).toEqual('super');
+
+    })
+  })
+});
+
+   const User = {
+   name: "johnDoe",
+   email: "johnDoe@test.com",
+   password: "secret",
+   user_type: "regular"
+ };
+   describe('a_super_user_cannot_post_to_admin_dashboard', () => {
+  it('should say true', () => {
+      expect(User.user_type).toEqual('admin');
+
+    })
+  })
+});
+          
+  
+          
+          
+  
 
 /* 
 Tests to write  :
