@@ -52,45 +52,41 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
+<head>
+	   <link rel="stylesheet" href="Register.css">
+	</head>
       <div className="login">
         <div className="row">
           <div className="columns">
             <div className="column">
               <h1 className="display-4 text-center">Log In</h1>
-              <p className="lead text-center">Sign in</p>
               <form onSubmit={this.onSubmit}>
-                <div className="form-group">
+                <div1 className="form-group">
                   <input
                     type="email"
-                    className={classnames("form-control form-control-lg", {
-                      "is-invalid": errors.email
-                    })}
-                    placeholder="Email Address"
+                    placeholder="Email"
                     name="email"
-                    value={this.state.email}
-                    onChange={this.onChange}
                   />
-                  {errors.email && (
-                    <div className="invalid-feedback">{errors.email}</div>
-                  )}
-                </div>
-                <div className="form-group">
+
+                </div1>
+                <br></br>
+                <p1>Forgot your password?</p1>
+                                <br></br>
+
+                <div2 className="form-group">
                   <input
                     type="password"
-                    className={classnames("form-control form-control-lg", {
-                      "is-invalid": errors.password
-                    })}
+
                     placeholder="Password"
                     name="password"
-                    value={this.state.password}
-                    onChange={this.onChange}
+
                   />
-                  {errors.password && (
-                    <div className="invalid-feedback">{errors.password}</div>
-                  )}
-                </div>
+
+                </div2>
+                <br></br>
                 <input
                   type="submit"
+                  value="Sign in"
                   className="btn btn-success btn-block mt-4"
                 />
               </form>
@@ -99,6 +95,11 @@ class Login extends Component {
           </div>
         </div>
       </div>
+      <br></br>
+            <br></br>
+
+      <p>Don't have an account?</p><p4> Sign up now.</p4>
+
     );
   }
 }
