@@ -98,7 +98,7 @@ class Login extends Component {
       <br></br>
             <br></br>
 
-      <p>Don't have an account?</p><p4> Sign up now.</p4>
+      <p>Dont have an account?</p><p4> Sign up now.</p4>
 
     );
   }
