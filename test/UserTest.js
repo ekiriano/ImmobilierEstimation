@@ -62,8 +62,8 @@ import { validateRegisterInput } from '/validation/register';
  };
    describe('a_regular_user_cannot_post_to_superuser_dashboard', () => {
   it('should say true', () => {
-      expect(User.user_type).toEqual('super');
-      expect(User.user_type).toEqual('admin');
+      expect(User.user_type).toEqual('super'); /////// you have this to add to the user scheme my nigga
+      expect(User.user_type).toEqual('admin');/////// this aswell
 
     })
   })
