@@ -13,6 +13,6 @@ var myMockdata = {
 	proxi:['tres_elogoignees', 'eloigne', 'standard', 'proche', 'tres_proche'],
 	quali:['a_renover', 'standard', 'refaite_a_neuf']
 };
-var template = fs.readFileSync('template.hbs', {encoding: 'utf8'});
+var template = fs.readFileSync('DataMaisonSchema.hbs', {encoding: 'utf8'});
 var result = dummyjson.parse(DataMaisonSchema, {mockdata: myMockdata});
 var obj = JSON.parse(result);
