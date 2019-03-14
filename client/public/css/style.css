@@ -168,6 +168,10 @@ label {
   margin: 2%;
 }
 
+.auth {
+  padding: 20px 150px;
+}
+
 @media (min-width: 1025px) and (max-width: 1280px) {
   .profileLink {
     font-size: 10px;

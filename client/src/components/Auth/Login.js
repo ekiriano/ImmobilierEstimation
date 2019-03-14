@@ -67,6 +67,9 @@ class Login extends Component {
                     value={this.state.email}
                     onChange={this.onChange}
                   />
+                  {errors.email && (
+                    <div className="invalid-feedback">{errors.email}</div>
+                  )}
                 </div>
                 <br />
                 <p>Forgot your password?</p>
@@ -74,23 +77,26 @@ class Login extends Component {
 
                 <div className="form-group">
                   <input
-                    className="input"
+                    className="input "
                     type="password"
                     placeholder="Password"
                     name="password"
                     value={this.state.password}
                     onChange={this.onChange}
                   />
+                  {errors.password && (
+                    <div className="invalid-feedback">{errors.password}</div>
+                  )}
                 </div>
                 <br />
-                <button type="submit" className="c-btn c-primary">
+                <button type="submit" className="c-btn auth c-primary">
                   Sign In
                 </button>
               </form>
-              <p>Dont have an account?</p>
-              <Link to="register">
-                <p> Sign up now.</p>
-              </Link>
+              <p>
+                Dont have an account?
+                <Link to="register">Sign up now.</Link>
+              </p>
             </div>
 
             <div className="column homepage hero" />
