@@ -14,5 +14,5 @@ var myMockdata = {
 	quali:['a_renover', 'standard', 'refaite_a_neuf']
 };
 var template = fs.readFileSync('template.hbs', {encoding: 'utf8'});
-var result = dummyjson.parse(DefaultDataMaison, {mockdata: myMockdata});
+var result = dummyjson.parse(DefaultDataSchema, {mockdata: myMockdata});
 var obj = JSON.parse(result);
