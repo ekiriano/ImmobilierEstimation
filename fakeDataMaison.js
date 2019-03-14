@@ -3,6 +3,7 @@ var dummyjson = require('./dummy-json');
  
  
  // REGLER PROBLEME CARACTERISTIQUES ENUM VIDES
+// PR FAIRE MARCHER FAUT INSTALLER DUMMY-JSON
 var myMockdata = {
 	companies: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
 	etat:['standard','rafraichissment_necessaire','travaux_importants_necessaires'],
