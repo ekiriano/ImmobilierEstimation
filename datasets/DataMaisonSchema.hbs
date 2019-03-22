@@ -4,12 +4,12 @@
     {
       "user": {{@index}},
       "rue": "{{street}}",
-      "code_postal": "{{zipcode}}",
+      "code_postal": {{zipcode}},
       "ville": "{{city}}",
-      "surface_habitable": "{{int 20 200}}",
-      "surface_totale_terrain": "{{int 20 100}}",
-      "surface_habitable_constructible": "{{int 20 100}}",
-      "nombre_pieces": "{{int 1 5}}",
+      "surface_habitable": {{int 20 200}},
+      "surface_totale_terrain": {{int 20 100}},
+      "surface_habitable_constructible": {{int 20 100}},
+      "nombre_pieces": {{int 1 5}},
       "nombre_salle_bain": "{{int 1 5}}",
       "nombre_niveaux": "{{int 1 5}}",
       "annee_construction": "{{int 1900 2019}}",
@@ -20,7 +20,7 @@
       "calme": "{{calm}}",
       "proximite_transports": "{{proxi}}",
       "qualite_toiture": "{{quali}}",
-      "prix_estimation": "{{int 50000 500000}}"
+      "prix_estimation": {{int 50000 500000}}
 
     }
     {{/repeat}}
