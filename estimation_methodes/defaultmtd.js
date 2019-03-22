@@ -8,29 +8,45 @@ module.exports = {
     return DefaultHouse;
   },
   defaultEstimationComparaison: DefaultBien => {
-    // returns house data + estimation field filled
 
-    // SCRAPPER LE MAX POSSIBLE DE BIENS QUI ONT LES MEME CARACTERISTIQUES AVEC DEFAULTBIEN ET LES METTRE DANS UN TABLEAU D'OBJETS
-    // JAPPELLE LE TABLEAU TAB FOR NOW
+  	var json = require('./output.json'); 
 
-    for (var bien in tab) {
-      DefaultBien.prix_estimation += bien.prix_estimation;
-      DefaultBien.prix_estimation = DefaultBien.prix_estimation / tab.length();
-    }
+  	var i = 1;
+  	for(var bien=0;bien<json.maisons.length;bien++){
+  		if((DefaultBien.prix_estimation-10000 <= json.maisons[bien].prix_estimation)  && (json.maisons[bien].prix_estimation<= DefaultBien.prix_estimation+10000)){
+  		      DefaultBien.prix_estimation += json.maisons[bien].prix_estimation;
+  		      i++;
+  		  }
+  	}
+  	console.log(DefaultBien.prix_estimation);
+
+  	DefaultBien.prix_estimation /= i;
+    
+    console.log(DefaultBien.prix_estimation);
     return DefaultBien;
   },
 
   defaultEstimationReference: DefaultBien => {
-    // SCRAPPER UN BIEN QUI EST LE PLUS SIMILAIRE A DEFAULTBIEN ET LE METTRE DANS UNE VARIABLE QUE JAPPELLE objet FOR NOW
-    if (objet.surface === DefaultBien.surface) {
+  	var json = require('./output.json'); 
+  	var objet;
+  	for(var bien=0;bien<json.maisons.length;bien++){
+  		if((DefaultBien.prix_estimation-10000 <= json.maisons[bien].prix_estimation)  && (json.maisons[bien].prix_estimation<= DefaultBien.prix_estimation+10000)){
+  			objet=json.maisons[bien];
+  		  }
+  	}
+   
+
+      if (objet.surface_habitable === DefaultBien.surface_habitable) {
       Defaultbien.prix_estimation = objet.prix_estimation;
       return DefaultBien;
     }
 
     var a = objet.prix_estimation;
-    var b = objet.surface;
-    var c = DefaultBien.surface;
-    DefaultBien.prix_estimation = (b * c) / a;
+    var b = objet.surface_habitable;
+    var c = DefaultBien.surface_habitable;
+    DefaultBien.prix_estimation = ((a * c) / b);
+        console.log(DefaultBien.prix_estimation);
+
     return DefaultBien;
   },
 
@@ -40,4 +56,32 @@ module.exports = {
     //DefaultBien.prix_estimation = compounded interest on nombre annee
     return DefaultBien;
   }
+  		
 };
+
+var test= { user: 21,
+  rue: 'Rutland Drive',
+  code_postal: '83411',
+  ville: 'Fargo',
+  surface_habitable: 136,
+  surface_totale_terrain: '74',
+  surface_habitable_constructible: '45',
+  nombre_pieces: '1',
+  nombre_salle_bain: '5',
+  nombre_niveaux: '4',
+  annee_construction: '1964',
+  diagnostic_performance_energetique: 'LexiconLabs',
+  etat_bien: '',
+  qualite_maison: '',
+  luminosite: '',
+  calme: '',
+  proximite_transports: '',
+  qualite_toiture: '',
+  prix_estimation: 311822 }
+
+
+
+module.exports.defaultEstimationComparaison(test);
+module.exports.defaultEstimationReference(test);
+
+
