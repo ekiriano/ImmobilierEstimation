@@ -9,121 +9,58 @@ const HouseSchema = new Schema({
   },
   client: [
     {
-      civilite: {
-        type: String,
-        required: [true, 'The civilite is required'],
-        enum: [
-          "aucun",
-          "monsieur",
-          "madame",
-          "monsieur et madame",
-          "messieurs",
-          "mesdames"
-        ]
+      civilite: { type: String, required: true
+        // enum: [
+        //   "aucun",
+        //   "monsieur",
+        //   "madame",
+        //   "monsieur et madame",
+        //   "messieurs",
+        //   "mesdames"
+        // ]
       },
+      prenom: {type: String,  required: true},
+      nom: {type: String, required: true},
+      email: {type: String, required: true},
+      telephone: {type: number, required: true }
 
-      name: {
-        first: {type: String, required: [true, 'The first name is required']},
-        last: {type: String, required: [true, 'The last name is required']}
-      },
-
-      email: {
-        type: String,
-        required: [true, 'The email is required']
-      },
-
-      telephone: {
-        type: number,
-        required: [true, 'The phone number is required']
-      },
     }
   ],
-  maison: [{
-    localisation:
+
+  bienImmobillier: [{
+    localisationBien:
     {
-      addresse:
-      {
-        numero: {type: Number, required: [true, 'The street number is required']},
-        voie: {type: String, required: [true, 'The street name is required']},
-        code_postale: {type: Number, required: [true, 'The zip code is required']},
-        ville: {type: String, required: [true, 'The city is required']}
-      }
+        numero: {type: Number, required: true},
+        voie: {type: String, required: true},
+        codePostal: {type: Number, required: true},
+        ville: {type: String, required: true}
+
     },
 
     informations:
     {
-      annee_construction: {
-        type: Number,
-        required: [true, 'The construction year is required'],
-        min: 1000
-      },
-
-      type_bien: {
-        type: String,
-        required: [true, 'The construction year is required'],
-        enum: [
-          // we need to fill this, (not very sure that this field needs to be here)
-        ]
-      },
-
-      number_of_pieces: {
-        type: Number,
-        required: [true, 'The number of pieces is required'],
-        min: 0
-      },
-
-      number_of_rooms: {
-        type: Number,
-        required: [true, 'The number rooms is required'],
-        min: 0
-      },
-
-      habitable_surface: {
-        type: Number,
-        required: [true, 'The habitable surface is required'],
-        min: 0
-      },
-
-      ground_surface: {
-        type: Number,
-        required: [true, 'The ground surface is required'],
-        min: 0
-      },
-
-      number_of_levels: {
-        type: Number,
-        required: [true, 'The number of levels is required'],
-        min: 0
-      },
-
-      elevator: {
-        type: Boolean,
-        required: [true, 'The elevator is required']
-      },
-
-      balcony: {
-        type: Boolean,
-        required: [true, 'The balcony is required']
-      },
-
-      can_sell: {
-        type: Boolean,
-        required: [true, 'The can sell is required']
-      },
+      anneConstruction: {type: Number, required: true, min: 1000},
+      typeBienAffiche: {type: String, required: true},
+      nombrePieces: {type: Number, required: true, min: 0},
+      nombreChambres: {type: Number,  required: true, min: 0},
+      surfaceHabitable: {type: Number,required: true, min: 0},
+      surfaceTerrain: { type: Number, required: true, min: 0},
+      nombreNiveaux: {type: Number,required: true,  min: 0},
+      ascenseur: {type: Boolean, required: true},
+      balconOuTerrasse: {type: Boolean, required: true},
+      LibreALaVente: {type: Boolean, required: true},
+      titreDossier: {type: String, required: true},
+      descriptifBien: {type: String, required: true},
+      DPE: {type: String, required: true},
+      GES: {type: String, required: true},
+      PrixMandat: {type: Number, required: true,  min: 0},
     },
 
-    charges_maison:
+    chargesEtImpots:
     {
-      charges:
-      {
-        annual: {type: Number, required: [true, 'The annual charges is required'], min: 0},
-        coprepriete: {type: Number, required: [true, 'The coprepriete charges is required'], min: 0},
-      },
-      impots: {
-        type: Number,
-        required: [true, 'The impots is required'],
-        min: 0
-      }
+        chargesAnnuellesTotales: {type: Number, required: true, min: 0},
+        chargesDeCopropriete: {type: Number, required: true, min: 0},
+        impotsFonciers: {type: Number,  required: true, min: 0}
     },
 
     photos_plan:
@@ -137,34 +74,20 @@ const HouseSchema = new Schema({
 
     },
 
-    points:
+    pointsFortsPointsFaible:
     {
-      forts:
-      {
-        type: String,
-        required: true
-      },
-      faibles:
-      {
-        type: String,
-        required: true
-      }
-
+      pointsForts:[{ content: { type: String } }],
+      pointsFaibles:[{ content: { type: String } }]
     },
 
-    commentaires:
-    {
-      content: {
-        type: String,
-        required: [true, 'The commentaire is required']
-      }
+    content: {type: String, required: true}
     },
   }],
-  caracteristique: [
+  caracteristiques: [
     {
-      elements_principaux:
+      elementsPrincipaux:
       {
-        etat_qualite: {
+        etatQualiteGrosOeuvre: {
         type: String,
         required: [true, 'The etat is required'],
         // enum: [
@@ -176,7 +99,7 @@ const HouseSchema = new Schema({
         // ]
       },
 
-      epoque_contruction: {
+      epoqueConstruction: {
         type: String,
         required: [true, 'The contruction period is required'],
         // enum: [
@@ -188,7 +111,7 @@ const HouseSchema = new Schema({
         // ]
       },
 
-      mitoyennite: {
+      mitoyennete: {
         type: String,
         required: [true, 'The mitoyennite is required'],
         // enum: [
@@ -200,7 +123,7 @@ const HouseSchema = new Schema({
         // ]
       },
 
-      general_agreement: {
+      agrementGeneral: {
         type: String,
         required: [true, 'The general agreement is required'],
         // enum: [
@@ -224,7 +147,7 @@ const HouseSchema = new Schema({
         // ]
       },
 
-      accessibilité: {
+      accessibilite: {
         type: String,
         required: [true, 'The accessibilité is required'],
         // enum: [
@@ -236,7 +159,7 @@ const HouseSchema = new Schema({
         // ]
       },
 
-      tout_a_legout : {
+      toutAEgout : {
         type: String,
         required: [true, 'The tout a legout is required'],
         // enum: [
@@ -249,9 +172,9 @@ const HouseSchema = new Schema({
       },
     },
 
-    autres_elements:
+    autresElements:
     {
-      qualite_architecturale : {
+      qualiteArchitecturale : {
         type: String,
         required: true,
         // enum: [
@@ -262,7 +185,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      etat_portes_fenetres : {
+      etatPortesEtFenetres : {
         type: String,
         required: true,
         // enum: [
@@ -273,7 +196,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      etat_toitures : {
+      etatDesToitures : {
         type: String,
         required: true,
         // enum: [
@@ -284,7 +207,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      cloture_terrain : {
+      clotureTerrain : {
         type: String,
         required: true,
         // enum: [
@@ -297,9 +220,9 @@ const HouseSchema = new Schema({
       },
     },
 
-    environnement:
+    environement:
     {
-      nuisances_sonores: {
+      nuissanceSonore: {
         type: String,
         required: true,
         // enum: [
@@ -310,7 +233,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      voisinage: {
+      voisinageVisaVis: {
         type: String,
         required: true,
         // enum: [
@@ -321,7 +244,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      qualite_environnement: {
+      qualiteEnvironnement: {
         type: String,
         required: true,
         // enum: [
@@ -332,7 +255,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      proximite_services_publique: {
+      proximiteServicesPublics: {
         type: String,
         required: true,
         // enum: [
@@ -346,9 +269,9 @@ const HouseSchema = new Schema({
 
     },
 
-    criteres_generaux:
+    criteresGeneraux:
     {
-      qualite_destribution: {
+      qualiteDistribution: {
         type: String,
         required: true,
         // enum: [
@@ -359,7 +282,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      etat_murs_plafonds: {
+      etatMursPlafonds: {
         type: String,
         required: true,
         // enum: [
@@ -370,7 +293,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      sois_revetements_sols: {
+      solsEtRevetementSols: {
         type: String,
         required: true,
         // enum: [
@@ -386,7 +309,7 @@ const HouseSchema = new Schema({
 
     sejour:
     {
-      taille: {
+      tailleSejour: {
         type: String,
         required: true,
         // enum: [
@@ -397,7 +320,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      exposition: {
+      expositionSejour: {
         type: String,
         required: true,
         // enum: [
@@ -408,7 +331,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      vue: {
+      vueSejour: {
         type: String,
         required: true,
         // enum: [
@@ -419,7 +342,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      lumonisite: {
+      luminosite: {
         type: String,
         required: true,
         // enum: [
@@ -468,7 +391,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      etat_general: {
+      etatGeneral: {
         type: String,
         required: true,
         // enum: [
@@ -495,7 +418,7 @@ const HouseSchema = new Schema({
 
     chambres:
     {
-      taille: {
+      tailleDesPieces: {
         type: String,
         required: true,
         // enum: [
@@ -506,7 +429,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      etat: {
+      etatDesPieces: {
         type: String,
         required: true,
         // enum: [
@@ -517,7 +440,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      exposition_bruit: {
+      expositionAuxBruits: {
         type: String,
         required: true,
         // enum: [
@@ -533,7 +456,7 @@ const HouseSchema = new Schema({
 
     sanitaires:
     {
-      taille: {
+      taillePiecesSanitaires: {
         type: String,
         required: true,
         // enum: [
@@ -544,7 +467,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      nombre: {
+      nombreDeSanitaires: {
         type: String,
         required: true,
         // enum: [
@@ -555,7 +478,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      qualite: {
+      qualiteEtatSanitaires: {
         type: String,
         required: true,
         // enum: [
@@ -571,7 +494,7 @@ const HouseSchema = new Schema({
 
     energie:
     {
-      facture: {
+      factureEnergetique: {
         type: String,
         required: true,
         // enum: [
@@ -582,7 +505,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      installation_electrique: {
+      installationElectrique: {
         type: String,
         required: true,
         // enum: [
@@ -593,7 +516,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      installation_gaz: {
+      installationGaz: {
         type: String,
         required: true,
         // enum: [
@@ -609,7 +532,7 @@ const HouseSchema = new Schema({
 
     annexes:
     {
-      balcon: {
+      balconLogiaTerasse: {
         type: String,
         required: true,
         // enum: [
@@ -620,7 +543,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      cave: {
+      caveSousSol: {
         type: String,
         required: true,
         // enum: [
@@ -631,7 +554,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      agrement_jardin: {
+      agrementJardin: {
         type: String,
         required: true,
         // enum: [
@@ -642,7 +565,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      garage_parking_couvert: {
+      garageOuParkingOuvert: {
         type: String,
         required: true,
         // enum: [
@@ -653,7 +576,7 @@ const HouseSchema = new Schema({
         //   'Complet'
         // ]
       },
-      combles: {
+      comble: {
         type: String,
         required: true,
         // enum: [
