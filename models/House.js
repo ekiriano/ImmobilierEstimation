@@ -590,7 +590,11 @@ const HouseSchema = new Schema({
 
     }
   }],
-  estimation: [{}]
+  
+  estimation: [{
+    type: number,
+  
+  }],
 
   // add longtitude latitude
 });
