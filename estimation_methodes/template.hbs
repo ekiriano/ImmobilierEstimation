@@ -1,0 +1,21 @@
+{
+  "maisons": [
+    {{#repeat 200}}
+    {
+      "user": {{@index}},
+      "client": {"civilite": "{{street}}", 
+		"prenom": "{{lastname}}", 
+		"nom": "{{firstname}}" , 
+		"email": "{{email}}", 
+		"telephone": "{{int 20 200}}" },
+	"bienImmobillier": {
+      "informations": {"surfaceHabitable": "{{int 20 200}}",
+			"prixm2": "{{int 100 50000}}" }
+	},
+
+      "estimation": {{int 50000 500000}}
+
+    }
+    {{/repeat}}
+  ]
+}
