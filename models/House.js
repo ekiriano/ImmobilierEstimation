@@ -54,6 +54,7 @@ const HouseSchema = new Schema({
       DPE: {type: String, required: true},
       GES: {type: String, required: true},
       PrixMandat: {type: Number, required: true,  min: 0},
+      prixm2: {type: Number, required: true, min:0},
     },
 
     chargesEtImpots:
