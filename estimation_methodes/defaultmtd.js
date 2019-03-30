@@ -9,8 +9,8 @@ module.exports = {
   },
   defaultEstimationComparaison: DefaultBien => {
 
-  	var json = require('./output.json'); 
-
+  	//var json = require('./output.json'); 
+    /*
   	var i = 1;
   	for(var bien=0;bien<json.maisons.length;bien++){
   		if((DefaultBien.prix_estimation-10000 <= json.maisons[bien].prix_estimation)  && (json.maisons[bien].prix_estimation<= DefaultBien.prix_estimation+10000)){
@@ -22,13 +22,15 @@ module.exports = {
 
   	DefaultBien.prix_estimation /= i;
     
-    console.log(DefaultBien.prix_estimation);
+    console.log(DefaultBien.prix_estimation);*/
     return DefaultBien;
   },
 
   defaultEstimationReference: DefaultBien => {
-  	var json = require('./output.json'); 
-  	var objet;
+    
+    //var json = require('./output.json'); 
+    /*
+    var objet;
   	for(var bien=0;bien<json.maisons.length;bien++){
   		if((DefaultBien.prix_estimation-10000 <= json.maisons[bien].prix_estimation)  && (json.maisons[bien].prix_estimation<= DefaultBien.prix_estimation+10000)){
   			objet=json.maisons[bien];
@@ -46,7 +48,7 @@ module.exports = {
     var c = DefaultBien.surface_habitable;
     DefaultBien.prix_estimation = ((a * c) / b);
         console.log(DefaultBien.prix_estimation);
-
+    */
     return DefaultBien;
   },
 

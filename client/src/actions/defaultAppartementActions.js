@@ -1,7 +1,7 @@
 import axios from "axios";
 import { GET_ERRORS } from "./types";
 
-export const submitAppartement = AppartementData => dispatch => {
+export const submitDefaultAppartement = AppartementData => dispatch => {
   axios
     .post("api/estimation/default/appartement", AppartementData)
     .then(res => console.log(res.data))
@@ -13,7 +13,7 @@ export const submitAppartement = AppartementData => dispatch => {
     );
 };
 
-export const submitAppartementSave = AppartementData => dispatch => {
+export const submitDefaultAppartementSave = AppartementData => dispatch => {
   axios
     .post("api/estimation/default/house/appartement", AppartementData)
     .then(res => console.log(res.data))

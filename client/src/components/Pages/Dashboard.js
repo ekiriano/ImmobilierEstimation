@@ -1,9 +1,14 @@
 import React, { Component } from "react";
-import MultiStep from "../Pages/simpleUser/maison/MaisonMasterForm";
+import { connect } from "react-redux";
+
+import MultiStepDefaultMaison from "../Pages/simpleUser/maison/MaisonMasterForm";
+import MultiStepDefaultAppartement from "../Pages/simpleUser/appartement/AppartementMasterForm";
+
 import Map from "../Pages/Map";
 import Profile from "../partials/Profile";
 
 // TODO ADD CONDITIONAL RENDERING ++> FACTORIN  USER TYPE AND ESTIMATION TYPE
+
 
 class Dashboard extends Component {
   render() {
@@ -21,7 +26,7 @@ class Dashboard extends Component {
                   <div className="columns dashboard-body-header">
                     <div className="column is-6">
                       {" "}
-                      <MultiStep />
+                      <MultiStepDefaultMaison />
                     </div>
                     <div className="column is-6">
                       <Map />
@@ -36,4 +41,10 @@ class Dashboard extends Component {
     );
   }
 }
-export default Dashboard;
+
+const mapStateProps = state => ({
+  user: state.auth.user,
+  errors: state.errors
+});
+
+export default connect(mapStateProps)(Dashboard);
