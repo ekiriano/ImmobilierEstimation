@@ -1,0 +1,8 @@
+.mapboxgl-canvas-container{
+  width: 0;
+}
+
+#map-container {
+  padding-bottom: 0;
+  overflow: hidden;
+}
