@@ -90,7 +90,7 @@ const AppartmentSchema = new Schema({
       {
         etatQualiteGrosOeuvre: {
         type: String,
-        required: [true, 'The etat is required'],
+        required: true,
         // enum: [
         //   'Mauvais',
         //   'Mediocore'
@@ -102,7 +102,7 @@ const AppartmentSchema = new Schema({
 
       epoqueConstruction: {
         type: String,
-        required: [true, 'The contruction period is required'],
+        required: true,
         // enum: [
         //   'Pas recherché',
         //   'Peu recherché'
@@ -114,7 +114,7 @@ const AppartmentSchema = new Schema({
 
       mitoyennete: {
         type: String,
-        required: [true, 'The mitoyennite is required'],
+        required: true,
         // enum: [
         //   '3 cotés',
         //   '2 cotés'
@@ -126,7 +126,7 @@ const AppartmentSchema = new Schema({
 
       agrementGeneral: {
         type: String,
-        required: [true, 'The general agreement is required'],
+        required: true,
         // enum: [
         //   'Tres desagreable',
         //   'Desagreable'
@@ -138,7 +138,7 @@ const AppartmentSchema = new Schema({
 
       standing: {
         type: String,
-        required: [true, 'The standing is required'],
+        required: true,
         // enum: [
         //   'Mauvais',
         //   'Mediocore'
@@ -150,7 +150,7 @@ const AppartmentSchema = new Schema({
 
       accessibilite: {
         type: String,
-        required: [true, 'The accessibilité is required'],
+        required: true,
         // enum: [
         //   'Trés difficile',
         //   'Difficile'
@@ -162,7 +162,7 @@ const AppartmentSchema = new Schema({
 
       toutAEgout : {
         type: String,
-        required: [true, 'The tout a legout is required'],
+        required: true,
         // enum: [
         //   'Rien',
         //   'A revoir'
