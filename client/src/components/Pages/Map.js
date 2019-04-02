@@ -18,22 +18,23 @@ class Map extends Component {
       height: 600,
       latitude: 43.6,
       longitude: 3.8833,
-      zoom: 10,
+      zoom: 9.5,
+      placeholder: "Yo !"
     }
   }
 
   mapRef = React.createRef()
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.resize)
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener('resize', this.resize)
+  // }
 
-  resize = () => {
-    this.handleViewportChange({
-      width: window.innerWidth,
-      height: window.innerHeight
-    })
-  }
+  // resize = () => {
+  //   this.handleViewportChange({
+  //     width: window.innerWidth,
+  //     height: window.innerHeight
+  //   })
+  // }
 
   handleViewportChange = (viewport) => {
     this.setState({
@@ -43,7 +44,7 @@ class Map extends Component {
 
   // if you are happy with Geocoder default settings, you can just use handleViewportChange directly
   handleGeocoderViewportChange = (viewport) => {
-    const geocoderDefaultOverrides = { transitionDuration: 3000 }
+    const geocoderDefaultOverrides = { transitionDuration: 2000 }
 
     return this.handleViewportChange({
       ...viewport,
