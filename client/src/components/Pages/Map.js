@@ -19,11 +19,11 @@ class Map extends Component {
       latitude: 43.6,
       longitude: 3.8833,
       zoom: 9.5,
-      placeholder: "Yo !"
     }
   }
 
-  mapRef = React.createRef()
+  mapRef = React.createRef();
+  geocoderContainerRef = React.createRef();
 
   // componentWillUnmount() {
   //   window.removeEventListener('resize', this.resize)
@@ -54,17 +54,32 @@ class Map extends Component {
 
   render() {
     return (
+      <div>
+      <div
+          ref={this.geocoderContainerRef}
+          style={{
+            height: 50,
+            background: "black",
+            display: "flex",
+            alignItems: "center",
+            paddingLeft: 4
+          }}
+        />
       <MapGL
         ref={this.mapRef}
         {...this.state.viewport}
         onViewportChange={this.handleViewportChange}
         mapboxApiAccessToken={TOKEN}>
         <Geocoder
-          mapRef={this.mapRef}
-          onViewportChange={this.handleGeocoderViewportChange}
-          mapboxApiAccessToken={TOKEN}
+        mapRef={this.mapRef}
+        containerRef={this.geocoderContainerRef}
+        onResult={this.handleOnResult}
+        onViewportChange={this.handleGeocoderViewportChange}
+        mapboxApiAccessToken={TOKEN}
+        placeholder='Please enter your adress'
         />
       </MapGL>
+      </div>
     )
   }
 }
