@@ -84,6 +84,18 @@ const DefaultAppartmentSchema = new Schema({
     required: true
     // enum: ["tres_elogoignees", "eloigne", "standard", "proche", "tres_proche"]
   },
+
+    prixm2: {
+    type: Number,
+    required: true,
+    min: 0
+  },
+  qualite_toiture: {
+    type: String,
+    required: true
+    // enum: ["a_renover", "standard", "refaite_a_neuf"]
+  },
+
   prix_estimation: {
     type: Number,
     min: 0

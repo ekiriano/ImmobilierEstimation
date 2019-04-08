@@ -1,8 +1,14 @@
 module.exports = {
-  defaultEstimationAppartment: DefaultAppartement => {
-    DefaultAppartement.prix_estimation = 10000;
-    return DefaultAppartement;
+  defaultEstimationHouse: House => {
+    House.prix_estimation = House.surface_habitable * House.prixm2;
+    return House;
   },
+
+
+  defaultEstimationAppartment: Appartment => {
+    Appartment.prix_estimation = Appartment.surface * Appartment.prixm2;
+    return Appartment;
+
   defaultEstimationHouse: DefaultHouse => {
     DefaultHouse.prix_estimation = 1000000;
     return DefaultHouse;
@@ -57,33 +63,8 @@ module.exports = {
     const growth_percentage = getAvgGrowth();
     //DefaultBien.prix_estimation = compounded interest on nombre annee
     return DefaultBien;
+
   }
-  		
 };
-
-var test= { user: 21,
-  rue: 'Rutland Drive',
-  code_postal: '83411',
-  ville: 'Fargo',
-  surface_habitable: 136,
-  surface_totale_terrain: '74',
-  surface_habitable_constructible: '45',
-  nombre_pieces: '1',
-  nombre_salle_bain: '5',
-  nombre_niveaux: '4',
-  annee_construction: '1964',
-  diagnostic_performance_energetique: 'LexiconLabs',
-  etat_bien: '',
-  qualite_maison: '',
-  luminosite: '',
-  calme: '',
-  proximite_transports: '',
-  qualite_toiture: '',
-  prix_estimation: 311822 }
-
-
-
-module.exports.defaultEstimationComparaison(test);
-module.exports.defaultEstimationReference(test);
 
 

@@ -28,7 +28,7 @@ class Dashboard extends Component {
                       {" "}
                       <MultiStepDefaultMaison />
                     </div>
-                    <div className="column is-6">
+                    <div className="column is-6" id="map-container">
                       <Map />
                     </div>
                   </div>
