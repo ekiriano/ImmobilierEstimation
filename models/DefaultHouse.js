@@ -93,16 +93,16 @@ const DefaultHouseSchema = new Schema({
     type: String,
     required: true,
     //enum: ["a_renover", "standard", "refaite_a_neuf"]
-  },
-    prixm2: {
-    type: Number,
-    required: true,
-      min: 0
-  },
-  prix_estimation: {
-    type: Number,
-    min: 0
   }
+  //   prixm2: {
+  //   type: Number,
+  //   required: true,
+  //     min: 0
+  // },
+  // prix_estimation: {
+  //   type: Number,
+  //   min: 0
+  // }
 
   // add longtitue latitude
 });

@@ -9,9 +9,10 @@ class Step3Super extends Component {
         }
         return (
           <div>
-            <h1>Elements Principaux</h1>
-            <label>
+            <h1>Elements Principaux</h1> <hr/>
+            <h3>
             Etat et Qualité du gros oeuvre
+            </h3>
               <div className="control">
                   <label className="radio">
                     <input type="radio" name="etatQualiteGrosOeuvre"></input>
@@ -34,10 +35,11 @@ class Step3Super extends Component {
                     Très Bon
                   </label>
               </div>
-            </label>
 
-            <label>
+
+            <h3>
             Epoque de construction
+            </h3>
               <div className="control">
                   <label className="radio">
                     <input type="radio" name="epoqueConstruction"></input>
@@ -60,10 +62,10 @@ class Step3Super extends Component {
                     Très recherchée
                   </label>
               </div>
-            </label>
 
-            <label>
+            <h3>
             Mitoyenneté
+            </h3>
               <div className="control">
                   <label className="radio">
                     <input type="radio" name="mitoyennete"></input>
@@ -86,11 +88,11 @@ class Step3Super extends Component {
                     Maison indépendante
                   </label>
               </div>
-            </label>
 
-            
-            <label>
+
+            <h3>
             Agrément général
+            </h3>
               <div className="control">
                   <label className="radio">
                     <input type="radio" name="agrementGeneral"></input>
@@ -113,10 +115,10 @@ class Step3Super extends Component {
                     Maison indépendante
                   </label>
               </div>
-            </label>
 
-            <label>
+            <h3>
             Standing
+            </h3>
               <div className="control">
                   <label className="radio">
                     <input type="radio" name="standing"></input>
@@ -139,10 +141,10 @@ class Step3Super extends Component {
                     Très bon
                   </label>
               </div>
-            </label>
 
-            <label>
+            <h3>
             accessibilite
+            </h3>
               <div className="control">
                   <label className="radio">
                     <input type="radio" name="accessibilite"></input>
@@ -165,10 +167,10 @@ class Step3Super extends Component {
                     Très facile
                   </label>
               </div>
-            </label>
 
-            <label>
+            <h3>
             Tout à l'égout
+            </h3>
               <div className="control">
                   <label className="radio">
                     <input type="radio" name="toutAEgout"></input>
@@ -191,17 +193,16 @@ class Step3Super extends Component {
                     Complet
                   </label>
               </div>
-            </label>
 
-            <h1>Autre Elements</h1>
-            <h1>Environement</h1>
-            <h1>Critère Généraux</h1>
-            <h1>Séjour</h1>
-            <h1>Cuisine</h1>
-            <h1>Chambre</h1>
-            <h1>Sanitaire</h1>
-            <h1>Energie</h1>
-            <h1>Annexes</h1>
+            <h1>Autre Elements</h1> <hr/>
+            <h1>Environement</h1><hr/>
+            <h1>Critère Généraux</h1><hr/>
+            <h1>Séjour</h1><hr/>
+            <h1>Cuisine</h1><hr/>
+            <h1>Chambre</h1><hr/>
+            <h1>Sanitaire</h1><hr/>
+            <h1>Energie</h1><hr/>
+            <h1>Annexes</h1><hr/>
           </div>
         );
       }

@@ -20,7 +20,8 @@ class Step1Super extends Component {
         }
         return (
           <div>
-            <h1>Test 1 </h1>
+            <h1>Test 1 </h1> <hr/>
+            
             <div className="control">
                 <label className="radio">
                   <input type="radio" name="civilite"></input>
@@ -48,82 +49,72 @@ class Step1Super extends Component {
                 </label>
             </div>
 
-            <div className="field">
-              <div className="control">
-                <label className="text">
-                Prénom
-                  <input
-                    className="input is-medium"
-                    type="text"
-                    name="Prenom"
-                    placeholder="Prenom"
-                    required
-                  />
-                  </label>
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label className="label">Prénom</label>
               </div>
-           </div>
-
-           <div className="field">
-              <div className="control">
-                <label className="text">
-                Nom
-                  <input
-                    className="input is-medium"
-                    type="text"
-                    name="nom"
-                    placeholder="nom"
-                    required
-                  />
-                  </label>
+              <div className="field-body">
+                <div className="field">
+                  <p className="control">
+                    <input className="input" type="texte" placeholder="Prénom" name="prenom" required/>
+                  </p>
+                </div>
               </div>
-           </div>
+            </div>
 
-           <div className="field">
-              <div className="control">
-                <label className="text">
-                Adresse Postale
-                  <input
-                    className="input is-medium"
-                    type="text"
-                    name="adressePostale"
-                    placeholder="Adresse Postale"
-                    required
-                  />
-                  </label>
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label className="label">Nom</label>
               </div>
-           </div>
-
-           <div className="field">
-              <div className="control">
-                <label className="text">
-                Email
-                  <input
-                    className="input is-medium"
-                    type="text"
-                    name="email"
-                    placeholder="Email"
-                    required
-                  />
-                  </label>
+              <div className="field-body">
+                <div className="field">
+                  <p className="control">
+                    <input className="input" type="texte" placeholder="Nom" name="nom" required/>
+                  </p>
+                </div>
               </div>
-           </div>
+            </div>
 
-           <div className="field">
-              <div className="control">
-                <label className="text">
-                Téléphone 
-                  <input
-                    className="input is-medium"
-                    type="text"
-                    name="telephone"
-                    placeholder="Telephone"
-                    required
-                  />
-                  </label>
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label className="label">Adresse Postale</label>
               </div>
-           </div>
+              <div className="field-body">
+                <div className="field">
+                  <p className="control">
+                    <input className="input" type="texte" placeholder="Adresse Postale" name="adressePostale" required/>
+                  </p>
+                </div>
+              </div>
+            </div>
 
-            
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label className="label">Email</label>
+              </div>
+              <div className="field-body">
+                <div className="field">
+                  <p className="control">
+                    <input className="input" type="email" placeholder="Email" name="email" required/>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label className="label">Téléphone</label>
+              </div>
+              <div className="field-body">
+                <div className="field">
+                  <p className="control">
+                    <input className="input" type="texte" placeholder="Téléphone" name="telephone" required/>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+
           </div>
         );
       }

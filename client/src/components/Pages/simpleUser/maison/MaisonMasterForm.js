@@ -37,7 +37,7 @@ class MaisonMasterForm extends Component {
       calme: "",
       proximite_transports: "",
       qualite_toiture: "",
-      errors: {}
+      errors: {},
     };
     this.onChange = this.onChange.bind(this);
     this.next = this.next.bind(this);

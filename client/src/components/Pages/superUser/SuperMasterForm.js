@@ -12,6 +12,7 @@ import {
 import Step1 from "./Step1Super";
 import Step2 from "./Step2Super";
 import Step3 from "./Step3Super";
+import './step.css'
 
 
 class SuperMasterForm extends Component {
@@ -187,10 +188,10 @@ class SuperMasterForm extends Component {
             </div>
           );
         }
-    
+
         return null;
       }
-    
+
       get nextButton() {
         let currentStep = this.state.currentStep;
         if (currentStep < 5) {
@@ -210,7 +211,7 @@ class SuperMasterForm extends Component {
       }
       get submitButton() {
         let currentStep = this.state.currentStep;
-    
+
         if (currentStep === 5) {
           return (
             <div className="bottom-right">
@@ -222,15 +223,15 @@ class SuperMasterForm extends Component {
         }
         return null;
       }
-    
+
 
     render() {
-        return ( 
+        return (
             <Fragment>
-                <form 
-                    noValidate 
+                <form
+                    noValidate
                     onSubmit={this.onSubmit}
-                    className = "form-bg form-full-height is-vertical-center" 
+                    className = "form-bg form-full-height is-vertical-center"
                 >
                     <Step1
                         currentStep={this.state.currentStep}
@@ -238,15 +239,15 @@ class SuperMasterForm extends Component {
                         errors={this.errors}
                         client={this.state.client}
                     />
-                
-                        
+
+
                     <Step2
                         currentStep={this.state.currentStep}
                         onChange={this.onChange}
                         errors={this.errors}
                         bienImmobillier={this.state.bienImmobillier}
                     />
-                    <Step3 
+                    <Step3
                         currentStep={this.state.currentStep}
                         onChange={this.onChange}
                         errors={this.errors}
@@ -257,7 +258,7 @@ class SuperMasterForm extends Component {
                     {this.nextButton}
                     {this.submitButton}
 
-                </form> 
+                </form>
             </Fragment>
         )
     }
