@@ -8,7 +8,7 @@ module.exports = {
   defaultEstimationAppartment: Appartment => {
     Appartment.prix_estimation = Appartment.surface * Appartment.prixm2;
     return Appartment;
-
+  },
   defaultEstimationHouse: DefaultHouse => {
     DefaultHouse.prix_estimation = 1000000;
     return DefaultHouse;

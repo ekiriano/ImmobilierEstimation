@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import classnames from "classnames";
 import { loginUser } from "../../actions/authActions";
 import { Link } from "react-router-dom";
-import "bulma/css/bulma.css"
+
 
 class Login extends Component {
   constructor() {
