@@ -195,8 +195,287 @@ class Step3Super extends Component {
               </div>
 
             <h1>Autre Elements</h1> <hr/>
+
+            <h3>
+            Qualité Architecturale
+            </h3>
+              <div className="control">
+                  <label className="radio">
+                    <input type="radio" name="qualiteArchitecturale"></input>
+                    Mauvaise
+                  </label>
+                  <label className="radio">
+                    <input type="radio" name="qualiteArchitecturale"></input>
+                   Médiocre
+                  </label>
+                  <label className="radio">
+                    <input type="radio" name="qualiteArchitecturale"></input>
+                   Moyenne
+                  </label>
+                  <label className="radio">
+                    <input type="radio" name="qualiteArchitecturale"></input>
+                  Bonne
+                  </label>
+                  <label className="radio">
+                    <input type="radio" name="qualiteArchitecturale"></input>
+                    Très bonne
+                  </label>
+              </div>
+
+              <h3>
+              Etat des portes et fenetres
+              </h3>
+                <div className="control">
+                    <label className="radio">
+                      <input type="radio" name="etatPortesEtFenetres"></input>
+                      Mauvais
+                    </label>
+                    <label className="radio">
+                      <input type="radio" name="etatPortesEtFenetres"></input>
+                     Médiocre
+                    </label>
+                    <label className="radio">
+                      <input type="radio" name="etatPortesEtFenetres"></input>
+                     Moyen
+                    </label>
+                    <label className="radio">
+                      <input type="radio" name="etatPortesEtFenetres"></input>
+                    Bon
+                    </label>
+                    <label className="radio">
+                      <input type="radio" name="etatPortesEtFenetres"></input>
+                      Très bon
+                    </label>
+                </div>
+
+                <h3>
+                Etat des toitures
+                </h3>
+                  <div className="control">
+                      <label className="radio">
+                        <input type="radio" name="etatDesToitures"></input>
+                        Mauvais
+                      </label>
+                      <label className="radio">
+                        <input type="radio" name="etatDesToitures"></input>
+                       Médiocre
+                      </label>
+                      <label className="radio">
+                        <input type="radio" name="etatDesToitures"></input>
+                       Moyen
+                      </label>
+                      <label className="radio">
+                        <input type="radio" name="etatDesToitures"></input>
+                      Bon
+                      </label>
+                      <label className="radio">
+                        <input type="radio" name="etatDesToitures"></input>
+                        Très bon
+                      </label>
+                  </div>
+
+                  <h3>
+                  Cloture Terrain(état/qualité)
+                  </h3>
+                    <div className="control">
+                        <label className="radio">
+                          <input type="radio" name="clotureTerrain"></input>
+                          Aucun/Mauvais
+                        </label>
+                        <label className="radio">
+                          <input type="radio" name="clotureTerrain"></input>
+                         Médiocre
+                        </label>
+                        <label className="radio">
+                          <input type="radio" name="clotureTerrain"></input>
+                         Moyen
+                        </label>
+                        <label className="radio">
+                          <input type="radio" name="clotureTerrain"></input>
+                        Bon
+                        </label>
+                    </div>
+
+
             <h1>Environement</h1><hr/>
+
+            <h3>
+            Nuisances Sonores
+            </h3>
+              <div className="control">
+                  <label className="radio">
+                    <input type="radio" name="nuissanceSonore"></input>
+                    Trés bruyant
+                  </label>
+                  <label className="radio">
+                    <input type="radio" name="nuissanceSonore"></input>
+                   Bruyant
+                  </label>
+                  <label className="radio">
+                    <input type="radio" name="nuissanceSonore"></input>
+                   Normal
+                  </label>
+                  <label className="radio">
+                    <input type="radio" name="nuissanceSonore"></input>
+                  Calme
+                  </label>
+              </div>
+
+              <h3>
+              Voisinage/ vis-à-vis
+              </h3>
+                <div className="control">
+                    <label className="radio">
+                      <input type="radio" name="nuissanceSonore"></input>
+                      Trés genant
+                    </label>
+                    <label className="radio">
+                      <input type="radio" name="nuissanceSonore"></input>
+                     Genant
+                    </label>
+                    <label className="radio">
+                      <input type="radio" name="nuissanceSonore"></input>
+                     Normal
+                    </label>
+                    <label className="radio">
+                      <input type="radio" name="nuissanceSonore"></input>
+                    Calme
+                    </label>
+                    <label className="radio">
+                      <input type="radio" name="nuissanceSonore"></input>
+                    Aucun
+                    </label>
+                </div>
+
+                <h3>
+                Qualité de l'environnement
+                </h3>
+                  <div className="control">
+                      <label className="radio">
+                        <input type="radio" name="qualiteEnvironnement"></input>
+                        Mauvaise
+                      </label>
+                      <label className="radio">
+                        <input type="radio" name="qualiteEnvironnement"></input>
+                       Faible
+                      </label>
+                      <label className="radio">
+                        <input type="radio" name="qualiteEnvironnement"></input>
+                       Moyenne
+                      </label>
+                      <label className="radio">
+                        <input type="radio" name="qualiteEnvironnement"></input>
+                      Bonne
+                      </label>
+                      <label className="radio">
+                        <input type="radio" name="qualiteEnvironnement"></input>
+                        Très bonne
+                      </label>
+                  </div>
+
+                  <h3>
+                  Proximite des services publiques
+                  </h3>
+                    <div className="control">
+                        <label className="radio">
+                          <input type="radio" name="proximiteServicesPublics"></input>
+                          Trés éloignés
+                        </label>
+                        <label className="radio">
+                          <input type="radio" name="proximiteServicesPublics"></input>
+                         Assez éloignés
+                        </label>
+                        <label className="radio">
+                          <input type="radio" name="proximiteServicesPublics"></input>
+                         Normales
+                        </label>
+                        <label className="radio">
+                          <input type="radio" name="proximiteServicesPublics"></input>
+                        Proches
+                        </label>
+                        <label className="radio">
+                          <input type="radio" name="proximiteServicesPublics"></input>
+                          Très proches
+                        </label>
+                    </div>
+
+
+
             <h1>Critère Généraux</h1><hr/>
+
+            <h3>
+            Qualité de la distribution
+            </h3>
+              <div className="control">
+                  <label className="radio">
+                    <input type="radio" name="qualiteDistribution"></input>
+                    Mauvaise
+                  </label>
+                  <label className="radio">
+                    <input type="radio" name="qualiteDistribution"></input>
+                   Médiocre
+                  </label>
+                  <label className="radio">
+                    <input type="radio" name="qualiteDistribution"></input>
+                   Moyenne
+                  </label>
+                  <label className="radio">
+                    <input type="radio" name="qualiteDistribution"></input>
+                  Bonne
+                  </label>
+              </div>
+
+              <h3>
+              Etat des murs et des plafonds
+              </h3>
+                <div className="control">
+                    <label className="radio">
+                      <input type="radio" name="etatMursPlafonds"></input>
+                      A refaire
+                    </label>
+                    <label className="radio">
+                      <input type="radio" name="etatMursPlafonds"></input>
+                     Usagé
+                    </label>
+                    <label className="radio">
+                      <input type="radio" name="etatMursPlafonds"></input>
+                     Moyen
+                    </label>
+                    <label className="radio">
+                      <input type="radio" name="etatMursPlafonds"></input>
+                    Récent
+                    </label>
+                    <label className="radio">
+                      <input type="radio" name="etatMursPlafonds"></input>
+                      Neuf
+                    </label>
+                </div>
+
+                <h3>
+                Sols et revetement de sols
+                </h3>
+                  <div className="control">
+                      <label className="radio">
+                        <input type="radio" name="solsEtRevetementSols"></input>
+                        A refaire
+                      </label>
+                      <label className="radio">
+                        <input type="radio" name="solsEtRevetementSols"></input>
+                       Médiocre
+                      </label>
+                      <label className="radio">
+                        <input type="radio" name="solsEtRevetementSols"></input>
+                       Convenable
+                      </label>
+                      <label className="radio">
+                        <input type="radio" name="solsEtRevetementSols"></input>
+                      Bon
+                      </label>
+                      <label className="radio">
+                        <input type="radio" name="solsEtRevetementSols"></input>
+                        Très bon
+                      </label>
+                  </div>
             <h1>Séjour</h1><hr/>
             <h1>Cuisine</h1><hr/>
             <h1>Chambre</h1><hr/>
