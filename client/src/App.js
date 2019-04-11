@@ -30,6 +30,7 @@ import SuperUserForm from "./components/Pages/superUser/SuperMasterForm";
 
 //  saved properties
  import SavedAppartements from "./components/Pages/simpleUser/saved/savedAppartements";
+ import SavedMaisons from "./components/Pages/simpleUser/saved/savedMaisons";
 
 
 //check nd set jwt token
@@ -59,6 +60,7 @@ class App extends Component {
               <Route exact path="/dashboard" component={Dashboard} />
               <Route exact path="/super" component={SuperUserForm} />
               <Route exact path="/saved/appartements" component={SavedAppartements} />
+              <Route exact path="/saved/maisons" component={SavedMaisons} />
             </div>
 
             <Footer />

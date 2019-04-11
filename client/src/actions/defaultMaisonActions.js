@@ -26,5 +26,7 @@ export const submitDefaultMaisonSave = defaultMaisonData => dispatch => {
 };
 
 export const getSavedMaison = dispatch => {
-
+  axios.get("api/estimation/default/house/saved")
+  .then(res => console.log(res.data))
+  .catch( error => console.log(error));
 }

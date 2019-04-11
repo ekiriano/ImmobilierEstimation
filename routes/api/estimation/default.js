@@ -58,7 +58,7 @@ router.post("/house", (req, res) => {
  * @desc    Estimate default appartment
  * @access  Public
  */
-router.post("/appartment", (req, res) => {
+router.post("/appartement", (req, res) => {
   const { errors, isValid } = validateDefaultAppartmentInput(req.body);
   // Check validation
   if (!isValid) {
@@ -144,7 +144,7 @@ router.post(
  *
  */
 router.post(
-  "/appartment/save",
+  "/appartement/save",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const { errors, isValid } = validateDefaultAppartmentInput(req.body);
@@ -183,12 +183,43 @@ router.post(
   }
 );
 
-router.get('/appartement/saved'),
+router.get(
+  '/appartement/saved',
 passport.authenticate("jwt", {session: false}),
 (req,res) => {
  var user = {
    id : req.user.id
  }
- res.json("test");
+ DefaultAppartment.find({"user" : user.id})
+ .then(data => {
+    if(data){
+       res.json(data);
+    } else{
+      return res.status(400).json({error : "pas d'appartements sauvegardes trouvées"});
+    }
+ })
+ .catch(err => console.log(err));
+ 
 }
+);
+
+router.get(
+  '/houses/saved',
+passport.authenticate("jwt", {session: false}),
+(req,res) => {
+ var user = {
+   id : req.user.id
+ }
+ DefaultHouse.find({"user" : user.id})
+ .then(data => {
+    if(data){
+       res.json(data);
+    } else{
+      return res.status(400).json({error : "pas de maisons sauvegardés trouvées"});
+    }
+ })
+ .catch(err => console.log(err));
+ 
+}
+);
 module.exports = router;
