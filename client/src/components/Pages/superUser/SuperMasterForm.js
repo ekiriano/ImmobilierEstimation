@@ -12,6 +12,7 @@ import {
 import Step1 from "./Step1Super";
 import Step2 from "./Step2Super";
 import Step3 from "./Step3Super";
+import Step4 from "./Step4Super";
 import './step.css'
 
 
@@ -159,7 +160,7 @@ class SuperMasterForm extends Component {
 
     next() {
         let currentStep = this.state.currentStep;
-        currentStep = currentStep >= 2 ? 3 : currentStep + 1;
+        currentStep = currentStep >= 3 ? 4 : currentStep + 1;
         this.setState({
             currentStep: currentStep
         });
@@ -194,7 +195,7 @@ class SuperMasterForm extends Component {
 
       get nextButton() {
         let currentStep = this.state.currentStep;
-        if (currentStep < 5) {
+        if (currentStep < 4) {
           return (
             <div className="bottom-right">
               <button
@@ -212,7 +213,7 @@ class SuperMasterForm extends Component {
       get submitButton() {
         let currentStep = this.state.currentStep;
 
-        if (currentStep === 5) {
+        if (currentStep === 4) {
           return (
             <div className="bottom-right">
               <button className="c-btn c-primary" type="submit">
@@ -252,6 +253,11 @@ class SuperMasterForm extends Component {
                         onChange={this.onChange}
                         errors={this.errors}
                         caracteristiques={this.state.caracteristiques}
+                    />
+                    <Step4
+                        currentStep={this.state.currentStep}
+                        onChange={this.onChange}
+                        errors={this.errors}
                     />
 
                     {this.previousButton}
