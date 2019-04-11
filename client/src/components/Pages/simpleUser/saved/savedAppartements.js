@@ -17,7 +17,7 @@ class savedAppartements extends Component {
     }
     
     componentDidMount(){
-        axios.get("api/estimation/default/appartement/saved")
+        axios.get("/api/estimation/default/appartement/saved")
         .then(res => console.log(res.data))
         .catch( error => console.log(error));
     }
@@ -65,8 +65,5 @@ class savedAppartements extends Component {
     )
   }
 }
-
-
-
 
 export default savedAppartements;

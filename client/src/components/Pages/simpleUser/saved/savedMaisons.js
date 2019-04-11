@@ -16,7 +16,7 @@ class savedMaisons extends Component {
     }
     
     componentDidMount(){
-        axios.get("api/estimation/default/house/saved")
+        axios.get("/api/estimation/default/house/saved")
         .then(res => console.log(res.data))
         .catch( error => console.log(error));
     }
