@@ -15,7 +15,7 @@ export const submitDefaultAppartement = AppartementData => dispatch => {
 
 export const submitDefaultAppartementSave = AppartementData => dispatch => {
   axios
-    .post("api/estimation/default/house/appartement", AppartementData)
+    .post("api/estimation/default/appartement/save", AppartementData)
     .then(res => console.log(res.data))
     .catch(err =>
       dispatch({
@@ -23,4 +23,8 @@ export const submitDefaultAppartementSave = AppartementData => dispatch => {
         payload: err.response.data
       })
     );
+};
+
+export const getSavedAppartement = dispatch => {
+  axios.get("")
 };

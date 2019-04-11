@@ -24,3 +24,7 @@ export const submitDefaultMaisonSave = defaultMaisonData => dispatch => {
       })
     );
 };
+
+export const getSavedMaison = dispatch => {
+
+}

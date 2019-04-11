@@ -26,7 +26,11 @@ import HomePage from "./components/Pages/HomePage";
 //SuperUser
 import Dashboard from "./components/Pages/Dashboard";
 
-import SuperUserForm from './components/Pages/superUser/SuperMasterForm';
+import SuperUserForm from "./components/Pages/superUser/SuperMasterForm";
+
+//  saved properties
+ import SavedAppartements from "./components/Pages/simpleUser/saved/savedAppartements";
+
 
 //check nd set jwt token
 if (localStorage.jwtToken) {
@@ -54,6 +58,7 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route exact path="/dashboard" component={Dashboard} />
               <Route exact path="/super" component={SuperUserForm} />
+              <Route exact path="/saved/appartements" component={SavedAppartements} />
             </div>
 
             <Footer />

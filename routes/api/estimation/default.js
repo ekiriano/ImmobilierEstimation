@@ -182,4 +182,13 @@ router.post(
       .catch(err => console.log(err));
   }
 );
+
+router.get('/appartement/saved'),
+passport.authenticate("jwt", {session: false}),
+(req,res) => {
+ var user = {
+   id : req.user.id
+ }
+ res.json("test");
+}
 module.exports = router;

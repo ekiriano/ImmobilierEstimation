@@ -123,30 +123,4 @@ router.get(
   }
 );
 
-/**
- * @todo finish this mtd
- * @route   GET api/users/appartments
- * @desc    Returns user saved appartments estimation
- * @access  Public
- */
-/*
-router.get(
-  "/appartments",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {}
-);
-*/
-/**
- * @todo finish this mtd
- * @route   GET api/users/houses
- * @desc    Returns user saved house estimation
- * @access  Public
- */
-/*
-router.get(
-  "/houses",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {}
-);*/
-
 module.exports = router;
