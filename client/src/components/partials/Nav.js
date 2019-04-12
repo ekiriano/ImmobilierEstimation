@@ -62,7 +62,7 @@ class Nav extends Component {
 
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
-            <Link to="/default" className="navbar-item">
+            <Link to="/estimmation/simple" className="navbar-item">
               Estimmer votre bien gratuitement
             </Link>
 
