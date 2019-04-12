@@ -13,6 +13,7 @@ module.exports = {
 
   defaultEstimationHouse: DefaultHouse => {
     DefaultHouse.prix_estimation = 1000000;
+    console.log(DefaultHouse)
     return DefaultHouse;
   },
 

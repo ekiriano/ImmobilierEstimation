@@ -72,7 +72,8 @@ class MaisonMasterForm extends Component {
       luminosite: this.state.luminosite,
       calme: this.state.calme,
       proximite_transports: this.state.proximite_transports,
-      qualite_toiture: this.state.qualite_toiture
+      qualite_toiture: this.state.qualite_toiture,
+      prix_estimation:this.state.prix_estimation
     };
 
     if (this.props.user.user_type === "regular" || this.props.user.user_type === "super" ) {
