@@ -138,7 +138,7 @@ router.post(
 );
 
 /**
- * @route   POST /routes/api/estimation/default/appartment/save
+ * @route   POST /api/estimation/default/appartment/save
  * @desc    Estimate default appartment and save it in user account for later use
  * @access  Auth Users
  *
