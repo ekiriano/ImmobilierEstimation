@@ -16,7 +16,7 @@ class Step5Appartement extends Component {
                 "is-danger": errors.qualite_maison
               })}
               type="text"
-              name="qualite_maison"
+              name="qualite_maison" ///////////////////// SHOULD BE CHANGEED TO QUALITE_APPARTEMENT IN THE MODEL
               placeholder="qualite maison"
               value={this.props.qualite_maison}
               onChange={this.props.onChange}
