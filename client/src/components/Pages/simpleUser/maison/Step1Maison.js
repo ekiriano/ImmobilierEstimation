@@ -8,7 +8,7 @@ class Step1Maison extends Component {
     }
     return (
       <div>
-        <h1>Etape 1 - L'adresse</h1>
+        <h1>Etape 1 - Ladresse</h1>
         <div className="field">
           <div className="control">
             <input
