@@ -80,6 +80,7 @@ footer {
 .primary-bg {
   background-color: #f5f6f7;
 }
+/*
 .input {
   border: 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.02);
@@ -97,7 +98,7 @@ label {
   font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
-}
+}*/
 
 .dashboard-main {
   background-color: #f5f6f7;

@@ -9,6 +9,7 @@ class Step4Maison extends Component {
     return (
       <div>
         <h1>Etape 4 - Auxiliaire</h1>
+
         <div className="field">
           <div className="control">
             <input
@@ -27,6 +28,8 @@ class Step4Maison extends Component {
             )}
           </div>
         </div>
+        
+
         <div className="field">
           <div className="control">
             <input
@@ -47,6 +50,10 @@ class Step4Maison extends Component {
             )}
           </div>
         </div>
+
+        
+
+
         <div className="field">
           <div className="control">
             <input
@@ -66,6 +73,7 @@ class Step4Maison extends Component {
           </div>
         </div>
       </div>
+    
     );
   }
 }

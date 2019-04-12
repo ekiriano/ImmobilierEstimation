@@ -8,7 +8,7 @@
 //     }
 //     return (
 //       <div>
-//         <h2>Adresse: {this.props.prix_estimation}</h2>
+//         <h2>Adresse: {this.state.prix_estimation}</h2>
 //         <h2></h2>
 //       </div>
 //     );

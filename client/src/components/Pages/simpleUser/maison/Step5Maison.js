@@ -10,6 +10,7 @@ class Step5Maison extends Component {
       <div>
         <h1>Etape 5 - Etats et Transports</h1>
         <div className="field">
+        
           <div className="control">
             <input
               className={classnames("input is-medium", {

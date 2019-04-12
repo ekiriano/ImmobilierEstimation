@@ -9,8 +9,11 @@ class Step1Maison extends Component {
     return (
       <div>
         <h1>Etape 1 - Ladresse</h1>
+
         <div className="field">
+        <label class="label">Rue : </label>
           <div className="control">
+          
             <input
               className={classnames("input is-medium", {
                 "is-danger": errors.rue
@@ -26,7 +29,9 @@ class Step1Maison extends Component {
             {errors.rue && <p class="help is-danger">{errors.rue}</p>}
           </div>
         </div>
+
         <div className="field">
+        <label class="label">Code Postal : </label>
           <div className="control">
             <input
               className={classnames("input is-medium", {
@@ -44,7 +49,9 @@ class Step1Maison extends Component {
             )}
           </div>
         </div>
+
         <div className="field">
+        <label class="label">Ville : </label>
           <div className="control">
             <input
               className={classnames("input is-medium", {
