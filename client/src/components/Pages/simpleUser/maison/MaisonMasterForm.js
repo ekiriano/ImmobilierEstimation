@@ -37,6 +37,7 @@ class MaisonMasterForm extends Component {
       calme: "",
       proximite_transports: "",
       qualite_toiture: "",
+      prix_estimation : "",
       errors: {},
     };
     this.onChange = this.onChange.bind(this);
@@ -74,7 +75,7 @@ class MaisonMasterForm extends Component {
       qualite_toiture: this.state.qualite_toiture
     };
 
-    if (this.props.user.user_type === "regular") {
+    if (this.props.user.user_type === "regular" || this.props.user.user_type === "super" ) {
       this.props.submitDefaultMaisonSave(newDefautMaison);
     } else {
       this.props.submitDefaultMaison(newDefautMaison);

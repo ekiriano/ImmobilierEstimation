@@ -25,7 +25,7 @@ class Step3Maison extends Component {
               required
             />
             {errors.nombre_pieces && (
-              <p class="help is-danger">{errors.nombre_pieces}</p>
+              <p className="help is-danger">{errors.nombre_pieces}</p>
             )}
           </div>
         </div>
@@ -43,7 +43,7 @@ class Step3Maison extends Component {
               required
             />
             {errors.nombre_salle_bain && (
-              <p class="help is-danger">{errors.nombre_salle_bain}</p>
+              <p className="help is-danger">{errors.nombre_salle_bain}</p>
             )}
           </div>
         </div>
@@ -61,7 +61,7 @@ class Step3Maison extends Component {
               required
             />
             {errors.nombre_niveaux && (
-              <p class="help is-danger">{errors.nombre_niveaux}</p>
+              <p className="help is-danger">{errors.nombre_niveaux}</p>
             )}
           </div>
         </div>

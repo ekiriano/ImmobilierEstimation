@@ -11,7 +11,7 @@ class Step1Maison extends Component {
         <h1>Etape 1 - Ladresse</h1>
 
         <div className="field">
-        <label class="label">Rue : </label>
+        <label className="label">Rue : </label>
           <div className="control">
           
             <input
@@ -26,12 +26,12 @@ class Step1Maison extends Component {
               required
             />
 
-            {errors.rue && <p class="help is-danger">{errors.rue}</p>}
+            {errors.rue && <p className="help is-danger">{errors.rue}</p>}
           </div>
         </div>
 
         <div className="field">
-        <label class="label">Code Postal : </label>
+        <label className="label">Code Postal : </label>
           <div className="control">
             <input
               className={classnames("input is-medium", {
@@ -45,13 +45,13 @@ class Step1Maison extends Component {
               required
             />
             {errors.code_postal && (
-              <p class="help is-danger">{errors.code_postal}</p>
+              <p className="help is-danger">{errors.code_postal}</p>
             )}
           </div>
         </div>
 
         <div className="field">
-        <label class="label">Ville : </label>
+        <label className="label">Ville : </label>
           <div className="control">
             <input
               className={classnames("input is-medium", {
@@ -64,7 +64,7 @@ class Step1Maison extends Component {
               onChange={this.props.onChange}
               required
             />
-            {errors.ville && <p class="help is-danger">{errors.ville}</p>}
+            {errors.ville && <p className="help is-danger">{errors.ville}</p>}
           </div>
         </div>
       </div>

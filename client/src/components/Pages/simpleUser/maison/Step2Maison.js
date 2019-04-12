@@ -12,7 +12,7 @@ class Step2Maison extends Component {
         <h1>Etape 2 - Surface</h1>
 
         <div className="field">
-        <label class="label">Surface habitable : </label>
+        <label className="label">Surface habitable : </label>
           <div className="control">
             <input
               className={classnames("input is-medium", {
@@ -26,13 +26,13 @@ class Step2Maison extends Component {
               required
             />
             {errors.surface_habitable && (
-              <p class="help is-danger">{errors.surface_habitable}</p>
+              <p className="help is-danger">{errors.surface_habitable}</p>
             )}
           </div>
         </div>
 
         <div className="field">
-        <label class="label">Surface totale terrain : </label>
+        <label className="label">Surface totale terrain : </label>
           <div className="control">
             <input
               className={classnames("input is-medium", {
@@ -46,13 +46,13 @@ class Step2Maison extends Component {
               required
             />
             {errors.surface_totale_terrain && (
-              <p class="help is-danger">{errors.surface_totale_terrain}</p>
+              <p className="help is-danger">{errors.surface_totale_terrain}</p>
             )}
           </div>
         </div>
 
         <div className="field">
-        <label class="label">Surface habitable constructible  : </label>
+        <label className="label">Surface habitable constructible  : </label>
           <div className="control">
             <input
               className={classnames("input is-medium", {
@@ -66,7 +66,7 @@ class Step2Maison extends Component {
               required
             />
             {errors.surface_habitable_constructible && (
-              <p class="help is-danger">
+              <p className="help is-danger">
                 {errors.surface_habitable_constructible}
               </p>
             )}

@@ -12,7 +12,7 @@ const validateDefaultHouseInput = require("../../../validation/defaultHouse");
 const validateDefaultAppartmentInput = require("../../../validation/defaultAppartment");
 
 // Load Default House Model
-//const DefaultHouse = require("../../../models/DefaultHouse");
+
 const DefaultAppartment = require("../../../models/DefaultAppartment");
 const DefaultHouse = require("../../../models/DefaultHouse");
 /**
