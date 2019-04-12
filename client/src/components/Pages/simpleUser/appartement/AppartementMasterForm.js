@@ -11,6 +11,7 @@ import Step1 from "./Step1Appartement";
 import Step2 from "./Step2Appartement";
 import Step3 from "./Step3Appartement";
 import Step4 from "./Step4Appartement";
+import Step5 from "./Step5Appartement";
 
 class AppartementMasterForm extends Component {
   constructor(props) {
@@ -21,19 +22,22 @@ class AppartementMasterForm extends Component {
       rue: "",
       code_postal: "",
       ville: "",
-      surface: "",
+      surface_habitable: "",
+      surface_habitable_terrain: "",
+      surface_totale_terrain: "",
+      surface_habitable_constructible: "",
       nombre_pieces: "",
       nombre_salle_bain: "",
-      etage: "",
-      nombre_etage_total:"",
+      nombre_niveaux: "",
       annee_construction: "",
       diagnostic_performance_energetique: "",
       etat_bien: "",
-      qualite_appartement: "",
+      qualite_maison: "",
       luminosite: "",
       calme: "",
       proximite_transports: "",
-      errors: {}
+      qualite_toiture: "",
+      errors: {},
     };
     this.onChange = this.onChange.bind(this);
     this.next = this.next.bind(this);
@@ -52,19 +56,22 @@ class AppartementMasterForm extends Component {
       rue: this.state.rue,
       code_postal: this.state.code_postal,
       ville: this.state.ville,
-      surface: this.state.surface,
+      surface_habitable: this.state.surface_habitable,
+      surface_totale_terrain: this.state.surface_totale_terrain,
+      surface_habitable_constructible: this.state
+        .surface_habitable_constructible,
       nombre_pieces: this.state.nombre_pieces,
       nombre_salle_bain: this.state.nombre_salle_bain,
-      etage: this.state.etage,
-      nombre_etage_total : this.state.nombre_etage_total,
+      nombre_niveaux: this.state.nombre_niveaux,
       annee_construction: this.state.annee_construction,
       diagnostic_performance_energetique: this.state
         .diagnostic_performance_energetique,
       etat_bien: this.state.etat_bien,
-      qualite_appartement: this.state.qualite_appartement,
+      qualite_maison: this.state.qualite_maison,
       luminosite: this.state.luminosite,
       calme: this.state.calme,
-      proximite_transports: this.state.proximite_transports
+      proximite_transports: this.state.proximite_transports,
+      qualite_toiture: this.state.qualite_toiture
     };
 
     if (this.props.user.user_type === "regular") {
@@ -159,7 +166,7 @@ class AppartementMasterForm extends Component {
           onSubmit={this.onSubmit}
           className="form-bg form-full-height is-vertical-center "
         >
-         
+          {/*Fragments let you group a list of children without adding extra nodes to the DOM.*/}
           <Step1
             currentStep={this.state.currentStep}
             onChange={this.onChange}
@@ -172,7 +179,11 @@ class AppartementMasterForm extends Component {
             currentStep={this.state.currentStep}
             onChange={this.onChange}
             errors={this.state.errors}
-            surface={this.state.surface}
+            surface_habitable={this.state.surface_habitable}
+            surface_totale_terrain={this.state.surface_totale_terrain}
+            surface_habitable_constructible={
+              this.state.surface_habitable_constructible
+            }
           />
           <Step3
             currentStep={this.state.currentStep}
@@ -180,21 +191,30 @@ class AppartementMasterForm extends Component {
             errors={this.state.errors}
             nombre_pieces={this.state.nombre_pieces}
             nombre_salle_bain={this.state.nombre_salle_bain}
-            etage={this.state.etage}
-            nombre_etage_total={this.state.nombre_etage_total}
+            nombre_niveaux={this.state.nombre_niveaux}
           />
           <Step4
             currentStep={this.state.currentStep}
             onChange={this.onChange}
             errors={this.state.errors}
+            nombre_niveaux={this.state.nombre_niveaux}
             annee_construction={this.state.annee_construction}
             diagnostic_performance_energetique={
               this.state.diagnostic_performance_energetique
             }
             etat_bien={this.state.etat_bien}
-            qualite_appartement={this.state.qualite_appartement}
+            qualite_maison={this.state.qualite_maison}
           />
-          
+          <Step5
+            currentStep={this.state.currentStep}
+            onChange={this.onChange}
+            errors={this.state.errors}
+            luminosite={this.state.luminosite}
+            calme={this.state.calme}
+            proximite_transports={this.state.proximite_transports}
+            qualite_toiture={this.state.qualite_toiture}
+          />
+
           {this.previousButton}
           {this.nextButton}
           {this.submitButton}
