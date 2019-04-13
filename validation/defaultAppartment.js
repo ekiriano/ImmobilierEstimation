@@ -13,16 +13,12 @@ module.exports = function validateDefaultAppartmentInput(data) {
   let errors = {};
 
   // set empty attr to empty string
-
+/*
   if (Validator.isEmpty(data.rue)) {
     errors.rue = "rue field is required";
   }
 
-  if (
-    !Validator.isLength(data.code_postal, { min: 5, max: 5 }) ||
-    Validator.isEmpty(data.code_postal) ||
-    !Validator.isNumeric(data.code_postal, { no_symbols: true })
-  ) {
+  if (Validator.isEmpty(data.code_postal)) {
     errors.code_postal =
       "code postal is required and is 5 digits and is positive";
   }
@@ -31,145 +27,59 @@ module.exports = function validateDefaultAppartmentInput(data) {
     errors.ville = "ville is required";
   }
 
-  if (
-    Validator.isEmpty(data.surface) ||
-    !Validator.isNumeric(data.surface, { no_symbols: true })
-  ) {
-    errors.surface = "surface is required and is a positive digit";
+  if (Validator.isEmpty(data.surface)) {
+    errors.surface = "surface is required ";
   }
 
-  if (
-    Validator.isEmpty(data.nombre_pieces) ||
-    !Validator.isNumeric(data.nombre_pieces, { no_symbols: true })
-  ) {
+  if (Validator.isEmpty(data.nombre_pieces)) {
     errors.nombre_pieces = "nombre_pieces is required and is a positive digit";
   }
 
-  if (
-    Validator.isEmpty(data.nombre_salle_bain) ||
-    !Validator.isNumeric(data.nombre_salle_bain, { no_symbols: true })
-  ) {
+  if (Validator.isEmpty(data.nombre_salle_bain) ) {
     errors.nombre_salle_bain =
       "nombre_salle_bain is required and is a positive digit";
   }
 
-  if (
-    Validator.isEmpty(data.etage) ||
-    !Validator.isNumeric(data.etage, { no_symbols: true })
-  ) {
+  if (Validator.isEmpty(data.etage)) {
     errors.etage = "etage is required and must be a positive digit";
   }
 
-  if (
-    Validator.isEmpty(data.nombre_etage_total) ||
-    !Validator.isNumeric(data.nombre_etage_total, { no_symbols: true })
-  ) {
+  if ( Validator.isEmpty(data.nombre_etage_total) ) {
     errors.nombre_total_etage =
       "nombre_total_etage is required and must be a positive digit";
   }
 
-  if (
-    Validator.isEmpty(data.annee_construction) ||
-    !Validator.isInt(data.annee_construction, { gt: 1900, lt: 2019 })
-  ) {
-    errors.annee_construction =
-      "annee_construction is required and must be between 1900 and 2019";
+  if(Validator.isEmpty(data.annee_construction) ) {
+    errors.annee_construction = "annee_construction is required";
   }
 
-  if (
-    Validator.isEmpty(data.diagnostic_performance_energetique) ||
-    !Validator.matches(
-      data.diagnostic_performance_energetique,
-      "A",
-      "B",
-      "C",
-      "D",
-      "E",
-      "F",
-      "G"
-    )
-  ) {
-    errors.diagnostic_performance_energetique =
-      "diagnostic_performance_energetique is required";
+  if(Validator.isEmpty(data.diagnostic_performance_energetique) ) {
+    errors.diagnostic_performance_energetique = "diagnostic_performance_energetique is required";
   }
 
-  if (
-    Validator.isEmpty(data.etat_bien) ||
-    !Validator.matches(
-      data.etat_bien,
-      "standard",
-      "rafraichissment_necessaire",
-      "travaux_importants_necessaires"
-    )
-  ) {
+  if (Validator.isEmpty(data.etat_bien) ) {
     errors.etat_bien = "etat_bien is required";
   }
 
-  if (
-    Validator.isEmpty(data.qualite_maison) ||
-    !Validator.matches(
-      data.qualite_maison,
-      "inferieure",
-      "comparable",
-      "suprerieure"
-    )
-  ) {
+  if (Validator.isEmpty(data.qualite_maison) ) {
     errors.qualite_maison = "qualite_maison is required";
   }
 
-  if (
-    Validator.isEmpty(data.luminosite) ||
-    !Validator.matches(
-      data.luminosite,
-      "sombre",
-      "peu_clair",
-      "standard",
-      "clair",
-      "tres_clair"
-    )
-  ) {
+  if (Validator.isEmpty(data.luminosite)) {
     errors.luminosite = "luminosite is required";
   }
 
-  if (
-    Validator.isEmpty(data.calme) ||
-    !Validator.matches(
-      data.calme,
-      "tres_bruyant",
-      "bruyant",
-      "standard",
-      "calme",
-      "tres_calme"
-    )
-  ) {
+  if (Validator.isEmpty(data.calme)) {
     errors.calme = "calme is required";
   }
 
-  if (
-    Validator.isEmpty(data.proximite_transports) ||
-    !Validator.matches(
-      data.proximite_transports,
-      "tres_elogoignees",
-      "eloigne",
-      "standard",
-      "proche",
-      "tres_proche"
-    )
-  ) {
+  if (Validator.isEmpty(data.proximite_transports)) {
     errors.proximite_transports = "proximite_transports is required";
   }
 
-  if (
-    Validator.isEmpty(data.qualite_toiture) ||
-    !Validator.matches(
-      data.qualite_toiture,
-      "a_renover",
-      "standard",
-      "refaite_a_neuf"
-    )
-  ) {
+  if (Validator.isEmpty(data.qualite_toiture)) {
     errors.qualite_toiture = "qualite_toiture is required";
-  }
+  }*/
 
   return {
     errors,

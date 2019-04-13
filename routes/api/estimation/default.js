@@ -183,8 +183,15 @@ router.post(
   }
 );
 
+
+/**
+ * @route   GET /api/estimation/default/appartements/saved
+ * @desc    FETCH saved appartements estimations of the user
+ * @access  Auth Users
+ */
+
 router.get(
-  '/appartement/saved',
+  '/appartements/saved',
 passport.authenticate("jwt", {session: false}),
 (req,res) => {
  var user = {
@@ -203,8 +210,13 @@ passport.authenticate("jwt", {session: false}),
 }
 );
 
+/**
+ * @route   GET /api/estimation/default/appartment/saved
+ * @desc   FETCH saved maisons estimations of the user
+ * @access  Auth Users
+ */
 router.get(
-  '/houses/saved',
+  '/maisons/saved',
 passport.authenticate("jwt", {session: false}),
 (req,res) => {
  var user = {
@@ -222,4 +234,10 @@ passport.authenticate("jwt", {session: false}),
  
 }
 );
+
+/**
+ * @route   DELETE /api/estimation/default/appartment/saved/:id
+ * @desc    Delete the estimation made by the user 
+ * @access  Auth Users
+ */
 module.exports = router;

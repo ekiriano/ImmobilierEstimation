@@ -3,7 +3,7 @@ import { GET_ERRORS } from "./types";
 
 export const submitDefaultAppartement = AppartementData => dispatch => {
   axios
-    .post("api/estimation/default/appartement", AppartementData)
+    .post("/api/estimation/default/appartement", AppartementData)
     .then(res => console.log(res.data))
     .catch(err =>
       dispatch({
@@ -15,7 +15,7 @@ export const submitDefaultAppartement = AppartementData => dispatch => {
 
 export const submitDefaultAppartementSave = AppartementData => dispatch => {
   axios
-    .post("api/estimation/default/appartement/save", AppartementData)
+    .post("/api/estimation/default/appartement/save", AppartementData)
     .then(res => console.log(res.data))
     .catch(err =>
       dispatch({

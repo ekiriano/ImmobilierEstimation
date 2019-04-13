@@ -101,7 +101,7 @@ const DefaultAppartmentSchema = new Schema({
     min: 0
   }
 
-  // add longtitue latitude
+ 
 });
 
 module.exports = DefaultAppartment = mongoose.model(

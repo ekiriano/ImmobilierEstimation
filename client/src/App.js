@@ -32,7 +32,7 @@ import CardMaisonForm from "./components/Pages/simpleUser/maison/CardMaisonForm"
 
 //  saved properties
  import SavedAppartements from "./components/Pages/simpleUser/saved/savedAppartements";
- import SavedMaisons from "./components/Pages/simpleUser/maison/CardMaisonForm";
+ import SavedMaisons from "./components/Pages/simpleUser/saved/savedMaisons";
  
  import SimpleUserRootForm from "./components/Pages/simpleUser/rootForm";
 
@@ -63,8 +63,8 @@ class App extends Component {
               
               <Route exact path="/estimmation/simple" component={SimpleUserRootForm} />
 
-              <Route exact path="/estimmation/simple/maison" component={CardAppartementForm} />
-              <Route exact path="/estimmation/simple/appartement" component={CardMaisonForm} />
+              <Route exact path="/estimmation/simple/maison" component={ CardMaisonForm } />
+              <Route exact path="/estimmation/simple/appartement" component={CardAppartementForm} />
 
               <Route exact path="/dashboard" component={Dashboard} />
               <Route exact path="/super" component={SuperUserForm} />
