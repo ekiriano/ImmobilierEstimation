@@ -18,17 +18,20 @@ class savedMaisons extends Component {
         .catch( error => console.log(error));
     }
 
-    delete(id){
+    delete(e,maison){
+        e.preventDefault();
+        console.log(maison);
+        /*
         axios.delete("/api/estimation/default/houses/saved/:id")
-        .then( /* fade the the concerned card -> find the record in maison and delete it */ )
-        .catch( error => console.log(error));
+        .then( /* fade the the concerned card -> find the record in maison and delete it *//* )
+        .catch( error => console.log(error));*/
     }
 
   render() {
 
-    var maisonCards = this.state.maisons.map( maison => {
+    var maisonCards = this.state.maisons.map( (maison,i) => {
         return (
-            <div className="card mb-is-1">
+            <div className="card mb-is-1" key={i}>
                     <header className="card-header">
                         <p className="card-header-title">
                             Addresse : {maison.rue} {maison.code_postal} {maison.ville}
@@ -58,7 +61,7 @@ class savedMaisons extends Component {
                         </div>
                     </div>
                    <footer className="card-footer">
-                        <Link to="#" className="card-footer-item"><i className='uil uil-trash-alt'></i>Delete</Link>
+                        <Link to="#" className="card-footer-item" onClick={e => this.delete(e,maison.id)}><i className='uil uil-trash-alt'></i>Delete</Link>
                    </footer>
                 </div>
         );

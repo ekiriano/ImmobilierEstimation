@@ -211,7 +211,7 @@ passport.authenticate("jwt", {session: false}),
 );
 
 /**
- * @route   GET /api/estimation/default/appartment/saved
+ * @route   GET /api/estimation/default/maisons/saved
  * @desc   FETCH saved maisons estimations of the user
  * @access  Auth Users
  */
@@ -236,8 +236,36 @@ passport.authenticate("jwt", {session: false}),
 );
 
 /**
- * @route   DELETE /api/estimation/default/appartment/saved/:id
+ * @route   DELETE /api/estimation/default/appartments/saved/:id
  * @desc    Delete the estimation made by the user 
  * @access  Auth Users
  */
+
+router.delete(
+  '/maisons/saved/:id',
+  passport.authenticate('jwt',{session:false}),
+  (req,res) => {
+    DefaultHouse.find({user : req.user.id}).then( houses => {
+      DefaultHouse.findById(req.params.id)
+      .then(house => {
+        // check estimation ownership
+        if(house.user.toString() != req.user.id){
+          return res.status(401).json({notauthorized : "User not authorized"});
+        }
+        //delete
+        house.remove().then( () => res.json({success : true}));
+      })
+      .catch(err => res.status(404).json({error : "no house estimation found"}));
+    })
+  }
+);
+
+ /**
+ * @route   DELETE /api/estimation/default/maisons/saved/:id
+ * @desc    Delete the estimation made by the user 
+ * @access  Auth Users
+ */
+/*
+router.delete()*/
+
 module.exports = router;
