@@ -75,7 +75,7 @@ class Nav extends Component {
               Estimmer votre bien gratuitement
             </Link>
 
-            <Link to="#" className="navbar-item">
+            <Link to="/premium" className="navbar-item">
               Devenir un utilisateur Premium
             </Link>
 

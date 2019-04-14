@@ -27,7 +27,6 @@ class Dashboard extends Component {
 
   
   render() {
-    //const savedMaisonsEstimation = SavedMaisons;
     return (
       <div className="primary-bg">
         <div className="row">
@@ -41,8 +40,6 @@ class Dashboard extends Component {
             <div className="column">
               {this.state.showAppartments ? <SavedAppartements/>: null}
               {this.state.showMaisons ? <SavedMaisons/>: null}
-              
-              
             </div>
           </div>
         </div>

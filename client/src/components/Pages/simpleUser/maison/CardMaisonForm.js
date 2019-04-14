@@ -17,7 +17,7 @@ export default class CardMaisonForm extends Component {
                       {" "}
                       <MultiStepDefaultMaison />
                     </div>
-                    <div className="column is-6" id="map-container">
+                    <div className="column is-6">
                       <Map />
                     </div>
                   </div>

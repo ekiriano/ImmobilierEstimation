@@ -48,7 +48,7 @@ const DefaultAppartmentSchema = new Schema({
   annee_construction: {
     type: Number,
     required: true,
-    min: 1000 // ?
+    min:0
   },
   diagnostic_performance_energetique: {
     type: String,

@@ -48,3 +48,7 @@ export const logoutUser = history => dispatch => {
   setAuthToken(false);
   dispatch(setCurrentUser({}));
 };
+
+export const switchToPremium = () => dispatch => {
+  
+}

@@ -29,22 +29,25 @@ router.post("/house", (req, res) => {
   }
 
   const newDefaultHouse = new DefaultHouse({
+    user: req.user.id,
     rue: req.body.rue,
     code_postal: req.body.code_postal,
     ville: req.body.ville,
-    surface: req.body.surface,
+    surface_habitable: req.body.surface_habitable,
+    surface_totale_terrain: req.body.surface_totale_terrain,
+    surface_habitable_constructible: req.body.surface_habitable_constructible,
     nombre_pieces: req.body.nombre_pieces,
     nombre_salle_bain: req.body.nombre_salle_bain,
-    etage: req.body.etage,
-    nombre_etage_total: req.body.nombre_etage_total,
+    nombre_niveaux: req.body.nombre_niveaux,
     annee_construction: req.body.annee_construction,
     diagnostic_performance_energetique:
       req.body.diagnostic_performance_energetique,
     etat_bien: req.body.etat_bien,
-    qualite_appartement: req.body.qualite_appartement,
+    qualite_maison: req.body.qualite_maison,
     luminosite: req.body.luminosite,
     calme: req.body.calme,
-    proximite_transports: req.body.proximite_transports
+    proximite_transports: req.body.proximite_transports,
+    qualite_toiture: req.body.qualite_toiture
   });
 
   const EstimatedDefaultHouse = defaultEstimationHouse(newDefaultHouse);
@@ -165,11 +168,10 @@ router.post(
       diagnostic_performance_energetique:
         req.body.diagnostic_performance_energetique,
       etat_bien: req.body.etat_bien,
-      qualite_maison: req.body.qualite_maison,
+      qualite_appartement: req.body.qualite_appartement,
       luminosite: req.body.luminosite,
       calme: req.body.calme,
-      proximite_transports: req.body.proximite_transports,
-      qualite_toiture: req.body.qualite_toiture
+      proximite_transports: req.body.proximite_transports
     });
     const EstimatedDefaultAppartment = defaultEstimationAppartment(
       newDefaultAppartment
@@ -258,11 +260,28 @@ router.delete(
 );
 
  /**
- * @route   DELETE /api/estimation/default/maisons/saved/:id
+ * @route   DELETE /api/estimation/default/appartment/saved/:id
  * @desc    Delete the estimation made by the user 
  * @access  Auth Users
  */
-/*
-router.delete()*/
+
+router.delete(
+  '/appartements/saved/:id',
+  passport.authenticate('jwt',{session:false}),
+  (req,res) => {
+    DefaultAppartment.find({user : req.user.id}).then( houses => {
+      DefaultAppartment.findById(req.params.id)
+      .then(house => {
+        // check estimation ownership
+        if(house.user.toString() != req.user.id){
+          return res.status(401).json({notauthorized : "User not authorized"});
+        }
+        //delete
+        house.remove().then( () => res.json({success : true}));
+      })
+      .catch(err => res.status(404).json({error : "no appartement estimation found"}));
+    })
+  }
+);
 
 module.exports = router;

@@ -68,7 +68,6 @@ class AppartementMasterForm extends Component {
       calme: this.state.calme,
       qualite_appartement:this.state.qualite_appartement,
       proximite_transports: this.state.proximite_transports,
-   
     };
 
     if (this.props.user.user_type === "regular" || this.props.user.user_type === "super") {

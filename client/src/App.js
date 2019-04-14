@@ -30,11 +30,8 @@ import SuperUserForm from "./components/Pages/superUser/SuperMasterForm";
 import CardAppartementForm from "./components/Pages/simpleUser/appartement/CardAppartementForm";
 import CardMaisonForm from "./components/Pages/simpleUser/maison/CardMaisonForm";
 
-//  saved properties
- import SavedAppartements from "./components/Pages/simpleUser/saved/savedAppartements";
- import SavedMaisons from "./components/Pages/simpleUser/saved/savedMaisons";
- 
- import SimpleUserRootForm from "./components/Pages/simpleUser/rootForm";
+import SimpleUserRootForm from "./components/Pages/simpleUser/rootForm";
+import Premium from "./components/Pages/BecomePremium";
 
 //check nd set jwt token
 if (localStorage.jwtToken) {
@@ -67,9 +64,9 @@ class App extends Component {
               <Route exact path="/estimmation/simple/appartement" component={CardAppartementForm} />
 
               <Route exact path="/dashboard" component={Dashboard} />
+              <Route exact path="/premium" component={Premium} />
               <Route exact path="/super" component={SuperUserForm} />
-              <Route exact path="/saved/appartements" component={SavedAppartements} />
-              <Route exact path="/saved/maisons" component={SavedMaisons} />
+             
             </div>
 
             <Footer />

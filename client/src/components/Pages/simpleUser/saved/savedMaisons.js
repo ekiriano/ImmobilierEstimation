@@ -65,7 +65,7 @@ class savedMaisons extends Component {
 
     return (
       <div>
-        <h1>My saved maisons</h1>
+        <h1 className="mb-is-0_5">Mes Estimations de maisons</h1>
         <div className="columns is-centered">
             <div className="column is-6">
                 {maisonCards}

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {getSavedAppartements,deleteSavedAppartement} from "../../../../actions/defaultAppartementActions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import MaisonMasterForm from "../maison/MaisonMasterForm";
 
 
 class savedAppartements extends Component {
@@ -22,44 +23,61 @@ class savedAppartements extends Component {
     onClickDelete(id){
         this.props.deleteSavedAppartement(id);
     }
+
+
+
   render() {
-    return (
-      <div>
-        <h1>My saved appartements</h1>
-        <div className="columns is-centered">
-            <div className="column is-6">
-                <div className="card">
-                    <header className="card-header">
-                        <p className="card-header-title">
-                            Addresse : 58 rue pomme ,34000 , Montpellier
-                        </p>
-                    </header>
-                    <div className="card-content">
-                        <div className="content">
-                            <div className="columns">
-                                <div className="column is-half">
-                                    <p> <i className='uil uil-ruler-combined'></i>surface : 350m²</p>
-                                    <p>nombre pièces : 6</p>
-                                    <p>nombre salle bain : 2</p>
-                                    <p>etage : 3</p>
-                                    <p>nombre etage total : 6</p>
-                                </div>
-                                <div className="column is-half">
-                                    <p><i className='uil uil-clock-two'></i>année construction : 1992</p>
-                                    <p><i className='uil uil-bolt-alt'></i>DPE : A+ </p>
-                                    <p>etat bien : bon etat</p>
-                                    <p>qualité luminosité : bonne</p>
-                                    <p>calme : tres calme</p>
-                                    <p>proximité : bien connecté</p>
-                                </div>
-                            </div>
-                            <p>Estimmé a : 230 000 €</p>
+
+    var appartementCards =  this.props.savedAppartements.map((appartement,i) => {
+        return(
+            <div className="card mb-is-1" key={i}>
+            <header className="card-header">
+                <p className="card-header-title">
+                    Addresse : {appartement.rue} {appartement.code_postal} {appartement.ville}
+                </p>
+            </header>
+            <div className="card-content">
+                <div className="content">
+                    <div className="columns">
+                        <div className="column is-half">
+                            <p> <i className='uil uil-ruler-combined'></i>surface : {appartement.surface}m²</p>
+                            <p>nombre pièces : {appartement.nombre_pieces}</p>
+                            <p>nombre salle bain : {appartement.nombre_salle_bain}</p>
+                            <p>etage : {appartement.etage}</p>
+                            <p>nombre etage total : {appartement.nombre_etage_total}</p>
+                        </div>
+                        <div className="column is-half">
+                        <p><i className='uil uil-clock-two'></i>année construction : {appartement.annee_construction}</p>
+                        <p><i className='uil uil-bolt-alt'></i>DPE : {appartement.diagnostic_performance_energetique} </p>
+                        <p>etat bien : {appartement.etat_bien}</p>
+                        <p>qualité luminosité : {appartement.luminosite}</p>
+                        <p>calme : {appartement.calme}</p>
+                        <p>proximité : {appartement.proximite_transports}</p>
                         </div>
                     </div>
-                   <footer className="card-footer">
-                        <Link to="#" className="card-footer-item"><i className='uil uil-trash-alt'></i>Delete</Link>
-                   </footer>
+                    <p>Estimmé a : {appartement.prix_estimation} €</p>
                 </div>
+            </div>
+           <footer className="card-footer">
+           <button
+            onClick={this.onClickDelete.bind(this, appartement._id)}
+            type="button"
+            className="button is-warning card-footer-item"
+            >    
+                <i className='uil uil-trash-alt'></i>   Supprimer
+            </button>
+           </footer>
+        </div> 
+        );
+    });
+
+
+    return (
+      <div>
+        <h1 className="mb-is-0_5">Mes Estimations d'appartements</h1>
+        <div className="columns is-centered">
+            <div className="column is-6">
+                {appartementCards}
             </div> 
         </div>
       </div>

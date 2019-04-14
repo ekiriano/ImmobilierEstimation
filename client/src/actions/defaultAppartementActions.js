@@ -29,6 +29,7 @@ export const submitDefaultAppartementSave = defaultAppartementData => dispatch =
       })  
     )
     .catch(err =>
+    
       dispatch({
         type: GET_ERRORS,
         payload: err.response.data
@@ -57,7 +58,7 @@ export const getSavedAppartements = () => dispatch => {
 
 export const deleteSavedAppartement = id => dispatch => {
   axios
-  .delete(``)
+  .delete(`/api/estimation/default/appartements/saved/${id}`)
   .then(res =>
     dispatch({
       type: DELETE_SIMPLE_SAVED_APPARTEMENT,
