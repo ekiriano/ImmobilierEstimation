@@ -47,9 +47,6 @@ img.rounded {
   padding: 0px 20px;
 }
 
-footer {
-  margin-top: 2%;
-}
 
 .full-vh {
   height: 100vh;
@@ -61,6 +58,10 @@ footer {
 }
 .mb-is-1 {
   margin-bottom: 50px;
+}
+
+.mb-is-0_5{
+  margin-bottom: 25px;
 }
 .customInput {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.02);

@@ -8,22 +8,22 @@ class Step5Appartement extends Component {
     }
     return (
       <div>
-        <h1>Etape 5 - Etats et Transports</h1>
+        <h1>Etape 5 - </h1>
         <div className="field">
           <div className="control">
             <input
               className={classnames("input is-medium", {
-                "is-danger": errors.qualite_maison
+                "is-danger": errors.qualite_appartement
               })}
               type="text"
-              name="qualite_maison" ///////////////////// SHOULD BE CHANGEED TO QUALITE_APPARTEMENT IN THE MODEL
-              placeholder="qualite maison"
-              value={this.props.qualite_maison}
+              name="qualite_appartement" 
+              placeholder="qualite appartement"
+              value={this.props.qualite_appartement}
               onChange={this.props.onChange}
               required
             />
-            {errors.qualite_maison && (
-              <p className="help is-danger">{errors.qualite_maison}</p>
+            {errors.qualite_appartement && (
+              <p className="help is-danger">{errors.qualite_appartement}</p>
             )}
           </div>
         </div>
@@ -76,24 +76,6 @@ class Step5Appartement extends Component {
             />
             {errors.proximite_transports && (
               <p className="help is-danger">{errors.proximite_transports}</p>
-            )}
-          </div>
-        </div>
-        <div className="field">
-          <div className="control">
-            <input
-              className={classnames("input is-medium", {
-                "is-danger": errors.qualite_toiture
-              })}
-              type="text"
-              name="qualite_toiture"
-              placeholder="qualite toiture"
-              value={this.props.qualite_toiture}
-              onChange={this.props.onChange}
-              required
-            />
-            {errors.qualite_toiture && (
-              <p className="help is-danger">{errors.qualite_toiture}</p>
             )}
           </div>
         </div>

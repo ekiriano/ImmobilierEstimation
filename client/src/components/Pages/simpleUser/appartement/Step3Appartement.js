@@ -9,59 +9,61 @@ class Step3Appartement extends Component {
     }
     return (
       <div>
-        <h1>Etape 3 - Pieces</h1>
+        <h1>Etape 3 - </h1>
 
         <div className="field">
           <div className="control">
             <input
               className={classnames("input is-medium", {
-                "is-danger": errors.nombre_pieces
+                "is-danger": errors.etage
               })}
               type="text"
-              name="nombre_pieces"
-              placeholder="nombre piece"
-              value={this.props.nombre_pieces}
+              name="etage"
+              placeholder="Etage"
+              value={this.props.etage}
               onChange={this.props.onChange}
               required
             />
-            {errors.nombre_pieces && (
-              <p class="help is-danger">{errors.nombre_pieces}</p>
+            {errors.etage && (
+              <p class="help is-danger">{errors.etage}</p>
             )}
           </div>
         </div>
+
         <div className="field">
           <div className="control">
             <input
               className={classnames("input is-medium", {
-                "is-danger": errors.nombre_salle_bain
+                "is-danger": errors.nombre_etage_total
               })}
               type="text"
-              name="nombre_salle_bain"
-              placeholder="nombre salle bain"
-              value={this.props.nombre_salle_bain}
+              name="nombre_etage_total"
+              placeholder="nombre etage total"
+              value={this.props.nombre_etage_total}
               onChange={this.props.onChange}
               required
             />
-            {errors.nombre_salle_bain && (
-              <p class="help is-danger">{errors.nombre_salle_bain}</p>
+            {errors.nombre_etage_total && (
+              <p class="help is-danger">{errors.nombre_etage_total}</p>
             )}
           </div>
         </div>
+
         <div className="field">
           <div className="control">
             <input
               className={classnames("input is-medium", {
-                "is-danger": errors.nombre_niveaux
+                "is-danger": errors.annee_construction
               })}
               type="text"
-              name="nombre_niveaux"
-              placeholder="nombre niveaux"
-              value={this.props.nombre_niveaux}
+              name="annee_construction"
+              placeholder="annee construction"
+              value={this.props.annee_construction}
               onChange={this.props.onChange}
               required
             />
-            {errors.nombre_niveaux && (
-              <p class="help is-danger">{errors.nombre_niveaux}</p>
+            {errors.annee_construction && (
+              <p class="help is-danger">{errors.annee_construction}</p>
             )}
           </div>
         </div>

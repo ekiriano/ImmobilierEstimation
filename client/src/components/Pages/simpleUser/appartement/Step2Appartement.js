@@ -14,65 +14,65 @@ class Step2Appartement extends Component {
           <div className="control">
             <label>
               {" "}
-              Surface habitable : <br />
+              Surface  : <br />
             </label>
             <input
               className={classnames("input is-medium", {
-                "is-danger": errors.surface_habitable
+                "is-danger": errors.surface
               })}
               type="text"
-              name="surface_habitable"
-              placeholder="surface habitable"
-              value={this.props.surface_habitable}
+              name="surface"
+              placeholder="surface"
+              value={this.props.surface}
               onChange={this.props.onChange}
               required
             />
-            {errors.surface_habitable && (
-              <p class="help is-danger">{errors.surface_habitable}</p>
+            {errors.surface && (
+              <p class="help is-danger">{errors.surface}</p>
             )}
           </div>
         </div>
         <div className="field">
           <label>
             {" "}
-            Surface habitable terrain : <br />
+            Nombre de Pieces : <br />
           </label>
           <div className="control">
             <input
               className={classnames("input is-medium", {
-                "is-danger": errors.surface_totale_terrain
+                "is-danger": errors.nombre_pieces
               })}
               type="text"
-              name="surface_totale_terrain"
-              placeholder="surface totale terrain"
-              value={this.props.surface_totale_terrain}
+              name="nombre_pieces"
+              placeholder="Nombre de Pieces"
+              value={this.props.nombre_pieces}
               onChange={this.props.onChange}
               required
             />
-            {errors.surface_totale_terrain && (
-              <p class="help is-danger">{errors.surface_totale_terrain}</p>
+            {errors.nombre_pieces && (
+              <p class="help is-danger">{errors.nombre_pieces}</p>
             )}
           </div>
         </div>
         <div className="field">
           <label>
-            Surface habitable constructible : <br />
+            Nombre de Salles de Bain : <br />
           </label>
           <div className="control">
             <input
               className={classnames("input is-medium", {
-                "is-danger": errors.surface_habitable_constructible
+                "is-danger": errors.nombre_salle_bain
               })}
               type="text"
-              name="surface_habitable_constructible"
-              placeholder="surface habitable constructible"
-              value={this.props.surface_habitable_constructible}
+              name="nombre_salle_bain"
+              placeholder="Nombre de Salles de Bain"
+              value={this.props.nombre_salle_bain}
               onChange={this.props.onChange}
               required
             />
-            {errors.surface_habitable_constructible && (
+            {errors.nombre_salle_bain && (
               <p class="help is-danger">
-                {errors.surface_habitable_constructible}
+                {errors.nombre_salle_bain}
               </p>
             )}
           </div>

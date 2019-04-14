@@ -55,6 +55,11 @@ const DefaultAppartmentSchema = new Schema({
     required: true
     //enum: ["A", "B", "C", "D", "E", "F", "G"]
   },
+  qualite_appartement: {
+    type: String,
+    required: true,
+    //enum: ["inferieure", "comparable", "suprerieure"]
+  },
   etat_bien: {
     type: String,
     required: true

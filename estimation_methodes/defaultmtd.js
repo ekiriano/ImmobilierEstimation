@@ -6,9 +6,16 @@ module.exports = {
   },
 */
 
+/*
   defaultEstimationAppartment: Appartment => {
     Appartment.prix_estimation = Appartment.surface * Appartment.prixm2;
     return Appartment;
+  },*/
+  
+  defaultEstimationAppartment : DefaultAppartment => {
+    DefaultAppartment.prix_estimation = 50000;
+    console.log(DefaultAppartment)
+    return DefaultAppartment;
   },
 
   defaultEstimationHouse: DefaultHouse => {

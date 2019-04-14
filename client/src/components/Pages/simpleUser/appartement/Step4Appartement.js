@@ -8,25 +8,7 @@ class Step4Appartement extends Component {
     }
     return (
       <div>
-        <h1>Etape 4 - Auxiliaire</h1>
-        <div className="field">
-          <div className="control">
-            <input
-              className={classnames("input is-medium", {
-                "is-danger": errors.annee_construction
-              })}
-              type="text"
-              name="annee_construction"
-              placeholder="annee_construction"
-              value={this.props.annee_construction}
-              onChange={this.props.onChange}
-              required
-            />
-            {errors.annee_construction && (
-              <p className="help is-danger">{errors.annee_construction}</p>
-            )}
-          </div>
-        </div>
+        <h1>Etape 4 - </h1>
         <div className="field">
           <div className="control">
             <input
@@ -35,15 +17,13 @@ class Step4Appartement extends Component {
               })}
               type="text"
               name="diagnostic_performance_energetique"
-              placeholder="diagnostic performance energetique "
+              placeholder="diagnostic_performance_energetique"
               value={this.props.diagnostic_performance_energetique}
               onChange={this.props.onChange}
               required
             />
             {errors.diagnostic_performance_energetique && (
-              <p className="help is-danger">
-                {errors.diagnostic_performance_energetique}
-              </p>
+              <p className="help is-danger">{errors.diagnostic_performance_energetique}</p>
             )}
           </div>
         </div>

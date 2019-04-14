@@ -23,21 +23,19 @@ class AppartementMasterForm extends Component {
       rue: "",
       code_postal: "",
       ville: "",
-      surface_habitable: "",
-      surface_habitable_terrain: "",
-      surface_totale_terrain: "",
-      surface_habitable_constructible: "",
+      surface: "",
       nombre_pieces: "",
       nombre_salle_bain: "",
-      nombre_niveaux: "",
+      etage: "",
+      nombre_etage_total: "",
       annee_construction: "",
       diagnostic_performance_energetique: "",
       etat_bien: "",
-      qualite_maison: "",
       luminosite: "",
       calme: "",
+      qualite_appartement : "",
       proximite_transports: "",
-      qualite_toiture: "",
+      
       errors: {},
     };
     this.onChange = this.onChange.bind(this);
@@ -57,22 +55,20 @@ class AppartementMasterForm extends Component {
       rue: this.state.rue,
       code_postal: this.state.code_postal,
       ville: this.state.ville,
-      surface_habitable: this.state.surface_habitable,
-      surface_totale_terrain: this.state.surface_totale_terrain,
-      surface_habitable_constructible: this.state
-        .surface_habitable_constructible,
+      surface: this.state.surface,
       nombre_pieces: this.state.nombre_pieces,
       nombre_salle_bain: this.state.nombre_salle_bain,
-      nombre_niveaux: this.state.nombre_niveaux,
+      etage: this.state.etage,
+      nombre_etage_total: this.state.nombre_etage_total,
       annee_construction: this.state.annee_construction,
       diagnostic_performance_energetique: this.state
         .diagnostic_performance_energetique,
       etat_bien: this.state.etat_bien,
-      qualite_maison: this.state.qualite_maison,
       luminosite: this.state.luminosite,
       calme: this.state.calme,
+      qualite_appartement:this.state.qualite_appartement,
       proximite_transports: this.state.proximite_transports,
-      qualite_toiture: this.state.qualite_toiture
+   
     };
 
     if (this.props.user.user_type === "regular" || this.props.user.user_type === "super") {
@@ -185,40 +181,36 @@ class AppartementMasterForm extends Component {
             currentStep={this.state.currentStep}
             onChange={this.onChange}
             errors={this.state.errors}
-            surface_habitable={this.state.surface_habitable}
-            surface_totale_terrain={this.state.surface_totale_terrain}
-            surface_habitable_constructible={
-              this.state.surface_habitable_constructible
+            surface={this.state.surface}
+            nombre_pieces={this.state.nombre_pieces}
+            nombre_salle_bain={
+              this.state.nombre_salle_bain
             }
           />
           <Step3
             currentStep={this.state.currentStep}
             onChange={this.onChange}
             errors={this.state.errors}
-            nombre_pieces={this.state.nombre_pieces}
-            nombre_salle_bain={this.state.nombre_salle_bain}
-            nombre_niveaux={this.state.nombre_niveaux}
+            etage={this.state.etage}
+            nombre_etage_total={this.state.nombre_etage_total}
+            annee_construction={this.state.annee_construction}
           />
           <Step4
             currentStep={this.state.currentStep}
             onChange={this.onChange}
             errors={this.state.errors}
-            nombre_niveaux={this.state.nombre_niveaux}
-            annee_construction={this.state.annee_construction}
-            diagnostic_performance_energetique={
-              this.state.diagnostic_performance_energetique
-            }
+            diagnostic_performance_energetique={this.state.diagnostic_performance_energetique}
             etat_bien={this.state.etat_bien}
-            qualite_maison={this.state.qualite_maison}
           />
           <Step5
             currentStep={this.state.currentStep}
             onChange={this.onChange}
             errors={this.state.errors}
+            qualite_appartement={this.state.qualite_appartement}
             luminosite={this.state.luminosite}
             calme={this.state.calme}
             proximite_transports={this.state.proximite_transports}
-            qualite_toiture={this.state.qualite_toiture}
+            
           />
 
           <FinalStepApartement

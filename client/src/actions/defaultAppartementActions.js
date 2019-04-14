@@ -1,9 +1,10 @@
 import axios from "axios";
 import {GET_ERRORS,GET_SIMPLE_SAVED_APPARTEMENTS, NEW_SIMPLE_ESTIMATION_APPARTEMENT, DELETE_SIMPLE_SAVED_APPARTEMENT} from "./types";
 
-export const submitDefaultAppartement = AppartementData => dispatch => {
+
+export const submitDefaultAppartement = defaultAppartementData => dispatch => {
   axios
-    .post("/api/estimation/default/appartement", AppartementData)
+    .post("/api/estimation/default/appartement", defaultAppartementData)
     .then(res => 
       dispatch({
         type : NEW_SIMPLE_ESTIMATION_APPARTEMENT,
@@ -18,9 +19,9 @@ export const submitDefaultAppartement = AppartementData => dispatch => {
     );
 };
 
-export const submitDefaultAppartementSave = AppartementData => dispatch => {
+export const submitDefaultAppartementSave = defaultAppartementData => dispatch => {
   axios
-    .post("/api/estimation/default/appartement/save", AppartementData)
+    .post("/api/estimation/default/appartement/save", defaultAppartementData)
     .then(res =>
       dispatch({
         type : NEW_SIMPLE_ESTIMATION_APPARTEMENT,

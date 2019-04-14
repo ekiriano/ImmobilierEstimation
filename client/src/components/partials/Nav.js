@@ -34,6 +34,15 @@ class Nav extends Component {
       </Link>
     );
 
+    const dashboard = (
+      <Link
+      to="/dashboard"
+      className="button is-info"
+      >
+        <strong> Dashboard </strong>
+      </Link>
+    )
+
     return (
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
@@ -67,38 +76,15 @@ class Nav extends Component {
             </Link>
 
             <Link to="#" className="navbar-item">
-              Documentation
+              Devenir un utilisateur Premium
             </Link>
 
-            <div className="navbar-item has-dropdown is-hoverable">
-              <Link to="#" className="navbar-link">
-                More
-              </Link>
-
-              <div className="navbar-dropdown">
-                <Link to="#" className="navbar-item">
-                  About
-                </Link>
-                <Link to="#" className="navbar-item">
-                  Jobs
-                </Link>
-                <Link to="#" className="navbar-item">
-                  Jobs
-                </Link>
-                <Link to="#" className="navbar-item">
-                  Contact
-                </Link>
-                <hr className="navbar-divider" />
-                <Link to="#" className="navbar-item">
-                  Report an issue
-                </Link>
-              </div>
-            </div>
           </div>
 
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
+              {this.props.isLoggedIn ? dashboard : null}
                 {this.props.isLoggedIn ? logout : auth}
               </div>
             </div>

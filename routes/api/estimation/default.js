@@ -32,21 +32,19 @@ router.post("/house", (req, res) => {
     rue: req.body.rue,
     code_postal: req.body.code_postal,
     ville: req.body.ville,
-    surface_habitable: req.body.surface_habitable,
-    surface_totale_terrain: req.body.surface_totale_terrain,
-    surface_habitable_constructible: req.body.surface_habitable_constructible,
+    surface: req.body.surface,
     nombre_pieces: req.body.nombre_pieces,
     nombre_salle_bain: req.body.nombre_salle_bain,
-    nombre_niveaux: req.body.nombre_niveaux,
+    etage: req.body.etage,
+    nombre_etage_total: req.body.nombre_etage_total,
     annee_construction: req.body.annee_construction,
     diagnostic_performance_energetique:
       req.body.diagnostic_performance_energetique,
     etat_bien: req.body.etat_bien,
-    qualite_maison: req.body.qualite_maison,
+    qualite_appartement: req.body.qualite_appartement,
     luminosite: req.body.luminosite,
     calme: req.body.calme,
-    proximite_transports: req.body.proximite_transports,
-    qualite_toiture: req.body.qualite_toiture
+    proximite_transports: req.body.proximite_transports
   });
 
   const EstimatedDefaultHouse = defaultEstimationHouse(newDefaultHouse);
@@ -79,11 +77,10 @@ router.post("/appartement", (req, res) => {
     diagnostic_performance_energetique:
       req.body.diagnostic_performance_energetique,
     etat_bien: req.body.etat_bien,
-    qualite_maison: req.body.qualite_maison,
+    qualite_appartement: req.body.qualite_appartement,
     luminosite: req.body.luminosite,
     calme: req.body.calme,
-    proximite_transports: req.body.proximite_transports,
-    qualite_toiture: req.body.qualite_toiture
+    proximite_transports: req.body.proximite_transports
   });
 
   const EstimatedDefaultAppartment = defaultEstimationAppartment(
