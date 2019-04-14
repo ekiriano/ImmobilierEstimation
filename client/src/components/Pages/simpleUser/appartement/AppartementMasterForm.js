@@ -12,6 +12,7 @@ import Step2 from "./Step2Appartement";
 import Step3 from "./Step3Appartement";
 import Step4 from "./Step4Appartement";
 import Step5 from "./Step5Appartement";
+import FinalStepApartement from "./FinalStepAppartement";
 
 class AppartementMasterForm extends Component {
   constructor(props) {
@@ -74,16 +75,18 @@ class AppartementMasterForm extends Component {
       qualite_toiture: this.state.qualite_toiture
     };
 
-    if (this.props.user.user_type === "regular") {
+    if (this.props.user.user_type === "regular" || this.props.user.user_type === "super") {
       this.props.submitDefaultAppartementSave(newDefautAppartement);
+      this.next()
     } else {
       this.props.submitDefaultAppartement(newDefautAppartement);
+      this.next();
     }
   }
 
   next() {
     let currentStep = this.state.currentStep;
-    currentStep = currentStep >= 4 ? 5 : currentStep + 1;
+    currentStep = currentStep >= 5 ? 6 : currentStep + 1;
     this.setState({
       currentStep: currentStep
     });
@@ -99,7 +102,7 @@ class AppartementMasterForm extends Component {
 
   get previousButton() {
     let currentStep = this.state.currentStep;
-    if (currentStep !== 1) {
+    if (currentStep !== 1 && currentStep !== 6) {
       return (
         <div className="bottom-left">
           <button
@@ -155,6 +158,9 @@ class AppartementMasterForm extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
+    }
+    if(nextProps.newEstimationAppartement){
+      this.setState({prix_estimation : nextProps.newEstimationAppartement.prix_estimation})
     }
   }
 
@@ -215,6 +221,13 @@ class AppartementMasterForm extends Component {
             qualite_toiture={this.state.qualite_toiture}
           />
 
+          <FinalStepApartement
+             currentStep={this.state.currentStep}
+             onChange={this.onChange}
+             errors={this.state.errors}
+             prix_estimation={this.state.prix_estimation}
+          />
+
           {this.previousButton}
           {this.nextButton}
           {this.submitButton}
@@ -232,7 +245,8 @@ AppartementMasterForm.propTypes = {
 
 const mapStateProps = state => ({
   user: state.auth.user,
-  errors: state.errors
+  errors: state.errors,
+  newEstimationAppartement : state.simpleAppartements.newEstimationAppartement,
 });
 
 export default connect(
