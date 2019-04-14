@@ -4,6 +4,12 @@ h1 {
   font-size: 22px;
 }
 
+h2 {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
 .is-horizontal {
   margin-top: 55px;
 }
@@ -20,4 +26,12 @@ h3 {
   font-size: 17px;
   font-weight: 400;
   margin: 10px;
+}
+
+#map-container {
+  margin-top: 50px;
+}
+
+.bottom-left {
+  margin-top: 40px;
 }
