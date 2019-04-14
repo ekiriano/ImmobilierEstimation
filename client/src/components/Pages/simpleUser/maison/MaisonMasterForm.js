@@ -14,6 +14,9 @@ import Step4 from "./Step4Maison";
 import Step5 from "./Step5Maison";
 import FinalStepMaison from "./FinalStepMaison";
 
+
+
+
 class MaisonMasterForm extends Component {
   constructor(props) {
     super(props);
@@ -79,10 +82,11 @@ class MaisonMasterForm extends Component {
 
     if (this.props.user.user_type === "regular" || this.props.user.user_type === "super" ) {
       this.props.submitDefaultMaisonSave(newDefautMaison);
-      console.log(this.props.newEstimationMaison);
+      
       this.next();
     } else {
       this.props.submitDefaultMaison(newDefautMaison);
+      console.log(this.props.newEstimationMaison);
       this.next();
     }
   }
@@ -164,7 +168,7 @@ class MaisonMasterForm extends Component {
       this.setState({ errors: nextProps.errors });
     }
     if(nextProps.newEstimationMaison){
-      this.setState({newEstimationMaison : nextProps.newEstimationMaison});
+      this.setState({prix_estimation : nextProps.newEstimationMaison.prix_estimation});
     }
   }
 
@@ -229,8 +233,9 @@ class MaisonMasterForm extends Component {
             currentStep={this.state.currentStep}
             onChange={this.onChange}
             errors={this.state.errors}
-            newSimpleEstimation={this.props.simpleMaisons}
+            prix_estimation={this.state.prix_estimation}
           />
+         
 
           {this.previousButton}
           {this.nextButton}

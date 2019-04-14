@@ -1,7 +1,5 @@
 import React, { Component} from "react";
 import PropTypes from 'prop-types';
-
-// import axios from "axios";
 import {connect} from 'react-redux';
 import {getSavedMaisons,deleteSavedMaison} from "../../../../actions/defaultMaisonActions";
 import { Link } from "react-router-dom";

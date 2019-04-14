@@ -35,7 +35,7 @@ export const submitDefaultAppartementSave = AppartementData => dispatch => {
     );
 };
 
-export const getSavedAppartement = () => dispatch => {
+export const getSavedAppartements = () => dispatch => {
   axios
   .get("/api/estimation/default/appartements/saved")
   .then(res =>

@@ -1,8 +1,7 @@
 import React, { Component} from "react";
-import axios from "axios";
+import PropTypes from 'prop-types';
 
-import PropTypes from "prop-types";
-
+import {getSavedAppartements,deleteSavedAppartement} from "../../../../actions/defaultAppartementActions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -17,9 +16,11 @@ class savedAppartements extends Component {
     }
     
     componentDidMount(){
-        axios.get("/api/estimation/default/appartements/saved")
-        .then(res => console.log(res.data))
-        .catch( error => console.log(error));
+        this.props.getSavedAppartements();
+    }
+
+    onClickDelete(id){
+        this.props.deleteSavedAppartement(id);
     }
   render() {
     return (
@@ -66,4 +67,14 @@ class savedAppartements extends Component {
   }
 }
 
-export default savedAppartements;
+savedAppartements.propTypes = {
+    getSavedAppartements : PropTypes.func.isRequired,
+    deleteSavedAppartement : PropTypes.func.isRequired,
+}
+
+
+const mapStateToProps = state => ({
+    savedAppartements : state.simpleAppartements.savedAppartements
+});
+
+export default connect(mapStateToProps,{getSavedAppartements,deleteSavedAppartement})(savedAppartements);
