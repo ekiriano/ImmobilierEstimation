@@ -1,36 +1,28 @@
 import React, { Component} from "react";
-import axios from "axios";
+import PropTypes from 'prop-types';
 
+// import axios from "axios";
+import {connect} from 'react-redux';
+import {getSavedMaisons,deleteSavedMaison} from "../../../../actions/defaultMaisonActions";
 import { Link } from "react-router-dom";
 
 
+
 class savedMaisons extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            maisons : [], 
-        }
-    }
     
     componentDidMount(){
-        axios.get("/api/estimation/default/maisons/saved")
-        .then(res => this.setState({maisons : res.data}))
-        .catch( error => console.log(error));
+        this.props.getSavedMaisons();
+    }
+    onClickDelete(id){
+        this.props.deleteSavedMaison(id);
     }
 
-    delete(e,maison){
-        e.preventDefault();
-        console.log(maison);
-        /*
-        axios.delete("/api/estimation/default/houses/saved/:id")
-        .then( /* fade the the concerned card -> find the record in maison and delete it *//* )
-        .catch( error => console.log(error));*/
-    }
 
   render() {
-
-    var maisonCards = this.state.maisons.map( (maison,i) => {
+   
+    var maisonCards = this.props.savedMaisons.map( (maison,i) => {
         return (
+
             <div className="card mb-is-1" key={i}>
                     <header className="card-header">
                         <p className="card-header-title">
@@ -61,7 +53,13 @@ class savedMaisons extends Component {
                         </div>
                     </div>
                    <footer className="card-footer">
-                        <Link to="#" className="card-footer-item" onClick={e => this.delete(e,maison.id)}><i className='uil uil-trash-alt'></i>Delete</Link>
+                       <button
+                        onClick={this.onClickDelete.bind(this, maison._id)}
+                        type="button"
+                        className="button is-danger card-footer-item"
+                       >    
+                         <i className='uil uil-trash-alt'></i>   Supprimer
+                       </button>
                    </footer>
                 </div>
         );
@@ -80,4 +78,15 @@ class savedMaisons extends Component {
   }
 }
 
-export default savedMaisons;
+savedMaisons.propTypes = {
+    getSavedMaisons : PropTypes.func.isRequired,
+    deleteSavedMaison : PropTypes.func.isRequired,
+
+}
+
+
+const mapStateToProps = state => ({
+    savedMaisons : state.simpleMaisons.savedMaisons
+});
+
+export default connect(mapStateToProps,{getSavedMaisons,deleteSavedMaison})(savedMaisons) ;

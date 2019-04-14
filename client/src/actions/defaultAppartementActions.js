@@ -1,10 +1,15 @@
 import axios from "axios";
-import { GET_ERRORS } from "./types";
+import {GET_ERRORS,GET_SIMPLE_SAVED_APPARTEMENTS, NEW_SIMPLE_ESTIMATION_APPARTEMENT, DELETE_SIMPLE_SAVED_APPARTEMENT} from "./types";
 
 export const submitDefaultAppartement = AppartementData => dispatch => {
   axios
     .post("/api/estimation/default/appartement", AppartementData)
-    .then(res => console.log(res.data))
+    .then(res => 
+      dispatch({
+        type : NEW_SIMPLE_ESTIMATION_APPARTEMENT,
+        payload : res.data
+      })
+    )
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
@@ -16,7 +21,12 @@ export const submitDefaultAppartement = AppartementData => dispatch => {
 export const submitDefaultAppartementSave = AppartementData => dispatch => {
   axios
     .post("/api/estimation/default/appartement/save", AppartementData)
-    .then(res => console.log(res.data))
+    .then(res =>
+      dispatch({
+        type : NEW_SIMPLE_ESTIMATION_APPARTEMENT,
+        payload : res.data
+      })  
+    )
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
@@ -25,6 +35,38 @@ export const submitDefaultAppartementSave = AppartementData => dispatch => {
     );
 };
 
-export const getSavedAppartement = dispatch => {
-  axios.get("")
+export const getSavedAppartement = () => dispatch => {
+  axios
+  .get("/api/estimation/default/appartements/saved")
+  .then(res =>
+    dispatch({
+      type : GET_SIMPLE_SAVED_APPARTEMENTS,
+      payload : res.data
+    })
+  )
+  .catch(err => 
+    dispatch({
+      type : GET_SIMPLE_SAVED_APPARTEMENTS,
+      payload : null
+    })
+  );
 };
+
+//deleted saved estimation
+
+export const deleteSavedAppartement = id => dispatch => {
+  axios
+  .delete(``)
+  .then(res =>
+    dispatch({
+      type: DELETE_SIMPLE_SAVED_APPARTEMENT,
+      payload : id,
+    })
+  )
+  .catch(err =>
+    dispatch({
+      type:GET_ERRORS,
+      payload : err.response.data
+    })
+  );
+}

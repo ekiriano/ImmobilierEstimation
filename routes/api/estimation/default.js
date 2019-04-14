@@ -236,7 +236,7 @@ passport.authenticate("jwt", {session: false}),
 );
 
 /**
- * @route   DELETE /api/estimation/default/appartments/saved/:id
+ * @route   DELETE /api/estimation/default/maisons/saved/:id
  * @desc    Delete the estimation made by the user 
  * @access  Auth Users
  */

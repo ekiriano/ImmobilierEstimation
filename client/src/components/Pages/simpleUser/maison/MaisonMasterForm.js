@@ -12,6 +12,7 @@ import Step2 from "./Step2Maison";
 import Step3 from "./Step3Maison";
 import Step4 from "./Step4Maison";
 import Step5 from "./Step5Maison";
+import FinalStepMaison from "./FinalStepMaison";
 
 class MaisonMasterForm extends Component {
   constructor(props) {
@@ -78,14 +79,17 @@ class MaisonMasterForm extends Component {
 
     if (this.props.user.user_type === "regular" || this.props.user.user_type === "super" ) {
       this.props.submitDefaultMaisonSave(newDefautMaison);
+      console.log(this.props.newEstimationMaison);
+      this.next();
     } else {
       this.props.submitDefaultMaison(newDefautMaison);
+      this.next();
     }
   }
 
   next() {
     let currentStep = this.state.currentStep;
-    currentStep = currentStep >= 4 ? 5 : currentStep + 1;
+    currentStep = currentStep >= 5 ? 6 : currentStep + 1;
     this.setState({
       currentStep: currentStep
     });
@@ -101,7 +105,7 @@ class MaisonMasterForm extends Component {
 
   get previousButton() {
     let currentStep = this.state.currentStep;
-    if (currentStep !== 1) {
+    if (currentStep !== 1 && currentStep !==6) {
       return (
         <div className="bottom-left">
           <button
@@ -137,11 +141,12 @@ class MaisonMasterForm extends Component {
   }
   get submitButton() {
     let currentStep = this.state.currentStep;
-
+    //onClick={this.next}
     if (currentStep === 5) {
       return (
         <div className="bottom-right">
-          <button className="c-btn c-primary" type="submit">
+          <button className="c-btn c-primary" type="submit" >
+          
             Estimer
           </button>
         </div>
@@ -157,6 +162,9 @@ class MaisonMasterForm extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
+    }
+    if(nextProps.newEstimationMaison){
+      this.setState({newEstimationMaison : nextProps.newEstimationMaison});
     }
   }
 
@@ -217,6 +225,13 @@ class MaisonMasterForm extends Component {
             qualite_toiture={this.state.qualite_toiture}
           />
 
+          <FinalStepMaison
+            currentStep={this.state.currentStep}
+            onChange={this.onChange}
+            errors={this.state.errors}
+            newSimpleEstimation={this.props.simpleMaisons}
+          />
+
           {this.previousButton}
           {this.nextButton}
           {this.submitButton}
@@ -234,7 +249,8 @@ MaisonMasterForm.propTypes = {
 
 const mapStateProps = state => ({
   user: state.auth.user,
-  errors: state.errors
+  errors: state.errors,
+  newEstimationMaison : state.simpleMaisons.newEstimationMaison,
 });
 
 export default connect(

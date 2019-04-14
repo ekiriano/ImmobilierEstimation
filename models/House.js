@@ -590,7 +590,7 @@ const HouseSchema = new Schema({
       },
 
     }
-  }],
+  }]
 
   estimation: {
     type: Number,
