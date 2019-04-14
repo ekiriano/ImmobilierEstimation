@@ -79,10 +79,15 @@ class MaisonMasterForm extends Component {
 
     if (this.props.user.user_type === "regular" || this.props.user.user_type === "super" ) {
       this.props.submitDefaultMaisonSave(newDefautMaison);
-      this.next();
+      if(this.state.errors === {}){
+        this.next();
+      }
+     
     } else {
       this.props.submitDefaultMaison(newDefautMaison);
-      this.next();
+      if(this.state.errors === {}){
+        this.next();
+      }
     }
   }
 
