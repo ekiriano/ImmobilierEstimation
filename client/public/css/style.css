@@ -158,17 +158,6 @@ label {
   justify-content: center;
 }
 
-.profileLink {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  background-color: #7c60ff;
-  padding: 13px 50px;
-  color: #ffffff;
-  font-family: "Open Sans";
-  font-size: 20px;
-  font-weight: 600;
-  margin: 2%;
-}
 
 .auth {
   padding: 20px 150px;
@@ -182,9 +171,4 @@ label {
 
 }
 
-@media (min-width: 1025px) and (max-width: 1280px) {
-  .profileLink {
-    font-size: 10px;
-    padding: 7px 25px;
-  }
-}
+

@@ -18,12 +18,13 @@ class Step2Maison extends Component {
               className={classnames("input is-medium", {
                 "is-danger": errors.surface_habitable
               })}
-              type="text"
+              type="number"
               name="surface_habitable"
               placeholder="surface habitable"
               value={this.props.surface_habitable}
               onChange={this.props.onChange}
               required
+              min="0"
             />
             {errors.surface_habitable && (
               <p className="help is-danger">{errors.surface_habitable}</p>
@@ -38,11 +39,12 @@ class Step2Maison extends Component {
               className={classnames("input is-medium", {
                 "is-danger": errors.surface_totale_terrain
               })}
-              type="text"
+              type="number"
               name="surface_totale_terrain"
               placeholder="surface totale terrain"
               value={this.props.surface_totale_terrain}
               onChange={this.props.onChange}
+              min="0"
               required
             />
             {errors.surface_totale_terrain && (
@@ -58,11 +60,12 @@ class Step2Maison extends Component {
               className={classnames("input is-medium", {
                 "is-danger": errors.surface_habitable_constructible
               })}
-              type="text"
+              type="number"
               name="surface_habitable_constructible"
               placeholder="surface habitable constructible"
               value={this.props.surface_habitable_constructible}
               onChange={this.props.onChange}
+              min="0"
               required
             />
             {errors.surface_habitable_constructible && (

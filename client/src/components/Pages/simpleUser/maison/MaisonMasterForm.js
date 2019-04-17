@@ -79,15 +79,19 @@ class MaisonMasterForm extends Component {
 
     if (this.props.user.user_type === "regular" || this.props.user.user_type === "super" ) {
       this.props.submitDefaultMaisonSave(newDefautMaison);
-      if(this.state.errors === {}){
+      if(this.state.prix_estimation !== ""){
         this.next();
       }
-     
     } else {
       this.props.submitDefaultMaison(newDefautMaison);
-      if(this.state.errors === {}){
+      if(this.state.prix_estimation !== ""){
         this.next();
+      }else{
+        this.setState({
+          errors : {}
+        })
       }
+      
     }
   }
 
@@ -143,6 +147,7 @@ class MaisonMasterForm extends Component {
     }
     return null;
   }
+  
   get submitButton() {
     let currentStep = this.state.currentStep;
     if (currentStep === 5) {

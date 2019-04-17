@@ -15,6 +15,8 @@ class Dashboard extends Component {
     }
   }
 
+ 
+
   onClickshowAppartments(){
     this.setState({showMaisons : false });
     this.setState({showAppartments : true });

@@ -35,7 +35,7 @@ class AppartementMasterForm extends Component {
       calme: "",
       qualite_appartement : "",
       proximite_transports: "",
-      
+      prix_estimation : "",
       errors: {},
     };
     this.onChange = this.onChange.bind(this);
@@ -68,14 +68,27 @@ class AppartementMasterForm extends Component {
       calme: this.state.calme,
       qualite_appartement:this.state.qualite_appartement,
       proximite_transports: this.state.proximite_transports,
+      prix_estimation : this.state.prix_estimation
     };
 
     if (this.props.user.user_type === "regular" || this.props.user.user_type === "super") {
       this.props.submitDefaultAppartementSave(newDefautAppartement);
-      this.next()
+      if(this.state.prix_estimation !== ""){
+        this.next();
+      }else{
+        this.setState({
+          errors : {}
+        })
+      }
     } else {
       this.props.submitDefaultAppartement(newDefautAppartement);
-      this.next();
+      if(this.state.prix_estimation !== ""){
+        this.next();
+      }else{
+        this.setState({
+          errors : {}
+        })
+      }
     }
   }
 

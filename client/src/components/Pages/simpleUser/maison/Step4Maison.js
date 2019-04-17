@@ -16,64 +16,80 @@ class Step4Maison extends Component {
               className={classnames("input is-medium", {
                 "is-danger": errors.annee_construction
               })}
-              type="text"
+              type="number"
               name="annee_construction"
               placeholder="annee_construction"
               value={this.props.annee_construction}
               onChange={this.props.onChange}
               required
+              min="0"
+              max={new Date().getFullYear()}
             />
             {errors.annee_construction && (
               <p className="help is-danger">{errors.annee_construction}</p>
             )}
           </div>
         </div>
-        
+
 
         <div className="field">
           <div className="control">
-            <input
-              className={classnames("input is-medium", {
-                "is-danger": errors.diagnostic_performance_energetique
-              })}
-              type="text"
-              name="diagnostic_performance_energetique"
-              placeholder="diagnostic performance energetique "
-              value={this.props.diagnostic_performance_energetique}
-              onChange={this.props.onChange}
-              required
-            />
-            {errors.diagnostic_performance_energetique && (
-              <p className="help is-danger">
-                {errors.diagnostic_performance_energetique}
-              </p>
-            )}
+              <div 
+                className={classnames("select is-medium", {
+                  "is-danger": errors.diagnostic_performance_energetique
+                })}
+              >
+                  <select
+                     name="diagnostic_performance_energetique"
+                     value={this.props.diagnostic_performance_energetique}
+                     onChange={this.props.onChange}
+                  >
+                      <option>Diag. Perf. Energetique</option>
+                      <option value="A">A</option>
+                      <option value="B">B</option>
+                      <option value="C">C</option>
+                      <option value="D">D</option>
+                      <option value="E">E</option>
+                      <option value="F">F</option>
+                  </select>
+              </div>
+              {errors.diagnostic_performance_energetique && (
+                <p className="help is-danger">
+                  {errors.diagnostic_performance_energetique}
+                </p>
+              )}
           </div>
         </div>
 
         
 
-
         <div className="field">
           <div className="control">
-            <input
-              className={classnames("input is-medium", {
+              <div 
+               className={classnames("select is-medium", {
                 "is-danger": errors.etat_bien
               })}
-              type="text"
-              name="etat_bien"
-              placeholder=" etat bien"
-              value={this.props.etat_bien}
-              onChange={this.props.onChange}
-              required
-            />
-            {errors.etat_bien && (
+              >
+                  <select
+                     name="etat_bien"
+                     value={this.props.etat_bien}
+                     onChange={this.props.onChange}
+                  >
+                      <option>Etat du bien</option>
+                      <option value="Refait a neuf" >Refait a neuf</option>
+                      <option value="Standard" >Standard</option>
+                      <option value="Rafraîchissment nécessaire" >Rafraîchissment nécessaire</option>
+                      <option value="Travaux importants nécessaires" >Travaux importants nécessaires</option>
+                  </select>
+              </div>
+              {errors.etat_bien && (
               <p className="help is-danger">{errors.etat_bien}</p>
             )}
           </div>
         </div>
       </div>
-    
+      
+
     );
   }
 }

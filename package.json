@@ -9,8 +9,8 @@
     "server": "nodemon",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild" : "NPM_CONFIG_PRODUCTION=false && npm i --prefix client && npm run build --prefix client",
-    "fake-data" : " cd datasets && dummyjson DataMaisonSchema.hbs > fakedataMaison.json"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm i --prefix client && npm run build --prefix client",
+    "fake-data": " cd datasets && dummyjson DataMaisonSchema.hbs > fakedataMaison.json"
   },
   "author": "ekiriano",
   "license": "MIT",
@@ -22,9 +22,11 @@
     "dummy-json": "^2.0.0",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.4.0",
+    "mapbox-gl": "^0.53.1",
     "mongoose": "^5.4.9",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "react-mapbox-gl": "^4.2.1",
     "request": "^2.88.0",
     "validator": "^9.4.1"
   },

@@ -20,12 +20,13 @@ class Step2Appartement extends Component {
               className={classnames("input is-medium", {
                 "is-danger": errors.surface
               })}
-              type="text"
+              type="number"
               name="surface"
               placeholder="surface"
               value={this.props.surface}
               onChange={this.props.onChange}
-              required
+             min="0"
+             required
             />
             {errors.surface && (
               <p class="help is-danger">{errors.surface}</p>
@@ -42,12 +43,13 @@ class Step2Appartement extends Component {
               className={classnames("input is-medium", {
                 "is-danger": errors.nombre_pieces
               })}
-              type="text"
+              type="number"
               name="nombre_pieces"
               placeholder="Nombre de Pieces"
               value={this.props.nombre_pieces}
               onChange={this.props.onChange}
-              required
+             min="0"
+             required
             />
             {errors.nombre_pieces && (
               <p class="help is-danger">{errors.nombre_pieces}</p>
@@ -63,12 +65,13 @@ class Step2Appartement extends Component {
               className={classnames("input is-medium", {
                 "is-danger": errors.nombre_salle_bain
               })}
-              type="text"
+              type="number"
               name="nombre_salle_bain"
               placeholder="Nombre de Salles de Bain"
               value={this.props.nombre_salle_bain}
               onChange={this.props.onChange}
-              required
+             min="0"
+             required
             />
             {errors.nombre_salle_bain && (
               <p class="help is-danger">
