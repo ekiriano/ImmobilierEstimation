@@ -119,7 +119,7 @@ class Step5Maison extends Component {
               >
                   <select
                   name="qualite_toiture"
-                  value={this.props.qualite_toiture}
+                                                                                                 
                   onChange={this.props.onChange}
                   >
                       <option>Qualité de la toiture</option>

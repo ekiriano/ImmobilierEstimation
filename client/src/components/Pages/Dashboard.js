@@ -27,6 +27,7 @@ class Dashboard extends Component {
     this.setState({showMaisons : true });
   }
 
+  // TODO ::  Component did update to re store user tye
   
   render() {
     return (

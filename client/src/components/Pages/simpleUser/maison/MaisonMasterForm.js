@@ -79,20 +79,12 @@ class MaisonMasterForm extends Component {
 
     if (this.props.user.user_type === "regular" || this.props.user.user_type === "super" ) {
       this.props.submitDefaultMaisonSave(newDefautMaison);
-      if(this.props.newEstimationMaison.prix_estimation !== ""){
-        this.next();
-      }
+      // go to next step only if prev sucessfull
+     
     } else {
       this.props.submitDefaultMaison(newDefautMaison);
-      if(this.props.newEstimationMaison.prix_estimation !== ""){
-        this.next();
-      }else{
-        this.setState({
-          errors : {}
-        })
-      }
-      
-    }
+      // go to next step only if prev sucessfull
+    } 
   }
 
   next() {

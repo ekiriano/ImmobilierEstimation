@@ -1,12 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import logo from "../partials/estimmo_logo.png";
+
 export default () => {
   return (
     <div>
       <header className="hero homepage">
         <div className="hero-text">
-          <h1>Estimmo</h1>
+        <img src={logo} alt="logo"
+        height="50" width="50%"/>
+        
+          {/*<h1>Estimmo</h1>*/}
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque
             ratione nam molestias recusandae porro mollitia at cumque alias quae

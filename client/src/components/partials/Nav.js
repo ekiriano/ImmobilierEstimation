@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { withRouter } from "react-router-dom";
 
+import logo from "./estimmo_logo.png";
+
 class Nav extends Component {
   onLogoutClick(e) {
     e.preventDefault();
@@ -48,9 +50,8 @@ class Nav extends Component {
         <div className="navbar-brand">
           <Link className="navbar-item" to="/">
             <img
-              src="https://bulma.io/images/bulma-logo.png"
-              width="112"
-              height="28"
+              src={logo}
+              
               alt="logo"
             />
           </Link>
