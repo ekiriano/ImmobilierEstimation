@@ -137,8 +137,19 @@ class SuperMasterForm extends Component {
 
             },
             estimation: {
+              decoteBienOccupe: "",
+              decoteBienOccupeR: "",
+              autresElements: "",
+              autresElementsR: "",
+              travauxARealiser: "",
+              travauxARealiserR: "",
+              valorisationTerrain: "",
+              valorisationTerrainR: "",
+              renove: "",
+              affichageNetVendeur: "",
               prix_comparaison: "",
-              prix_reference: ""
+              prix_reference: "",
+              prix_final: ""
             },
             comparables: {
 
