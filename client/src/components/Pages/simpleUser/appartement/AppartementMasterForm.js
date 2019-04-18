@@ -169,6 +169,9 @@ class AppartementMasterForm extends Component {
     }
     if(nextProps.newEstimationAppartement){
       this.setState({prix_estimation : nextProps.newEstimationAppartement.prix_estimation})
+      if(nextProps.newEstimationAppartement.prix_estimation > 0) {
+        this.next();
+      }
     }
   }
 

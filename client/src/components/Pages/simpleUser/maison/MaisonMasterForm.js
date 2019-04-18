@@ -78,9 +78,7 @@ class MaisonMasterForm extends Component {
     };
 
     if (this.props.user.user_type === "regular" || this.props.user.user_type === "super" ) {
-      this.props.submitDefaultMaisonSave(newDefautMaison);
-      // go to next step only if prev sucessfull
-     
+      this.props.submitDefaultMaisonSave(newDefautMaison);    
     } else {
       this.props.submitDefaultMaison(newDefautMaison);
       // go to next step only if prev sucessfull
@@ -165,6 +163,9 @@ class MaisonMasterForm extends Component {
     }
     if(nextProps.newEstimationMaison){
       this.setState({prix_estimation : nextProps.newEstimationMaison.prix_estimation});
+      if(nextProps.newEstimationMaison.prix_estimation > 0) {
+        this.next();
+      }
     }
   }
 
