@@ -593,7 +593,66 @@ const HouseSchema = new Schema({
   }]
 
   estimation: {
-    type: Number,
+    decoteBienOccupe: {
+      type: String,
+      required: true,
+    },
+    decoteBienOccupeR: {
+      type: String,
+      required: true,
+      // enum: [
+      //   '$',
+      //   '%'
+      // ]
+    },
+    autresElements: {
+      type: String,
+      required: true,
+    },
+    autresElementsR: {
+      type: String,
+      required: true,
+      // enum: [
+      //   '$',
+      //   '%'
+      // ]
+    },
+    travauxARealiser: {
+      type: String,
+      required: true,
+    },
+    travauxARealiserR: {
+      type: String,
+      required: true,
+      // enum: [
+      //   '$',
+      //   '%'
+      // ]
+    },
+    valorisationTerrain: {
+      type: String,
+      required: true,
+    },
+    valorisationTerrainR: {
+      type: String,
+      required: true,
+      // enum: [
+      //   '$',
+      //   '%'
+      // ]
+    },
+    renove: {
+      type: String,
+      required: true,
+    },
+    renoveR: {
+      type: String,
+      required: true,
+      // enum: [
+      //   '$',
+      //   '%'
+      // ]
+    }
 
   },
 

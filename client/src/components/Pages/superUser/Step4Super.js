@@ -13,7 +13,7 @@ class Step4Super extends Component {
         return (
           <div>
           <h1>City's name</h1> <hr/>
-          
+
           <div class="columns">
               <div class="column is-three-fifths">
               <div class="columns">
@@ -21,12 +21,6 @@ class Step4Super extends Component {
                 <MapSuper id="map-container"/>
                 <h2>Votre secteur de reference</h2><hr/>
 
-                <div className="control">
-                    <label className="radio">
-                      <input type="radio" name="secteur"></input>
-                      idk how is this generated
-                    </label>
-                </div>
                 </div>
 
                 <div class="column">
@@ -34,62 +28,117 @@ class Step4Super extends Component {
                 <p>Prix moyen du secteur: </p>
                 <p>Indice de qualité: </p>
 
-                <p>Decote si bien vende occupé: </p>
+                <div className="field is-horizontal">
+                  <div className="field-label is-small">
+                    <label className="label">Decote si bien vendu occupé: </label>
+                  </div>
+                  <div className="field-body">
+                    <div className="field">
+                      <p className="control">
+                        <input className="input is-small" type="texte" placeholder="decoteBienOccupe" name="decoteBienOccupe" required/>
+                      </p>
+                    </div>
+                  </div>
+                </div>
                 <div className="control">
                     <label className="radio">
-                      <input type="radio" name="decoteBienOccupe"></input>
+                      <input type="radio" name="decoteBienOccupeR"></input>
                       $
                     </label>
                     <label className="radio">
-                      <input type="radio" name="decoteBienOccupe"></input>
+                      <input type="radio" name="decoteBienOccupeR"></input>
                       %
                     </label>
                 </div>
 
-                <p>Autres élements: </p>
+                <div className="field is-horizontal">
+                  <div className="field-label is-small">
+                    <label className="label">Autres élements: </label>
+                  </div>
+                  <div className="field-body">
+                    <div className="field">
+                      <p className="control">
+                        <input className="input is-small" type="texte" placeholder="autresElements" name="autresElements" required/>
+                      </p>
+                    </div>
+                  </div>
+                </div>
                 <div className="control">
                     <label className="radio">
-                      <input type="radio" name="autresElements"></input>
+                      <input type="radio" name="autresElementsR"></input>
                       $
                     </label>
                     <label className="radio">
-                      <input type="radio" name="autresElements"></input>
+                      <input type="radio" name="autresElementsR"></input>
                       %
                     </label>
                 </div>
 
-                <p>Travaux à réaliser: </p>
+                <div className="field is-horizontal">
+                  <div className="field-label is-small">
+                    <label className="label">Travaux à réaliser </label>
+                  </div>
+                  <div className="field-body">
+                    <div className="field">
+                      <p className="control">
+                        <input className="input is-small" type="texte" placeholder="travauxARealiser" name="travauxARealiser" required/>
+                      </p>
+                    </div>
+                  </div>
+                </div>
                 <div className="control">
                     <label className="radio">
-                      <input type="radio" name="travauxARealiser"></input>
+                      <input type="radio" name="travauxARealiserR"></input>
                       $
                     </label>
                     <label className="radio">
-                      <input type="radio" name="travauxARealiser"></input>
+                      <input type="radio" name="travauxARealiserR"></input>
                       %
                     </label>
                 </div>
 
-                <p>Valorisation du terrain: </p>
+                <div className="field is-horizontal">
+                  <div className="field-label is-small">
+                    <label className="label">Valorisation du terrain </label>
+                  </div>
+                  <div className="field-body">
+                    <div className="field">
+                      <p className="control">
+                        <input className="input is-small" type="texte" placeholder="valorisationTerrain" name="valorisationTerrain" required/>
+                      </p>
+                    </div>
+                  </div>
+                </div>
                 <div className="control">
                     <label className="radio">
-                      <input type="radio" name="valorisationTerrain"></input>
+                      <input type="radio" name="valorisationTerrainR"></input>
                       $
                     </label>
                     <label className="radio">
-                      <input type="radio" name="valorisationTerrain"></input>
+                      <input type="radio" name="valorisationTerrainR"></input>
                       %
                     </label>
                 </div>
 
-                <p>Renové: </p>
+                <div className="field is-horizontal">
+                  <div className="field-label is-small">
+                    <label className="label">Rénové </label>
+                  </div>
+                  <div className="field-body">
+                    <div className="field">
+                      <p className="control">
+                        <input className="input is-small" type="texte" placeholder="renove" name="renove" required/>
+                      </p>
+                    </div>
+                  </div>
+                </div>
                 <div className="control">
                     <label className="radio">
-                      <input type="radio" name="renove"></input>
+                      <input type="radio" name="renoveR"></input>
                       $
                     </label>
                     <label className="radio">
-                      <input type="radio" name="renove"></input>
+                      <input type="radio" name="renoveR"></input>
                       %
                     </label>
                 </div>
@@ -103,20 +152,20 @@ class Step4Super extends Component {
               <div class="column">
               <h1> Synthèse de l'étude </h1>
 
-              <h2>Les méthodes utilisée</h2>
+              <h2>Les méthodes utilisée</h2> <hr/>
               <div className="control">
                   <label className="radio">
                     <input type="radio" name=""></input>
-                    Methode par capitalisation
+                    Methode par référence
                   </label>
                   <label className="radio">
                     <input type="radio" name=""></input>
                     Methode par comparaison
                   </label>
               </div>
-              <p>Moyenne des méthodes</p>
+              <p>Moyenne des méthodes:</p>
 
-              <h2>Le prix et les honoraires</h2>
+              <h2>Le prix et les honoraires</h2> <hr/>
               <p>Affichage net du vendeur ?</p>
               <div className="control">
                   <label className="radio">
