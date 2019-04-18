@@ -124,10 +124,15 @@ router.get(
 );
 
 router.post(
-  "/",
+  "/upgradeto/super",
   passport.authenticate("jwt",{session:false}),
   (req,res) => {
   //find the curent user and set it to super type  
+  User.findByIdAndUpdate(req.user.id,{$set:{user_type :"super"}})
+  .then(data => res.json({success : true , message : "User was succesfully updated to super"}))
+  .catch(err => res.status(404).json({error :"Couldn't upgrade the user to super"}));
+  ;
+
   }
 );
 

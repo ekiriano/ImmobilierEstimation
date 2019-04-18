@@ -71,6 +71,7 @@ class Map extends Component {
         onViewportChange={this.handleViewportChange}
         mapboxApiAccessToken={TOKEN}>
         <Geocoder
+        
         mapRef={this.mapRef}
         containerRef={this.geocoderContainerRef}
         onResult={this.handleOnResult}

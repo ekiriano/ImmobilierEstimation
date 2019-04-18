@@ -39,6 +39,7 @@ class Dashboard extends Component {
               <button className="button is-link is-rounded mb-is-0_5" onClick={this.onClickshowMaisons.bind(this)} >Mes estimations de maisons</button> 
               <button className="button is-link is-rounded" onClick={this.onClickshowAppartments.bind(this)}>Mes estimations d'appartements</button>
             </div>
+            {/* TODO: Switch to a menu like this would be better : https://bulma.io/documentation/components/menu/*/ }
             <div className="column">
               {this.state.showAppartments ? <SavedAppartements/>: null}
               {this.state.showMaisons ? <SavedMaisons/>: null}

@@ -18,7 +18,6 @@ export default function(state = initialState,action){
                 savedAppartements : state.savedAppartements.filter(savedAppartement => savedAppartement._id !== action.payload)
             };
         case NEW_SIMPLE_ESTIMATION_APPARTEMENT :
-        console.log("NEW_SIMPLE_ESTIMATION_APPARTEMENT");
             return{
                 ...state,
                 newEstimationAppartement : action.payload

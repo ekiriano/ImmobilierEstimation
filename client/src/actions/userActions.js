@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const setUserTypeToSuper = user => dispatch => {
     axios.
-    post("/",user)
+    post("/api/users/upgradeto/super",user)
     .then(res => 
         console.log(res)
     )
