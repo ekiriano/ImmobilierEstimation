@@ -1,7 +1,7 @@
 module.exports = {
   HouseEstimationComparaison: Bien => {
 
-  	var json = require('./output.json'); 
+  	var json = require('./fakedatamaison.json');
 
   	var i = 1;
   	for(var bien=0;bien<json.maisons.length;bien++){
@@ -10,16 +10,15 @@ module.exports = {
   		      i++;
   		  }
   	}
-  	console.log(Bien.estimation);
 
   	Bien.estimation /= i;
-    
+
     console.log(Bien.estimation);
     return Bien;
   },
 
   HouseEstimationReference: Bien => {
-  	var json = require('./output.json'); 
+  	var json = require('./fakedatamaison.json');
   	var objet;
   	for(var bien=0;bien<json.maisons.length;bien++){
   		if((Bien.estimation-100000 <= json.maisons[bien].estimation)  && (json.maisons[bien].estimation<= Bien.estimation+100000)){
@@ -53,15 +52,15 @@ module.exports = {
 
   AppartementEstimationComparaison: Bien => {},
   AppartementEstimationReference: Bien => {},
-  		
+
 };
 
 var test = {
 	user: 0,
-	client: {civilite: "Arlington Road", 
-		prenom: "", 
-		nom: "" , 
-		email: "cory.connor@dynaroc.name", 
+	client: {civilite: "Arlington Road",
+		prenom: "",
+		nom: "" ,
+		email: "cory.connor@dynaroc.name",
 		telephone: 195 },
 	bienImmobillier: {
 		informations: {surfaceHabitable: 25,
@@ -75,4 +74,3 @@ var test = {
 
 module.exports.HouseEstimationComparaison(test);
 module.exports.HouseEstimationReference(test);
-

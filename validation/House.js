@@ -871,6 +871,76 @@ if (
 
 ///////////////////////////// estimation validation ////////////////////////////////
 
+if (Validator.isEmpty(data.estimation.renove)) {
+  errors.estimation.renove =
+    "renove is required";
+}
+
+if (
+  Validator.isEmpty(data.estimation.renoveR) ||
+  !Validator.matches(
+    data.caracteristiques.renoveR,
+    '$',
+    '%'
+  )
+) {
+  errors.estimation.renoveR =
+    "choix renove is required";
+}
+
+if (Validator.isEmpty(data.estimation.valorisationTerrain)) {
+  errors.estimation.valorisationTerrain =
+    "valorisationTerrain is required";
+}
+
+if (
+  Validator.isEmpty(data.estimation.valorisationTerrainR) ||
+  !Validator.matches(
+    data.caracteristiques.valorisationTerrainR,
+    '$',
+    '%'
+  )
+) {
+  errors.estimation.valorisationTerrainR =
+    "choix valorisationTerrain is required";
+}
+
+if (Validator.isEmpty(data.estimation.travauxARealiser)) {
+  errors.estimation.travauxARealiser =
+    "travauxARealiser is required";
+}
+
+if (
+  Validator.isEmpty(data.estimation.travauxARealiserR) ||
+  !Validator.matches(
+    data.caracteristiques.travauxARealiserR,
+    '$',
+    '%'
+  )
+) {
+  errors.estimation.travauxARealiserR =
+    "travauxARealiserR required";
+}
+
+if (Validator.isEmpty(data.estimation.autresElements)) {
+  errors.estimation.autresElements =
+    "autresElements is required";
+}
+
+if (
+  Validator.isEmpty(data.estimation.travauxARealiserR) ||
+  !Validator.matches(
+    data.caracteristiques.travauxARealiserR,
+    '$',
+    '%'
+  )
+) {
+  errors.estimation.travauxARealiserR =
+    "travauxARealiserR is required";
+}
+
+
+
 
 ///////////////////////////// end of estimation validation ////////////////////////////////
 
