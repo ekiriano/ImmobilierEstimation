@@ -75,9 +75,14 @@ class Nav extends Component {
               Estimmer votre bien gratuitement
             </Link>
 
-            <Link to="/premium" className="navbar-item">
-              Devenir un utilisateur Premium
-            </Link>
+            {this.props.isLoggedIn ? (
+               <Link to="/premium" className="navbar-item">
+               Devenir un utilisateur Premium
+              </Link>
+
+            ) : null} 
+
+           
 
           </div>
 

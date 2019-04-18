@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route , Redirect } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utilities/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
@@ -33,6 +33,9 @@ import CardMaisonForm from "./components/Pages/simpleUser/maison/CardMaisonForm"
 import SimpleUserRootForm from "./components/Pages/simpleUser/rootForm";
 import Premium from "./components/Pages/BecomePremium";
 
+import requireAuth from "./routes/requireAuth";
+import requireSuper from "./routes/requireSuper";
+
 //check nd set jwt token
 if (localStorage.jwtToken) {
   //TODO set to secure cookie
@@ -45,6 +48,9 @@ if (localStorage.jwtToken) {
     window.location.href = "/login";
   }
 }
+
+
+
 
 class App extends Component {
   render() {
@@ -63,12 +69,10 @@ class App extends Component {
               <Route exact path="/estimmation/simple/maison" component={ CardMaisonForm } />
               <Route exact path="/estimmation/simple/appartement" component={CardAppartementForm} />
 
-              <Route exact path="/dashboard" component={Dashboard} />
-              <Route exact path="/premium" component={Premium} />
-              <Route exact path="/super" component={SuperUserForm} />
-             
+              <Route exact path="/dashboard" component={requireAuth(Dashboard)} />
+              <Route exact path="/premium" component={requireAuth(Premium)} />
+              <Route exact path="/super" component={requireSuper(SuperUserForm)} />
             </div>
-
             <Footer />
           </div>
         </Router>
