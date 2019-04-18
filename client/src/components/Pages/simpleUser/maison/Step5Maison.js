@@ -48,7 +48,7 @@ class Step5Maison extends Component {
                   >
                       <option>Luminosité</option>
                       <option value="Sombre">Sombre</option>
-                      <option value="Peu clai">Peu clair</option>
+                      <option value="Peu clair">Peu clair</option>
                       <option value="Standard">Standard</option>
                       <option value="Clair">Clair</option>
                       <option value="Très Clair">Très Clair</option>

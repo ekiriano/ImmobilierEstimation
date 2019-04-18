@@ -29,7 +29,6 @@ router.post("/house", (req, res) => {
   }
 
   const newDefaultHouse = new DefaultHouse({
-    user: req.user.id,
     rue: req.body.rue,
     code_postal: req.body.code_postal,
     ville: req.body.ville,

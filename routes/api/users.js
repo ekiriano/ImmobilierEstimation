@@ -123,4 +123,12 @@ router.get(
   }
 );
 
+router.post(
+  "/",
+  passport.authenticate("jwt",{session:false}),
+  (req,res) => {
+  //find the curent user and set it to super type  
+  }
+);
+
 module.exports = router;
