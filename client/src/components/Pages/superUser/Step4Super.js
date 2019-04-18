@@ -169,11 +169,11 @@ class Step4Super extends Component {
               <p>Affichage net du vendeur ?</p>
               <div className="control">
                   <label className="radio">
-                    <input type="radio" name="affichageNetVendeur"></input>
+                    <input type="radio" value="1" name="affichageNetVendeur"></input>
                     Oui
                   </label>
                   <label className="radio">
-                    <input type="radio" name="affichageNetVendeur"></input>
+                    <input type="radio" value="0" name="affichageNetVendeur"></input>
                     Non
                   </label>
               </div>

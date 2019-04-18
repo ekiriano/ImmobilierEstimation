@@ -21,30 +21,30 @@ class Step1Super extends Component {
         return (
           <div>
             <h1>Test 1 </h1> <hr/>
-            
+
             <div className="control">
                 <label className="radio">
-                  <input type="radio" name="civilite"></input>
-                  Aucun
+                  <input type="radio" value="Aucun" name="civilite"></input>
+                  Aucun.
                 </label>
                 <label className="radio">
-                  <input type="radio" name="civilite"></input>
-                  Monsieur
+                  <input type="radio" value="Monsieur" name="civilite"></input>
+                  Monsieur.
                 </label>
                 <label className="radio">
-                  <input type="radio" name="civilite"></input>
+                  <input type="radio" value="Madame" name="civilite"></input>
                   Madame.
                 </label>
                 <label className="radio">
-                  <input type="radio" name="civilite"></input>
+                  <input type="radio" value="MonsieurEtMadame" name="civilite"></input>
                   Monsieur et Madame.
                 </label>
                 <label className="radio">
-                  <input type="radio" name="civilite"></input>
+                  <input type="radio" value="Messieurs" name="civilite"></input>
                   Messieurs.
                 </label>
                 <label className="radio">
-                  <input type="radio" name="civilite"></input>
+                  <input type="radio" value="Mesdames" name="civilite"></input>
                   Mesdames.
                 </label>
             </div>

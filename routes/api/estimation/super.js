@@ -7,10 +7,10 @@ const {
 } = require("../../../estimation_methodes/superusermtd");
 
 // Super Validation
-const validateSuperBienInput = require("../../../validation/House");
+const validateSuperBienInput = require("../../../validation/SuperBien");
 
 // Super Model
-const SuperBien = require("../../../models/House");
+const SuperBien = require("../../../models/SuperBien");
 
 /**
  * @route   POST /routes/api/estimation/super/bien/save
