@@ -49,6 +49,3 @@ export const logoutUser = history => dispatch => {
   dispatch(setCurrentUser({}));
 };
 
-export const switchToPremium = () => dispatch => {
-  
-}

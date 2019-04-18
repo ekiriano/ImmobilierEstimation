@@ -11,8 +11,9 @@ class BecomePremium extends Component {
 
     const onSuccess = (payment) => {
       console.log("success");
+      this.props.setUserTypeToSuper();
       this.props.history.push('/login');
-      //this.props.setUserTypeToSuper();
+      
     }
 
 
@@ -52,7 +53,7 @@ class BecomePremium extends Component {
        
         <div className="columns is-centered">
             <div className="column">
-               <p>Devenir premium pour la modique somme de 20€ vous permetra de  :</p>
+               <p>Devenir premium pour la <b>modique somme de 20€ </b> vous permetra de  :</p>
                <ul>
                  <li>Gerer les estimmations de vos clients</li>
                  <li>Avoir acces a des estimmations plus completes</li>
