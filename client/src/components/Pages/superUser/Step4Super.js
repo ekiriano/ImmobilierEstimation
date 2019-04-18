@@ -42,11 +42,11 @@ class Step4Super extends Component {
                 </div>
                 <div className="control">
                     <label className="radio">
-                      <input type="radio" name="decoteBienOccupeR"></input>
+                      <input type="radio" value="$" name="decoteBienOccupeR"></input>
                       $
                     </label>
                     <label className="radio">
-                      <input type="radio" name="decoteBienOccupeR"></input>
+                      <input type="radio" value="%" name="decoteBienOccupeR"></input>
                       %
                     </label>
                 </div>
@@ -65,11 +65,11 @@ class Step4Super extends Component {
                 </div>
                 <div className="control">
                     <label className="radio">
-                      <input type="radio" name="autresElementsR"></input>
+                      <input type="radio" value="$" name="autresElementsR"></input>
                       $
                     </label>
                     <label className="radio">
-                      <input type="radio" name="autresElementsR"></input>
+                      <input type="radio" value="%" name="autresElementsR"></input>
                       %
                     </label>
                 </div>
@@ -88,11 +88,11 @@ class Step4Super extends Component {
                 </div>
                 <div className="control">
                     <label className="radio">
-                      <input type="radio" name="travauxARealiserR"></input>
+                      <input type="radio" value="$" name="travauxARealiserR"></input>
                       $
                     </label>
                     <label className="radio">
-                      <input type="radio" name="travauxARealiserR"></input>
+                      <input type="radio" value="%" name="travauxARealiserR"></input>
                       %
                     </label>
                 </div>
@@ -111,11 +111,11 @@ class Step4Super extends Component {
                 </div>
                 <div className="control">
                     <label className="radio">
-                      <input type="radio" name="valorisationTerrainR"></input>
+                      <input type="radio" value="$" name="valorisationTerrainR"></input>
                       $
                     </label>
                     <label className="radio">
-                      <input type="radio" name="valorisationTerrainR"></input>
+                      <input type="radio" value="%" name="valorisationTerrainR"></input>
                       %
                     </label>
                 </div>
@@ -134,11 +134,11 @@ class Step4Super extends Component {
                 </div>
                 <div className="control">
                     <label className="radio">
-                      <input type="radio" name="renoveR"></input>
+                      <input type="radio" value="$" name="renoveR"></input>
                       $
                     </label>
                     <label className="radio">
-                      <input type="radio" name="renoveR"></input>
+                      <input type="radio" value="%" name="renoveR"></input>
                       %
                     </label>
                 </div>
