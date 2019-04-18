@@ -12,7 +12,8 @@ class BecomePremium extends Component {
     const onSuccess = (payment) => {
       console.log("success");
       this.props.setUserTypeToSuper();
-      this.props.history.push('/login');
+      
+      this.props.history.push('/dashboard');
       
     }
 

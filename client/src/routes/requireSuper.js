@@ -6,7 +6,7 @@ export default function(ComposedComponent){
   class requireSuper extends Component {
 
     componentWillMount(){
-      if(!this.props.user_type === "super"){
+      if(!this.props.user.user_type === "super" && this.props.user_type!== null){
         this.context.router.history.push('/login')
       } 
     }
@@ -28,7 +28,7 @@ export default function(ComposedComponent){
   }
 
   function mapStateToProps(state){
-    return {user_type : state.auth.user.user_type}
+    return {user : state.auth.user}
   }
 
   return connect(mapStateToProps)(requireSuper);

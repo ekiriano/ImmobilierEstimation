@@ -71,7 +71,7 @@ class App extends Component {
 
               <Route exact path="/dashboard" component={requireAuth(Dashboard)} />
               <Route exact path="/premium" component={requireAuth(Premium)} />
-              <Route exact path="/super" component={requireSuper(SuperUserForm)} />
+              <Route exact path="/super" component={requireAuth(SuperUserForm)} />
             </div>
             <Footer />
           </div>
