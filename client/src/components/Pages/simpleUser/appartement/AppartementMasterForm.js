@@ -73,22 +73,8 @@ class AppartementMasterForm extends Component {
 
     if (this.props.user.user_type === "regular" || this.props.user.user_type === "super") {
       this.props.submitDefaultAppartementSave(newDefautAppartement);
-      if(this.state.prix_estimation !== ""){
-        this.next();
-      }else{
-        this.setState({
-          errors : {}
-        })
-      }
     } else {
       this.props.submitDefaultAppartement(newDefautAppartement);
-      if(this.state.prix_estimation !== ""){
-        this.next();
-      }else{
-        this.setState({
-          errors : {}
-        })
-      }
     }
   }
 

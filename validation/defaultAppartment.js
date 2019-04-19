@@ -13,7 +13,7 @@ module.exports = function validateDefaultAppartmentInput(data) {
   let errors = {};
 
   // set empty attr to empty string
-/*
+
   if (Validator.isEmpty(data.rue)) {
     errors.rue = "rue field is required";
   }
@@ -32,21 +32,21 @@ module.exports = function validateDefaultAppartmentInput(data) {
   }
 
   if (Validator.isEmpty(data.nombre_pieces)) {
-    errors.nombre_pieces = "nombre_pieces is required and is a positive digit";
+    errors.nombre_pieces = "nombre_pieces is required";
   }
 
   if (Validator.isEmpty(data.nombre_salle_bain) ) {
     errors.nombre_salle_bain =
-      "nombre_salle_bain is required and is a positive digit";
+      "nombre_salle_bain is required";
   }
 
   if (Validator.isEmpty(data.etage)) {
-    errors.etage = "etage is required and must be a positive digit";
+    errors.etage = "etage is required";
   }
 
   if ( Validator.isEmpty(data.nombre_etage_total) ) {
-    errors.nombre_total_etage =
-      "nombre_total_etage is required and must be a positive digit";
+    errors.nombre_etage_total =
+      "nombre_total_etage is required ";
   }
 
   if(Validator.isEmpty(data.annee_construction) ) {
@@ -61,8 +61,8 @@ module.exports = function validateDefaultAppartmentInput(data) {
     errors.etat_bien = "etat_bien is required";
   }
 
-  if (Validator.isEmpty(data.qualite_maison) ) {
-    errors.qualite_maison = "qualite_maison is required";
+  if (Validator.isEmpty(data.qualite_appartement) ) {
+    errors.qualite_maison = "qualite_appartement is required";
   }
 
   if (Validator.isEmpty(data.luminosite)) {
@@ -77,9 +77,6 @@ module.exports = function validateDefaultAppartmentInput(data) {
     errors.proximite_transports = "proximite_transports is required";
   }
 
-  if (Validator.isEmpty(data.qualite_toiture)) {
-    errors.qualite_toiture = "qualite_toiture is required";
-  }*/
 
   return {
     errors,
