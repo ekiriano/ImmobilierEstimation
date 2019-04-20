@@ -5,6 +5,7 @@ import classnames from "classnames";
 import { loginUser } from "../../actions/authActions";
 import { Link } from "react-router-dom";
 
+import {toast} from 'react-toastify';
 
 class Login extends Component {
   constructor() {
@@ -49,10 +50,8 @@ class Login extends Component {
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
-
   render() {
     const { errors } = this.state;
-
     return (
       <div className="login primary-bg ">
         <div className="row">

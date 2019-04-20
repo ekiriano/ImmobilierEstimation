@@ -2,18 +2,28 @@ import axios from "axios";
 import setAuthToken from "../utilities/setAuthToken";
 import jwt_decode from "jwt-decode";
 import { GET_ERRORS, SET_CURRENT_USER } from "./types";
+import {toast} from 'react-toastify';
+
 
 export const registerUser = (userData, history) => dispatch => {
   axios
     .post("/api/users/register", userData)
-    .then(res => history.push("/login")) // success
+    .then(res => 
+      {
+        toast.success("Votre compte a été crée avec succes , Veuillez vous connecter! ");
+        history.push("/login");
+      }
+    ) // success
     .catch((
       err //error
     ) =>
+    {
       dispatch({
         type: GET_ERRORS,
         payload: err.response.data
       })
+      toast.error("Erreur lors de l'inscription : Veuillez corriger les erreurs indiquées !")
+    }
     );
 };
 
@@ -27,12 +37,16 @@ export const loginUser = userData => dispatch => {
       setAuthToken(token);
       const decoded = jwt_decode(token);
       dispatch(setCurrentUser(decoded));
+      toast.success("Connection Reussie");
     })
     .catch(err =>
-      dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
-      })
+      {
+        dispatch({
+          type: GET_ERRORS,
+          payload: err.response.data
+        })
+        toast.error("Erreur lors de la connection  : Veuillez corriger les erreurs indiquées !")
+      }
     );
 };
 
@@ -47,5 +61,6 @@ export const logoutUser = history => dispatch => {
   localStorage.removeItem("jwtToken");
   setAuthToken(false);
   dispatch(setCurrentUser({}));
+  toast.error("Deconnecté ...");
 };
 

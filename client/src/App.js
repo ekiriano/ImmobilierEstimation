@@ -36,6 +36,9 @@ import Premium from "./components/Pages/BecomePremium";
 import requireAuth from "./routes/requireAuth";
 import requireSuper from "./routes/requireSuper";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 //check nd set jwt token
 if (localStorage.jwtToken) {
   //TODO set to secure cookie
@@ -53,12 +56,15 @@ if (localStorage.jwtToken) {
 
 
 class App extends Component {
+ 
   render() {
     return (
       <Provider store={store}>
         <Router>
           <div className="App">
             <Nav />
+            
+            <ToastContainer position="bottom-center" />
             <div className="">
               <Route exact path="/" component={HomePage} />
               <Route exact path="/register" component={Register} />

@@ -22,8 +22,8 @@ class savedAppartements extends Component {
 
     onClickDelete(id){
         this.props.deleteSavedAppartement(id);
+       
     }
-
 
 
   render() {

@@ -4,12 +4,11 @@ import Geocoder from 'react-map-gl-geocoder'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import './map.css'
 
-// import DeckGL, { GeoJsonLayer } from "deck.gl";
-
 
 
 const TOKEN =
   "pk.eyJ1IjoidGVyMjAxOSIsImEiOiJjanJsdjhxczMwYnE1M3lvNWM3MHo5bHZrIn0.4jZb3pG3_OwR8dY2w7qJEA";
+
 
 class Map extends Component {
   state = {
@@ -77,6 +76,7 @@ class Map extends Component {
         onResult={this.handleOnResult}
         onViewportChange={this.handleGeocoderViewportChange}
         mapboxApiAccessToken={TOKEN}
+        position="bottom-left"
         placeholder='Please enter your adress'
         />
       </MapGL>
@@ -84,4 +84,4 @@ class Map extends Component {
     )
   }
 }
-export default Map;
+export default Map; 
