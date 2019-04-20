@@ -11,7 +11,7 @@ export const submitDefaultAppartement = defaultAppartementData => dispatch => {
           type : NEW_SIMPLE_ESTIMATION_APPARTEMENT,
           payload : res.data
         })
-        toast.success("Votre appartement a été estimmer avec succés");
+        toast.success("Votre appartement a été estimmé avec succés");
       }
     )
     .catch(err =>
@@ -34,7 +34,7 @@ export const submitDefaultAppartementSave = defaultAppartementData => dispatch =
           type : NEW_SIMPLE_ESTIMATION_APPARTEMENT,
           payload : res.data
         })
-        toast.success("Votre appartment a été estimmer et sauvegardé  avec succés");
+        toast.success("Votre appartment a été estimmé et sauvegardé  avec succés");
       }  
     )
     .catch(err =>

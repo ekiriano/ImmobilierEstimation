@@ -12,7 +12,7 @@ export const submitDefaultMaison = defaultMaisonData => dispatch => {
           type : NEW_SIMPLE_ESTIMATION_MAISON,
           payload : res.data
         })
-        toast.success("Votre maison a été estimmer avec succés");
+        toast.success("Votre maison a été estimmée avec succés");
       }
     )
     .catch(err =>
@@ -35,7 +35,7 @@ export const submitDefaultMaisonSave = defaultMaisonData => dispatch => {
           type : NEW_SIMPLE_ESTIMATION_MAISON,
           payload : res.data
         })
-        toast.success("Votre maison a été estimmer et sauvegardé  avec succés");
+        toast.success("Votre maison a été estimmée et sauvegardée  avec succès");
       }
     )
     .catch(err =>
