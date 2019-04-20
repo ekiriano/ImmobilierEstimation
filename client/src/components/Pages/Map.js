@@ -54,34 +54,16 @@ class Map extends Component {
   render() {
     return (
       <div>
-      <div
-          ref={this.geocoderContainerRef}
-          style={{
-            height: 50,
-            background: "black",
-            display: "flex",
-            alignItems: "center",
-            paddingLeft: 4
-          }}
-        />
+
       <MapGL
         ref={this.mapRef}
         {...this.state.viewport}
         onViewportChange={this.handleViewportChange}
         mapboxApiAccessToken={TOKEN}>
-        <Geocoder
         
-        mapRef={this.mapRef}
-        containerRef={this.geocoderContainerRef}
-        onResult={this.handleOnResult}
-        onViewportChange={this.handleGeocoderViewportChange}
-        mapboxApiAccessToken={TOKEN}
-        position="bottom-left"
-        placeholder='Please enter your adress'
-        />
       </MapGL>
       </div>
     )
   }
 }
-export default Map; 
+export default Map;

@@ -20,6 +20,9 @@ class MaisonMasterForm extends Component {
     this.state = {
       currentStep: 1,
       user: {},
+      adresse_complete: "",
+      lat: "",
+      long: "",
       rue: "",
       code_postal: "",
       ville: "",
@@ -45,10 +48,40 @@ class MaisonMasterForm extends Component {
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.search = this.search.bind(this);
   }
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+  }
+
+  search(e){
+    console.log('street', this.state.rue);
+    const BASE_URL = 'https://api-adresse.data.gouv.fr/search/?';
+    const FETCH_URL = `${BASE_URL}q=${this.state.adresse_complete}&postcode=${this.state.code_postal}&type=street&limit=1`;
+    console.log('FETCH_URL', FETCH_URL);
+    fetch(FETCH_URL, {
+      method: 'GET'
+    })
+    .then(response => response.json())
+    .then(json => {
+      const address = json.features[0];
+      console.log('address', address);
+      this.setState({
+        adresse_complete: address.properties.label,
+        rue: address.properties.name,
+        ville: address.properties.city,
+        code_postal: address.properties.postcode,
+        lat: address.geometry.coordinates[1],
+        long: address.geometry.coordinates[0],
+      });
+      console.log('adresse_complete', this.state.adresse_complete);
+      console.log('rue', this.state.rue);
+      console.log('ville', this.state.ville);
+      console.log('code_postal', this.state.code_postal);
+      console.log('long', this.state.long);
+      console.log('lat', this.state.lat);
+    });
   }
 
   onSubmit(e) {
@@ -78,11 +111,11 @@ class MaisonMasterForm extends Component {
     };
 
     if (this.props.user.user_type === "regular" || this.props.user.user_type === "super" ) {
-      this.props.submitDefaultMaisonSave(newDefautMaison);    
+      this.props.submitDefaultMaisonSave(newDefautMaison);
     } else {
       this.props.submitDefaultMaison(newDefautMaison);
       // go to next step only if prev sucessfull
-    } 
+    }
   }
 
   next() {
@@ -137,14 +170,14 @@ class MaisonMasterForm extends Component {
     }
     return null;
   }
-  
+
   get submitButton() {
     let currentStep = this.state.currentStep;
     if (currentStep === 5) {
       return (
         <div className="bottom-right">
           <button className="c-btn c-primary" type="submit" >
-          
+
             Estimer
           </button>
         </div>
@@ -185,6 +218,13 @@ class MaisonMasterForm extends Component {
             rue={this.state.rue}
             code_postal={this.state.code_postal}
             ville={this.state.ville}
+            adresse_complete={this.state.adresse_complete}
+            onKeyPress={event => {
+              if(event.key === 'Enter'){
+                this.search()
+              }
+            }}
+
           />
           <Step2
             currentStep={this.state.currentStep}
@@ -232,7 +272,7 @@ class MaisonMasterForm extends Component {
             errors={this.state.errors}
             prix_estimation={this.state.prix_estimation}
           />
-         
+
 
           {this.previousButton}
           {this.nextButton}

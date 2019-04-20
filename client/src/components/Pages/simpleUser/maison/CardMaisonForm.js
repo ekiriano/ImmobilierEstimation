@@ -6,7 +6,7 @@ import Map from "../../Map";
 export default class CardMaisonForm extends Component {
   render() {
     return (
-      
+
         <div>
          <div className="column is-12">
               <div className="dashboard-main">
@@ -25,7 +25,7 @@ export default class CardMaisonForm extends Component {
               </div>
             </div>
       </div>
-      
+
     )
   }
 }
