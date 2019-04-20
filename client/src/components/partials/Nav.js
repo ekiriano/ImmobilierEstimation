@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { withRouter } from "react-router-dom";
 
-import logo from "./estimmo_logo.png";
+import logo from "./logo_navbar.png";
 
 class Nav extends Component {
   onLogoutClick(e) {
