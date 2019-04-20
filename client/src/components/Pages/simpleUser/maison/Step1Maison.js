@@ -45,6 +45,21 @@ class Step1Maison extends Component {
           </div>
         </div>
 
+
+        <div>
+            {
+              this.props.predictions.map((prediction, index) => (
+                <li
+			             key={index}
+			             onClick={() => this.props.onClick(prediction)}
+		             >
+			              {prediction.properties.label}
+		            </li>
+              ))
+            }
+            </div>
+
+
         <div className="field">
         <label className="label">Rue : </label>
           <div className="control">

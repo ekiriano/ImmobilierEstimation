@@ -14,6 +14,8 @@ import Step4 from "./Step4Maison";
 import Step5 from "./Step5Maison";
 import FinalStepMaison from "./FinalStepMaison";
 
+const INPUT_TIMEOUT = 250;
+
 class MaisonMasterForm extends Component {
   constructor(props) {
     super(props);
@@ -21,6 +23,7 @@ class MaisonMasterForm extends Component {
       currentStep: 1,
       user: {},
       adresse_complete: "",
+      predictions: [],
       lat: "",
       long: "",
       rue: "",
@@ -48,17 +51,17 @@ class MaisonMasterForm extends Component {
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.search = this.search.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  search(e){
+  search(address){
     console.log('street', this.state.rue);
     const BASE_URL = 'https://api-adresse.data.gouv.fr/search/?';
-    const FETCH_URL = `${BASE_URL}q=${this.state.adresse_complete}&postcode=${this.state.code_postal}&type=street&limit=1`;
+    const FETCH_URL = `${BASE_URL}q=${this.state.adresse_complete}&postcode=${this.state.code_postal}&type=street&limit=5`;
     console.log('FETCH_URL', FETCH_URL);
     fetch(FETCH_URL, {
       method: 'GET'
@@ -68,19 +71,56 @@ class MaisonMasterForm extends Component {
       const address = json.features[0];
       console.log('address', address);
       this.setState({
-        adresse_complete: address.properties.label,
-        rue: address.properties.name,
-        ville: address.properties.city,
-        code_postal: address.properties.postcode,
-        lat: address.geometry.coordinates[1],
-        long: address.geometry.coordinates[0],
+        predictions: json.features,
+      //   adresse_complete: address.properties.label,
+      //   rue: address.properties.name,
+      //   ville: address.properties.city,
+      //   code_postal: address.properties.postcode,
+      //   lat: address.geometry.coordinates[1],
+      //   long: address.geometry.coordinates[0],
       });
-      console.log('adresse_complete', this.state.adresse_complete);
-      console.log('rue', this.state.rue);
-      console.log('ville', this.state.ville);
-      console.log('code_postal', this.state.code_postal);
-      console.log('long', this.state.long);
-      console.log('lat', this.state.lat);
+      // console.log('adresse_complete', this.state.adresse_complete);
+      // console.log('predictions', this.state.predictions);
+      // console.log('rue', this.state.rue);
+      // console.log('ville', this.state.ville);
+      // console.log('code_postal', this.state.code_postal);
+      // console.log('long', this.state.long);
+      // console.log('lat', this.state.lat);
+    });
+  }
+
+  // handleChange(e){
+  //   clearTimeout(this.timeout);
+  //     const value = e.target.value;
+  //     this.setState({
+  //       adresse_complete: value
+  //     });
+  //
+  //     if (value.length > 0) {
+  //       // make delayed api call
+  //       this.timeout = setTimeout(() => {
+  //         const predictions = this.search(value);
+  //         this.setState({
+  //           predictions
+  //         });
+  //       }, INPUT_TIMEOUT);
+  //     } else {
+  //       this.setState({
+  //         predictions: []
+  //       });
+  //     }
+  // }
+
+  onClick(prediction){
+    console.log('prediction', prediction);
+    const address = prediction;
+    this.setState({
+      adresse_complete: address.properties.label,
+      rue: address.properties.name,
+      ville: address.properties.city,
+      code_postal: address.properties.postcode,
+      lat: address.geometry.coordinates[1],
+      long: address.geometry.coordinates[0],
     });
   }
 
@@ -218,12 +258,14 @@ class MaisonMasterForm extends Component {
             rue={this.state.rue}
             code_postal={this.state.code_postal}
             ville={this.state.ville}
+            predictions={this.state.predictions}
             adresse_complete={this.state.adresse_complete}
             onKeyPress={event => {
-              if(event.key === 'Enter'){
+              if(event.key === ' '){
                 this.search()
               }
             }}
+            onClick={this.onClick}
 
           />
           <Step2
