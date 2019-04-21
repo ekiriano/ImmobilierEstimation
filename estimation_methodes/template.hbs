@@ -1,23 +1,45 @@
-// THE TEMPLATE IS JUST FOR TESTING RIGHT NOW, ILL UPDATE IT ONCE ABED FINISHES APPARTMENT MODEL
-
 {
   "maisons": [
-    {{#repeat 200}}
+    {{#repeat 100}}
     {
-      "user": {{@index}},
-      "client": {"civilite": "{{street}}", 
-		"prenom": "{{lastname}}", 
-		"nom": "{{firstname}}" , 
-		"email": "{{email}}", 
-		"telephone": "{{int 20 200}}" },
 	"bienImmobillier": {
-      "informations": {"surfaceHabitable": "{{int 20 200}}",
-			"prixm2": "{{int 100 50000}}" }
-	},
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
 
-      "estimation": {{int 50000 500000}}
+	"informations": {
+			"surfaceHabitable": {{int 15 300}},
+			"nombrePieces":{{int 1 5}},
+			"nombreChambres":{{int 1 8}},
+			"nombreNiveaux":{{int 1 5}},
+			"prixm2":{{int 8 200}},
+			"valeurLocative": {{int 200 4000}},
+			"tauxCapitalisation": {{float 1 8}}
+			},
 
+
+	"estimation": {
+		"decoteBienOccupe": {{int 10 10000}},
+
+    	"autresElements": {{int 10 10000}},
+
+    	"travauxARealiser": {{int 10 10000}},
+
+    	"valorisationTerrain": {{int 10 10000}},
+
+    	"renove": {{int 10 10000}},
+
+    	"prix_estimation": {
+    		"methodecomparaison": {{float 200000 250000}},
+    		"methodereference": {{float 200000 250000}}
+        	}
+    	}
     }
+
+
+
+
     {{/repeat}}
   ]
 }
