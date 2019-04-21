@@ -53,54 +53,68 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="login primary-bg ">
-        <div className="row">
-          <div className="columns">
-            <div className="column">
-              <h1 className="display-4 text-center">Log In</h1>
-              <form onSubmit={this.onSubmit}>
-                <div className="form-group">
-                  <input
-                    className="input"
-                    type="email"
-                    placeholder="Email"
-                    name="email"
-                    value={this.state.email}
-                    onChange={this.onChange}
-                  />
-                  {errors.email && (
-                    <div className="invalid-feedback">{errors.email}</div>
-                  )}
+      <div className="column homepage hero is-paddingless">
+        <div className="login column is-4 is-offset-8 is-paddingless">
+          <div className="card-content has-background-white">
+            <section className="section has-background-white">
+              <div className="column">
+                <div class="has-text-centered">
+                  <img src="/static/media/estimmo_logo.bd1438a3.png" alt="logo" width="70%"/>
                 </div>
-                <br />
-                <p>Forgot your password?</p>
-                <br />
-
-                <div className="form-group">
-                  <input
-                    className="input "
-                    type="password"
-                    placeholder="Password"
-                    name="password"
-                    value={this.state.password}
-                    onChange={this.onChange}
-                  />
-                  {errors.password && (
-                    <div className="invalid-feedback">{errors.password}</div>
-                  )}
-                </div>
-                <br />
-                <button type="submit" className="c-btn auth c-primary">
-                  Sign In
-                </button>
-              </form>
-              <p>
-                Dont have an account?
-                <Link to="register">Sign up now.</Link>
-              </p>
-            </div>
-
-            <div className="column homepage hero" />
+                <form onSubmit={this.onSubmit}>
+                  <div className="field">
+                    <label className="label">Email</label>
+                    <div class="control has-icons-left">
+                      <input
+                        className="input"
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        value={this.state.email}
+                        onChange={this.onChange}
+                      />
+                      <span class="icon is-small is-left">
+                        <i class=" far fa-envelope"></i>
+                      </span>
+                      {errors.email && (
+                        <div className="invalid-feedback">{errors.email}</div>
+                      )}
+                    </div>
+                  </div>
+                  <div className="field">
+                    <label className="label">Password</label>
+                    <div class="control has-icons-left">
+                      <input
+                        className="input "
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        value={this.state.password}
+                        onChange={this.onChange}
+                      />
+                      <span class="icon is-small is-left">
+                        <i class=" fas fa-key"></i>
+                      </span>
+                      {errors.password && (
+                        <div className="invalid-feedback">{errors.password}</div>
+                      )}
+                    </div>
+                  </div>
+                  <br />
+                  <div className="has-text-centered">
+                    <button type="submit" className="button is-vcentred">
+                      Sign In
+                    </button>
+                  </div>
+                  <div className="has-text-centered">
+                    <p>
+                      Dont have an account?
+                      <Link to="register">Sign up now.</Link>
+                    </p>
+                  </div>
+                </form>
+              </div>
+            </section>
           </div>
         </div>
       </div>
