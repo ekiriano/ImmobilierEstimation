@@ -1,0 +1,3504 @@
+{
+  "maisons": [
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 26,
+			"nombrePieces":5,
+			"nombreChambres":5,
+			"nombreNiveaux":4,
+			"prixm2":145,
+			"valeurLocative": 485,
+			"tauxCapitalisation": 5.041534425504156
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 8043,
+
+    	"autresElements": 8319,
+
+    	"travauxARealiser": 979,
+
+    	"valorisationTerrain": 7561,
+
+    	"renove": 2952,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 204755.2310327163,
+    		"methodereference": 234924.5879957433
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 27,
+			"nombrePieces":3,
+			"nombreChambres":1,
+			"nombreNiveaux":2,
+			"prixm2":59,
+			"valeurLocative": 1851,
+			"tauxCapitalisation": 6.552296756888421
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 8982,
+
+    	"autresElements": 8442,
+
+    	"travauxARealiser": 2377,
+
+    	"valorisationTerrain": 1892,
+
+    	"renove": 6199,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 211617.02456727257,
+    		"methodereference": 201600.67955750562
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 131,
+			"nombrePieces":3,
+			"nombreChambres":4,
+			"nombreNiveaux":1,
+			"prixm2":193,
+			"valeurLocative": 3834,
+			"tauxCapitalisation": 2.829469874668293
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 3423,
+
+    	"autresElements": 3992,
+
+    	"travauxARealiser": 7428,
+
+    	"valorisationTerrain": 422,
+
+    	"renove": 7494,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 223274.54591858157,
+    		"methodereference": 227878.67893770605
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 251,
+			"nombrePieces":4,
+			"nombreChambres":7,
+			"nombreNiveaux":5,
+			"prixm2":174,
+			"valeurLocative": 912,
+			"tauxCapitalisation": 4.652902470596507
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 1946,
+
+    	"autresElements": 3531,
+
+    	"travauxARealiser": 2019,
+
+    	"valorisationTerrain": 5768,
+
+    	"renove": 1377,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 227812.58625916418,
+    		"methodereference": 243390.57945631977
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 265,
+			"nombrePieces":5,
+			"nombreChambres":4,
+			"nombreNiveaux":1,
+			"prixm2":9,
+			"valeurLocative": 3385,
+			"tauxCapitalisation": 6.254751866478053
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 6028,
+
+    	"autresElements": 9925,
+
+    	"travauxARealiser": 9554,
+
+    	"valorisationTerrain": 3433,
+
+    	"renove": 2880,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 230619.51234819385,
+    		"methodereference": 219148.28489675606
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 202,
+			"nombrePieces":5,
+			"nombreChambres":3,
+			"nombreNiveaux":3,
+			"prixm2":79,
+			"valeurLocative": 2098,
+			"tauxCapitalisation": 7.763979094985475
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 3362,
+
+    	"autresElements": 3266,
+
+    	"travauxARealiser": 8055,
+
+    	"valorisationTerrain": 4118,
+
+    	"renove": 6861,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 208704.103865896,
+    		"methodereference": 247432.89541792677
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 238,
+			"nombrePieces":1,
+			"nombreChambres":8,
+			"nombreNiveaux":4,
+			"prixm2":197,
+			"valeurLocative": 2662,
+			"tauxCapitalisation": 3.0676605997199142
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 6175,
+
+    	"autresElements": 3867,
+
+    	"travauxARealiser": 5241,
+
+    	"valorisationTerrain": 9870,
+
+    	"renove": 9010,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 233233.0159279475,
+    		"methodereference": 206640.11033721824
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 186,
+			"nombrePieces":5,
+			"nombreChambres":5,
+			"nombreNiveaux":3,
+			"prixm2":141,
+			"valeurLocative": 1301,
+			"tauxCapitalisation": 6.798343370150345
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 2356,
+
+    	"autresElements": 4958,
+
+    	"travauxARealiser": 5993,
+
+    	"valorisationTerrain": 1355,
+
+    	"renove": 9316,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 206927.2461597859,
+    		"methodereference": 224321.4765394535
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 42,
+			"nombrePieces":5,
+			"nombreChambres":5,
+			"nombreNiveaux":2,
+			"prixm2":156,
+			"valeurLocative": 1039,
+			"tauxCapitalisation": 2.7652803554514147
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 541,
+
+    	"autresElements": 9439,
+
+    	"travauxARealiser": 1235,
+
+    	"valorisationTerrain": 88,
+
+    	"renove": 4511,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 217328.96365535233,
+    		"methodereference": 203814.13283023538
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 163,
+			"nombrePieces":3,
+			"nombreChambres":7,
+			"nombreNiveaux":3,
+			"prixm2":62,
+			"valeurLocative": 1143,
+			"tauxCapitalisation": 5.195109281071452
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 1270,
+
+    	"autresElements": 1692,
+
+    	"travauxARealiser": 3289,
+
+    	"valorisationTerrain": 4554,
+
+    	"renove": 4916,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 208571.82974247145,
+    		"methodereference": 240634.23484212454
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 230,
+			"nombrePieces":4,
+			"nombreChambres":8,
+			"nombreNiveaux":1,
+			"prixm2":52,
+			"valeurLocative": 2771,
+			"tauxCapitalisation": 7.77074088919703
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 8920,
+
+    	"autresElements": 4401,
+
+    	"travauxARealiser": 9763,
+
+    	"valorisationTerrain": 8227,
+
+    	"renove": 10,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 216045.6171491305,
+    		"methodereference": 216949.83506117537
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 95,
+			"nombrePieces":1,
+			"nombreChambres":5,
+			"nombreNiveaux":4,
+			"prixm2":155,
+			"valeurLocative": 1186,
+			"tauxCapitalisation": 2.461818545862455
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 5285,
+
+    	"autresElements": 2380,
+
+    	"travauxARealiser": 5755,
+
+    	"valorisationTerrain": 1129,
+
+    	"renove": 6415,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 202379.5689509444,
+    		"methodereference": 236024.2835953749
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 25,
+			"nombrePieces":5,
+			"nombreChambres":6,
+			"nombreNiveaux":4,
+			"prixm2":41,
+			"valeurLocative": 494,
+			"tauxCapitalisation": 2.0149595249594876
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 5622,
+
+    	"autresElements": 8787,
+
+    	"travauxARealiser": 788,
+
+    	"valorisationTerrain": 1880,
+
+    	"renove": 6022,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 201363.58133978775,
+    		"methodereference": 200002.3760242909
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 205,
+			"nombrePieces":4,
+			"nombreChambres":2,
+			"nombreNiveaux":4,
+			"prixm2":101,
+			"valeurLocative": 919,
+			"tauxCapitalisation": 1.7683827045205622
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 4588,
+
+    	"autresElements": 2091,
+
+    	"travauxARealiser": 6075,
+
+    	"valorisationTerrain": 9489,
+
+    	"renove": 6244,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 201371.29636541946,
+    		"methodereference": 233149.68785206595
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 139,
+			"nombrePieces":3,
+			"nombreChambres":5,
+			"nombreNiveaux":3,
+			"prixm2":162,
+			"valeurLocative": 3010,
+			"tauxCapitalisation": 6.951072277849172
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 6504,
+
+    	"autresElements": 8637,
+
+    	"travauxARealiser": 1875,
+
+    	"valorisationTerrain": 9875,
+
+    	"renove": 4517,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 215456.158104026,
+    		"methodereference": 228740.90318009726
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 234,
+			"nombrePieces":2,
+			"nombreChambres":8,
+			"nombreNiveaux":4,
+			"prixm2":127,
+			"valeurLocative": 1376,
+			"tauxCapitalisation": 5.793366186262227
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 897,
+
+    	"autresElements": 4070,
+
+    	"travauxARealiser": 7576,
+
+    	"valorisationTerrain": 5140,
+
+    	"renove": 6133,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 236391.60018265914,
+    		"methodereference": 227054.6550453993
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 200,
+			"nombrePieces":1,
+			"nombreChambres":3,
+			"nombreNiveaux":5,
+			"prixm2":35,
+			"valeurLocative": 2248,
+			"tauxCapitalisation": 7.936803079188945
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 3976,
+
+    	"autresElements": 1795,
+
+    	"travauxARealiser": 6596,
+
+    	"valorisationTerrain": 5771,
+
+    	"renove": 9630,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 230298.5288414649,
+    		"methodereference": 236401.55682621046
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 109,
+			"nombrePieces":3,
+			"nombreChambres":4,
+			"nombreNiveaux":4,
+			"prixm2":33,
+			"valeurLocative": 383,
+			"tauxCapitalisation": 6.760251201184557
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 7531,
+
+    	"autresElements": 3114,
+
+    	"travauxARealiser": 7301,
+
+    	"valorisationTerrain": 8338,
+
+    	"renove": 1405,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 246819.95268260123,
+    		"methodereference": 216623.26547926184
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 118,
+			"nombrePieces":4,
+			"nombreChambres":6,
+			"nombreNiveaux":2,
+			"prixm2":162,
+			"valeurLocative": 1283,
+			"tauxCapitalisation": 1.1679753606330523
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 2400,
+
+    	"autresElements": 6435,
+
+    	"travauxARealiser": 4314,
+
+    	"valorisationTerrain": 5087,
+
+    	"renove": 3835,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 249133.1111761388,
+    		"methodereference": 215958.6218980641
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 68,
+			"nombrePieces":5,
+			"nombreChambres":2,
+			"nombreNiveaux":2,
+			"prixm2":88,
+			"valeurLocative": 401,
+			"tauxCapitalisation": 2.9504904613210714
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 3510,
+
+    	"autresElements": 9514,
+
+    	"travauxARealiser": 7601,
+
+    	"valorisationTerrain": 1603,
+
+    	"renove": 2828,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 206584.89533489433,
+    		"methodereference": 224652.66226391547
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 146,
+			"nombrePieces":2,
+			"nombreChambres":1,
+			"nombreNiveaux":4,
+			"prixm2":46,
+			"valeurLocative": 3265,
+			"tauxCapitalisation": 3.8949892136111615
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 4628,
+
+    	"autresElements": 1313,
+
+    	"travauxARealiser": 193,
+
+    	"valorisationTerrain": 3942,
+
+    	"renove": 1364,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 246541.04218498903,
+    		"methodereference": 206628.84504923932
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 230,
+			"nombrePieces":1,
+			"nombreChambres":8,
+			"nombreNiveaux":4,
+			"prixm2":146,
+			"valeurLocative": 1588,
+			"tauxCapitalisation": 7.707877506674933
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 9687,
+
+    	"autresElements": 670,
+
+    	"travauxARealiser": 9671,
+
+    	"valorisationTerrain": 8339,
+
+    	"renove": 188,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 235140.41701520403,
+    		"methodereference": 249062.26098782604
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 55,
+			"nombrePieces":5,
+			"nombreChambres":1,
+			"nombreNiveaux":3,
+			"prixm2":23,
+			"valeurLocative": 355,
+			"tauxCapitalisation": 7.642706005548868
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 612,
+
+    	"autresElements": 246,
+
+    	"travauxARealiser": 7755,
+
+    	"valorisationTerrain": 494,
+
+    	"renove": 5704,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 248266.0459413502,
+    		"methodereference": 237078.6489667718
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 119,
+			"nombrePieces":2,
+			"nombreChambres":7,
+			"nombreNiveaux":3,
+			"prixm2":170,
+			"valeurLocative": 863,
+			"tauxCapitalisation": 7.099397332845603
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 4674,
+
+    	"autresElements": 6001,
+
+    	"travauxARealiser": 2642,
+
+    	"valorisationTerrain": 7690,
+
+    	"renove": 9619,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 209590.8931189907,
+    		"methodereference": 244952.9526196281
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 254,
+			"nombrePieces":3,
+			"nombreChambres":7,
+			"nombreNiveaux":2,
+			"prixm2":161,
+			"valeurLocative": 1626,
+			"tauxCapitalisation": 7.285852227799232
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 6786,
+
+    	"autresElements": 43,
+
+    	"travauxARealiser": 7814,
+
+    	"valorisationTerrain": 1882,
+
+    	"renove": 2400,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 249917.98227504827,
+    		"methodereference": 200449.7563321045
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 119,
+			"nombrePieces":1,
+			"nombreChambres":6,
+			"nombreNiveaux":2,
+			"prixm2":160,
+			"valeurLocative": 2056,
+			"tauxCapitalisation": 5.52195760769313
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 1845,
+
+    	"autresElements": 9947,
+
+    	"travauxARealiser": 1576,
+
+    	"valorisationTerrain": 3031,
+
+    	"renove": 2208,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 217247.28622943748,
+    		"methodereference": 231198.37528344803
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 166,
+			"nombrePieces":1,
+			"nombreChambres":2,
+			"nombreNiveaux":2,
+			"prixm2":22,
+			"valeurLocative": 3870,
+			"tauxCapitalisation": 6.601490699396405
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 8959,
+
+    	"autresElements": 8770,
+
+    	"travauxARealiser": 2988,
+
+    	"valorisationTerrain": 6081,
+
+    	"renove": 6801,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 227394.89573851865,
+    		"methodereference": 232451.0586057155
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 121,
+			"nombrePieces":3,
+			"nombreChambres":8,
+			"nombreNiveaux":2,
+			"prixm2":67,
+			"valeurLocative": 3133,
+			"tauxCapitalisation": 1.3799105734665194
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 3752,
+
+    	"autresElements": 3666,
+
+    	"travauxARealiser": 5541,
+
+    	"valorisationTerrain": 4633,
+
+    	"renove": 8246,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 236813.6408865598,
+    		"methodereference": 235945.03192006887
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 264,
+			"nombrePieces":4,
+			"nombreChambres":6,
+			"nombreNiveaux":2,
+			"prixm2":148,
+			"valeurLocative": 2786,
+			"tauxCapitalisation": 3.3705224916705845
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 9016,
+
+    	"autresElements": 2638,
+
+    	"travauxARealiser": 4577,
+
+    	"valorisationTerrain": 9641,
+
+    	"renove": 5027,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 218414.25464211707,
+    		"methodereference": 237372.31296404824
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 129,
+			"nombrePieces":5,
+			"nombreChambres":8,
+			"nombreNiveaux":1,
+			"prixm2":194,
+			"valeurLocative": 2582,
+			"tauxCapitalisation": 6.074979330100939
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 4762,
+
+    	"autresElements": 2604,
+
+    	"travauxARealiser": 4726,
+
+    	"valorisationTerrain": 171,
+
+    	"renove": 2840,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 214996.4142512135,
+    		"methodereference": 237384.7273452572
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 195,
+			"nombrePieces":4,
+			"nombreChambres":4,
+			"nombreNiveaux":2,
+			"prixm2":17,
+			"valeurLocative": 3986,
+			"tauxCapitalisation": 4.570630066828182
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 4263,
+
+    	"autresElements": 8260,
+
+    	"travauxARealiser": 2036,
+
+    	"valorisationTerrain": 4996,
+
+    	"renove": 5626,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 219181.4569033328,
+    		"methodereference": 238255.87572366884
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 135,
+			"nombrePieces":5,
+			"nombreChambres":2,
+			"nombreNiveaux":4,
+			"prixm2":174,
+			"valeurLocative": 973,
+			"tauxCapitalisation": 7.168156269884031
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 4700,
+
+    	"autresElements": 7956,
+
+    	"travauxARealiser": 4890,
+
+    	"valorisationTerrain": 5971,
+
+    	"renove": 2798,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 200573.69993480318,
+    		"methodereference": 200548.0251345967
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 216,
+			"nombrePieces":2,
+			"nombreChambres":8,
+			"nombreNiveaux":3,
+			"prixm2":200,
+			"valeurLocative": 3079,
+			"tauxCapitalisation": 2.6355387790184097
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 7542,
+
+    	"autresElements": 8577,
+
+    	"travauxARealiser": 9558,
+
+    	"valorisationTerrain": 5015,
+
+    	"renove": 3069,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 210271.14460444445,
+    		"methodereference": 208320.93650526236
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 215,
+			"nombrePieces":3,
+			"nombreChambres":1,
+			"nombreNiveaux":2,
+			"prixm2":177,
+			"valeurLocative": 1580,
+			"tauxCapitalisation": 5.886957262438332
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 984,
+
+    	"autresElements": 6429,
+
+    	"travauxARealiser": 5503,
+
+    	"valorisationTerrain": 3071,
+
+    	"renove": 7986,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 207314.6565142581,
+    		"methodereference": 244515.87855076668
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 283,
+			"nombrePieces":3,
+			"nombreChambres":6,
+			"nombreNiveaux":1,
+			"prixm2":13,
+			"valeurLocative": 1999,
+			"tauxCapitalisation": 7.268667609182459
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 7194,
+
+    	"autresElements": 399,
+
+    	"travauxARealiser": 7050,
+
+    	"valorisationTerrain": 395,
+
+    	"renove": 218,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 231792.48358808208,
+    		"methodereference": 209955.8228296334
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 157,
+			"nombrePieces":3,
+			"nombreChambres":2,
+			"nombreNiveaux":5,
+			"prixm2":144,
+			"valeurLocative": 1012,
+			"tauxCapitalisation": 6.317515708733978
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 4772,
+
+    	"autresElements": 4985,
+
+    	"travauxARealiser": 6593,
+
+    	"valorisationTerrain": 8685,
+
+    	"renove": 5279,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 216621.68322453112,
+    		"methodereference": 211701.21319023686
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 172,
+			"nombrePieces":2,
+			"nombreChambres":8,
+			"nombreNiveaux":3,
+			"prixm2":169,
+			"valeurLocative": 592,
+			"tauxCapitalisation": 1.243331206327255
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 9400,
+
+    	"autresElements": 7596,
+
+    	"travauxARealiser": 3923,
+
+    	"valorisationTerrain": 4836,
+
+    	"renove": 5666,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 243011.58972377056,
+    		"methodereference": 245899.48252343206
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 275,
+			"nombrePieces":4,
+			"nombreChambres":5,
+			"nombreNiveaux":3,
+			"prixm2":128,
+			"valeurLocative": 2803,
+			"tauxCapitalisation": 3.460708916753415
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 7303,
+
+    	"autresElements": 7676,
+
+    	"travauxARealiser": 4057,
+
+    	"valorisationTerrain": 3959,
+
+    	"renove": 7804,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 241025.14919397634,
+    		"methodereference": 233177.42077010253
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 180,
+			"nombrePieces":2,
+			"nombreChambres":6,
+			"nombreNiveaux":5,
+			"prixm2":79,
+			"valeurLocative": 3391,
+			"tauxCapitalisation": 2.4410252778894015
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 3917,
+
+    	"autresElements": 7789,
+
+    	"travauxARealiser": 8470,
+
+    	"valorisationTerrain": 7346,
+
+    	"renove": 1930,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 226219.84003221572,
+    		"methodereference": 222822.98454539044
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 94,
+			"nombrePieces":5,
+			"nombreChambres":4,
+			"nombreNiveaux":5,
+			"prixm2":189,
+			"valeurLocative": 3083,
+			"tauxCapitalisation": 5.9438405245561015
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 279,
+
+    	"autresElements": 1184,
+
+    	"travauxARealiser": 8305,
+
+    	"valorisationTerrain": 1744,
+
+    	"renove": 7793,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 229477.27039244343,
+    		"methodereference": 232444.94684496673
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 170,
+			"nombrePieces":4,
+			"nombreChambres":7,
+			"nombreNiveaux":4,
+			"prixm2":184,
+			"valeurLocative": 2488,
+			"tauxCapitalisation": 5.96497151449766
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 1419,
+
+    	"autresElements": 4933,
+
+    	"travauxARealiser": 4524,
+
+    	"valorisationTerrain": 2284,
+
+    	"renove": 8027,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 203695.61726309336,
+    		"methodereference": 246232.8055930439
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 208,
+			"nombrePieces":3,
+			"nombreChambres":1,
+			"nombreNiveaux":3,
+			"prixm2":132,
+			"valeurLocative": 1214,
+			"tauxCapitalisation": 3.9919586054744034
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 573,
+
+    	"autresElements": 7032,
+
+    	"travauxARealiser": 4512,
+
+    	"valorisationTerrain": 1116,
+
+    	"renove": 5844,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 246525.3654466668,
+    		"methodereference": 231724.39151003974
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 279,
+			"nombrePieces":3,
+			"nombreChambres":4,
+			"nombreNiveaux":5,
+			"prixm2":150,
+			"valeurLocative": 2612,
+			"tauxCapitalisation": 6.069410225872152
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 4435,
+
+    	"autresElements": 3147,
+
+    	"travauxARealiser": 2158,
+
+    	"valorisationTerrain": 4946,
+
+    	"renove": 1303,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 220926.26834042667,
+    		"methodereference": 229230.20627895877
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 201,
+			"nombrePieces":3,
+			"nombreChambres":4,
+			"nombreNiveaux":5,
+			"prixm2":96,
+			"valeurLocative": 2206,
+			"tauxCapitalisation": 1.0889134217219723
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 4141,
+
+    	"autresElements": 5850,
+
+    	"travauxARealiser": 3716,
+
+    	"valorisationTerrain": 454,
+
+    	"renove": 2600,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 222615.08291008274,
+    		"methodereference": 206262.77688358192
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 293,
+			"nombrePieces":3,
+			"nombreChambres":1,
+			"nombreNiveaux":2,
+			"prixm2":83,
+			"valeurLocative": 1278,
+			"tauxCapitalisation": 5.7515023540065755
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 3612,
+
+    	"autresElements": 9920,
+
+    	"travauxARealiser": 4614,
+
+    	"valorisationTerrain": 2969,
+
+    	"renove": 9347,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 229493.97061249532,
+    		"methodereference": 228500.9143505322
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 192,
+			"nombrePieces":1,
+			"nombreChambres":3,
+			"nombreNiveaux":3,
+			"prixm2":48,
+			"valeurLocative": 2620,
+			"tauxCapitalisation": 2.6852401980977505
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 9617,
+
+    	"autresElements": 8138,
+
+    	"travauxARealiser": 1651,
+
+    	"valorisationTerrain": 1334,
+
+    	"renove": 2998,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 214215.26140715665,
+    		"methodereference": 223593.78095141362
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 203,
+			"nombrePieces":2,
+			"nombreChambres":8,
+			"nombreNiveaux":5,
+			"prixm2":96,
+			"valeurLocative": 3257,
+			"tauxCapitalisation": 1.6791673278551262
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 743,
+
+    	"autresElements": 595,
+
+    	"travauxARealiser": 1444,
+
+    	"valorisationTerrain": 2171,
+
+    	"renove": 3313,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 201478.57490727858,
+    		"methodereference": 203813.73967942141
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 40,
+			"nombrePieces":5,
+			"nombreChambres":6,
+			"nombreNiveaux":3,
+			"prixm2":173,
+			"valeurLocative": 658,
+			"tauxCapitalisation": 4.874077622387752
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 2955,
+
+    	"autresElements": 4902,
+
+    	"travauxARealiser": 3222,
+
+    	"valorisationTerrain": 1697,
+
+    	"renove": 9653,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 244533.21730772685,
+    		"methodereference": 242966.82039652398
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 203,
+			"nombrePieces":5,
+			"nombreChambres":7,
+			"nombreNiveaux":5,
+			"prixm2":151,
+			"valeurLocative": 1868,
+			"tauxCapitalisation": 4.306361304395058
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 1017,
+
+    	"autresElements": 798,
+
+    	"travauxARealiser": 9450,
+
+    	"valorisationTerrain": 2178,
+
+    	"renove": 7534,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 229072.7766103707,
+    		"methodereference": 221154.26375861693
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 28,
+			"nombrePieces":1,
+			"nombreChambres":5,
+			"nombreNiveaux":3,
+			"prixm2":28,
+			"valeurLocative": 3431,
+			"tauxCapitalisation": 4.687904553824258
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 3875,
+
+    	"autresElements": 9412,
+
+    	"travauxARealiser": 8593,
+
+    	"valorisationTerrain": 6814,
+
+    	"renove": 5658,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 205184.4515067398,
+    		"methodereference": 245355.9403184007
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 212,
+			"nombrePieces":4,
+			"nombreChambres":1,
+			"nombreNiveaux":2,
+			"prixm2":147,
+			"valeurLocative": 1207,
+			"tauxCapitalisation": 6.758246151655048
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 6706,
+
+    	"autresElements": 1411,
+
+    	"travauxARealiser": 4310,
+
+    	"valorisationTerrain": 910,
+
+    	"renove": 6752,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 242613.87771372948,
+    		"methodereference": 245488.50189572043
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 57,
+			"nombrePieces":5,
+			"nombreChambres":7,
+			"nombreNiveaux":3,
+			"prixm2":24,
+			"valeurLocative": 878,
+			"tauxCapitalisation": 7.561507131233142
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 4264,
+
+    	"autresElements": 6145,
+
+    	"travauxARealiser": 1018,
+
+    	"valorisationTerrain": 9231,
+
+    	"renove": 9352,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 204344.73130869874,
+    		"methodereference": 233846.3229777565
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 25,
+			"nombrePieces":1,
+			"nombreChambres":7,
+			"nombreNiveaux":4,
+			"prixm2":56,
+			"valeurLocative": 2399,
+			"tauxCapitalisation": 3.5185488898859236
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 2539,
+
+    	"autresElements": 340,
+
+    	"travauxARealiser": 4519,
+
+    	"valorisationTerrain": 6916,
+
+    	"renove": 3126,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 202270.4871930904,
+    		"methodereference": 239229.7696098198
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 251,
+			"nombrePieces":3,
+			"nombreChambres":1,
+			"nombreNiveaux":1,
+			"prixm2":8,
+			"valeurLocative": 3984,
+			"tauxCapitalisation": 6.30713128015319
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 4023,
+
+    	"autresElements": 7689,
+
+    	"travauxARealiser": 3040,
+
+    	"valorisationTerrain": 8429,
+
+    	"renove": 7088,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 241712.81017393374,
+    		"methodereference": 213683.50796204855
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 50,
+			"nombrePieces":5,
+			"nombreChambres":8,
+			"nombreNiveaux":2,
+			"prixm2":175,
+			"valeurLocative": 858,
+			"tauxCapitalisation": 4.720756005563649
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 4735,
+
+    	"autresElements": 6308,
+
+    	"travauxARealiser": 488,
+
+    	"valorisationTerrain": 9704,
+
+    	"renove": 7652,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 227100.6793659308,
+    		"methodereference": 221856.97389776466
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 57,
+			"nombrePieces":3,
+			"nombreChambres":2,
+			"nombreNiveaux":1,
+			"prixm2":197,
+			"valeurLocative": 3303,
+			"tauxCapitalisation": 7.174677643737252
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 312,
+
+    	"autresElements": 1924,
+
+    	"travauxARealiser": 1833,
+
+    	"valorisationTerrain": 8703,
+
+    	"renove": 6294,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 224396.12423278432,
+    		"methodereference": 212543.27847938312
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 261,
+			"nombrePieces":2,
+			"nombreChambres":6,
+			"nombreNiveaux":5,
+			"prixm2":108,
+			"valeurLocative": 3402,
+			"tauxCapitalisation": 5.608237865294681
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 6895,
+
+    	"autresElements": 3345,
+
+    	"travauxARealiser": 9119,
+
+    	"valorisationTerrain": 858,
+
+    	"renove": 6398,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 205824.34581202958,
+    		"methodereference": 208166.84840074173
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 60,
+			"nombrePieces":5,
+			"nombreChambres":5,
+			"nombreNiveaux":3,
+			"prixm2":193,
+			"valeurLocative": 3234,
+			"tauxCapitalisation": 4.3583817634866495
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 9144,
+
+    	"autresElements": 121,
+
+    	"travauxARealiser": 7654,
+
+    	"valorisationTerrain": 3180,
+
+    	"renove": 3559,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 242941.28002974816,
+    		"methodereference": 227687.9264289026
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 242,
+			"nombrePieces":3,
+			"nombreChambres":7,
+			"nombreNiveaux":1,
+			"prixm2":154,
+			"valeurLocative": 1711,
+			"tauxCapitalisation": 7.195644901652453
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 5551,
+
+    	"autresElements": 4348,
+
+    	"travauxARealiser": 3372,
+
+    	"valorisationTerrain": 6057,
+
+    	"renove": 4736,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 214588.14839149374,
+    		"methodereference": 239814.55104923045
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 78,
+			"nombrePieces":2,
+			"nombreChambres":7,
+			"nombreNiveaux":3,
+			"prixm2":193,
+			"valeurLocative": 2406,
+			"tauxCapitalisation": 3.9614153510597907
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 8374,
+
+    	"autresElements": 8688,
+
+    	"travauxARealiser": 382,
+
+    	"valorisationTerrain": 6424,
+
+    	"renove": 6862,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 246512.4240893776,
+    		"methodereference": 210623.71268825693
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 300,
+			"nombrePieces":1,
+			"nombreChambres":7,
+			"nombreNiveaux":5,
+			"prixm2":61,
+			"valeurLocative": 867,
+			"tauxCapitalisation": 2.7267016792735443
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 4002,
+
+    	"autresElements": 3357,
+
+    	"travauxARealiser": 418,
+
+    	"valorisationTerrain": 6061,
+
+    	"renove": 2753,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 235837.63608882204,
+    		"methodereference": 220963.21911824102
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 20,
+			"nombrePieces":5,
+			"nombreChambres":3,
+			"nombreNiveaux":1,
+			"prixm2":71,
+			"valeurLocative": 3604,
+			"tauxCapitalisation": 3.755562753094287
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 7719,
+
+    	"autresElements": 1296,
+
+    	"travauxARealiser": 9964,
+
+    	"valorisationTerrain": 5257,
+
+    	"renove": 1129,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 229799.48358695643,
+    		"methodereference": 236326.08152287337
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 195,
+			"nombrePieces":4,
+			"nombreChambres":7,
+			"nombreNiveaux":5,
+			"prixm2":141,
+			"valeurLocative": 3639,
+			"tauxCapitalisation": 6.718419535863147
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 3782,
+
+    	"autresElements": 9526,
+
+    	"travauxARealiser": 4813,
+
+    	"valorisationTerrain": 7241,
+
+    	"renove": 5709,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 246497.60480131174,
+    		"methodereference": 206097.88997478958
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 257,
+			"nombrePieces":5,
+			"nombreChambres":6,
+			"nombreNiveaux":2,
+			"prixm2":21,
+			"valeurLocative": 306,
+			"tauxCapitalisation": 3.39966631264452
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 1343,
+
+    	"autresElements": 4676,
+
+    	"travauxARealiser": 7789,
+
+    	"valorisationTerrain": 7520,
+
+    	"renove": 5844,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 241373.78413135366,
+    		"methodereference": 240366.01753293013
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 283,
+			"nombrePieces":4,
+			"nombreChambres":7,
+			"nombreNiveaux":3,
+			"prixm2":67,
+			"valeurLocative": 3869,
+			"tauxCapitalisation": 7.735295712714859
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 7894,
+
+    	"autresElements": 5893,
+
+    	"travauxARealiser": 8605,
+
+    	"valorisationTerrain": 1758,
+
+    	"renove": 4745,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 229142.9212804714,
+    		"methodereference": 249492.37996858705
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 122,
+			"nombrePieces":3,
+			"nombreChambres":8,
+			"nombreNiveaux":1,
+			"prixm2":162,
+			"valeurLocative": 2423,
+			"tauxCapitalisation": 3.1426883086381503
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 1961,
+
+    	"autresElements": 5509,
+
+    	"travauxARealiser": 6040,
+
+    	"valorisationTerrain": 7997,
+
+    	"renove": 7657,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 244987.46543943143,
+    		"methodereference": 223967.4438884848
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 300,
+			"nombrePieces":1,
+			"nombreChambres":4,
+			"nombreNiveaux":5,
+			"prixm2":88,
+			"valeurLocative": 2213,
+			"tauxCapitalisation": 6.295885633102918
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 3913,
+
+    	"autresElements": 2059,
+
+    	"travauxARealiser": 5278,
+
+    	"valorisationTerrain": 886,
+
+    	"renove": 9369,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 242815.40704494758,
+    		"methodereference": 248596.71253725918
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 152,
+			"nombrePieces":4,
+			"nombreChambres":8,
+			"nombreNiveaux":2,
+			"prixm2":134,
+			"valeurLocative": 2524,
+			"tauxCapitalisation": 2.756594852889598
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 635,
+
+    	"autresElements": 7168,
+
+    	"travauxARealiser": 5371,
+
+    	"valorisationTerrain": 1791,
+
+    	"renove": 3585,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 234450.278833905,
+    		"methodereference": 246049.23692150819
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 43,
+			"nombrePieces":1,
+			"nombreChambres":5,
+			"nombreNiveaux":2,
+			"prixm2":102,
+			"valeurLocative": 1050,
+			"tauxCapitalisation": 5.155027392812711
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 5886,
+
+    	"autresElements": 9392,
+
+    	"travauxARealiser": 2517,
+
+    	"valorisationTerrain": 1197,
+
+    	"renove": 2781,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 249765.4920396519,
+    		"methodereference": 220305.0392506218
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 103,
+			"nombrePieces":4,
+			"nombreChambres":3,
+			"nombreNiveaux":4,
+			"prixm2":134,
+			"valeurLocative": 3309,
+			"tauxCapitalisation": 6.453628368272762
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 6708,
+
+    	"autresElements": 5154,
+
+    	"travauxARealiser": 4797,
+
+    	"valorisationTerrain": 6668,
+
+    	"renove": 5603,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 216951.64342758927,
+    		"methodereference": 218152.51099538757
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 212,
+			"nombrePieces":3,
+			"nombreChambres":6,
+			"nombreNiveaux":4,
+			"prixm2":30,
+			"valeurLocative": 3970,
+			"tauxCapitalisation": 7.949164725913719
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 8913,
+
+    	"autresElements": 4065,
+
+    	"travauxARealiser": 7775,
+
+    	"valorisationTerrain": 2892,
+
+    	"renove": 7702,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 208778.46545457447,
+    		"methodereference": 236953.6892799409
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 289,
+			"nombrePieces":4,
+			"nombreChambres":2,
+			"nombreNiveaux":3,
+			"prixm2":18,
+			"valeurLocative": 2154,
+			"tauxCapitalisation": 5.737631495980293
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 3110,
+
+    	"autresElements": 5144,
+
+    	"travauxARealiser": 5647,
+
+    	"valorisationTerrain": 1630,
+
+    	"renove": 8090,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 202320.1394256627,
+    		"methodereference": 214778.72349593465
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 187,
+			"nombrePieces":5,
+			"nombreChambres":3,
+			"nombreNiveaux":4,
+			"prixm2":71,
+			"valeurLocative": 3298,
+			"tauxCapitalisation": 5.3368381148020125
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 3185,
+
+    	"autresElements": 8857,
+
+    	"travauxARealiser": 4688,
+
+    	"valorisationTerrain": 6955,
+
+    	"renove": 3179,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 243980.6089226217,
+    		"methodereference": 220930.74724115414
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 181,
+			"nombrePieces":3,
+			"nombreChambres":7,
+			"nombreNiveaux":3,
+			"prixm2":8,
+			"valeurLocative": 987,
+			"tauxCapitalisation": 1.4181003119737432
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 6732,
+
+    	"autresElements": 8668,
+
+    	"travauxARealiser": 3506,
+
+    	"valorisationTerrain": 2385,
+
+    	"renove": 4348,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 210694.4062377967,
+    		"methodereference": 225098.25605925915
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 150,
+			"nombrePieces":3,
+			"nombreChambres":8,
+			"nombreNiveaux":3,
+			"prixm2":91,
+			"valeurLocative": 1746,
+			"tauxCapitalisation": 6.195404935670279
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 4872,
+
+    	"autresElements": 5737,
+
+    	"travauxARealiser": 6979,
+
+    	"valorisationTerrain": 3768,
+
+    	"renove": 917,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 245048.61665891384,
+    		"methodereference": 241274.98061973884
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 124,
+			"nombrePieces":3,
+			"nombreChambres":4,
+			"nombreNiveaux":5,
+			"prixm2":59,
+			"valeurLocative": 1531,
+			"tauxCapitalisation": 4.65154471709273
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 4450,
+
+    	"autresElements": 806,
+
+    	"travauxARealiser": 5758,
+
+    	"valorisationTerrain": 7151,
+
+    	"renove": 7560,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 245412.52822059454,
+    		"methodereference": 234764.3496364026
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 86,
+			"nombrePieces":5,
+			"nombreChambres":3,
+			"nombreNiveaux":2,
+			"prixm2":22,
+			"valeurLocative": 3061,
+			"tauxCapitalisation": 5.468696181083875
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 9477,
+
+    	"autresElements": 5357,
+
+    	"travauxARealiser": 2610,
+
+    	"valorisationTerrain": 4982,
+
+    	"renove": 37,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 232849.1190933425,
+    		"methodereference": 238963.42882176867
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 269,
+			"nombrePieces":3,
+			"nombreChambres":5,
+			"nombreNiveaux":1,
+			"prixm2":24,
+			"valeurLocative": 2646,
+			"tauxCapitalisation": 3.327656089348873
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 6431,
+
+    	"autresElements": 5612,
+
+    	"travauxARealiser": 8826,
+
+    	"valorisationTerrain": 2200,
+
+    	"renove": 4394,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 237845.56730841513,
+    		"methodereference": 228599.92690292074
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 130,
+			"nombrePieces":4,
+			"nombreChambres":3,
+			"nombreNiveaux":3,
+			"prixm2":105,
+			"valeurLocative": 3316,
+			"tauxCapitalisation": 2.294289240852996
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 2422,
+
+    	"autresElements": 5103,
+
+    	"travauxARealiser": 1381,
+
+    	"valorisationTerrain": 5425,
+
+    	"renove": 7490,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 227920.39405992354,
+    		"methodereference": 232148.98586966202
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 76,
+			"nombrePieces":3,
+			"nombreChambres":5,
+			"nombreNiveaux":4,
+			"prixm2":52,
+			"valeurLocative": 1994,
+			"tauxCapitalisation": 3.739371690149615
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 7273,
+
+    	"autresElements": 7611,
+
+    	"travauxARealiser": 1639,
+
+    	"valorisationTerrain": 3169,
+
+    	"renove": 8642,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 209349.93253815302,
+    		"methodereference": 204214.94870517476
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 91,
+			"nombrePieces":4,
+			"nombreChambres":2,
+			"nombreNiveaux":5,
+			"prixm2":116,
+			"valeurLocative": 1532,
+			"tauxCapitalisation": 7.459339264990792
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 8423,
+
+    	"autresElements": 8249,
+
+    	"travauxARealiser": 9246,
+
+    	"valorisationTerrain": 513,
+
+    	"renove": 562,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 220306.40426940145,
+    		"methodereference": 231305.05384470828
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 211,
+			"nombrePieces":1,
+			"nombreChambres":4,
+			"nombreNiveaux":4,
+			"prixm2":11,
+			"valeurLocative": 1904,
+			"tauxCapitalisation": 5.729659417209138
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 1211,
+
+    	"autresElements": 9510,
+
+    	"travauxARealiser": 2662,
+
+    	"valorisationTerrain": 5812,
+
+    	"renove": 7437,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 215664.2907720247,
+    		"methodereference": 210807.8582414863
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 34,
+			"nombrePieces":1,
+			"nombreChambres":7,
+			"nombreNiveaux":4,
+			"prixm2":54,
+			"valeurLocative": 1584,
+			"tauxCapitalisation": 4.002561750465617
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 5911,
+
+    	"autresElements": 8351,
+
+    	"travauxARealiser": 2320,
+
+    	"valorisationTerrain": 6205,
+
+    	"renove": 2399,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 215582.69915288143,
+    		"methodereference": 225345.97032372386
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 160,
+			"nombrePieces":1,
+			"nombreChambres":3,
+			"nombreNiveaux":1,
+			"prixm2":118,
+			"valeurLocative": 3412,
+			"tauxCapitalisation": 5.039579556714091
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 5593,
+
+    	"autresElements": 2160,
+
+    	"travauxARealiser": 5975,
+
+    	"valorisationTerrain": 4024,
+
+    	"renove": 7288,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 200751.06923024214,
+    		"methodereference": 201378.5787288522
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 220,
+			"nombrePieces":2,
+			"nombreChambres":5,
+			"nombreNiveaux":2,
+			"prixm2":130,
+			"valeurLocative": 3573,
+			"tauxCapitalisation": 4.97802567663293
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 7261,
+
+    	"autresElements": 5732,
+
+    	"travauxARealiser": 3650,
+
+    	"valorisationTerrain": 753,
+
+    	"renove": 2749,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 222304.75640723167,
+    		"methodereference": 226203.28449306736
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 237,
+			"nombrePieces":4,
+			"nombreChambres":6,
+			"nombreNiveaux":1,
+			"prixm2":79,
+			"valeurLocative": 1690,
+			"tauxCapitalisation": 1.4627888766875325
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 2982,
+
+    	"autresElements": 6980,
+
+    	"travauxARealiser": 9998,
+
+    	"valorisationTerrain": 6617,
+
+    	"renove": 7130,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 245456.227743403,
+    		"methodereference": 230892.3408869512
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 59,
+			"nombrePieces":2,
+			"nombreChambres":2,
+			"nombreNiveaux":5,
+			"prixm2":162,
+			"valeurLocative": 1921,
+			"tauxCapitalisation": 7.568274436452833
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 7332,
+
+    	"autresElements": 6850,
+
+    	"travauxARealiser": 9991,
+
+    	"valorisationTerrain": 2215,
+
+    	"renove": 532,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 244250.5943135151,
+    		"methodereference": 203151.9219332041
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 165,
+			"nombrePieces":4,
+			"nombreChambres":6,
+			"nombreNiveaux":5,
+			"prixm2":132,
+			"valeurLocative": 1328,
+			"tauxCapitalisation": 5.026560703181269
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 7384,
+
+    	"autresElements": 2308,
+
+    	"travauxARealiser": 7849,
+
+    	"valorisationTerrain": 7732,
+
+    	"renove": 5719,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 239098.38606091024,
+    		"methodereference": 206121.10795149187
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 87,
+			"nombrePieces":5,
+			"nombreChambres":8,
+			"nombreNiveaux":3,
+			"prixm2":120,
+			"valeurLocative": 2736,
+			"tauxCapitalisation": 1.1993920042063435
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 1750,
+
+    	"autresElements": 7779,
+
+    	"travauxARealiser": 8395,
+
+    	"valorisationTerrain": 9901,
+
+    	"renove": 1232,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 226992.95636263664,
+    		"methodereference": 228033.71218455973
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 28,
+			"nombrePieces":3,
+			"nombreChambres":8,
+			"nombreNiveaux":2,
+			"prixm2":136,
+			"valeurLocative": 2198,
+			"tauxCapitalisation": 1.6968569174200445
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 3663,
+
+    	"autresElements": 2712,
+
+    	"travauxARealiser": 301,
+
+    	"valorisationTerrain": 7881,
+
+    	"renove": 8799,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 237795.08436140625,
+    		"methodereference": 200344.88178183828
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 238,
+			"nombrePieces":4,
+			"nombreChambres":2,
+			"nombreNiveaux":3,
+			"prixm2":126,
+			"valeurLocative": 1892,
+			"tauxCapitalisation": 4.842428698984348
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 9017,
+
+    	"autresElements": 4230,
+
+    	"travauxARealiser": 4151,
+
+    	"valorisationTerrain": 6209,
+
+    	"renove": 6595,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 232645.89970754128,
+    		"methodereference": 247955.10809979666
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 278,
+			"nombrePieces":5,
+			"nombreChambres":3,
+			"nombreNiveaux":2,
+			"prixm2":194,
+			"valeurLocative": 2873,
+			"tauxCapitalisation": 3.438385420727541
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 9057,
+
+    	"autresElements": 6629,
+
+    	"travauxARealiser": 3135,
+
+    	"valorisationTerrain": 1582,
+
+    	"renove": 2000,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 229554.4683070471,
+    		"methodereference": 215862.02357873466
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 187,
+			"nombrePieces":2,
+			"nombreChambres":2,
+			"nombreNiveaux":2,
+			"prixm2":164,
+			"valeurLocative": 997,
+			"tauxCapitalisation": 5.040899054889397
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 9056,
+
+    	"autresElements": 640,
+
+    	"travauxARealiser": 5247,
+
+    	"valorisationTerrain": 3994,
+
+    	"renove": 2965,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 217196.05839307196,
+    		"methodereference": 248741.6635227758
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 127,
+			"nombrePieces":1,
+			"nombreChambres":2,
+			"nombreNiveaux":1,
+			"prixm2":169,
+			"valeurLocative": 3568,
+			"tauxCapitalisation": 2.1113412382195857
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 5018,
+
+    	"autresElements": 7060,
+
+    	"travauxARealiser": 8163,
+
+    	"valorisationTerrain": 2323,
+
+    	"renove": 9629,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 228173.43304236504,
+    		"methodereference": 205839.9807718517
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 274,
+			"nombrePieces":2,
+			"nombreChambres":3,
+			"nombreNiveaux":4,
+			"prixm2":138,
+			"valeurLocative": 1684,
+			"tauxCapitalisation": 4.396680980688035
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 9111,
+
+    	"autresElements": 3044,
+
+    	"travauxARealiser": 4286,
+
+    	"valorisationTerrain": 4061,
+
+    	"renove": 2197,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 233833.15450759308,
+    		"methodereference": 215606.3865538726
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 119,
+			"nombrePieces":1,
+			"nombreChambres":2,
+			"nombreNiveaux":5,
+			"prixm2":30,
+			"valeurLocative": 529,
+			"tauxCapitalisation": 7.57765518848312
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 425,
+
+    	"autresElements": 1712,
+
+    	"travauxARealiser": 4261,
+
+    	"valorisationTerrain": 162,
+
+    	"renove": 1739,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 230728.0091885114,
+    		"methodereference": 241998.69516458703
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 57,
+			"nombrePieces":1,
+			"nombreChambres":6,
+			"nombreNiveaux":1,
+			"prixm2":140,
+			"valeurLocative": 758,
+			"tauxCapitalisation": 3.713646234941005
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 2463,
+
+    	"autresElements": 3408,
+
+    	"travauxARealiser": 7170,
+
+    	"valorisationTerrain": 4440,
+
+    	"renove": 9394,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 218500.99897017548,
+    		"methodereference": 223026.65492074206
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 77,
+			"nombrePieces":4,
+			"nombreChambres":8,
+			"nombreNiveaux":1,
+			"prixm2":61,
+			"valeurLocative": 3358,
+			"tauxCapitalisation": 4.516193896443517
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 1582,
+
+    	"autresElements": 1577,
+
+    	"travauxARealiser": 3747,
+
+    	"valorisationTerrain": 3971,
+
+    	"renove": 7750,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 203823.35859229608,
+    		"methodereference": 210366.15654287775
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 52,
+			"nombrePieces":4,
+			"nombreChambres":6,
+			"nombreNiveaux":4,
+			"prixm2":33,
+			"valeurLocative": 1011,
+			"tauxCapitalisation": 3.685220945877308
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 13,
+
+    	"autresElements": 8712,
+
+    	"travauxARealiser": 5167,
+
+    	"valorisationTerrain": 776,
+
+    	"renove": 5907,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 236069.92011689796,
+    		"methodereference": 213835.89520828184
+        	}
+    	}
+    },
+    {
+	"bienImmobillier": {
+      "localisationBien": {
+			"codePostal": 34000 }
+			},
+	
+
+	"informations": {
+			"surfaceHabitable": 232,
+			"nombrePieces":5,
+			"nombreChambres":1,
+			"nombreNiveaux":2,
+			"prixm2":40,
+			"valeurLocative": 3092,
+			"tauxCapitalisation": 6.863767996229057
+			},
+
+
+	"estimation": {
+		"decoteBienOccupe": 7987,
+
+    	"autresElements": 4481,
+
+    	"travauxARealiser": 9628,
+
+    	"valorisationTerrain": 7781,
+
+    	"renove": 951,
+
+    	"prix_estimation": {
+    		"methodecomparaison": 225303.2114564087,
+    		"methodereference": 221572.8909806761
+        	}
+    	}
+    }
+  ]
+}
