@@ -55,11 +55,11 @@ class Login extends Component {
     return (
       <div className="column homepage hero is-paddingless">
         <div className="login column is-4 is-offset-8 is-paddingless">
-          <div className="card-content has-background-white">
+          <div id="card_log" className="card-content has-background-white">
             <section className="section has-background-white">
               <div className="column">
                 <div className="has-text-centered">
-                  <img src="/static/media/estimmo_logo.bd1438a3.png" alt="logo" width="70%"/>
+                  <img src="/static/media/estimmo_logo.bd1438a3.png" alt="logo" width="60%"/>
                 </div>
                 <form onSubmit={this.onSubmit}>
                   <div className="field">
