@@ -65,7 +65,7 @@ class App extends Component {
             <Nav />
             
             <ToastContainer position="bottom-center" />
-            <div className="">
+            <div className="contenu">
               <Route exact path="/" component={HomePage} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
