@@ -58,7 +58,7 @@ class Login extends Component {
           <div className="card-content has-background-white">
             <section className="section has-background-white">
               <div className="column">
-                <div class="has-text-centered">
+                <div className="has-text-centered">
                   <img src="/static/media/estimmo_logo.bd1438a3.png" alt="logo" width="70%"/>
                 </div>
                 <form onSubmit={this.onSubmit}>
@@ -73,8 +73,8 @@ class Login extends Component {
                         value={this.state.email}
                         onChange={this.onChange}
                       />
-                      <span class="icon is-small is-left">
-                        <i class=" far fa-envelope"></i>
+                      <span className="icon is-small is-left">
+                        <i className=" far fa-envelope"></i>
                       </span>
                       {errors.email && (
                         <div className="invalid-feedback">{errors.email}</div>
@@ -83,7 +83,7 @@ class Login extends Component {
                   </div>
                   <div className="field">
                     <label className="label">Password</label>
-                    <div class="control has-icons-left">
+                    <div className="control has-icons-left">
                       <input
                         className="input "
                         type="password"

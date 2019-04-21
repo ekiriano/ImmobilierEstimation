@@ -12,7 +12,7 @@ export default function(state = initialState,action){
                 ...state,
                 savedAppartements : action.payload
             };
-        case DELETE_SIMPLE_SAVED_APPARTEMENT : 
+        case DELETE_SIMPLE_SAVED_APPARTEMENT :
             return {
                 ...state,
                 savedAppartements : state.savedAppartements.filter(savedAppartement => savedAppartement._id !== action.payload)

@@ -8,6 +8,7 @@ const path = require('path');
 // Api Routes Importation
 const users = require("./routes/api/users");
 const defaultEstimation = require("./routes/api/estimation/default");
+// const superEstimation = require("./routes/api/estimation/super");
 const app = express();
 
 // Body parser middleware
@@ -34,6 +35,7 @@ require("./config/passport")(passport);
 // Use Routes
 app.use("/api/users", users);
 app.use("/api/estimation/default", defaultEstimation);
+// app.use("/api/estimation/super", superEstimation);
 
 // For heroku deploy
 if(process.env.NODE_ENV === 'production') {

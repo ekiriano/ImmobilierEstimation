@@ -286,13 +286,9 @@ class SuperMasterForm extends Component {
 
 
           };
+          console.log('state', this.state)
+            this.props.submitSuperBienSave(newBienSuper);
 
-          // if (this.props.user.user_type === "super" ) {
-          //   this.props.submitSuperBienSave(newSuperBien);
-          // if(this.state.prix_comparaison !== "" || this.state.prix_reference !== ""){  it will be && or || depends if he can chose 2 methods
-          //     this.next();
-          //   }
-          // }
 
     }
 
@@ -413,16 +409,16 @@ SuperMasterForm.propTypes = {
   errors: PropTypes.object.isRequired
 };
 
-// const mapStateProps = state => ({
-//   user: state.auth.user,
-//   errors: state.errors,
-//   newEstimationAppartement : state.simpleAppartements.newEstimationAppartement,
-// });
+const mapStateProps = state => ({
+  user: state.auth.user,
+  errors: state.errors,
+  newEstimationBien : state.superBiens.newEstimationBien,
+});
 
-// export default connect(
-//   mapStateProps,
-//   { submitSuperBienSave }
-// )(SuperMasterForm);
+export default connect(
+  mapStateProps,
+  { submitSuperBienSave }
+)(SuperMasterForm);
 
 
-export default SuperMasterForm;
+// export default SuperMasterForm;

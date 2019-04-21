@@ -3,6 +3,7 @@ import authReducer from "./authReducer";
 import errorReducer from "./errorReducer";
 import simpleMaisonReducer from "./simpleMaisonReducer";
 import simpleAppartementReducer from "./simpleAppartementReducer";
+import superBienReducer from "./superBienReducer";
 import mapReducer from "./mapReducer";
 
 export default combineReducers({
@@ -11,4 +12,5 @@ export default combineReducers({
   simpleMaisons : simpleMaisonReducer,
   simpleAppartements : simpleAppartementReducer,
   map : mapReducer,
+  superBiens : superBienReducer
 });
