@@ -1,7 +1,7 @@
 module.exports = {
   EstimationComparaison: Bien => {
 
-  	var json = require('./data.json');
+  	var json = require('../datasets/superBien.json');
 
     var nbr=0;
     var estime=0;
@@ -21,7 +21,7 @@ module.exports = {
   },
 
   EstimationReference: Bien => {
-  	var json = require('./data.json');
+  	var json = require('../datasets/superBien.json');
 
     var bienSimilaire;
 
@@ -68,6 +68,7 @@ module.exports = {
   },
 
   EstimationCapitalisation: Bien => {
+    
     Bien.estimation.prix_estimation.methodecapitalisation= (Bien.informations.valeurLocative * 12)/ (Bien.informations.tauxCapitalisation/100);
     Bien.estimation.prix_estimation.methodecapitalisation=Bien.estimation.prix_estimation.methodecapitalisation-(Bien.estimation.decoteBienOccupe+Bien.estimation.autresElements+Bien.estimation.travauxARealiser+Bien.estimation.valorisationTerrain+Bien.estimation.renove);
   },

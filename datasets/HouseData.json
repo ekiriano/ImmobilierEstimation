@@ -1,0 +1,1305 @@
+{
+  "maisons": [
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":13,
+        "surface_totale_terrain":50,
+        "surface_habitable_constructible":77,
+        "nombre_niveaux":8,
+        "nombre_pieces":6,
+        "nombre_salle_bain":8,
+        "nombre_etage_total":6,
+        "annee_construction":2016,
+        "prix_estimation":231038
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":25,
+        "surface_totale_terrain":65,
+        "surface_habitable_constructible":73,
+        "nombre_niveaux":3,
+        "nombre_pieces":9,
+        "nombre_salle_bain":3,
+        "nombre_etage_total":10,
+        "annee_construction":2010,
+        "prix_estimation":206054
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":74,
+        "surface_totale_terrain":134,
+        "surface_habitable_constructible":132,
+        "nombre_niveaux":6,
+        "nombre_pieces":6,
+        "nombre_salle_bain":9,
+        "nombre_etage_total":7,
+        "annee_construction":1972,
+        "prix_estimation":241992
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":48,
+        "surface_totale_terrain":146,
+        "surface_habitable_constructible":120,
+        "nombre_niveaux":5,
+        "nombre_pieces":3,
+        "nombre_salle_bain":7,
+        "nombre_etage_total":8,
+        "annee_construction":2007,
+        "prix_estimation":245646
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":25,
+        "surface_totale_terrain":89,
+        "surface_habitable_constructible":71,
+        "nombre_niveaux":4,
+        "nombre_pieces":3,
+        "nombre_salle_bain":2,
+        "nombre_etage_total":7,
+        "annee_construction":2006,
+        "prix_estimation":233372
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":100,
+        "surface_totale_terrain":103,
+        "surface_habitable_constructible":16,
+        "nombre_niveaux":4,
+        "nombre_pieces":8,
+        "nombre_salle_bain":3,
+        "nombre_etage_total":4,
+        "annee_construction":2010,
+        "prix_estimation":238677
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":71,
+        "surface_totale_terrain":82,
+        "surface_habitable_constructible":145,
+        "nombre_niveaux":6,
+        "nombre_pieces":1,
+        "nombre_salle_bain":4,
+        "nombre_etage_total":10,
+        "annee_construction":2014,
+        "prix_estimation":219497
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":46,
+        "surface_totale_terrain":125,
+        "surface_habitable_constructible":144,
+        "nombre_niveaux":4,
+        "nombre_pieces":5,
+        "nombre_salle_bain":5,
+        "nombre_etage_total":5,
+        "annee_construction":1968,
+        "prix_estimation":205517
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":132,
+        "surface_totale_terrain":66,
+        "surface_habitable_constructible":149,
+        "nombre_niveaux":7,
+        "nombre_pieces":7,
+        "nombre_salle_bain":9,
+        "nombre_etage_total":5,
+        "annee_construction":2010,
+        "prix_estimation":224548
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":61,
+        "surface_totale_terrain":105,
+        "surface_habitable_constructible":60,
+        "nombre_niveaux":6,
+        "nombre_pieces":4,
+        "nombre_salle_bain":10,
+        "nombre_etage_total":1,
+        "annee_construction":1975,
+        "prix_estimation":217683
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":103,
+        "surface_totale_terrain":68,
+        "surface_habitable_constructible":23,
+        "nombre_niveaux":4,
+        "nombre_pieces":6,
+        "nombre_salle_bain":8,
+        "nombre_etage_total":10,
+        "annee_construction":1997,
+        "prix_estimation":243492
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":57,
+        "surface_totale_terrain":129,
+        "surface_habitable_constructible":38,
+        "nombre_niveaux":4,
+        "nombre_pieces":1,
+        "nombre_salle_bain":8,
+        "nombre_etage_total":7,
+        "annee_construction":1990,
+        "prix_estimation":209167
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":64,
+        "surface_totale_terrain":75,
+        "surface_habitable_constructible":138,
+        "nombre_niveaux":7,
+        "nombre_pieces":2,
+        "nombre_salle_bain":1,
+        "nombre_etage_total":2,
+        "annee_construction":1998,
+        "prix_estimation":206670
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":14,
+        "surface_totale_terrain":89,
+        "surface_habitable_constructible":11,
+        "nombre_niveaux":6,
+        "nombre_pieces":1,
+        "nombre_salle_bain":8,
+        "nombre_etage_total":4,
+        "annee_construction":1997,
+        "prix_estimation":205812
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":52,
+        "surface_totale_terrain":63,
+        "surface_habitable_constructible":94,
+        "nombre_niveaux":3,
+        "nombre_pieces":4,
+        "nombre_salle_bain":9,
+        "nombre_etage_total":10,
+        "annee_construction":1999,
+        "prix_estimation":246918
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":78,
+        "surface_totale_terrain":35,
+        "surface_habitable_constructible":139,
+        "nombre_niveaux":1,
+        "nombre_pieces":8,
+        "nombre_salle_bain":7,
+        "nombre_etage_total":6,
+        "annee_construction":2005,
+        "prix_estimation":230873
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":96,
+        "surface_totale_terrain":141,
+        "surface_habitable_constructible":108,
+        "nombre_niveaux":3,
+        "nombre_pieces":7,
+        "nombre_salle_bain":6,
+        "nombre_etage_total":4,
+        "annee_construction":1974,
+        "prix_estimation":227580
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":138,
+        "surface_totale_terrain":135,
+        "surface_habitable_constructible":149,
+        "nombre_niveaux":6,
+        "nombre_pieces":9,
+        "nombre_salle_bain":5,
+        "nombre_etage_total":5,
+        "annee_construction":2005,
+        "prix_estimation":221519
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":54,
+        "surface_totale_terrain":83,
+        "surface_habitable_constructible":13,
+        "nombre_niveaux":6,
+        "nombre_pieces":9,
+        "nombre_salle_bain":9,
+        "nombre_etage_total":6,
+        "annee_construction":1960,
+        "prix_estimation":200689
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":60,
+        "surface_totale_terrain":129,
+        "surface_habitable_constructible":136,
+        "nombre_niveaux":3,
+        "nombre_pieces":9,
+        "nombre_salle_bain":9,
+        "nombre_etage_total":10,
+        "annee_construction":1983,
+        "prix_estimation":210124
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":48,
+        "surface_totale_terrain":31,
+        "surface_habitable_constructible":28,
+        "nombre_niveaux":2,
+        "nombre_pieces":10,
+        "nombre_salle_bain":7,
+        "nombre_etage_total":2,
+        "annee_construction":1980,
+        "prix_estimation":200635
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":100,
+        "surface_totale_terrain":24,
+        "surface_habitable_constructible":103,
+        "nombre_niveaux":8,
+        "nombre_pieces":1,
+        "nombre_salle_bain":5,
+        "nombre_etage_total":7,
+        "annee_construction":2018,
+        "prix_estimation":232567
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":46,
+        "surface_totale_terrain":71,
+        "surface_habitable_constructible":41,
+        "nombre_niveaux":2,
+        "nombre_pieces":10,
+        "nombre_salle_bain":4,
+        "nombre_etage_total":10,
+        "annee_construction":1974,
+        "prix_estimation":241302
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":90,
+        "surface_totale_terrain":92,
+        "surface_habitable_constructible":10,
+        "nombre_niveaux":2,
+        "nombre_pieces":1,
+        "nombre_salle_bain":7,
+        "nombre_etage_total":1,
+        "annee_construction":2012,
+        "prix_estimation":223544
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":28,
+        "surface_totale_terrain":32,
+        "surface_habitable_constructible":28,
+        "nombre_niveaux":3,
+        "nombre_pieces":3,
+        "nombre_salle_bain":9,
+        "nombre_etage_total":9,
+        "annee_construction":1973,
+        "prix_estimation":247552
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":29,
+        "surface_totale_terrain":95,
+        "surface_habitable_constructible":20,
+        "nombre_niveaux":8,
+        "nombre_pieces":3,
+        "nombre_salle_bain":10,
+        "nombre_etage_total":6,
+        "annee_construction":1965,
+        "prix_estimation":213200
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":118,
+        "surface_totale_terrain":43,
+        "surface_habitable_constructible":9,
+        "nombre_niveaux":1,
+        "nombre_pieces":5,
+        "nombre_salle_bain":1,
+        "nombre_etage_total":5,
+        "annee_construction":1982,
+        "prix_estimation":242747
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":110,
+        "surface_totale_terrain":148,
+        "surface_habitable_constructible":29,
+        "nombre_niveaux":1,
+        "nombre_pieces":7,
+        "nombre_salle_bain":4,
+        "nombre_etage_total":10,
+        "annee_construction":1975,
+        "prix_estimation":210760
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":117,
+        "surface_totale_terrain":125,
+        "surface_habitable_constructible":95,
+        "nombre_niveaux":2,
+        "nombre_pieces":8,
+        "nombre_salle_bain":3,
+        "nombre_etage_total":5,
+        "annee_construction":2007,
+        "prix_estimation":239074
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":140,
+        "surface_totale_terrain":59,
+        "surface_habitable_constructible":67,
+        "nombre_niveaux":5,
+        "nombre_pieces":9,
+        "nombre_salle_bain":4,
+        "nombre_etage_total":4,
+        "annee_construction":1968,
+        "prix_estimation":204709
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":39,
+        "surface_totale_terrain":19,
+        "surface_habitable_constructible":20,
+        "nombre_niveaux":3,
+        "nombre_pieces":7,
+        "nombre_salle_bain":7,
+        "nombre_etage_total":2,
+        "annee_construction":1975,
+        "prix_estimation":234680
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":136,
+        "surface_totale_terrain":117,
+        "surface_habitable_constructible":118,
+        "nombre_niveaux":4,
+        "nombre_pieces":7,
+        "nombre_salle_bain":7,
+        "nombre_etage_total":6,
+        "annee_construction":1967,
+        "prix_estimation":233382
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":115,
+        "surface_totale_terrain":140,
+        "surface_habitable_constructible":148,
+        "nombre_niveaux":2,
+        "nombre_pieces":8,
+        "nombre_salle_bain":3,
+        "nombre_etage_total":9,
+        "annee_construction":1976,
+        "prix_estimation":227942
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":47,
+        "surface_totale_terrain":96,
+        "surface_habitable_constructible":73,
+        "nombre_niveaux":1,
+        "nombre_pieces":5,
+        "nombre_salle_bain":3,
+        "nombre_etage_total":9,
+        "annee_construction":1961,
+        "prix_estimation":239647
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":48,
+        "surface_totale_terrain":98,
+        "surface_habitable_constructible":32,
+        "nombre_niveaux":3,
+        "nombre_pieces":1,
+        "nombre_salle_bain":5,
+        "nombre_etage_total":8,
+        "annee_construction":1978,
+        "prix_estimation":206765
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":113,
+        "surface_totale_terrain":57,
+        "surface_habitable_constructible":133,
+        "nombre_niveaux":6,
+        "nombre_pieces":4,
+        "nombre_salle_bain":10,
+        "nombre_etage_total":2,
+        "annee_construction":1963,
+        "prix_estimation":236713
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":133,
+        "surface_totale_terrain":124,
+        "surface_habitable_constructible":88,
+        "nombre_niveaux":1,
+        "nombre_pieces":3,
+        "nombre_salle_bain":4,
+        "nombre_etage_total":8,
+        "annee_construction":1971,
+        "prix_estimation":212023
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":64,
+        "surface_totale_terrain":29,
+        "surface_habitable_constructible":13,
+        "nombre_niveaux":3,
+        "nombre_pieces":4,
+        "nombre_salle_bain":9,
+        "nombre_etage_total":2,
+        "annee_construction":1968,
+        "prix_estimation":217412
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":125,
+        "surface_totale_terrain":70,
+        "surface_habitable_constructible":106,
+        "nombre_niveaux":5,
+        "nombre_pieces":1,
+        "nombre_salle_bain":5,
+        "nombre_etage_total":4,
+        "annee_construction":1991,
+        "prix_estimation":247631
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":148,
+        "surface_totale_terrain":67,
+        "surface_habitable_constructible":113,
+        "nombre_niveaux":5,
+        "nombre_pieces":1,
+        "nombre_salle_bain":4,
+        "nombre_etage_total":9,
+        "annee_construction":1967,
+        "prix_estimation":204794
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":125,
+        "surface_totale_terrain":142,
+        "surface_habitable_constructible":18,
+        "nombre_niveaux":2,
+        "nombre_pieces":8,
+        "nombre_salle_bain":10,
+        "nombre_etage_total":5,
+        "annee_construction":1994,
+        "prix_estimation":207520
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":44,
+        "surface_totale_terrain":118,
+        "surface_habitable_constructible":100,
+        "nombre_niveaux":3,
+        "nombre_pieces":9,
+        "nombre_salle_bain":2,
+        "nombre_etage_total":2,
+        "annee_construction":1994,
+        "prix_estimation":249929
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":142,
+        "surface_totale_terrain":83,
+        "surface_habitable_constructible":46,
+        "nombre_niveaux":5,
+        "nombre_pieces":6,
+        "nombre_salle_bain":2,
+        "nombre_etage_total":2,
+        "annee_construction":2005,
+        "prix_estimation":217336
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":133,
+        "surface_totale_terrain":134,
+        "surface_habitable_constructible":94,
+        "nombre_niveaux":3,
+        "nombre_pieces":10,
+        "nombre_salle_bain":2,
+        "nombre_etage_total":4,
+        "annee_construction":1963,
+        "prix_estimation":232085
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":68,
+        "surface_totale_terrain":97,
+        "surface_habitable_constructible":13,
+        "nombre_niveaux":5,
+        "nombre_pieces":9,
+        "nombre_salle_bain":3,
+        "nombre_etage_total":2,
+        "annee_construction":2000,
+        "prix_estimation":200709
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":87,
+        "surface_totale_terrain":112,
+        "surface_habitable_constructible":136,
+        "nombre_niveaux":3,
+        "nombre_pieces":10,
+        "nombre_salle_bain":8,
+        "nombre_etage_total":8,
+        "annee_construction":1979,
+        "prix_estimation":244460
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":122,
+        "surface_totale_terrain":142,
+        "surface_habitable_constructible":89,
+        "nombre_niveaux":1,
+        "nombre_pieces":10,
+        "nombre_salle_bain":8,
+        "nombre_etage_total":2,
+        "annee_construction":1976,
+        "prix_estimation":247090
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":72,
+        "surface_totale_terrain":58,
+        "surface_habitable_constructible":87,
+        "nombre_niveaux":3,
+        "nombre_pieces":2,
+        "nombre_salle_bain":3,
+        "nombre_etage_total":4,
+        "annee_construction":2017,
+        "prix_estimation":234407
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":20,
+        "surface_totale_terrain":115,
+        "surface_habitable_constructible":8,
+        "nombre_niveaux":4,
+        "nombre_pieces":10,
+        "nombre_salle_bain":8,
+        "nombre_etage_total":2,
+        "annee_construction":1979,
+        "prix_estimation":214031
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":140,
+        "surface_totale_terrain":9,
+        "surface_habitable_constructible":41,
+        "nombre_niveaux":3,
+        "nombre_pieces":2,
+        "nombre_salle_bain":4,
+        "nombre_etage_total":10,
+        "annee_construction":1995,
+        "prix_estimation":221939
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":53,
+        "surface_totale_terrain":150,
+        "surface_habitable_constructible":104,
+        "nombre_niveaux":2,
+        "nombre_pieces":2,
+        "nombre_salle_bain":7,
+        "nombre_etage_total":10,
+        "annee_construction":1995,
+        "prix_estimation":239724
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":81,
+        "surface_totale_terrain":117,
+        "surface_habitable_constructible":136,
+        "nombre_niveaux":1,
+        "nombre_pieces":6,
+        "nombre_salle_bain":7,
+        "nombre_etage_total":5,
+        "annee_construction":1962,
+        "prix_estimation":235455
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":59,
+        "surface_totale_terrain":38,
+        "surface_habitable_constructible":116,
+        "nombre_niveaux":7,
+        "nombre_pieces":3,
+        "nombre_salle_bain":4,
+        "nombre_etage_total":10,
+        "annee_construction":2000,
+        "prix_estimation":203383
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":143,
+        "surface_totale_terrain":111,
+        "surface_habitable_constructible":8,
+        "nombre_niveaux":7,
+        "nombre_pieces":1,
+        "nombre_salle_bain":3,
+        "nombre_etage_total":3,
+        "annee_construction":2011,
+        "prix_estimation":229034
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":118,
+        "surface_totale_terrain":144,
+        "surface_habitable_constructible":15,
+        "nombre_niveaux":2,
+        "nombre_pieces":7,
+        "nombre_salle_bain":10,
+        "nombre_etage_total":5,
+        "annee_construction":2011,
+        "prix_estimation":242830
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":49,
+        "surface_totale_terrain":42,
+        "surface_habitable_constructible":46,
+        "nombre_niveaux":6,
+        "nombre_pieces":9,
+        "nombre_salle_bain":9,
+        "nombre_etage_total":9,
+        "annee_construction":1960,
+        "prix_estimation":243960
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":92,
+        "surface_totale_terrain":53,
+        "surface_habitable_constructible":143,
+        "nombre_niveaux":3,
+        "nombre_pieces":4,
+        "nombre_salle_bain":9,
+        "nombre_etage_total":10,
+        "annee_construction":2000,
+        "prix_estimation":243500
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":28,
+        "surface_totale_terrain":28,
+        "surface_habitable_constructible":121,
+        "nombre_niveaux":8,
+        "nombre_pieces":3,
+        "nombre_salle_bain":8,
+        "nombre_etage_total":3,
+        "annee_construction":2014,
+        "prix_estimation":233214
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":66,
+        "surface_totale_terrain":89,
+        "surface_habitable_constructible":138,
+        "nombre_niveaux":8,
+        "nombre_pieces":8,
+        "nombre_salle_bain":4,
+        "nombre_etage_total":7,
+        "annee_construction":2004,
+        "prix_estimation":202119
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":57,
+        "surface_totale_terrain":102,
+        "surface_habitable_constructible":141,
+        "nombre_niveaux":2,
+        "nombre_pieces":10,
+        "nombre_salle_bain":10,
+        "nombre_etage_total":1,
+        "annee_construction":2000,
+        "prix_estimation":228965
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":8,
+        "surface_totale_terrain":22,
+        "surface_habitable_constructible":145,
+        "nombre_niveaux":5,
+        "nombre_pieces":5,
+        "nombre_salle_bain":7,
+        "nombre_etage_total":10,
+        "annee_construction":2002,
+        "prix_estimation":224538
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":28,
+        "surface_totale_terrain":130,
+        "surface_habitable_constructible":55,
+        "nombre_niveaux":1,
+        "nombre_pieces":5,
+        "nombre_salle_bain":5,
+        "nombre_etage_total":2,
+        "annee_construction":1997,
+        "prix_estimation":228508
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":137,
+        "surface_totale_terrain":23,
+        "surface_habitable_constructible":37,
+        "nombre_niveaux":2,
+        "nombre_pieces":5,
+        "nombre_salle_bain":5,
+        "nombre_etage_total":5,
+        "annee_construction":2001,
+        "prix_estimation":236445
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":82,
+        "surface_totale_terrain":146,
+        "surface_habitable_constructible":113,
+        "nombre_niveaux":6,
+        "nombre_pieces":6,
+        "nombre_salle_bain":10,
+        "nombre_etage_total":3,
+        "annee_construction":1966,
+        "prix_estimation":226475
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":71,
+        "surface_totale_terrain":106,
+        "surface_habitable_constructible":76,
+        "nombre_niveaux":3,
+        "nombre_pieces":2,
+        "nombre_salle_bain":4,
+        "nombre_etage_total":10,
+        "annee_construction":1996,
+        "prix_estimation":220288
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":14,
+        "surface_totale_terrain":107,
+        "surface_habitable_constructible":75,
+        "nombre_niveaux":4,
+        "nombre_pieces":9,
+        "nombre_salle_bain":5,
+        "nombre_etage_total":2,
+        "annee_construction":2017,
+        "prix_estimation":231647
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":95,
+        "surface_totale_terrain":93,
+        "surface_habitable_constructible":130,
+        "nombre_niveaux":7,
+        "nombre_pieces":5,
+        "nombre_salle_bain":6,
+        "nombre_etage_total":7,
+        "annee_construction":2003,
+        "prix_estimation":244765
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":144,
+        "surface_totale_terrain":26,
+        "surface_habitable_constructible":38,
+        "nombre_niveaux":4,
+        "nombre_pieces":2,
+        "nombre_salle_bain":7,
+        "nombre_etage_total":6,
+        "annee_construction":1972,
+        "prix_estimation":211175
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":80,
+        "surface_totale_terrain":108,
+        "surface_habitable_constructible":89,
+        "nombre_niveaux":6,
+        "nombre_pieces":7,
+        "nombre_salle_bain":10,
+        "nombre_etage_total":7,
+        "annee_construction":1960,
+        "prix_estimation":222325
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":36,
+        "surface_totale_terrain":118,
+        "surface_habitable_constructible":75,
+        "nombre_niveaux":3,
+        "nombre_pieces":10,
+        "nombre_salle_bain":7,
+        "nombre_etage_total":7,
+        "annee_construction":1991,
+        "prix_estimation":228411
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":23,
+        "surface_totale_terrain":78,
+        "surface_habitable_constructible":12,
+        "nombre_niveaux":2,
+        "nombre_pieces":9,
+        "nombre_salle_bain":6,
+        "nombre_etage_total":5,
+        "annee_construction":1987,
+        "prix_estimation":217072
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":62,
+        "surface_totale_terrain":111,
+        "surface_habitable_constructible":89,
+        "nombre_niveaux":5,
+        "nombre_pieces":8,
+        "nombre_salle_bain":10,
+        "nombre_etage_total":7,
+        "annee_construction":1983,
+        "prix_estimation":200872
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":122,
+        "surface_totale_terrain":75,
+        "surface_habitable_constructible":99,
+        "nombre_niveaux":5,
+        "nombre_pieces":9,
+        "nombre_salle_bain":7,
+        "nombre_etage_total":7,
+        "annee_construction":1988,
+        "prix_estimation":230246
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":13,
+        "surface_totale_terrain":72,
+        "surface_habitable_constructible":110,
+        "nombre_niveaux":1,
+        "nombre_pieces":2,
+        "nombre_salle_bain":2,
+        "nombre_etage_total":6,
+        "annee_construction":1975,
+        "prix_estimation":242093
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":91,
+        "surface_totale_terrain":132,
+        "surface_habitable_constructible":118,
+        "nombre_niveaux":6,
+        "nombre_pieces":8,
+        "nombre_salle_bain":4,
+        "nombre_etage_total":5,
+        "annee_construction":2018,
+        "prix_estimation":215940
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":77,
+        "surface_totale_terrain":61,
+        "surface_habitable_constructible":56,
+        "nombre_niveaux":7,
+        "nombre_pieces":2,
+        "nombre_salle_bain":6,
+        "nombre_etage_total":10,
+        "annee_construction":1976,
+        "prix_estimation":249994
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":36,
+        "surface_totale_terrain":82,
+        "surface_habitable_constructible":126,
+        "nombre_niveaux":6,
+        "nombre_pieces":1,
+        "nombre_salle_bain":4,
+        "nombre_etage_total":4,
+        "annee_construction":1967,
+        "prix_estimation":246085
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":83,
+        "surface_totale_terrain":87,
+        "surface_habitable_constructible":17,
+        "nombre_niveaux":6,
+        "nombre_pieces":7,
+        "nombre_salle_bain":2,
+        "nombre_etage_total":8,
+        "annee_construction":1983,
+        "prix_estimation":226072
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":14,
+        "surface_totale_terrain":136,
+        "surface_habitable_constructible":100,
+        "nombre_niveaux":8,
+        "nombre_pieces":4,
+        "nombre_salle_bain":2,
+        "nombre_etage_total":5,
+        "annee_construction":2017,
+        "prix_estimation":229805
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":143,
+        "surface_totale_terrain":84,
+        "surface_habitable_constructible":145,
+        "nombre_niveaux":6,
+        "nombre_pieces":7,
+        "nombre_salle_bain":1,
+        "nombre_etage_total":4,
+        "annee_construction":1984,
+        "prix_estimation":234811
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":68,
+        "surface_totale_terrain":69,
+        "surface_habitable_constructible":128,
+        "nombre_niveaux":8,
+        "nombre_pieces":3,
+        "nombre_salle_bain":6,
+        "nombre_etage_total":4,
+        "annee_construction":2009,
+        "prix_estimation":231604
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":30,
+        "surface_totale_terrain":61,
+        "surface_habitable_constructible":23,
+        "nombre_niveaux":4,
+        "nombre_pieces":6,
+        "nombre_salle_bain":8,
+        "nombre_etage_total":3,
+        "annee_construction":1962,
+        "prix_estimation":224427
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":63,
+        "surface_totale_terrain":135,
+        "surface_habitable_constructible":98,
+        "nombre_niveaux":1,
+        "nombre_pieces":3,
+        "nombre_salle_bain":7,
+        "nombre_etage_total":8,
+        "annee_construction":2002,
+        "prix_estimation":243389
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":101,
+        "surface_totale_terrain":51,
+        "surface_habitable_constructible":65,
+        "nombre_niveaux":4,
+        "nombre_pieces":6,
+        "nombre_salle_bain":10,
+        "nombre_etage_total":1,
+        "annee_construction":2006,
+        "prix_estimation":212658
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":112,
+        "surface_totale_terrain":82,
+        "surface_habitable_constructible":82,
+        "nombre_niveaux":3,
+        "nombre_pieces":9,
+        "nombre_salle_bain":10,
+        "nombre_etage_total":3,
+        "annee_construction":1971,
+        "prix_estimation":235060
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":121,
+        "surface_totale_terrain":70,
+        "surface_habitable_constructible":16,
+        "nombre_niveaux":1,
+        "nombre_pieces":1,
+        "nombre_salle_bain":1,
+        "nombre_etage_total":4,
+        "annee_construction":2011,
+        "prix_estimation":205580
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":76,
+        "surface_totale_terrain":119,
+        "surface_habitable_constructible":99,
+        "nombre_niveaux":4,
+        "nombre_pieces":3,
+        "nombre_salle_bain":4,
+        "nombre_etage_total":10,
+        "annee_construction":1990,
+        "prix_estimation":236465
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":49,
+        "surface_totale_terrain":128,
+        "surface_habitable_constructible":22,
+        "nombre_niveaux":3,
+        "nombre_pieces":9,
+        "nombre_salle_bain":3,
+        "nombre_etage_total":10,
+        "annee_construction":1986,
+        "prix_estimation":246009
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":134,
+        "surface_totale_terrain":123,
+        "surface_habitable_constructible":43,
+        "nombre_niveaux":6,
+        "nombre_pieces":4,
+        "nombre_salle_bain":9,
+        "nombre_etage_total":4,
+        "annee_construction":2005,
+        "prix_estimation":225179
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":22,
+        "surface_totale_terrain":57,
+        "surface_habitable_constructible":24,
+        "nombre_niveaux":7,
+        "nombre_pieces":2,
+        "nombre_salle_bain":5,
+        "nombre_etage_total":9,
+        "annee_construction":1996,
+        "prix_estimation":222939
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":131,
+        "surface_totale_terrain":68,
+        "surface_habitable_constructible":33,
+        "nombre_niveaux":8,
+        "nombre_pieces":1,
+        "nombre_salle_bain":3,
+        "nombre_etage_total":9,
+        "annee_construction":1976,
+        "prix_estimation":239502
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":56,
+        "surface_totale_terrain":27,
+        "surface_habitable_constructible":55,
+        "nombre_niveaux":6,
+        "nombre_pieces":9,
+        "nombre_salle_bain":2,
+        "nombre_etage_total":7,
+        "annee_construction":2006,
+        "prix_estimation":247492
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":126,
+        "surface_totale_terrain":136,
+        "surface_habitable_constructible":41,
+        "nombre_niveaux":5,
+        "nombre_pieces":5,
+        "nombre_salle_bain":7,
+        "nombre_etage_total":4,
+        "annee_construction":2014,
+        "prix_estimation":242587
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":16,
+        "surface_totale_terrain":82,
+        "surface_habitable_constructible":28,
+        "nombre_niveaux":1,
+        "nombre_pieces":10,
+        "nombre_salle_bain":5,
+        "nombre_etage_total":2,
+        "annee_construction":1964,
+        "prix_estimation":218305
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":116,
+        "surface_totale_terrain":83,
+        "surface_habitable_constructible":82,
+        "nombre_niveaux":6,
+        "nombre_pieces":1,
+        "nombre_salle_bain":10,
+        "nombre_etage_total":4,
+        "annee_construction":1980,
+        "prix_estimation":233904
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":54,
+        "surface_totale_terrain":94,
+        "surface_habitable_constructible":9,
+        "nombre_niveaux":4,
+        "nombre_pieces":2,
+        "nombre_salle_bain":5,
+        "nombre_etage_total":9,
+        "annee_construction":1973,
+        "prix_estimation":223975
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":118,
+        "surface_totale_terrain":107,
+        "surface_habitable_constructible":94,
+        "nombre_niveaux":5,
+        "nombre_pieces":2,
+        "nombre_salle_bain":5,
+        "nombre_etage_total":10,
+        "annee_construction":1963,
+        "prix_estimation":233509
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":42,
+        "surface_totale_terrain":92,
+        "surface_habitable_constructible":135,
+        "nombre_niveaux":5,
+        "nombre_pieces":10,
+        "nombre_salle_bain":6,
+        "nombre_etage_total":8,
+        "annee_construction":2016,
+        "prix_estimation":249965
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":136,
+        "surface_totale_terrain":119,
+        "surface_habitable_constructible":128,
+        "nombre_niveaux":7,
+        "nombre_pieces":2,
+        "nombre_salle_bain":5,
+        "nombre_etage_total":4,
+        "annee_construction":1980,
+        "prix_estimation":238571
+    },
+
+    {
+        "code_postal": 34000,
+        "surface_habitable":41,
+        "surface_totale_terrain":145,
+        "surface_habitable_constructible":138,
+        "nombre_niveaux":3,
+        "nombre_pieces":2,
+        "nombre_salle_bain":7,
+        "nombre_etage_total":8,
+        "annee_construction":1966,
+        "prix_estimation":220233
+    }
+  ]
+}
+
