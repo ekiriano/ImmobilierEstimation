@@ -28,132 +28,92 @@ class SuperMasterForm extends Component {
             currentStep: 1,
             user: {},
             errors : {},
-            client: {
-                civilite: "",
-                prenom: "",
-                nom: "",
-                adressePostale: "",
-                email: "",
-                telephone: ""
-            },
-            bienImmobillier: {
-                localisationBien: {
-                    numero: "",
-                    voie: "",
-                    codePostal: "",
-                    ville: ""
-                },
-                informations: {
-                    anneeConstruction: "",
-                    typeBienAffiche: "",
-                    nombrePieces: "",
-                    nombreChambres: "",
-                    surfaceHabitable: "",
-                    surfaceTerrain: "",
-                    nombreNiveaux: "",
-                    ascenseur: "",
-                    balconOuTerrasse: "",
-                    LibreALaVente: "",
-                    titreDossier: "",
-                    descriptifBien: "",
-                    DPE: "",
-                    GES: "",
-                    PrixMandat: ""
-                },
-                chargesEtImpots: {
-                    chargesAnnuellesTotales: "",
-                    chargesDeCopropriete: "",
-                    impotsFonciers: ""
-                },
-                annexes: [],
-                pointsFortsPointsFaible: {
-                    pointsForts: [],
-                    pointsFaibles: []
-                },
-                commentairesConfidentiels: ""
-            },
-            caracteristiques: {
-                elementsPrincipaux: {
-                    etatQualiteGrosOeuvre: "",
-                    epoqueConstruction: "",
-                    mitoyennete: "",
-                    agrementGeneral: "",
-                    standing: "",
-                    accessibilite: "",
-                    toutAEgout: ""
-                },
-                autresElements: {
-                    qualiteArchitecturale: "",
-                    etatPortesEtFenetres: "",
-                    etatDesToitures: "",
-                    clotureTerrain: ""
-                },
-                environement: {
-                    nuissanceSonore: "",
-                    voisinageVisaVis: "",
-                    qualiteEnvironnement: "",
-                    proximiteServicesPublics: ""
-                },
-                criteresGeneraux: {
-                    qualiteDistribution: "",
-                    etatMursPlafonds: "",
-                    solsEtRevetementSols: ""
-                },
-                sejour: {
-                    tailleSejour: "",
-                    expositionSejour: "",
-                    vueSejour: "",
-                    luminosite: "",
-                    cheminee: ""
-                },
-                cuisine: {
-                    taille: "",
-                    equipement: "",
-                    etatGeneral: "",
-                    agrement: "",
-                },
-                chambres: {
-                    tailleDesPieces: "",
-                    etatDesPieces: "",
-                    expositionAuxBruits: ""
-                },
-                sanitaires: {
-                    taillePiecesSanitaires: "",
-                    nombreDeSanitaires: "",
-                    qualiteEtatSanitaires: ""
-                },
-                energie: {
-                    factureEnergetique: "",
-                    installationElectrique: "",
-                    installationGaz: ""
-                },
-                annexes: {
-                    balconLogiaTerasse: "",
-                    caveSousSol: "",
-                    agrementJardin: "",
-                    garageOuParkingOuvert: "",
-                    comble: ""
-                }
-
-            },
-            estimation: {
-              decoteBienOccupe: "",
-              decoteBienOccupeR: "",
-              autresElements: "",
-              autresElementsR: "",
-              travauxARealiser: "",
-              travauxARealiserR: "",
-              valorisationTerrain: "",
-              valorisationTerrainR: "",
-              renove: "",
-              affichageNetVendeur: "",
-              prix_comparaison: "",
-              prix_reference: "",
-              prix_final: ""
-            },
-            comparables: {
-
-            }
+            civilite: "",
+            prenom: "",
+            nom: "",
+            adressePostale: "",
+            email: "",
+            telephone: "",
+            numero: "",
+            voie: "",
+            codePostal: "",
+            ville: "",
+            anneeConstruction: "",
+            typeBienAffiche: "",
+            nombrePieces: "",
+            nombreChambres: "",
+            surfaceHabitable: "",
+            surfaceTerrain: "",
+            nombreNiveaux: "",
+            ascenseur: "",
+            balconOuTerrasse: "",
+            LibreALaVente: "",
+            titreDossier: "",
+            descriptifBien: "",
+            DPE: "",
+            GES: "",
+            PrixMandat: "",
+            chargesAnnuellesTotales: "",
+            chargesDeCopropriete: "",
+            impotsFonciers: "",
+            annexes: [],
+            pointsForts: [],
+            pointsFaibles: [],
+            commentairesConfidentiels: "",
+            etatQualiteGrosOeuvre: "",
+            epoqueConstruction: "",
+            mitoyennete: "",
+            agrementGeneral: "",
+            standing: "",
+            accessibilite: "",
+            toutAEgout: "",
+            qualiteArchitecturale: "",
+            etatPortesEtFenetres: "",
+            etatDesToitures: "",
+            clotureTerrain: "",
+            nuissanceSonore: "",
+            voisinageVisaVis: "",
+            qualiteEnvironnement: "",
+            proximiteServicesPublics: "",
+            qualiteDistribution: "",
+            etatMursPlafonds: "",
+            solsEtRevetementSols: "",
+            tailleSejour: "",
+            expositionSejour: "",
+            vueSejour: "",
+            luminosite: "",
+            cheminee: "",
+            taille: "",
+            equipement: "",
+            etatGeneral: "",
+            agrement: "",
+            tailleDesPieces: "",
+            etatDesPieces: "",
+            expositionAuxBruits: "",
+            taillePiecesSanitaires: "",
+            nombreDeSanitaires: "",
+            qualiteEtatSanitaires: "",
+            factureEnergetique: "",
+            installationElectrique: "",
+            installationGaz: "",
+            balconLogiaTerasse: "",
+            caveSousSol: "",
+            agrementJardin: "",
+            garageOuParkingOuvert: "",
+            comble: "",
+            decoteBienOccupe: "",
+            decoteBienOccupeR: "",
+            autresElements: "",
+            autresElementsR: "",
+            travauxARealiser: "",
+            travauxARealiserR: "",
+            valorisationTerrain: "",
+            valorisationTerrainR: "",
+            renove: "",
+            affichageNetVendeur: "",
+            prix_comparaison: "",
+            prix_reference: "",
+            prix_final: ""
         }
 
         this.onChange = this.onChange.bind(this);
@@ -170,126 +130,120 @@ class SuperMasterForm extends Component {
         });
     }
 
-    onClientChange(e) {
-        this.setState({
-            [e.target.name]: e.target.value
-        });
-    }
-
     onSubmit(e) {
         e.preventDefault();
 
           const newBienSuper = {
             client: {
-              nom: this.state.client.nom,
-              prenom: this.state.client.prenom,
-              adressePostale: this.state.client.adressePostale,
-              telephone: this.state.client.telephone,
-              email: this.state.client.email
+              nom: this.state.nom,
+              prenom: this.state.prenom,
+              adressePostale: this.state.adressePostale,
+              telephone: this.state.telephone,
+              email: this.state.email
             },
             bienImmobillier: {
                 localisationBien: {
-                    numero: this.state.bienImmobillier.localisationBien.umero,
-                    voie: this.state.bienImmobillier.localisationBien.voie,
-                    codePostal: this.state.bienImmobillier.localisationBien.codePostal,
-                    ville: this.state.bienImmobillier.localisationBien.ville
+                    numero: this.state.numero,
+                    voie: this.state.voie,
+                    codePostal: this.state.codePostal,
+                    ville: this.state.ville
                 },
                 informations: {
-                    anneeConstruction: this.state.bienImmobillier.informations.anneeConstruction,
-                    typeBienAffiche: this.state.bienImmobillier.informations.typeBienAffiche,
-                    nombrePieces: this.state.bienImmobillier.informations.nombrePieces,
-                    nombreChambres: this.state.bienImmobillier.informations.nombreChambres,
-                    surfaceHabitable: this.state.bienImmobillier.informations.surfaceHabitable,
-                    surfaceTerrain: this.state.bienImmobillier.informations.surfaceTerrain,
-                    nombreNiveaux: this.state.bienImmobillier.informations.nombreNiveaux,
-                    ascenseur: this.state.bienImmobillier.informations.ascenseur,
-                    balconOuTerrasse: this.state.bienImmobillier.informations.balconOuTerrasse,
-                    LibreALaVente: this.state.bienImmobillier.informations.LibreALaVente,
-                    titreDossier: this.state.bienImmobillier.informations.titreDossier,
-                    descriptifBien: this.state.bienImmobillier.informations.descriptifBien,
-                    DPE: this.state.bienImmobillier.informations.DPE,
-                    GES: this.state.bienImmobillier.informations.GES,
-                    PrixMandat: this.state.bienImmobillier.informations.PrixMandat
+                    anneeConstruction: this.state.anneeConstruction,
+                    typeBienAffiche: this.state.typeBienAffiche,
+                    nombrePieces: this.state.nombrePieces,
+                    nombreChambres: this.state.nombreChambres,
+                    surfaceHabitable: this.state.surfaceHabitable,
+                    surfaceTerrain: this.state.surfaceTerrain,
+                    nombreNiveaux: this.state.nombreNiveaux,
+                    ascenseur: this.state.ascenseur,
+                    balconOuTerrasse: this.state.balconOuTerrasse,
+                    LibreALaVente: this.state.LibreALaVente,
+                    titreDossier: this.state.titreDossier,
+                    descriptifBien: this.state.descriptifBien,
+                    DPE: this.state.DPE,
+                    GES: this.state.GES,
+                    PrixMandat: this.state.PrixMandat
                 },
                 chargesEtImpots: {
-                    chargesAnnuellesTotales: this.state.bienImmobillier.chargesEtImpots.chargesAnnuellesTotales,
-                    chargesDeCopropriete: this.state.bienImmobillier.chargesEtImpots.chargesDeCopropriete,
-                    impotsFonciers: this.state.bienImmobillier.chargesEtImpots.impotsFonciers
+                    chargesAnnuellesTotales: this.state.chargesAnnuellesTotales,
+                    chargesDeCopropriete: this.state.chargesDeCopropriete,
+                    impotsFonciers: this.state.impotsFonciers
                 },
-                annexes: this.state.bienImmobillier.annexes,
+                annexes: this.state.annexes,
                 pointsFortsPointsFaible: {
-                    pointsForts: this.state.bienImmobillier.pointsFortsPointsFaible.pointsForts,
-                    pointsFaibles: this.state.bienImmobillier.pointsFortsPointsFaible.pointsFaibles
+                    pointsForts: this.state.pointsForts,
+                    pointsFaibles: this.state.pointsFaibles
                 },
-                commentairesConfidentiels: this.state.bienImmobillier.commentairesConfidentiels
+                commentairesConfidentiels: this.state.commentairesConfidentiels
             },
             caracteristiques: {
                 elementsPrincipaux: {
-                    etatQualiteGrosOeuvre: this.state.caracteristiques.elementsPrincipaux.etatQualiteGrosOeuvre,
-                    epoqueConstruction: this.state.caracteristiques.elementsPrincipaux.epoqueConstruction,
-                    mitoyennete: this.state.caracteristiques.elementsPrincipaux.mitoyennete,
-                    agrementGeneral: this.state.caracteristiques.elementsPrincipaux.agrementGeneral,
-                    standing: this.state.caracteristiques.elementsPrincipaux.standing,
-                    accessibilite: this.state.caracteristiques.elementsPrincipaux.accessibilite,
-                    toutAEgout: this.state.caracteristiques.elementsPrincipaux.toutAEgout
+                    etatQualiteGrosOeuvre: this.state.etatQualiteGrosOeuvre,
+                    epoqueConstruction: this.state.epoqueConstruction,
+                    mitoyennete: this.state.mitoyennete,
+                    agrementGeneral: this.state.agrementGeneral,
+                    standing: this.state.standing,
+                    accessibilite: this.state.accessibilite,
+                    toutAEgout: this.state.toutAEgout
                 },
                 autresElements: {
-                    qualiteArchitecturale: this.state.caracteristiques.autresElements.qualiteArchitecturale,
-                    etatPortesEtFenetres: this.state.caracteristiques.autresElements.etatPortesEtFenetres,
-                    etatDesToitures: this.state.caracteristiques.autresElements.etatDesToitures,
-                    clotureTerrain: this.state.caracteristiques.autresElements.clotureTerrain
+                    qualiteArchitecturale: this.state.qualiteArchitecturale,
+                    etatPortesEtFenetres: this.state.etatPortesEtFenetres,
+                    etatDesToitures: this.state.etatDesToitures,
+                    clotureTerrain: this.state.clotureTerrain
                 },
                 environement: {
-                    nuissanceSonore: this.state.caracteristiques.environement.nuissanceSonore,
-                    voisinageVisaVis: this.state.caracteristiques.environement.voisinageVisaVis,
-                    qualiteEnvironnement: this.state.caracteristiques.environement.qualiteEnvironnement,
-                    proximiteServicesPublics: this.state.caracteristiques.environement.proximiteServicesPublics
+                    nuissanceSonore: this.state.nuissanceSonore,
+                    voisinageVisaVis: this.state.voisinageVisaVis,
+                    qualiteEnvironnement: this.state.qualiteEnvironnement,
+                    proximiteServicesPublics: this.state.proximiteServicesPublics
                 },
                 criteresGeneraux: {
-                    qualiteDistribution: this.state.caracteristiques.criteresGeneraux.qualiteDistribution,
-                    etatMursPlafonds: this.state.caracteristiques.criteresGeneraux.etatMursPlafonds,
-                    solsEtRevetementSols: this.state.caracteristiques.criteresGeneraux.solsEtRevetementSols
+                    qualiteDistribution: this.state.qualiteDistribution,
+                    etatMursPlafonds: this.state.etatMursPlafonds,
+                    solsEtRevetementSols: this.state.solsEtRevetementSols
                 },
                 sejour: {
-                    tailleSejour: this.state.caracteristiques.sejour.tailleSejour,
-                    expositionSejour: this.state.caracteristiques.sejour.expositionSejour,
-                    vueSejour: this.state.caracteristiques.sejour.vueSejour,
-                    luminosite: this.state.caracteristiques.sejour.luminosite,
-                    cheminee: this.state.caracteristiques.sejour.cheminee
+                    tailleSejour: this.state.tailleSejour,
+                    expositionSejour: this.state.expositionSejour,
+                    vueSejour: this.state.vueSejour,
+                    luminosite: this.state.luminosite,
+                    cheminee: this.state.cheminee
                 },
                 cuisine: {
-                    taille: this.state.caracteristiques.cuisine.taille,
-                    equipement: this.state.caracteristiques.cuisine.equipement,
-                    etatGeneral: this.state.caracteristiques.cuisine.etatGeneral,
-                    agrement: this.state.caracteristiques.cuisine.agrement,
+                    taille: this.state.taille,
+                    equipement: this.state.equipement,
+                    etatGeneral: this.state.etatGeneral,
+                    agrement: this.state.agrement,
                 },
                 chambres: {
-                    tailleDesPieces: this.state.caracteristiques.chambres.tailleDesPieces,
-                    etatDesPieces: this.state.caracteristiques.chambres.etatDesPieces,
-                    expositionAuxBruits: this.state.caracteristiques.chambres.expositionAuxBruits
+                    tailleDesPieces: this.state.tailleDesPieces,
+                    etatDesPieces: this.state.etatDesPieces,
+                    expositionAuxBruits: this.state.expositionAuxBruits
                 },
                 sanitaires: {
-                    taillePiecesSanitaires: this.state.caracteristiques.sanitaires.taillePiecesSanitaires,
-                    nombreDeSanitaires: this.state.caracteristiques.sanitaires.nombreDeSanitaires,
-                    qualiteEtatSanitaires: this.state.caracteristiques.sanitaires.qualiteEtatSanitaires
+                    taillePiecesSanitaires: this.state.taillePiecesSanitaires,
+                    nombreDeSanitaires: this.state.nombreDeSanitaires,
+                    qualiteEtatSanitaires: this.state.qualiteEtatSanitaires
                 },
                 energie: {
-                    factureEnergetique: this.state.caracteristiques.energie.factureEnergetique,
-                    installationElectrique: this.state.caracteristiques.energie.installationElectrique,
-                    installationGaz: this.state.caracteristiques.energie.installationGaz
+                    factureEnergetique: this.state.factureEnergetique,
+                    installationElectrique: this.state.installationElectrique,
+                    installationGaz: this.state.installationGaz
                 },
                 annexes: {
-                    balconLogiaTerasse: this.state.caracteristiques.annexes.balconOuTerrasse,
-                    caveSousSol: this.state.caracteristiques.annexes.caveSousSol,
-                    agrementJardin: this.state.caracteristiques.annexes.agrementJardin,
-                    garageOuParkingOuvert: this.state.caracteristiques.annexes.garageOuParkingOuvert,
-                    comble: this.state.caracteristiques.annexes.comble
+                    balconLogiaTerasse: this.state.balconOuTerrasse,
+                    caveSousSol: this.state.caveSousSol,
+                    agrementJardin: this.state.agrementJardin,
+                    garageOuParkingOuvert: this.state.garageOuParkingOuvert,
+                    comble: this.state.comble
                 }
 
             },
             estimation: {
-            prix_comparaison: this.state.estimation.prix_estimation,
-            prix_reference: this.state.estimation.prix_reference
+            prix_comparaison: this.state.prix_estimation,
+            prix_reference: this.state.prix_reference
           }
 
 
@@ -380,7 +334,12 @@ class SuperMasterForm extends Component {
                         currentStep={this.state.currentStep}
                         onChange={this.onChange}
                         errors={this.errors}
-                        client={this.state.client}
+                        civilite={this.state.civilite}
+                        prenom={this.state.prenom}
+                        nom={this.state.nom}
+                        adressePostale={this.state.adressePostale}
+                        email={this.state.email}
+                        telephone={this.state.telephone}
                     />
 
 
@@ -388,18 +347,97 @@ class SuperMasterForm extends Component {
                         currentStep={this.state.currentStep}
                         onChange={this.onChange}
                         errors={this.errors}
-                        bienImmobillier={this.state.bienImmobillier}
-                    />
+                        numero={this.state.numero}
+                        voie={this.state.voie}
+                        codePostal={this.state.codePostal}
+                        ville={this.state.ville}
+                        anneeConstruction={this.state.anneeConstruction}
+                        typeBienAffiche={this.state.typeBienAffiche}
+                        nombrePieces={this.state.nombrePieces}
+                        nombreChambres={this.state.nombreChambres}
+                        surfaceHabitable={this.state.surfaceHabitable}
+                        surfaceTerrain={this.state.surfaceTerrain}
+                        nombreNiveaux={this.state.nombreNiveaux}
+                        ascenseur={this.state.ascenseur}
+                        balconOuTerrasse={this.state.balconOuTerrasse}
+                        LibreALaVente={this.state.LibreALaVente}
+                        titreDossier={this.state.titreDossier}
+                        descriptifBien={this.state.descriptifBien}
+                        DPE={this.state.DPE}
+                        GES={this.state.GES}
+                        PrixMandat={this.state.PrixMandat}
+                        chargesAnnuellesTotales={this.state.chargesAnnuellesTotales}
+                        chargesDeCopropriete={this.state.chargesDeCopropriete}
+                        impotsFonciers={this.state.impotsFonciers}
+                        annexes={this.state.annexes}
+                        pointsForts={this.state.pointsForts}
+                        pointsFaibles={this.state.pointsFaibles}
+                        commentairesConfidentiels={this.state.commentairesConfidentiels}
+                        />
                     <Step3
                         currentStep={this.state.currentStep}
                         onChange={this.onChange}
                         errors={this.errors}
-                        caracteristiques={this.state.caracteristiques}
-                    />
+                        etatQualiteGrosOeuvre={this.state.etatQualiteGrosOeuvre}
+                        epoqueConstruction={this.state.epoqueConstruction}
+                        mitoyennete={this.state.mitoyennete}
+                        agrementGeneral={this.state.agrementGeneral}
+                        standing={this.state.standing}
+                        accessibilite={this.state.accessibilite}
+                        toutAEgout={this.state.toutAEgout}
+                        qualiteArchitecturale={this.state.qualiteArchitecturale}
+                        etatPortesEtFenetres={this.state.etatPortesEtFenetres}
+                        etatDesToitures={this.state.etatDesToitures}
+                        clotureTerrain={this.state.clotureTerrain}
+                        nuissanceSonore={this.state.nuissanceSonore}
+                        voisinageVisaVis={this.state.voisinageVisaVis}
+                        qualiteEnvironnement={this.state.qualiteEnvironnement}
+                        proximiteServicesPublics={this.state.proximiteServicesPublics}
+                        qualiteDistribution={this.state.qualiteDistribution}
+                        etatMursPlafonds={this.state.etatMursPlafonds}
+                        solsEtRevetementSols={this.state.solsEtRevetementSols}
+                        tailleSejour={this.state.tailleSejour}
+                        expositionSejour={this.state.expositionSejour}
+                        vueSejour={this.state.vueSejour}
+                        luminosite={this.state.luminosite}
+                        cheminee={this.state.cheminee}
+                        taille={this.state.taille}
+                        equipement={this.state.equipement}
+                        etatGeneral={this.state.etatGeneral}
+                        agrement={this.state.agrement}
+                        tailleDesPieces={this.state.tailleDesPieces}
+                        etatDesPieces={this.state.etatDesPieces}
+                        expositionAuxBruits={this.state.expositionAuxBruits}
+                        taillePiecesSanitaires={this.state.taillePiecesSanitaires}
+                        nombreDeSanitaires={this.state.nombreDeSanitaires}
+                        qualiteEtatSanitaires={this.state.qualiteEtatSanitaires}
+                        factureEnergetique={this.state.factureEnergetique}
+                        installationElectrique={this.state.installationElectrique}
+                        installationGaz={this.state.installationGaz}
+                        balconLogiaTerasse={this.state.balconLogiaTerasse}
+                        caveSousSol={this.state.caveSousSol}
+                        agrementJardin={this.state.agrementJardin}
+                        garageOuParkingOuvert={this.state.garageOuParkingOuvert}
+                        comble={this.state.comble}
+                        />
+
                     <Step4
                         currentStep={this.state.currentStep}
                         onChange={this.onChange}
                         errors={this.errors}
+                        decoteBienOccupe={this.state.decoteBienOccupe}
+                        decoteBienOccupeR={this.state.decoteBienOccupeR}
+                        autresElements={this.state.autresElements}
+                        autresElementsR={this.state.autresElementsR}
+                        travauxARealiser={this.state.travauxARealiser}
+                        travauxARealiserR={this.state.travauxARealiserR}
+                        valorisationTerrain={this.state.valorisationTerrain}
+                        valorisationTerrainR={this.state.valorisationTerrainR}
+                        renove={this.state.renove}
+                        affichageNetVendeur={this.state.affichageNetVendeur}
+                        prix_comparaison={this.state.prix_comparaison}
+                        prix_reference={this.state.prix_reference}
+                        prix_final={this.state.prix_final}
                     />
 
                     {this.previousButton}

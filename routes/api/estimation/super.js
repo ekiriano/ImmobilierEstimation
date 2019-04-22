@@ -30,7 +30,7 @@ router.post(
     }
 
     const newSuperBien = new SuperBien({
-        user: req.user.id,
+          user: req.user.id,
           nom: req.body.client.nom,
           prenom: req.body.client.prenom,
           adressePostale: req.body.client.ville,

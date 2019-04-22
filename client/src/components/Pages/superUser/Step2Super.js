@@ -21,7 +21,7 @@ class Step2Super extends Component {
                     <input className="input" type="texte" placeholder="Numéro"
                     name="numero"
                     onChange={this.props.onChange}
-                    value={this.props.bienImmobillier.localisationBien.numero}
+                    value={this.props.numero}
                      required
                      />
                   </p>
@@ -38,7 +38,7 @@ class Step2Super extends Component {
                   <p className="control">
                     <input className="input" type="texte" placeholder="Voie"
                     name="voie"
-                    value={this.props.bienImmobillier.localisationBien.voie}
+                    value={this.props.voie}
                     onChange={this.props.onChange}
                     required/>
                   </p>
@@ -55,7 +55,7 @@ class Step2Super extends Component {
                   <p className="control">
                     <input className="input" type="texte" placeholder="Code postal"
                     name="codePostal"
-                    value={this.props.bienImmobillier.localisationBien.codePostal}
+                    value={this.props.codePostal}
                     onChange={this.props.onChange}
                     required/>
                   </p>
@@ -72,7 +72,7 @@ class Step2Super extends Component {
                   <p className="control">
                     <input className="input" type="texte" placeholder="Ville"
                     name="ville"
-                    value={this.props.bienImmobillier.localisationBien.ville}
+                    value={this.props.ville}
                     onChange={this.props.onChange}
                     required/>
                   </p>
@@ -91,7 +91,7 @@ class Step2Super extends Component {
                  <p className="control">
                    <input className="input" type="texte" placeholder="Année de construction"
                    name="anneeConstruction"
-                   value={this.props.bienImmobillier.informations.anneeConstruction}
+                   value={this.props.anneeConstruction}
                    onChange={this.props.onChange}
                    required/>
                  </p>
@@ -128,7 +128,7 @@ class Step2Super extends Component {
                  <p className="control">
                    <input className="input" type="texte" placeholder="Nombre de pièces"
                    name="nombrePieces"
-                   value={this.props.bienImmobillier.informations.nombrePieces}
+                   value={this.props.nombrePieces}
                    onChange={this.props.onChange}
                    required/>
                  </p>
@@ -145,7 +145,7 @@ class Step2Super extends Component {
                  <p className="control">
                    <input className="input" type="texte" placeholder="Nombre de chambres"
                    name="nombreChambres"
-                   value={this.props.bienImmobillier.informations.nombreChambres}
+                   value={this.props.nombreChambres}
                    onChange={this.props.onChange}
                    required/>
                  </p>
@@ -163,7 +163,7 @@ class Step2Super extends Component {
                  <p className="control">
                    <input className="input" type="texte" placeholder="Surface habitable"
                    name="surfaceHabitable"
-                   value={this.props.bienImmobillier.informations.surfaceHabitable}
+                   value={this.props.surfaceHabitable}
                    onChange={this.props.onChange}
                    required/>
                  </p>
@@ -180,7 +180,7 @@ class Step2Super extends Component {
                  <p className="control">
                    <input className="input" type="texte" placeholder="Surface terrain"
                    name="surfaceTerrain"
-                   value={this.props.bienImmobillier.informations.surfaceTerrain}
+                   value={this.props.surfaceTerrain}
                    onChange={this.props.onChange}
                    required/>
                  </p>
@@ -197,7 +197,7 @@ class Step2Super extends Component {
                  <p className="control">
                    <input className="input" type="texte" placeholder="Nombre de niveaux"
                    name="nombreNiveaux"
-                   value={this.props.bienImmobillier.informations.nombreNiveaux}
+                   value={this.props.nombreNiveaux}
                    onChange={this.props.onChange}
                    required/>
                  </p>
@@ -209,11 +209,17 @@ class Step2Super extends Component {
             Ascenseur
            <div className="control">
                 <label className="radio">
-                  <input type="radio" name="ascenseur"></input>
+                  <input type="radio" name="ascenseur"
+                  value="Non"
+                  checked={this.props.ascenseur === "Non"}
+                  onChange={this.props.onChange}></input>
                   Non
                 </label>
                 <label className="radio">
-                  <input type="radio" name="ascenseur"></input>
+                  <input type="radio" name="ascenseur"
+                  value="Oui"
+                  checked={this.props.ascenseur === "Oui"}
+                  onChange={this.props.onChange}></input>
                   Oui
                 </label>
             </div>
@@ -223,11 +229,17 @@ class Step2Super extends Component {
             Balcon/Terasse
            <div className="control">
                 <label className="radio">
-                  <input type="radio" name="balconOuTerrasse"></input>
+                  <input type="radio" name="balconOuTerrasse"
+                  value="Non"
+                  checked={this.props.balconOuTerrasse === "Non"}
+                  onChange={this.props.onChange}></input>
                   Non
                 </label>
                 <label className="radio">
-                  <input type="radio" name="balconOuTerrasse"></input>
+                  <input type="radio" name="balconOuTerrasse"
+                  value="Oui"
+                  checked={this.props.balconOuTerrasse === "Oui"}
+                  onChange={this.props.onChange}></input>
                   Oui
                 </label>
             </div>
@@ -237,11 +249,17 @@ class Step2Super extends Component {
             Libre A La Vente
            <div className="control">
                 <label className="radio">
-                  <input type="radio" name="LibreALaVente"></input>
+                  <input type="radio" name="LibreALaVente"
+                  value="Non"
+                  checked={this.props.LibreALaVente === "Non"}
+                  onChange={this.props.onChange}></input>
                   Non
                 </label>
                 <label className="radio">
-                  <input type="radio" name="LibreALaVente"></input>
+                  <input type="radio" name="LibreALaVente"
+                  value="Oui"
+                  checked={this.props.LibreALaVente === "Oui"}
+                  onChange={this.props.onChange}></input>
                   Oui
                 </label>
             </div>
@@ -258,7 +276,7 @@ class Step2Super extends Component {
                  <p className="control">
                    <input className="input" type="texte" placeholder="Charges annuelles totales"
                    name="chargesAnnuellesTotales"
-                   value={this.props.bienImmobillier.chargesEtImpots.chargesAnnuellesTotales}
+                   value={this.props.chargesAnnuellesTotales}
                    onChange={this.props.onChange}
                    required/>
                  </p>
@@ -275,7 +293,7 @@ class Step2Super extends Component {
                  <p className="control">
                    <input className="input" type="texte" placeholder="Charges de copropriete"
                    name="chargesDeCopropriete"
-                   value={this.props.bienImmobillier.chargesEtImpots.chargesDeCopropriete}
+                   value={this.props.chargesDeCopropriete}
                    onChange={this.props.onChange}
                    required/>
                  </p>
@@ -292,7 +310,7 @@ class Step2Super extends Component {
                  <p className="control">
                    <input className="input" type="texte" placeholder="Impots fonciers"
                    name="impotsFonciers"
-                   value={this.props.bienImmobillier.chargesEtImpots.impotsFonciers}
+                   value={this.props.impotsFonciers}
                    onChange={this.props.onChange}
                    required/>
                  </p>
@@ -311,7 +329,7 @@ class Step2Super extends Component {
                     placeholder="points Fort"
                     name="pointsForts"
                     onChange={this.props.onChange}
-                    value={this.props.bienImmobillier.pointsFortsPointsFaible.pointsForts}
+                    value={this.props.pointsForts}
                     required/>
 
               </div>
@@ -329,7 +347,7 @@ class Step2Super extends Component {
                     name="pointsFortsPointsFaible"
                     placeholder="points Faibles"
                     onChange={this.props.onChange}
-                    value={this.props.bienImmobillier.pointsFortsPointsFaible.pointsFaibles}
+                    value={this.props.pointsFaibles}
                     required/>
 
               </div>
@@ -341,7 +359,7 @@ class Step2Super extends Component {
             <textarea className="textarea"
             name="commentairesConfidentiels"
             placeholder="Ce commentaire n'apparait pas dans les documents clients"
-            value={this.props.bienImmobillier.commentairesConfidentiels}
+            value={this.props.commentairesConfidentiels}
             required>
             </textarea>
 
