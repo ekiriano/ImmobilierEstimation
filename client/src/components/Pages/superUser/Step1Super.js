@@ -24,27 +24,27 @@ class Step1Super extends Component {
 
             <div className="control">
                 <label className="radio">
-                  <input type="radio" value="Aucun" name="civilite"></input>
+                  <input type="radio" value="Aucun" name="civilite" onChange={this.props.onChange}></input>
                   Aucun.
                 </label>
                 <label className="radio">
-                  <input type="radio" value="Monsieur" name="civilite"></input>
+                  <input type="radio" value="Monsieur" name="civilite" onChange={this.props.onChange}></input>
                   Monsieur.
                 </label>
                 <label className="radio">
-                  <input type="radio" value="Madame" name="civilite"></input>
+                  <input type="radio" value="Madame" name="civilite" onChange={this.props.onChange}></input>
                   Madame.
                 </label>
                 <label className="radio">
-                  <input type="radio" value="MonsieurEtMadame" name="civilite"></input>
+                  <input type="radio" value="MonsieurEtMadame" name="civilite" onChange={this.props.onChange}></input>
                   Monsieur et Madame.
                 </label>
                 <label className="radio">
-                  <input type="radio" value="Messieurs" name="civilite"></input>
+                  <input type="radio" value="Messieurs" name="civilite" onChange={this.props.onChange}></input>
                   Messieurs.
                 </label>
                 <label className="radio">
-                  <input type="radio" value="Mesdames" name="civilite"></input>
+                  <input type="radio" value="Mesdames" name="civilite" onChange={this.props.onChange}></input>
                   Mesdames.
                 </label>
             </div>
@@ -56,7 +56,11 @@ class Step1Super extends Component {
               <div className="field-body">
                 <div className="field">
                   <p className="control">
-                    <input className="input" type="texte" placeholder="Prénom" name="prenom" required/>
+                    <input className="input" type="texte" placeholder="Prénom"
+                    name="prenom"
+                    // onChange={this.props.onChange}
+                    value={this.props.client.prenom}
+                    required/>
                   </p>
                 </div>
               </div>
@@ -69,7 +73,10 @@ class Step1Super extends Component {
               <div className="field-body">
                 <div className="field">
                   <p className="control">
-                    <input className="input" type="texte" placeholder="Nom" name="nom" required/>
+                    <input className="input" type="texte" placeholder="Nom"
+                    name="nom"
+                    value={this.props.client.nom}
+                    required/>
                   </p>
                 </div>
               </div>
@@ -82,7 +89,11 @@ class Step1Super extends Component {
               <div className="field-body">
                 <div className="field">
                   <p className="control">
-                    <input className="input" type="texte" placeholder="Adresse Postale" name="adressePostale" required/>
+                    <input className="input" type="texte" placeholder="Adresse Postale"
+                    name="adressePostale"
+                    onChange={this.props.onChange}
+                    value={this.props.client.adressePostale}
+                    required/>
                   </p>
                 </div>
               </div>
@@ -95,7 +106,11 @@ class Step1Super extends Component {
               <div className="field-body">
                 <div className="field">
                   <p className="control">
-                    <input className="input" type="email" placeholder="Email" name="email" required/>
+                    <input className="input" type="email" placeholder="Email"
+                    name="email"
+                    // onChange={this.props.onChange}
+                    value={this.props.client.email}
+                    required/>
                   </p>
                 </div>
               </div>
@@ -108,7 +123,11 @@ class Step1Super extends Component {
               <div className="field-body">
                 <div className="field">
                   <p className="control">
-                    <input className="input" type="texte" placeholder="Téléphone" name="telephone" required/>
+                    <input className="input" type="texte" placeholder="Téléphone"
+                    name="telephone"
+                    // onChange={this.props.onChange}
+                    value={this.props.client.telephone}
+                    required/>
                   </p>
                 </div>
               </div>

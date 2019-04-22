@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create Schema
-const HouseSchema = new Schema({
+const SuperBienSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
     ref: "users"
@@ -21,8 +21,9 @@ const HouseSchema = new Schema({
       },
       prenom: {type: String,  required: true},
       nom: {type: String, required: true},
+      adressePostale: {type: String, required: true},
       email: {type: String, required: true},
-      telephone: {type: number, required: true }
+      telephone: {type: Number, required: true }
 
     }
   ],
@@ -82,7 +83,6 @@ const HouseSchema = new Schema({
     },
 
     content: {type: String, required: true}
-    },
   }],
   caracteristiques: [
     {
@@ -590,7 +590,7 @@ const HouseSchema = new Schema({
       },
 
     }
-  }]
+  }],
 
   estimation: {
     decoteBienOccupe: {
@@ -659,4 +659,4 @@ const HouseSchema = new Schema({
   // add longtitude latitude
 });
 
-module.exports = House = mongoose.model("House", HouseSchema);
+module.exports = SuperBien = mongoose.model("SuperBien", SuperBienSchema);
