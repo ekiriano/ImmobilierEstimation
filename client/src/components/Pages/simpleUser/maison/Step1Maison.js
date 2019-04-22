@@ -45,7 +45,9 @@ class Step1Maison extends Component {
             <AlgoliaPlaces
               placeholder='rue'
               name="rue"
-              className="input is-medium"
+              className={classnames("input is-medium", {
+                "is-danger": errors.rue
+             })}
               //value={this.props.rue}
               onChange={this.props.onChange}
               required
@@ -66,7 +68,9 @@ class Step1Maison extends Component {
                 {
                   console.log( suggestion.latlng)
                   this.props.setCoordinates(suggestion.latlng);
-                  document.querySelector('#ville').value = suggestion.city || '';
+                  var ville = document.querySelector('#ville');
+                  ville.value = suggestion.city || '';
+                  ville.dispatchEvent(new Event('input', { bubbles: true }));
                   document.querySelector('#code_postal').value = suggestion.postcode || '';
                 } 
             
