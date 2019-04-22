@@ -44,7 +44,7 @@ class SuperMasterForm extends Component {
                     ville: ""
                 },
                 informations: {
-                    annneConstruction: "",
+                    anneeConstruction: "",
                     typeBienAffiche: "",
                     nombrePieces: "",
                     nombreChambres: "",
@@ -157,6 +157,7 @@ class SuperMasterForm extends Component {
         }
 
         this.onChange = this.onChange.bind(this);
+        this.onClientChange = this.onClientChange.bind(this);
         this.next = this.next.bind(this);
         this.previous = this.previous.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -169,6 +170,12 @@ class SuperMasterForm extends Component {
         });
     }
 
+    onClientChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+
     onSubmit(e) {
         e.preventDefault();
 
@@ -176,7 +183,8 @@ class SuperMasterForm extends Component {
             client: {
               nom: this.state.client.nom,
               prenom: this.state.client.prenom,
-              adressePostale: this.state.client.ville,
+              adressePostale: this.state.client.adressePostale,
+              telephone: this.state.client.telephone,
               email: this.state.client.email
             },
             bienImmobillier: {
@@ -187,7 +195,7 @@ class SuperMasterForm extends Component {
                     ville: this.state.bienImmobillier.localisationBien.ville
                 },
                 informations: {
-                    anneConstruction: this.state.bienImmobillier.informations.anneConstruction,
+                    anneeConstruction: this.state.bienImmobillier.informations.anneeConstruction,
                     typeBienAffiche: this.state.bienImmobillier.informations.typeBienAffiche,
                     nombrePieces: this.state.bienImmobillier.informations.nombrePieces,
                     nombreChambres: this.state.bienImmobillier.informations.nombreChambres,

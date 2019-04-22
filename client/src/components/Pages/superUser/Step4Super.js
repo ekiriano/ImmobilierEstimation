@@ -35,7 +35,7 @@ class Step4Super extends Component {
                   <div className="field-body">
                     <div className="field">
                       <p className="control">
-                        <input className="input is-small" type="texte" placeholder="decoteBienOccupe" name="decoteBienOccupe" required/>
+                        <input className="input is-small" type="texte" placeholder="decoteBienOccupe" name="decoteBienOccupe" onChange={this.props.onChange} required/>
                       </p>
                     </div>
                   </div>
@@ -58,7 +58,7 @@ class Step4Super extends Component {
                   <div className="field-body">
                     <div className="field">
                       <p className="control">
-                        <input className="input is-small" type="texte" placeholder="autresElements" name="autresElements" required/>
+                        <input className="input is-small" type="texte" placeholder="autresElements" name="autresElements" onChange={this.props.onChange} required/>
                       </p>
                     </div>
                   </div>
@@ -81,7 +81,7 @@ class Step4Super extends Component {
                   <div className="field-body">
                     <div className="field">
                       <p className="control">
-                        <input className="input is-small" type="texte" placeholder="travauxARealiser" name="travauxARealiser" required/>
+                        <input className="input is-small" type="texte" placeholder="travauxARealiser" name="travauxARealiser" onChange={this.props.onChange} required/>
                       </p>
                     </div>
                   </div>
@@ -104,7 +104,7 @@ class Step4Super extends Component {
                   <div className="field-body">
                     <div className="field">
                       <p className="control">
-                        <input className="input is-small" type="texte" placeholder="valorisationTerrain" name="valorisationTerrain" required/>
+                        <input className="input is-small" type="texte" placeholder="valorisationTerrain" name="valorisationTerrain" onChange={this.props.onChange} required/>
                       </p>
                     </div>
                   </div>
@@ -127,7 +127,7 @@ class Step4Super extends Component {
                   <div className="field-body">
                     <div className="field">
                       <p className="control">
-                        <input className="input is-small" type="texte" placeholder="renove" name="renove" required/>
+                        <input className="input is-small" type="texte" placeholder="renove" name="renove" onChange={this.props.onChange} required/>
                       </p>
                     </div>
                   </div>

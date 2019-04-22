@@ -130,6 +130,7 @@ class MaisonMasterForm extends Component {
       qualite_toiture: this.state.qualite_toiture,
       prix_estimation:this.state.prix_estimation
     };
+    console.log('state', this.state)
 
     if (this.props.user.user_type === "regular" || this.props.user.user_type === "super" ) {
       this.props.submitDefaultMaisonSave(newDefautMaison);

@@ -49,7 +49,7 @@ if (Validator.isEmpty(data.client.email)) {
 }
 
 if (Validator.isEmpty(data.client.telephone) ||
-!Validator.isNumeric(data.client.telephone, { no_symbols: true })
+!Validator.isNumeric(data.client.telephone, { no_symbols: true }))
 {
   errors.client.telephone = "telephone is required";
 }
@@ -238,7 +238,7 @@ if (
   !Validator.matches(
     data.caracteristiques.elementsPrincipaux.epoqueConstruction,
     'Pas recherché',
-    'Peu recherché'
+    'Peu recherché',
     'Neutre',
     'Recherché',
     'Trés recherché'
@@ -253,7 +253,7 @@ if (
   !Validator.matches(
     data.caracteristiques.elementsPrincipaux.mitoyennete,
     '3 cotés',
-    '2 cotés'
+    '2 cotés',
     '1 cotés',
     'Pas de dependance',
     'Maison independante'
@@ -268,7 +268,7 @@ if (
   !Validator.matches(
     data.caracteristiques.elementsPrincipaux.agrementGeneral,
     'Tres desagreable',
-    'Desagreable'
+    'Desagreable',
     'Moyen',
     'Agreable',
     'Tres agreable'
@@ -298,7 +298,7 @@ if (
   !Validator.matches(
     data.caracteristiques.elementsPrincipaux.accessibilite,
     'Trés difficile',
-    'Difficile'
+    'Difficile',
     'Normal',
     'Facile',
     'Tres facile'
@@ -313,7 +313,7 @@ if (
   !Validator.matches(
     data.caracteristiques.elementsPrincipaux.toutAEgout,
     'Rien',
-    'A revoir'
+    'A revoir',
     'Assainissement individuel',
     'Partiel',
     'Complet'
@@ -394,7 +394,7 @@ if (
   !Validator.matches(
     data.caracteristiques.environnement.nuissanceSonore,
     'Tres bruyant',
-    'Bruyant'
+    'Bruyant',
     'Normal',
     'Calme'
   )
@@ -408,7 +408,7 @@ if (
   !Validator.matches(
     data.caracteristiques.environnement.voisinage,
     'Tres genant',
-    'Bruyant'
+    'Bruyant',
     'Normal',
     'Discret',
     'Aucun'
@@ -438,7 +438,7 @@ if (
   !Validator.matches(
     data.caracteristiques.environnement.proximiteServicesPublics,
     'Tres eloignes',
-    'Assez eloignes'
+    'Assez eloignes',
     'Normales',
     'Proches',
     'Tres proches'
@@ -471,7 +471,7 @@ if (
   !Validator.matches(
     data.caracteristiques.criteresGeneraux.etatMursPlafonds,
     'A refaire',
-    'Usage'
+    'Usage',
     'Moyen',
     'Recent',
     'Neuf'
@@ -505,7 +505,7 @@ if (
   !Validator.matches(
     data.caracteristiques.sejour.tailleSejour,
     'Tres petit',
-    'Petit'
+    'Petit',
     'Normal',
     'Grand',
     'Tres grand'
@@ -584,7 +584,7 @@ if (
   !Validator.matches(
     data.caracteristiques.cuisine.taille,
     'Tres petite',
-    'Petite'
+    'Petite',
     'Normale',
     'Grande',
     'Tres grande'
@@ -648,7 +648,7 @@ if (
   !Validator.matches(
     data.caracteristiques.chambres.tailleDesPieces,
     'Tres petite',
-    'Petite'
+    'Petite',
     'Normale',
     'Grande',
     'Tres grande'
@@ -678,7 +678,7 @@ if (
   !Validator.matches(
     data.caracteristiques.chambres.expositionAuxBruits,
     'Tres bruyante',
-    'Bruyante'
+    'Bruyante',
     'Moyenne',
     'Faible',
     'Tres faible'
@@ -697,7 +697,7 @@ if (
   !Validator.matches(
     data.caracteristiques.sanitaires.taillePiecesSanitaires,
     'Tres petite',
-    'Petite'
+    'Petite',
     'Normale',
     'Grande',
     'Tres grande'
@@ -712,7 +712,7 @@ if (
   !Validator.matches(
     data.caracteristiques.sanitaires.nombreDeSanitaires,
     'Inexistant',
-    'Insuffisant'
+    'Insuffisant',
     'Normal',
     'Eleve',
     'Tres eleve'
@@ -746,7 +746,7 @@ if (
   !Validator.matches(
     data.caracteristiques.energie.factureEnergetique,
     'Tres Elevee',
-    'Elevee'
+    'Elevee',
     'Moyenne',
     'Faible',
     'Tres faible'
