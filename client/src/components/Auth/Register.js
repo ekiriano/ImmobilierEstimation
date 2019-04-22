@@ -56,7 +56,7 @@ class Register extends Component {
 <div className="column homepage hero is-paddingless">
         <div className="login column is-4 is-offset-8 is-paddingless">
           <div id="card_log" className="card-content has-background-white">
-            <section className="section" height="50%">
+            <section className="section" >
                 <div className="has-text-centered">
                   <img src="/static/media/estimmo_logo.bd1438a3.png" alt="logo" width="60%"/>
                 </div>

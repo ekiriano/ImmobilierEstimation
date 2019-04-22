@@ -10,6 +10,9 @@ import AlgoliaPlaces from 'algolia-places-react';
 
 
 class Step1Maison extends Component {
+ 
+
+
   render() {
     const errors = this.props.errors;
     if (this.props.currentStep !== 1) {
@@ -18,27 +21,8 @@ class Step1Maison extends Component {
     return (
       <div>
 
-        <h1>Etape 1 - Ladresse</h1>
+        <h1>Etape 1 - L'adresse</h1>
 
-    {/*
-        <div className="field">
-          <div className="control">
-            <input
-              className={classnames("input is-medium", {
-                "is-danger": errors.rue
-              })}
-              type="text"
-              name="rue"
-              placeholder="rue"
-              value={this.props.rue}
-              onChange={this.props.onChange}
-              required
-            />
-
-            {errors.rue && <p class="help is-danger">{errors.rue}</p>}
-          </div>
-        </div>
-            */}
 
         <div className="field">
           <div className="control">
@@ -49,13 +33,14 @@ class Step1Maison extends Component {
                 "is-danger": errors.rue
              })}
               //value={this.props.rue}
-              onChange={this.props.onChange}
+             
               required
               options={{
                 appId: 'plWUDIFT7TRW',
                 apiKey: '22f2e2fcd81c4671b9628b413b864801',
                 templates: {
                   value: function(suggestion) {
+                  
                     return suggestion.name;
                   }
                 },
@@ -66,18 +51,20 @@ class Step1Maison extends Component {
               // eslint-disable-next-line react/jsx-no-duplicate-props
               onChange={({ query, rawAnswer, suggestion, suggestionIndex }) => 
                 {
-                  console.log( suggestion.latlng)
                   this.props.setCoordinates(suggestion.latlng);
                   var ville = document.querySelector('#ville');
                   ville.value = suggestion.city || '';
-                  ville.dispatchEvent(new Event('input', { bubbles: true }));
-                  document.querySelector('#code_postal').value = suggestion.postcode || '';
+                  this.props.changeVille(suggestion.city);
+                  this.props.changeRue(suggestion.name);
+                  var code_postal = document.querySelector('#code_postal');
+                  code_postal.value = suggestion.postcode || '';
+                  this.props.changeCodePostal(suggestion.postcode || '');
                 } 
             
               }
         
               onSuggestions={({ rawAnswer, query, suggestions }) => 
-                console.log()}
+                console.log({rawAnswer})}
         
               onCursorChanged={({ rawAnswer, query, suggestion, suggestonIndex }) => 
                 console.log()}

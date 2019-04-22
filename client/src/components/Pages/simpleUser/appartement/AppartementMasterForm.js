@@ -42,10 +42,24 @@ class AppartementMasterForm extends Component {
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.changeVille = this.changeVille.bind(this);
+    this.changeCodePostal = this.changeCodePostal.bind(this);
+    this.changeRue = this.changeRue.bind(this);
   }
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+  }
+
+   
+  changeVille(ville){
+    this.setState({ ville: ville });
+  }
+  changeRue(rue){
+    this.setState({ rue: rue });
+  }
+  changeCodePostal(code_postal){
+    this.setState({ code_postal: code_postal });
   }
 
   onSubmit(e) {
@@ -177,6 +191,9 @@ class AppartementMasterForm extends Component {
             rue={this.state.rue}
             code_postal={this.state.code_postal}
             ville={this.state.ville}
+            changeVille={this.changeVille}
+            changeCodePostal={this.changeCodePostal}
+            changeRue={this.changeRue}
           />
           <Step2
             currentStep={this.state.currentStep}
