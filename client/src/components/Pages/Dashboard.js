@@ -29,13 +29,14 @@ class Dashboard extends Component {
 
   // TODO ::  Component did update to re store user tye
 
+  /*
   componentWillUpdate(nextprops){
     if(nextprops.auth.user){
       
 
     }
   }
-  
+  */
   render() {
     return (
       <div className="primary-bg">
