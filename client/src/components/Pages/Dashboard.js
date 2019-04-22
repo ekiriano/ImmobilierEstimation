@@ -39,7 +39,7 @@ class Dashboard extends Component {
   /*
   componentWillUpdate(nextprops){
     if(nextprops.auth.user){
-      
+
 
     }
   }
@@ -97,6 +97,7 @@ class Dashboard extends Component {
                       className={classnames("", {
                         "is-active": this.state.showBiens
                       })}
+                      onClick={this.onClickshowBiens.bind(this)}
                     >
                       Estimmations
                     </Link>

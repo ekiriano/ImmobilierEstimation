@@ -318,6 +318,99 @@ class Step2Super extends Component {
               </div>
             </label>
           </div>
+
+          <div className="field">
+            <div className="control">
+                <div
+                  className={classnames("select is-medium", {
+                    "is-danger": errors.DPE
+                  })}
+                >
+                    <select
+                       name="DPE"
+                       value={this.props.DPE}
+                       onChange={this.props.onChange}
+                    >
+                        <option>Diag. Perf. Energetique</option>
+                        <option value="A++">A++</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                    </select>
+                </div>
+                {errors.DPE && (
+                  <p className="help is-danger">
+                    {errors.DPE}
+                  </p>
+                )}
+            </div>
+          </div>
+          <div className="field">
+            <div className="control">
+                <div
+                  className={classnames("select is-medium", {
+                    "is-danger": errors.GES
+                  })}
+                >
+                    <select
+                       name="GES"
+                       value={this.props.GES}
+                       onChange={this.props.onChange}
+                    >
+                        <option>Diag. Perf. Energetique</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                    </select>
+                </div>
+                {errors.GES && (
+                  <p className="help is-danger">
+                    {errors.GES}
+                  </p>
+                )}
+            </div>
+          </div>
+          <div className="field is-horizontal">
+            <div className="field-label is-normal">
+              <label className="label">Prix mandat</label>
+            </div>
+            <div className="field-body">
+              <div className="field">
+                <p className="control">
+                  <input
+                    className="input"
+                    type="number"
+                    placeholder="$"
+                    name="prixMandat"
+                    value={this.props.prixMandat}
+                    onChange={this.props.onChange}
+                    required
+                  />
+                </p>
+              </div>
+            </div>
+          </div>
+          <textarea
+            className="textarea"
+            name="titreDossier"
+            placeholder="Titre du dossier"
+            value={this.props.titreDossier}
+            onChange={this.props.onChange}
+            required
+          />
+          <textarea
+            className="textarea"
+            name="descriptifBien"
+            placeholder="Description"
+            value={this.props.descriptifBien}
+            onChange={this.props.onChange}
+            required
+          />
           <div className="column">
             <h1>Charges et impots</h1> <hr />
             <div className="field is-horizontal">
@@ -380,12 +473,32 @@ class Step2Super extends Component {
                 </div>
               </div>
             </div>
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label className="label">Annexes</label>
+              </div>
+              <div className="field-body">
+                <div className="field">
+                  <p className="control">
+                    <input
+                      className="input"
+                      type="text"
+                      placeholder="Annexes"
+                      name="annexes"
+                      value={this.props.annexes}
+                      onChange={this.props.onChange}
+                      required
+                    />
+                  </p>
+                </div>
+              </div>
+            </div>
             <h1>Points forts et faibles</h1> <hr />
             <ul>
               <li className="">
                 Un point fort
                 <Link to="#" className="button is-danger">
-                  <i class="uil uil-trash-alt" />
+                  <i className="uil uil-trash-alt" />
                 </Link>
               </li>
             </ul>
@@ -404,7 +517,7 @@ class Step2Super extends Component {
                 </div>
               </div>
               <button className="button is-success">
-                <i class="uil uil-plus" />
+                <i className="uil uil-plus" />
                 Ajouter point fort
               </button>
               <button>plus</button>
@@ -424,26 +537,26 @@ class Step2Super extends Component {
                 </div>
               </div>
               <button className="button is-success">
-                <i class="uil uil-plus" /> Ajouter point faible
+                <i className="uil uil-plus" /> Ajouter point faible
               </button>
               <button>plus</button>
             </div>
             <h1>Commentaires confidentiels</h1> <hr />
-            {/*
             <textarea
               className="textarea"
               name="commentairesConfidentiels"
               placeholder="Ce commentaire n'apparait pas dans les documents clients"
               value={this.props.commentairesConfidentiels}
+              onChange={this.props.onChange}
               required
-            />*/}
-            <Editor
-              editorState={this.props.commentairesConfidentiels}
-              toolbarClassName="toolbarClassName"
-              wrapperClassName="wrapperClassName"
-              editorClassName="editorClassName"
-              onEditorStateChange={this.onEditorStateChange}
             />
+            {/* <Editor
+             editorState={this.props.commentairesConfidentiels}
+             toolbarClassName="toolbarClassName"
+             wrapperClassName="wrapperClassName"
+             editorClassName="editorClassName"
+             onEditorStateChange={this.onEditorStateChange}
+             /> */}
           </div>
         </div>
       </div>

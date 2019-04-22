@@ -31,7 +31,7 @@ class savedBiens extends Component {
             <div className="card mb-is-1" key={i}>
             <header className="card-header">
                 <p className="card-header-title">
-                    Addresse : {bien.rue} {bien.code_postal} {bien.ville}
+                    Addresse :{bien.ville}
                 </p>
             </header>
             <div className="card-content">
