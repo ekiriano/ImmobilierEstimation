@@ -5,17 +5,26 @@ module.exports = {
 
     var nbr=0;
     var estime=0;
+    var surfacemoy=0;
     for(var bien=0;bien<json.maisons.length;bien++){
       if(json.maisons[bien].bienImmobillier.localisationBien.codePostal== Bien.bienImmobillier.localisationBien.codePostal){
       estime=estime+json.maisons[bien].estimation.prix_estimation.methodecomparaison;
+      surfacemoy=surfacemoy + json.maisons[bien].informations.surfaceHabitable;
       nbr++;
     }
   }
+  surfacemoy=surfacemoy/nbr;
 
-    estime=estime/nbr;
 
-    Bien.estimation.prix_estimation.methodecomparaison=estime;
+  estime=estime/nbr;
+
+  var a= surfacemoy;
+  var b= Bien.informations.surfaceHabitable;
+  var c = estime;
+  var estimmation = Math.round( (b*c)/a);
+  Bien.estimation.prix_estimation.methodecomparaison=estimmation;
     Bien.estimation.prix_estimation.methodecomparaison=Bien.estimation.prix_estimation.methodecomparaison-(Bien.estimation.decoteBienOccupe+Bien.estimation.autresElements+Bien.estimation.travauxARealiser+Bien.estimation.valorisationTerrain+Bien.estimation.renove);
+    console.log(Bien.estimation.prix_estimation.methodecomparaison);
 
     return Bien;
   },
@@ -65,12 +74,16 @@ module.exports = {
     }
 
     Bien.estimation.prix_estimation.methodereference=Bien.estimation.prix_estimation.methodereference-(Bien.estimation.decoteBienOccupe+Bien.estimation.autresElements+Bien.estimation.travauxARealiser+Bien.estimation.valorisationTerrain+Bien.estimation.renove);
+        console.log(Math.round(Bien.estimation.prix_estimation.methodereference));
+
   },
 
   EstimationCapitalisation: Bien => {
     
     Bien.estimation.prix_estimation.methodecapitalisation= (Bien.informations.valeurLocative * 12)/ (Bien.informations.tauxCapitalisation/100);
     Bien.estimation.prix_estimation.methodecapitalisation=Bien.estimation.prix_estimation.methodecapitalisation-(Bien.estimation.decoteBienOccupe+Bien.estimation.autresElements+Bien.estimation.travauxARealiser+Bien.estimation.valorisationTerrain+Bien.estimation.renove);
+    console.log(Math.round(Bien.estimation.prix_estimation.methodecapitalisation));
+
   },
 
 };
@@ -83,37 +96,38 @@ module.exports = {
   
 
   "informations": {
-      "surfaceHabitable": 200,
+      "surfaceHabitable": 100,
       "nombrePieces":5,
-      "nombreChambres":1,
-      "nombreNiveaux":1,
-      "prixm2":21,
-      "valeurLocative": 1200,
-      "tauxCapitalisation": 4.206778355678784
+      "nombreChambres":4,
+      "nombreNiveaux":2,
+      "prixm2":89,
+      "valeurLocative": 1000,
+      "tauxCapitalisation": 5.399303410679334
       },
 
 
   "estimation": {
-    "decoteBienOccupe": 2920,
+    "decoteBienOccupe": 2574,
 
-      "autresElements": 9784,
+      "autresElements": 7078,
 
-      "travauxARealiser": 4376,
+      "travauxARealiser": 5539,
 
-      "valorisationTerrain": 9315,
+      "valorisationTerrain": 4763,
 
-      "renove": 6740,
+      "renove": 7233,
 
       "prix_estimation": {
         "methodecomparaison": 0,
         "methodereference": 0,
-        "methodecapitalisation":0
+
+        "methodecapitalisation": 0
           }
       }
-    };*/
+    };
 
 
 
-/*module.exports.EstimationComparaison();
-module.exports.EstimationReference();
-module.exports.EstimationCapitalisation();*/
+module.exports.EstimationComparaison(test);
+module.exports.EstimationReference(test);
+module.exports.EstimationCapitalisation(test);*/
