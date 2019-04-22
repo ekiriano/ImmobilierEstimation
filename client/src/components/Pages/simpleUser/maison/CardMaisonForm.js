@@ -14,12 +14,12 @@ export default class CardMaisonForm extends Component {
                 <div className="dashboard-main-header" />
                 <div className="row">
                   <div className="columns dashboard-body-header">
-                    <div className="column is-6">
+                    <div className="column is-8">
                       {" "}
                       <MultiStepDefaultMaison />
                     </div>
-                    <div className="column is-6">
-                      <Map id="map-container" />
+                    <div className="column is-4 pb-0">
+                      <Map />
                     </div>
                   </div>
                 </div>
