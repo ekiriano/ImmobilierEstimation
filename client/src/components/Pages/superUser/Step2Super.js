@@ -5,6 +5,14 @@ import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 class Step2Super extends Component {
+  addPointFort(pointFort) {}
+
+  addPointFaible(pointFaible) {}
+
+  deletePointFort(index) {}
+
+  deletePointFaible(index) {}
+
   render() {
     const errors = this.props.errors;
     if (this.props.currentStep !== 2) {
