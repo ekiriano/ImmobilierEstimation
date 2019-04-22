@@ -50,7 +50,10 @@ class Dashboard extends Component {
         <div className="row">
           <div className="columns">
             <div className="column is-2 primary-bg">
-              <h1>{this.props.user.name}</h1>
+              <h1>
+                {" "}
+                <i class="uil uil-user-circle" /> {this.props.user.name}
+              </h1>
               <h3>{this.props.user.user_type} User</h3>
               {/*
               <button className="button is-link is-rounded mb-is-0_5" onClick={this.onClickshowMaisons.bind(this)} >Mes estimations de maisons</button>
@@ -102,11 +105,17 @@ class Dashboard extends Component {
               </aside>
             </div>
             {/* TODO: Switch to a menu like this would be better : https://bulma.io/documentation/components/menu/*/}
-
             <div className="column">
-              {this.state.showAppartments ? <SavedAppartements /> : null}
-              {this.state.showMaisons ? <SavedMaisons /> : null}
-              {this.state.showBiens ? <SavedBiens /> : null}
+              <div className="columns">
+                <div className="column is-10">
+                  {this.state.showAppartments ? <SavedAppartements /> : null}
+                  {this.state.showMaisons ? <SavedMaisons /> : null}
+                  {this.state.showBiens ? <SavedBiens /> : null}
+                </div>
+                <div className="column is-2">
+                  <h3>Filter Methods</h3>
+                </div>
+              </div>
             </div>
           </div>
         </div>

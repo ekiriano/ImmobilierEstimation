@@ -79,7 +79,7 @@ class Login extends Component {
                         onChange={this.onChange}
                       />
                       <span className="icon is-small is-left">
-                        <i className=" far fa-envelope" />
+                        <i class="uil uil-user-circle" />
                       </span>
                       {errors.email && (
                         <div className="invalid-feedback">{errors.email}</div>
@@ -98,7 +98,7 @@ class Login extends Component {
                         onChange={this.onChange}
                       />
                       <span class="icon is-small is-left">
-                        <i class=" fas fa-key" />
+                        <i class="uil uil-keyhole-circle" />
                       </span>
                       {errors.password && (
                         <div className="invalid-feedback">
