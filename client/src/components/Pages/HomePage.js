@@ -7,7 +7,7 @@ export default () => {
   return (
     <div>
       <header className="hero homepage">
-        <div className="hero-text">
+        <div className="hero-body">
         <img src={logo} alt="logo"
         height="50" width="50%"/>
         
