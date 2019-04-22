@@ -1,20 +1,9 @@
 import React, { Component } from "react";
 import classnames from "classnames";
-import Map from "../../Map";
+
+
 
 class Step1Maison extends Component {
-
-  constructor(props) {
-    super(props);
-  }
-
-// search(){
-//   console.log('this.state', this.state);
-//   const BASE_URL = 'https://api-adresse.data.gouv.fr/search/?';
-//   const FETCH_URL = '${BASE_URL}q=${this.props.rue}&postcode=${this.props.code_postal}&type=street&limit=1';
-//   fetch(FETCH_URL)
-// }
-
   render() {
     const errors = this.props.errors;
     if (this.props.currentStep !== 1) {
@@ -38,6 +27,7 @@ class Step1Maison extends Component {
               value={this.props.adresse_complete}
               onChange={this.props.onChange}
               onKeyPress={this.props.onKeyPress}
+              // autoComplete="on"
               required
             />
 
@@ -48,9 +38,9 @@ class Step1Maison extends Component {
 
         <div>
             {
-              this.props.predictions.map((prediction, index) => (
+              this.props.predictions.map((prediction) => (
                 <li
-			             key={index}
+			             key={prediction.properties.label}
 			             onClick={() => this.props.onClick(prediction)}
 		             >
 			              {prediction.properties.label}

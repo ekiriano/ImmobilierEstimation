@@ -3,6 +3,9 @@ import {
   submitDefaultMaison,
   submitDefaultMaisonSave
 } from "../../../../actions/defaultMaisonActions";
+import {
+  setCoordinates
+} from "../../../../actions/mapActions";
 import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
@@ -14,7 +17,8 @@ import Step4 from "./Step4Maison";
 import Step5 from "./Step5Maison";
 import FinalStepMaison from "./FinalStepMaison";
 
-const INPUT_TIMEOUT = 250;
+
+// const INPUT_TIMEOUT = 250;
 
 class MaisonMasterForm extends Component {
   constructor(props) {
@@ -24,8 +28,6 @@ class MaisonMasterForm extends Component {
       user: {},
       adresse_complete: "",
       predictions: [],
-      lat: "",
-      long: "",
       rue: "",
       code_postal: "",
       ville: "",
@@ -68,59 +70,38 @@ class MaisonMasterForm extends Component {
     })
     .then(response => response.json())
     .then(json => {
-      const address = json.features[0];
-      console.log('address', address);
       this.setState({
         predictions: json.features,
-      //   adresse_complete: address.properties.label,
-      //   rue: address.properties.name,
-      //   ville: address.properties.city,
-      //   code_postal: address.properties.postcode,
-      //   lat: address.geometry.coordinates[1],
-      //   long: address.geometry.coordinates[0],
       });
-      // console.log('adresse_complete', this.state.adresse_complete);
-      // console.log('predictions', this.state.predictions);
-      // console.log('rue', this.state.rue);
-      // console.log('ville', this.state.ville);
-      // console.log('code_postal', this.state.code_postal);
-      // console.log('long', this.state.long);
-      // console.log('lat', this.state.lat);
     });
   }
 
-  // handleChange(e){
-  //   clearTimeout(this.timeout);
-  //     const value = e.target.value;
-  //     this.setState({
-  //       adresse_complete: value
-  //     });
-  //
-  //     if (value.length > 0) {
-  //       // make delayed api call
-  //       this.timeout = setTimeout(() => {
-  //         const predictions = this.search(value);
-  //         this.setState({
-  //           predictions
-  //         });
-  //       }, INPUT_TIMEOUT);
-  //     } else {
-  //       this.setState({
-  //         predictions: []
-  //       });
+  // handleAdresseCompleteChange = (e) => {
+  //   this.setState({
+  //     adresse_complete: this.search.value
+  //   }, () => {
+  //     if (this.state.adresse_complete && this.state.adresse_complete.length > 1) {
+  //       if (this.state.adresse_complete.length % 2 === 0) {
+  //         this.getInfo()
+  //       }
   //     }
+  //   });
   // }
 
   onClick(prediction){
     console.log('prediction', prediction);
-    const address = prediction;
     this.setState({
-      adresse_complete: address.properties.label,
-      rue: address.properties.name,
-      ville: address.properties.city,
-      code_postal: address.properties.postcode,
-      lat: address.geometry.coordinates[1],
-      long: address.geometry.coordinates[0],
+
+      adresse_complete: prediction.properties.label,
+      rue: prediction.properties.name,
+      ville: prediction.properties.city,
+      code_postal: prediction.properties.postcode,
+
+    });
+    this.props.setCoordinates(prediction.geometry.coordinates[1],prediction.geometry.coordinates[0]);
+    console.log('props', this);
+    this.setState({
+      predictions: []
     });
   }
 
@@ -243,6 +224,7 @@ class MaisonMasterForm extends Component {
   }
 
   render() {
+    // console.log('props', this.props);
     return (
       <Fragment>
         <form
@@ -335,9 +317,10 @@ const mapStateProps = state => ({
   user: state.auth.user,
   errors: state.errors,
   newEstimationMaison : state.simpleMaisons.newEstimationMaison,
+  coordinates: state.map.coordinates,
 });
 
 export default connect(
   mapStateProps,
-  { submitDefaultMaison, submitDefaultMaisonSave }
+  { submitDefaultMaison, submitDefaultMaisonSave, setCoordinates }
 )(MaisonMasterForm);

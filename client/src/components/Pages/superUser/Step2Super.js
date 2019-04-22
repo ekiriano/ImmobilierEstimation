@@ -78,14 +78,14 @@ class Step2Super extends Component {
              </div>
            </div>
 
-           <div class="field is-horizontal">
-           <div class="field-label is-normal">
-            <label class="label">Type de Bien</label>
+           <div className="field is-horizontal">
+           <div className="field-label is-normal">
+            <label className="label">Type de Bien</label>
           </div>
-          <div class="field-body">
-            <div class="field is-big">
-              <div class="control">
-                <div class="select is-fullwidth">
+          <div className="field-body">
+            <div className="field is-big">
+              <div className="control">
+                <div className="select is-fullwidth">
                   <select>
                     <option>Veuillez selectionner un type</option>
                     <option>Maison</option>

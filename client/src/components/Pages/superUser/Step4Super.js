@@ -14,16 +14,16 @@ class Step4Super extends Component {
           <div>
           <h1>City's name</h1> <hr/>
 
-          <div class="columns">
-              <div class="column is-three-fifths">
-              <div class="columns">
-              <div class="column is-half">
+          <div className="columns">
+              <div className="column is-three-fifths">
+              <div className="columns">
+              <div className="column is-half">
                 <MapSuper id="map-container"/>
                 <h2>Votre secteur de reference</h2><hr/>
 
                 </div>
 
-                <div class="column">
+                <div className="column">
                 <p>Type de Bien: </p>
                 <p>Prix moyen du secteur: </p>
                 <p>Indice de qualité: </p>
@@ -149,7 +149,7 @@ class Step4Super extends Component {
 
 
 
-              <div class="column">
+              <div className="column">
               <h1> Synthèse de l'étude </h1>
 
               <h2>Les méthodes utilisée</h2> <hr/>

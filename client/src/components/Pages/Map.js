@@ -11,13 +11,30 @@ const TOKEN =
 
 
 class Map extends Component {
-  state = {
-    viewport: {
-      width: 569,
-      height: 600,
-      latitude: 43.6,
-      longitude: 3.8833,
-      zoom: 9.5,
+  constructor(props) {
+    super(props);
+    this.state = {
+      viewport: {
+        width: 676,
+        height: 700,
+        latitude: 43.6,
+        longitude: 3.8833,
+        zoom: 9.5,
+      }
+  }
+
+  }
+
+  componentWillReceiveProps(nextProps){
+    console.log('updated props', nextProps);
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+    if(nextProps.coordinates){
+      this.setState({
+        latitude : nextProps.coordinates.latitude,
+        longtitude: nextProps.coordinates.longtitude
+      });
     }
   }
 
@@ -27,12 +44,20 @@ class Map extends Component {
   // componentWillUnmount() {
   //   window.removeEventListener('resize', this.resize)
   // }
-
+  //
   // resize = () => {
   //   this.handleViewportChange({
   //     width: window.innerWidth,
   //     height: window.innerHeight
   //   })
+  // }
+
+  // componentWillMount(nextProps) {
+  //   if(this.state.latitude !== this.nextProps.coordinates.latitude)
+  //       this.setState({
+  //         latitude: this.nextProps.coordinates.latitude,
+  //         longitude: this.nextProps.coordinates.longtitude
+  //       });
   // }
 
   handleViewportChange = (viewport) => {
@@ -52,6 +77,7 @@ class Map extends Component {
   }
 
   render() {
+    // console.log('coordinates', this.props);
     return (
       <div>
 
@@ -60,7 +86,7 @@ class Map extends Component {
         {...this.state.viewport}
         onViewportChange={this.handleViewportChange}
         mapboxApiAccessToken={TOKEN}>
-        
+
       </MapGL>
       </div>
     )

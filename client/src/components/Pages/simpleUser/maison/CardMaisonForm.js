@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import MultiStepDefaultMaison from "../maison/MaisonMasterForm";
 import Map from "../../Map";
+import "../../map.css"
 
 export default class CardMaisonForm extends Component {
   render() {
@@ -18,7 +19,7 @@ export default class CardMaisonForm extends Component {
                       <MultiStepDefaultMaison />
                     </div>
                     <div className="column is-6">
-                      <Map />
+                      <Map id="map-container" />
                     </div>
                   </div>
                 </div>

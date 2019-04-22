@@ -19,7 +19,7 @@ export const submitSuperBienSave = superBienData => dispatch => {
     );
 };
 
-export const getSavedBien = () => dispatch => {
+export const getSavedBiens = () => dispatch => {
   axios
   .get("/api/estimation/super/biens/saved")
   .then(res =>
@@ -40,7 +40,7 @@ export const getSavedBien = () => dispatch => {
 
 export const deleteSavedBien = id => dispatch => {
   axios
-  .delete(`/api/estimation/super/bien/saved/${id}`)
+  .delete(`/api/estimation/super/biens/saved/${id}`)
   .then(res =>
     dispatch({
       type: DELETE_SUPER_SAVED_BIEN,
