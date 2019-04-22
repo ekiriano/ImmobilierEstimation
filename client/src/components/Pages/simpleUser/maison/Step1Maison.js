@@ -64,13 +64,26 @@ class Step1Maison extends Component {
               }
         
               onSuggestions={({ rawAnswer, query, suggestions }) => 
-                console.log({rawAnswer})}
+                console.log()}
         
               onCursorChanged={({ rawAnswer, query, suggestion, suggestonIndex }) => 
                 console.log()}
         
               onClear={() => 
-                console.log()}
+                {
+                
+                  this.props.changeVille("");
+                  this.props.changeRue("");
+                  this.props.changeCodePostal("");
+
+                  var code_postal = document.querySelector('#code_postal');
+                  code_postal.value =  '';
+                  
+                  var ville = document.querySelector('#ville');
+                  ville.value = "";
+                } 
+              
+              }
         
               onLimit={({ message }) => 
                 console.log()}
