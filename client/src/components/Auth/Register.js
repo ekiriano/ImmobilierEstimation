@@ -53,89 +53,121 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="register primary-bg ">
-        <div className="row">
-          <div className="columns">
-            <div className="column">
-              <h1 className="display-4 text-center">Sign Up</h1>
-
+<div className="column homepage hero is-paddingless">
+        <div className="login column is-4 is-offset-8 is-paddingless">
+          <div id="card_log" className="card-content has-background-white">
+            <section className="section" height="50%">
+                <div className="has-text-centered">
+                  <img src="/static/media/estimmo_logo.bd1438a3.png" alt="logo" width="60%"/>
+                </div>
               <form noValidate onSubmit={this.onSubmit}>
-                <div className="form-group">
-                  <input
-                    type="text"
-                    className={classnames(
-                      "form-control input form-control-lg",
-                      {
-                        "is-invalid": errors.name
-                      }
+                <div className="field">
+                  <label className="label">Username</label>
+                  <div className="control has-icons-left">
+                    <input
+                      type="text"
+                      className={classnames(
+                        "form-control input form-control-lg",
+                        {
+                          "is-invalid": errors.name
+                        }
+                      )}
+                      placeholder="Name"
+                      name="name"
+                      value={this.state.name}
+                      onChange={this.onChange}
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-user"></i>
+                    </span>
+                    {errors.name && (
+                      <div className="invalid-feedback">{errors.name}</div>
                     )}
-                    placeholder="Name"
-                    name="name"
-                    value={this.state.name}
-                    onChange={this.onChange}
-                  />
-                  {errors.name && (
-                    <div className="invalid-feedback">{errors.name}</div>
-                  )}
+                  </div>
                 </div>
-                <div className="form-group">
-                  <input
-                    type="email"
-                    className={classnames(
-                      "form-control input form-control-lg",
-                      {
-                        "is-invalid": errors.email
-                      }
+                <div className="field">
+                  <label className="label">Email</label>
+                  <div className="control has-icons-left">
+                    <input
+                      type="email"
+                      className={classnames(
+                        "form-control input form-control-lg",
+                        {
+                          "is-invalid": errors.email
+                        }
+                      )}
+                      placeholder="Email Address"
+                      name="email"
+                      value={this.state.email}
+                      onChange={this.onChange}
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-envelope"></i>
+                    </span>
+                    {errors.email && (
+                      <div className="invalid-feedback">{errors.email}</div>
                     )}
-                    placeholder="Email Address"
-                    name="email"
-                    value={this.state.email}
-                    onChange={this.onChange}
-                  />
-                  {errors.email && (
-                    <div className="invalid-feedback">{errors.email}</div>
-                  )}
+                  </div>
                 </div>
-                <div className="form-group">
-                  <input
-                    type="password"
-                    className={classnames(
-                      "form-control  input form-control-lg",
-                      {
-                        "is-invalid": errors.password
-                      }
+                <div className="field">
+                  <label className="label">Password</label>
+                  <div className="control has-icons-left">
+                    <input
+                      type="password"
+                      className={classnames(
+                        "form-control  input form-control-lg",
+                        {
+                          "is-invalid": errors.password
+                        }
+                      )}
+                      placeholder="Password"
+                      name="password"
+                      value={this.state.password}
+                      onChange={this.onChange}
+                    />
+                    <span className="icon is-small is-left">
+                      <i className="fa fa-key"></i>
+                    </span>
+                    {errors.password && (
+                      <div className="invalid-feedback">{errors.password}</div>
                     )}
-                    placeholder="Password"
-                    name="password"
-                    value={this.state.password}
-                    onChange={this.onChange}
-                  />
-                  {errors.password && (
-                    <div className="invalid-feedback">{errors.password}</div>
-                  )}
+                  </div>
                 </div>
-                <div className="form-group">
-                  <input
-                    type="password"
-                    className={classnames(
-                      "form-control input form-control-lg",
-                      {
-                        "is-invalid": errors.password2
-                      }
+                <div className="field">
+                  <label className="label">Confirm Password</label>
+                  <div className="control has-icons-left">
+                    <input
+                      type="password"
+                      className={classnames(
+                        "form-control input form-control-lg",
+                        {
+                          "is-invalid": errors.password2
+                        }
+                      )}
+                      placeholder="Confirm Password"
+                      name="password2"
+                      value={this.state.password2}
+                      onChange={this.onChange}
+                    />
+                    <span className="icon is-small is-left">
+                      <i className="fa fa-key"></i>
+                    </span>
+                    {errors.password2 && (
+                      <div className="invalid-feedback">{errors.password2}</div>
                     )}
-                    placeholder="Confirm Password"
-                    name="password2"
-                    value={this.state.password2}
-                    onChange={this.onChange}
-                  />
-                  {errors.password2 && (
-                    <div className="invalid-feedback">{errors.password2}</div>
-                  )}
+                  </div>
                 </div>
-                <input type="submit" className="c-btn c-primary" />
+                <div className="has-text-centered">
+                  <button type="submit" className="button is-vcentered is-primary is-outlined">Sign Up!</button>
+                </div>
+                <div className="has-text-centered">
+                  <p>
+                    Already have an account? 
+                    <Link to="login">Log in now !</Link>
+                  </p>
+                </div>
               </form>
-            </div>
-            <div className="homepage hero column" />
+            </section>
           </div>
         </div>
       </div>
