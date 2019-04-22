@@ -5,8 +5,6 @@ import classnames from "classnames";
 import { loginUser } from "../../actions/authActions";
 import { Link } from "react-router-dom";
 
-import {toast} from 'react-toastify';
-
 class Login extends Component {
   constructor() {
     super();
@@ -53,16 +51,20 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
-            <div className="columns">
+      <div className="columns">
         <div className="column is-8 is-paddingless">
-          <div className="homepage hero is-paddingless"/>
-        </div>  
+          <div className="homepage hero is-paddingless" />
+        </div>
         <div className="login column is-4 is-paddingless">
           <div id="card_log" className="card-content has-background-white">
             <section className="section has-background-white">
               <div className="column">
                 <div className="has-text-centered">
-                  <img src="/static/media/estimmo_logo.bd1438a3.png" alt="logo" width="60%"/>
+                  <img
+                    src="/static/media/estimmo_logo.bd1438a3.png"
+                    alt="logo"
+                    width="60%"
+                  />
                 </div>
                 <form onSubmit={this.onSubmit}>
                   <div className="field">
@@ -77,7 +79,7 @@ class Login extends Component {
                         onChange={this.onChange}
                       />
                       <span className="icon is-small is-left">
-                        <i className=" far fa-envelope"></i>
+                        <i className=" far fa-envelope" />
                       </span>
                       {errors.email && (
                         <div className="invalid-feedback">{errors.email}</div>
@@ -96,10 +98,12 @@ class Login extends Component {
                         onChange={this.onChange}
                       />
                       <span class="icon is-small is-left">
-                        <i class=" fas fa-key"></i>
+                        <i class=" fas fa-key" />
                       </span>
                       {errors.password && (
-                        <div className="invalid-feedback">{errors.password}</div>
+                        <div className="invalid-feedback">
+                          {errors.password}
+                        </div>
                       )}
                     </div>
                   </div>

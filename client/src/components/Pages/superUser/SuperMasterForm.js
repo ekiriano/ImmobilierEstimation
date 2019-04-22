@@ -117,7 +117,6 @@ class SuperMasterForm extends Component {
         }
 
         this.onChange = this.onChange.bind(this);
-        this.onClientChange = this.onClientChange.bind(this);
         this.next = this.next.bind(this);
         this.previous = this.previous.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
