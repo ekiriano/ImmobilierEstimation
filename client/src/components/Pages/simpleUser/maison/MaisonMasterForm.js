@@ -26,8 +26,6 @@ class MaisonMasterForm extends Component {
     this.state = {
       currentStep: 1,
       user: {},
-      adresse_complete: "",
-      predictions: [],
       rue: "",
       code_postal: "",
       ville: "",
@@ -53,57 +51,13 @@ class MaisonMasterForm extends Component {
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.onClick = this.onClick.bind(this);
+   
   }
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  search(address){
-    console.log('street', this.state.rue);
-    const BASE_URL = 'https://api-adresse.data.gouv.fr/search/?';
-    const FETCH_URL = `${BASE_URL}q=${this.state.adresse_complete}&postcode=${this.state.code_postal}&type=street&limit=5`;
-    console.log('FETCH_URL', FETCH_URL);
-    fetch(FETCH_URL, {
-      method: 'GET'
-    })
-    .then(response => response.json())
-    .then(json => {
-      this.setState({
-        predictions: json.features,
-      });
-    });
-  }
-
-  // handleAdresseCompleteChange = (e) => {
-  //   this.setState({
-  //     adresse_complete: this.search.value
-  //   }, () => {
-  //     if (this.state.adresse_complete && this.state.adresse_complete.length > 1) {
-  //       if (this.state.adresse_complete.length % 2 === 0) {
-  //         this.getInfo()
-  //       }
-  //     }
-  //   });
-  // }
-
-  onClick(prediction){
-    console.log('prediction', prediction);
-    this.setState({
-
-      adresse_complete: prediction.properties.label,
-      rue: prediction.properties.name,
-      ville: prediction.properties.city,
-      code_postal: prediction.properties.postcode,
-
-    });
-    this.props.setCoordinates(prediction.geometry.coordinates[1],prediction.geometry.coordinates[0]);
-    console.log('props', this);
-    this.setState({
-      predictions: []
-    });
-  }
 
   onSubmit(e) {
     e.preventDefault();

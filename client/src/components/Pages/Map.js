@@ -5,61 +5,28 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import './map.css'
 
 
+import PropTypes from "prop-types";
+import {connect} from "react-redux";
 
-const TOKEN =
-  "pk.eyJ1IjoidGVyMjAxOSIsImEiOiJjanJsdjhxczMwYnE1M3lvNWM3MHo5bHZrIn0.4jZb3pG3_OwR8dY2w7qJEA";
+//const TOKEN = "pk.eyJ1IjoidGVyMjAxOSIsImEiOiJjanJsdjhxczMwYnE1M3lvNWM3MHo5bHZrIn0.4jZb3pG3_OwR8dY2w7qJEA";
+const TOKEN = "pk.eyJ1IjoibWVpbGxldXJzYWdlbnRzIiwiYSI6ImNqMWV5YnRpMDAwMHkyeXRnd3JkdXRiaDEifQ.emcFsn3Ox6WcKmOHhbTOPQ";
 
 
 class Map extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      viewport: {
-        width: 676,
-        height: 700,
-        latitude: 43.6,
-        longitude: 3.8833,
-        zoom: 9.5,
-      }
-  }
-
-  }
-
-  componentWillReceiveProps(nextProps){
-    console.log('updated props', nextProps);
-    if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors });
-    }
-    if(nextProps.coordinates){
-      this.setState({
-        latitude : nextProps.coordinates.latitude,
-        longtitude: nextProps.coordinates.longtitude
-      });
+ 
+  state = {
+    viewport: {
+      width: "100%",
+      height: 600,
+      latitude: 43.5981932,
+      longitude: 3.9009796999999935,
+      zoom: 17,
     }
   }
 
   mapRef = React.createRef();
   geocoderContainerRef = React.createRef();
-
-  // componentWillUnmount() {
-  //   window.removeEventListener('resize', this.resize)
-  // }
-  //
-  // resize = () => {
-  //   this.handleViewportChange({
-  //     width: window.innerWidth,
-  //     height: window.innerHeight
-  //   })
-  // }
-
-  // componentWillMount(nextProps) {
-  //   if(this.state.latitude !== this.nextProps.coordinates.latitude)
-  //       this.setState({
-  //         latitude: this.nextProps.coordinates.latitude,
-  //         longitude: this.nextProps.coordinates.longtitude
-  //       });
-  // }
-
+  
   handleViewportChange = (viewport) => {
     this.setState({
       viewport: { ...this.state.viewport, ...viewport }
@@ -76,8 +43,20 @@ class Map extends Component {
     })
   }
 
+  componentWillReceiveProps(nextProps){
+    if(nextProps.coordinates){
+      const nextViewport = {
+        width: "100%",
+        height: 600,
+        latitude: nextProps.coordinates.latitude,
+        longitude: nextProps.coordinates.longitude,
+        zoom: 16,
+      }
+      this.setState({viewport : nextViewport })
+    }
+  }
+
   render() {
-    // console.log('coordinates', this.props);
     return (
       <div>
 
@@ -85,11 +64,20 @@ class Map extends Component {
         ref={this.mapRef}
         {...this.state.viewport}
         onViewportChange={this.handleViewportChange}
-        mapboxApiAccessToken={TOKEN}>
-
+        mapboxApiAccessToken={TOKEN}
+        mapStyle="mapbox://styles/meilleursagents/cjfm7js7u0o552snxqa6g7vxr"
+      >
       </MapGL>
       </div>
     )
   }
 }
-export default Map;
+
+Map.propTypes = {
+  coordinates : PropTypes.object.isRequired
+}
+const mapStateToProps = state => ({
+  coordinates : state.map.coordinates,
+});
+
+export default connect(mapStateToProps)(Map);
