@@ -1,10 +1,10 @@
 nav {
-  height: 81px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  height: 80px;
 }
 
 .hero {
-  height: 90vh;
+  height:100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -172,11 +172,6 @@ label {
 
 }
 .contenu{
-  margin-top: 81px;
+  margin-top: 80px;
 }
 
-#card_log{
-  position: absolute;
-  height: 100%;
-  overflow: auto;
-}
