@@ -53,8 +53,11 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="column homepage hero is-paddingless">
-        <div className="login column is-4 is-offset-8 is-paddingless">
+            <div className="columns">
+        <div className="column is-8 is-paddingless">
+          <div className="homepage hero is-paddingless"/>
+        </div>  
+        <div className="login column is-4 is-paddingless">
           <div id="card_log" className="card-content has-background-white">
             <section className="section has-background-white">
               <div className="column">
@@ -64,7 +67,7 @@ class Login extends Component {
                 <form onSubmit={this.onSubmit}>
                   <div className="field">
                     <label className="label">Email</label>
-                    <div class="control has-icons-left">
+                    <div className="control has-icons-left">
                       <input
                         className="input"
                         type="email"
