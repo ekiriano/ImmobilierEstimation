@@ -1,18 +1,24 @@
 import React, { Component } from "react";
 import classnames from "classnames";
 import { Link } from "react-router-dom";
-import { Editor } from "react-draft-wysiwyg";
+//import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 class Step2Super extends Component {
-  addPointFort(pointFort) {}
+  constructor(props) {
+    super(props);
+    this.state = {
+      pointFortValueInput: "",
+      pointFaibleValueInput: ""
+    };
+    this.onChange = this.onChange.bind(this);
+  }
 
-  addPointFaible(pointFaible) {}
-
-  deletePointFort(index) {}
-
-  deletePointFaible(index) {}
-
+  onChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
   render() {
     const errors = this.props.errors;
     if (this.props.currentStep !== 2) {
@@ -126,26 +132,24 @@ class Step2Super extends Component {
             </div>
             <div className="field">
               <div className="control">
-                  <div
-                    className={classnames("select is-medium", {
-                      "is-danger": errors.typeBienAffiche
-                    })}
+                <div
+                  className={classnames("select is-medium", {
+                    "is-danger": errors.typeBienAffiche
+                  })}
+                >
+                  <select
+                    name="typeBienAffiche"
+                    value={this.props.typeBienAffiche}
+                    onChange={this.props.onChange}
                   >
-                      <select
-                         name="typeBienAffiche"
-                         value={this.props.typeBienAffiche}
-                         onChange={this.props.onChange}
-                      >
-                          <option>Type de bien</option>
-                          <option value="maison">Maison</option>
-                          <option value="appartement">Appartement</option>
-                      </select>
-                  </div>
-                  {errors.typeBienAffiche && (
-                    <p className="help is-danger">
-                      {errors.typeBienAffiche}
-                    </p>
-                  )}
+                    <option>Type de bien</option>
+                    <option value="maison">Maison</option>
+                    <option value="appartement">Appartement</option>
+                  </select>
+                </div>
+                {errors.typeBienAffiche && (
+                  <p className="help is-danger">{errors.typeBienAffiche}</p>
+                )}
               </div>
             </div>
             <div className="field is-horizontal">
@@ -341,58 +345,50 @@ class Step2Super extends Component {
             />
             <div className="field">
               <div className="control">
-                  <div
-                    className={classnames("select is-medium", {
-                      "is-danger": errors.DPE
-                    })}
+                <div
+                  className={classnames("select is-medium", {
+                    "is-danger": errors.DPE
+                  })}
+                >
+                  <select
+                    name="DPE"
+                    value={this.props.DPE}
+                    onChange={this.props.onChange}
                   >
-                      <select
-                         name="DPE"
-                         value={this.props.DPE}
-                         onChange={this.props.onChange}
-                      >
-                          <option>Diag. Perf. Energetique</option>
-                          <option value="A++">A++</option>
-                          <option value="B">B</option>
-                          <option value="C">C</option>
-                          <option value="D">D</option>
-                          <option value="E">E</option>
-                          <option value="F">F</option>
-                      </select>
-                  </div>
-                  {errors.DPE && (
-                    <p className="help is-danger">
-                      {errors.DPE}
-                    </p>
-                  )}
+                    <option>Diag. Perf. Energetique</option>
+                    <option value="A++">A++</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                  </select>
+                </div>
+                {errors.DPE && <p className="help is-danger">{errors.DPE}</p>}
               </div>
             </div>
             <div className="field">
               <div className="control">
-                  <div
-                    className={classnames("select is-medium", {
-                      "is-danger": errors.GES
-                    })}
+                <div
+                  className={classnames("select is-medium", {
+                    "is-danger": errors.GES
+                  })}
+                >
+                  <select
+                    name="GES"
+                    value={this.props.GES}
+                    onChange={this.props.onChange}
                   >
-                      <select
-                         name="GES"
-                         value={this.props.GES}
-                         onChange={this.props.onChange}
-                      >
-                          <option>Diag. Perf. Energetique</option>
-                          <option value="A">A</option>
-                          <option value="B">B</option>
-                          <option value="C">C</option>
-                          <option value="D">D</option>
-                          <option value="E">E</option>
-                          <option value="F">F</option>
-                      </select>
-                  </div>
-                  {errors.GES && (
-                    <p className="help is-danger">
-                      {errors.GES}
-                    </p>
-                  )}
+                    <option>Diag. Perf. Energetique</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                  </select>
+                </div>
+                {errors.GES && <p className="help is-danger">{errors.GES}</p>}
               </div>
             </div>
             <div className="field is-horizontal">
@@ -415,10 +411,7 @@ class Step2Super extends Component {
                 </div>
               </div>
             </div>
-
-
           </div>
-
 
           <div className="column">
             <h1>Charges et impots</h1> <hr />
@@ -518,14 +511,20 @@ class Step2Super extends Component {
                     className="input is-medium"
                     type="text"
                     placeholder="points forts"
-                    name="pointsForts"
-                    onChange={this.props.onChange}
-                    value={this.props.pointsForts}
+                    name="pointFortValueInput"
+                    onChange={this.onChange}
+                    value={this.state.pointFortValueInput}
                     required
                   />
                 </div>
               </div>
-              <button className="button is-success">
+              <button
+                className="button is-success"
+                onClick={this.props.addPointFort.bind(
+                  this,
+                  this.state.pointFortValueInput
+                )}
+              >
                 <i className="uil uil-plus" />
                 Ajouter point fort
               </button>
@@ -537,15 +536,21 @@ class Step2Super extends Component {
                   <input
                     className="input is-medium"
                     type="text"
-                    name="PointsFaibles"
+                    name="pointFaibleValueInput"
                     placeholder="points faibles"
-                    onChange={this.props.onChange}
-                    value={this.props.pointsFaibles}
+                    onChange={this.onChange}
+                    value={this.state.pointFaibleValueInput}
                     required
                   />
                 </div>
               </div>
-              <button className="button is-success">
+              <button
+                className="button is-success"
+                onClick={this.props.addPointFaible.bind(
+                  this,
+                  this.state.pointFortValueInput
+                )}
+              >
                 <i className="uil uil-plus" /> Ajouter point faible
               </button>
               <button>plus</button>
