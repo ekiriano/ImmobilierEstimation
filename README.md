@@ -4,7 +4,7 @@ Estimmo  is a single page web application made with the MERN stack that allows u
 ## Getting Started
 
 ```
-https://github.com/ekiriano/Estimmo.git
+git clone ttps://github.com/ekiriano/Estimmo.git
 npm i 
 cd client npm i 
 cd ../
