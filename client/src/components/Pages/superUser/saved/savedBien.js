@@ -19,7 +19,7 @@ class savedBiens extends Component {
     }
 
     onClickDelete(id){
-        this.props.deleteSavedBiens(id);
+        this.props.deleteSavedBien(id);
 
     }
 
