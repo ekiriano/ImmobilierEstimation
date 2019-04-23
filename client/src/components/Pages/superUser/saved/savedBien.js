@@ -24,9 +24,6 @@ class savedBiens extends Component {
   onClickDelete(id) {
     this.props.deleteSavedBien(id);
   }
-  componentDidMount() {
-    this.props.getSavedBiens();
-  }
 
   render() {
     var bienCards = this.props.savedBiens.map((bien, i) => {
@@ -64,14 +61,7 @@ class savedBiens extends Component {
                   <p>proximité : {bien.proximite_transports}</p>
                 </div>
               </div>
-              <p>Estimmé a : {bien.prix_final} €</p>
-              <a
-                class="button is-success is-small"
-                onClick={() => this.openModal()}
-              >
-                Plus de détails
-              </a>
-
+              <p>Estimmé a : {bien.prix_final} €</p>>
               <div>
                 <h1>{bien.ville}</h1> <hr />
                 <div className="columns">
