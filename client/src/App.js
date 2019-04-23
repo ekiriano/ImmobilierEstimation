@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route , Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utilities/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
@@ -36,8 +36,10 @@ import Premium from "./components/Pages/BecomePremium";
 import requireAuth from "./routes/requireAuth";
 import requireSuper from "./routes/requireSuper";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import Page404 from "./components/Pages/Page404";
 
 //check nd set jwt token
 if (localStorage.jwtToken) {
@@ -52,32 +54,49 @@ if (localStorage.jwtToken) {
   }
 }
 
-
-
-
 class App extends Component {
- 
   render() {
     return (
       <Provider store={store}>
         <Router>
           <div className="App">
             <Nav />
-            
+
             <ToastContainer position="bottom-center" />
             <div className="contenu">
               <Route exact path="/" component={HomePage} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              
-              <Route exact path="/estimmation/simple" component={SimpleUserRootForm} />
 
-              <Route exact path="/estimmation/simple/maison" component={ CardMaisonForm } />
-              <Route exact path="/estimmation/simple/appartement" component={CardAppartementForm} />
+              <Route
+                exact
+                path="/estimmation/simple"
+                component={SimpleUserRootForm}
+              />
 
-              <Route exact path="/dashboard" component={requireAuth(Dashboard)} />
+              <Route
+                exact
+                path="/estimmation/simple/maison"
+                component={CardMaisonForm}
+              />
+              <Route
+                exact
+                path="/estimmation/simple/appartement"
+                component={CardAppartementForm}
+              />
+
+              <Route
+                exact
+                path="/dashboard"
+                component={requireAuth(Dashboard)}
+              />
               <Route exact path="/premium" component={requireAuth(Premium)} />
-              <Route exact path="/super" component={requireAuth(SuperUserForm)} />
+              <Route
+                exact
+                path="/super"
+                component={requireAuth(SuperUserForm)}
+              />
+              <Route component={Page404} />
             </div>
             <Footer />
           </div>

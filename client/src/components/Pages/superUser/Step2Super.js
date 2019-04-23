@@ -37,6 +37,7 @@ class Step2Super extends Component {
         convertToRaw(commentairesConfidentiels.getCurrentContent())
       )
     });
+    //this.props.onChangeCommentaire(this.state.commentaire)
   };
   onDescriptifStateChange: Function = descriptif => {
     //onsole.log(editorState);
@@ -46,6 +47,7 @@ class Step2Super extends Component {
     this.setState({
       descriptif: draftToHtml(convertToRaw(descriptif.getCurrentContent()))
     });
+    //this.props.onChangeDescriptif(this.state.descriptif)
   };
   render() {
     const errors = this.props.errors;
