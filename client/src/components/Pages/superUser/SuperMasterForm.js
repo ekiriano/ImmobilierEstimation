@@ -120,6 +120,8 @@ class SuperMasterForm extends Component {
     this.deletePointFort = this.deletePointFort.bind(this);
     this.addPointFaible = this.addPointFaible.bind(this);
     this.deletePointFaible = this.deletePointFaible.bind(this);
+    this.onChangeComConf = this.onChangeComConf.bind(this);
+    this.onChangeDescriptif = this.onChangeDescriptif.bind(this);
   }
 
   addPointFort(pointfort) {
@@ -155,6 +157,12 @@ class SuperMasterForm extends Component {
     this.setState({
       [e.target.name]: e.target.value
     });
+  }
+  onChangeComConf(commenConf) {
+    this.setState({ commentairesConfidentiels: commenConf });
+  }
+  onChangeDescriptif(desc) {
+    this.setState({ descriptifBien: desc });
   }
 
   onSubmit(e) {
@@ -361,6 +369,8 @@ class SuperMasterForm extends Component {
             addPointFaible={this.addPointFaible}
             deletePointFort={this.deletePointFort}
             deletePointFaible={this.deletePointFaible}
+            onChangeComConf={this.onChangeComConf}
+            onChangeDescriptif={this.onChangeDescriptif}
           />
           <Step3
             currentStep={this.state.currentStep}
