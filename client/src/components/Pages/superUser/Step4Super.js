@@ -19,13 +19,10 @@ class Step4Super extends Component {
               <div className="columns">
               <div className="column is-half">
                 <MapSuper id="map-container"/>
-                <h2>Votre secteur de reference</h2><hr/>
-
                 </div>
 
                 <div className="column">
                 <p>Type de Bien: {this.props.typeBienAffiche} </p>
-                <p>Prix moyen du secteur: </p>
                 <p>Indice de qualité: </p>
 
                 <div className="field is-horizontal">
@@ -186,7 +183,7 @@ class Step4Super extends Component {
 
 
               <div className="column">
-              <h1> Synthèse de l'étude </h1>
+            {/*  <h1> Synthèse de l'étude </h1>
 
               <h2>Les méthodes utilisée</h2> <hr/>
               <div className="control">
@@ -232,6 +229,104 @@ class Step4Super extends Component {
 
               <h2>Le prix final</h2>
               <p>Prix final: {this.props.prix_final}</p>
+              */}
+
+              <div class="card">
+              <header class="card-header">
+                <p class="card-header-title">
+                  Synthése de l'étude
+                </p>
+              </header>
+              <div className="card-content">
+
+                <div className="content">
+                <header class="card-header">
+                  <p class="card-header-title">
+                    1. Les methodes utilisées
+                  </p>
+                </header>
+                <div className="control">
+                <label className="checkbox">
+                  <input type="checkbox" value="1"
+                  name="methodeReferenceSelected"
+                  checked={this.props.methodeReferenceSelected === "1"}
+                  onChange={this.props.onChange}></input>
+                    méthode par référence
+                </label>
+              <label className="checkbox">
+                <input type="checkbox" value="1"
+                name="methodeComparaisonSelected"
+                checked={this.props.methodeComparaisonSelected === "1"}
+                onChange={this.props.onChange}></input>
+                  la méthode par comparaison
+              </label>
+                </div>
+                <header class="card-header">
+                  <p class="card-header-title">
+                    La moyenne des méthodes:
+                  </p>
+                </header>
+                </div>
+
+                <div className="content">
+                <header class="card-header">
+                  <p class="card-header-title">
+                    2. Le prix et les honoraires
+                  </p>
+                </header>
+                <p>Affichage net du vendeur ?</p>
+                <div className="control">
+                    <label className="radio">
+                      <input type="radio" value="Oui"
+                      name="affichageNetVendeur"
+                      checked={this.props.affichageNetVendeur === "Oui"}
+                      onChange={this.props.onChange}></input>
+                      Oui
+                    </label>
+                    <label className="radio">
+                      <input type="radio" value="Non"
+                      name="affichageNetVendeur"
+                      checked={this.props.affichageNetVendeur === "Non"}
+                      onChange={this.props.onChange}></input>
+                      Non
+                    </label>
+                </div>
+                </div>
+
+                <div className="content">
+                <header class="card-header">
+                  <p class="card-header-title">
+                    3. Le prix final et remarques
+                  </p>
+                </header>
+                <header class="card-header">
+                  <p class="card-header-title">
+                    Le prix final des methodes:
+                  </p>
+                </header>
+                <p>
+                  Remarques de l'expert
+                </p>
+                  <div className="control">
+                  <label className="radio">
+                    <input type="radio" value="1"
+                    name="textePredifini"
+                    checked={this.props.textePredifini === "1"}
+                    onChange={this.props.onChange}></input>
+                    Texte prédifini
+                  </label>
+                  </div>
+                  <textarea
+                    className="textarea"
+                    name="titreDossier"
+                    placeholder="Titre du dossier"
+                    value={this.props.titreDossier}
+                    onChange={this.props.onChange}
+                    required
+                  />
+                </div>
+              </div>
+            </div>
 
               </div>
 
