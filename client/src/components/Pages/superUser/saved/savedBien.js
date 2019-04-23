@@ -4,15 +4,13 @@ import PropTypes from 'prop-types';
 import {getSavedBiens,deleteSavedBien} from "../../../../actions/superBienActions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import Modal from 'react-awesome-modal';
 
 class savedBiens extends Component {
     constructor(props){
         super(props);
         this.state = {
             biens : [],
-            errors :{},
-            visible: false,
+            errors :{}
         }
     }
 
@@ -23,18 +21,6 @@ class savedBiens extends Component {
     onClickDelete(id){
         this.props.deleteSavedBien(id);
 
-    }
-
-    openModal() {
-        this.setState({
-            visible : true
-        });
-    }
-
-    closeModal() {
-        this.setState({
-            visible : false
-        });
     }
 
 
@@ -68,27 +54,6 @@ class savedBiens extends Component {
                         </div>
                     </div>
                     <p>Estimmé a : {bien.prix_final} €</p>
-                    <a class="button is-success is-small" onClick={() => this.openModal()}>Plus de détails</a>
-                    <Modal visible={this.state.visible} width="65%" height="80%" effect="fadeInUp" onClickAway={() => this.closeModal()}>
-                      <div>
-                        <h1>{bien.ville}</h1> <hr/>
-                          <div className="columns">
-                            <div className="column is-half">
-                              <p>nombre pièces : {bien.nombre_pieces}</p>
-                              <p>nombre salle bain : {bien.nombre_salle_bain}</p>
-                              <p>etage : {bien.etage}</p>
-                              <p>nombre etage total : {bien.nombre_etage_total}</p>
-                            </div>
-                            <div className="column is-half">
-                              <p>nombre pièces : {bien.nombre_pieces}</p>
-                              <p>nombre salle bain : {bien.nombre_salle_bain}</p>
-                              <p>etage : {bien.etage}</p>
-                              <p>nombre etage total : {bien.nombre_etage_total}</p>
-                            </div>
-                          </div>
-                        <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
-                      </div>
-                    </Modal>
                 </div>
             </div>
            <footer className="card-footer">
