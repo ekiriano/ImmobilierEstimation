@@ -39,8 +39,7 @@ router.post(
           voie: req.body.voie,
           codePostal: req.body.codePostal,
           ville: req.body.ville,
-
-          anneConstruction: req.body.anneConstruction,
+          anneeConstruction: req.body.anneeConstruction,
           typeBienAffiche: req.body.typeBienAffiche,
           nombrePieces: req.body.nombrePieces,
           nombreChambres: req.body.nombreChambres,
@@ -55,7 +54,6 @@ router.post(
           DPE: req.body.DPE,
           GES: req.body.GES,
           prixMandat: req.body.prixMandat,
-
           chargesAnnuellesTotales: req.body.chargesAnnuellesTotales,
           chargesDeCopropriete: req.body.chargesDeCopropriete,
           impotsFonciers: req.body.impotsFonciers,
@@ -63,7 +61,6 @@ router.post(
           pointsForts: req.body.pointsForts,
           pointsFaibles: req.body.pointsFaibles,
           commentairesConfidentiels: req.body.commentairesConfidentiels,
-
           etatQualiteGrosOeuvre: req.body.etatQualiteGrosOeuvre,
           epoqueConstruction: req.body.epoqueConstruction,
           mitoyennete: req.body.mitoyennete,
@@ -71,40 +68,32 @@ router.post(
           standing: req.body.standing,
           accessibilite: req.body.accessibilite,
           toutAEgout: req.body.toutAEgout,
-
           qualiteArchitecturale: req.body.qualiteArchitecturale,
           etatPortesEtFenetres: req.body.etatPortesEtFenetres,
           etatDesToitures: req.body.etatDesToitures,
           clotureTerrain: req.body.clotureTerrain,
-
           nuissanceSonore: req.body.nuissanceSonore,
           voisinageVisaVis: req.body.voisinageVisaVis,
           qualiteEnvironnement: req.body.qualiteEnvironnement,
           proximiteServicesPublics: req.body.proximiteServicesPublics,
-
           qualiteDistribution: req.body.qualiteDistribution,
           etatMursPlafonds: req.body.etatMursPlafonds,
           solsEtRevetementSols: req.body.solsEtRevetementSols,
-
           tailleSejour: req.body.tailleSejour,
           expositionSejour: req.body.expositionSejour,
           vueSejour: req.body.vueSejour,
           luminosite: req.body.luminosite,
           cheminee: req.body.cheminee,
-
           taille: req.body.taille,
           equipement: req.body.equipement,
           etatGeneral: req.body.etatGeneral,
           agrement: req.body.agrement,
-
           tailleDesPieces: req.body.tailleDesPieces,
           etatDesPieces: req.body.etatDesPieces,
           expositionAuxBruits: req.body.expositionAuxBruits,
-
           taillePiecesSanitaires: req.body.taillePiecesSanitaires,
           nombreDeSanitaires: req.body.nombreDeSanitaires,
           qualiteEtatSanitaires: req.body.qualiteEtatSanitaires,
-
           factureEnergetique: req.body.factureEnergetique,
           installationElectrique: req.body.installationElectrique,
           installationGaz: req.body.installationGaz,

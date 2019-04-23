@@ -3,24 +3,24 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const SuperBienSchema = new Schema({
-    user: { type: Schema.Types.ObjectId,  ref: "users" },
-      civilite: { type: String, },
-      prenom: {type: String,  },
-      nom: {type: String, },
-      adressePostale: {type: String, },
-      email: {type: String, },
-      telephone: {type: Number,  },
-      numero: {type: Number, },
-      voie: {type: String, },
-      codePostal: {type: Number, },
-      ville: {type: String, },
+      user: { type: Schema.Types.ObjectId,  ref: "users" },
+      civilite: { type: String, required: true },
+      prenom: {type: String, required: true  },
+      nom: {type: String, required: true },
+      adressePostale: {type: String, required: true },
+      email: {type: String, required: true },
+      telephone: {type: Number, required: true  },
+      numero: {type: Number, required: true },
+      voie: {type: String, required: true },
+      codePostal: {type: Number, required: true },
+      ville: {type: String, required: true },
       anneeConstruction: {type: Number,  min: 1000},
-      typeBienAffiche: {type: String, },
-      nombrePieces: {type: Number,  min: 0},
-      nombreChambres: {type: Number,   min: 0},
-      surfaceHabitable: {type: Number, min: 0},
-      surfaceTerrain: { type: Number,  min: 0},
-      nombreNiveaux: {type: Number,  min: 0},
+      typeBienAffiche: {type: String, required: true },
+      nombrePieces: {type: Number,  min: 0, required: true},
+      nombreChambres: {type: Number,   min: 0, required: true},
+      surfaceHabitable: {type: Number, min: 0, required: true},
+      surfaceTerrain: { type: Number,  min: 0, required: true},
+      nombreNiveaux: {type: Number,  min: 0, required: true},
       ascenseur: {type: String, },
       balconOuTerrasse: {type: String, },
       LibreALaVente: {type: String, },
@@ -202,7 +202,7 @@ const SuperBienSchema = new Schema({
 
       },
     decoteBienOccupe: {
-      type: String,
+      type: Number,
 
     },
     decoteBienOccupeR: {
@@ -210,7 +210,7 @@ const SuperBienSchema = new Schema({
 
     },
     autresElements: {
-      type: String,
+      type: Number,
 
     },
     autresElementsR: {
@@ -218,7 +218,7 @@ const SuperBienSchema = new Schema({
 
     },
     travauxARealiser: {
-      type: String,
+      type: Number,
 
     },
     travauxARealiserR: {
@@ -226,7 +226,7 @@ const SuperBienSchema = new Schema({
 
     },
     valorisationTerrain: {
-      type: String,
+      type: Number,
 
     },
     valorisationTerrainR: {
@@ -234,12 +234,18 @@ const SuperBienSchema = new Schema({
 
     },
     renove: {
-      type: String,
+      type: Number,
 
     },
     renoveR: {
       type: String,
 
+    },
+    textePredifini: {
+      type: String,
+    },
+    textePredifiniR: {
+      type: String
     }
 
   // add longtitude latitude

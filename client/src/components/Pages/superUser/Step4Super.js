@@ -66,7 +66,7 @@ class Step4Super extends Component {
                       <p className="control">
                         <input className="input is-small" type="texte" placeholder="autresElements"
                         name="autresElements"
-                        value={this.props.autresElements === "autresElements"}
+                        value={this.props.autresElements}
                         onChange={this.props.onChange} required/>
                       </p>
                     </div>
@@ -310,17 +310,17 @@ class Step4Super extends Component {
                   <div className="control">
                   <label className="radio">
                     <input type="radio" value="1"
-                    name="textePredifini"
-                    checked={this.props.textePredifini === "1"}
+                    name="textePredifiniR"
+                    checked={this.props.textePredifiniR === "1"}
                     onChange={this.props.onChange}></input>
                     Texte prédifini
                   </label>
                   </div>
                   <textarea
                     className="textarea"
-                    name="titreDossier"
+                    name="textePredifini"
                     placeholder="Titre du dossier"
-                    value={this.props.titreDossier}
+                    value={this.props.textePredifini}
                     onChange={this.props.onChange}
                     required
                   />

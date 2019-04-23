@@ -128,11 +128,11 @@ class Step2Super extends Component {
               <div className="control">
                   <div
                     className={classnames("select is-medium", {
-                      "is-danger": errors.DPE
+                      "is-danger": errors.typeBienAffiche
                     })}
                   >
                       <select
-                         name="DPE"
+                         name="typeBienAffiche"
                          value={this.props.typeBienAffiche}
                          onChange={this.props.onChange}
                       >

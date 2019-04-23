@@ -37,14 +37,14 @@ class Step3Super extends Component {
                   </label>
                   <label className="radio">
                     <input type="radio" value="Bon"
-                    value="Médiocre"
+                    name="etatQualiteGrosOeuvre"
                     checked={this.props.etatQualiteGrosOeuvre === "Bon"}
                     onChange={this.props.onChange}></input>
                     Bon
                   </label>
                   <label className="radio">
                     <input type="radio" value="Trés bon"
-                    value="Médiocre"
+                    name="etatQualiteGrosOeuvre"
                     checked={this.props.etatQualiteGrosOeuvre === "Trés bon"}
                     onChange={this.props.onChange}></input>
                     Très Bon
@@ -141,36 +141,36 @@ class Step3Super extends Component {
             <div className="control">
             <label className="radio">
               <input type="radio" value="3 côtés"
-              name="mitoyennete"
-              checked={this.props.mitoyennete === "3 côtés"}
+              name="agrementGeneral"
+              checked={this.props.agrementGeneral === "3 côtés"}
               onChange={this.props.onChange} ></input>
               3 côtés
             </label>
             <label className="radio">
               <input type="radio" value="2 côtés"
-              name="mitoyennete"
-              checked={this.props.mitoyennete === "2 côtés"}
+              name="agrementGeneral"
+              checked={this.props.agrementGeneral === "2 côtés"}
               onChange={this.props.onChange} ></input>
               2 côtés
             </label>
             <label className="radio">
               <input type="radio" value="1 côtés"
-              name="mitoyennete"
-              checked={this.props.mitoyennete === "1 côtés"}
+              name="agrementGeneral"
+              checked={this.props.agrementGeneral === "1 côtés"}
               onChange={this.props.onChange} ></input>
               1 côtés
             </label>
             <label className="radio">
               <input type="radio" value="Par dependance"
-              name="mitoyennete"
-              checked={this.props.mitoyennete === "Par dependance"}
+              name="agrementGeneral"
+              checked={this.props.agrementGeneral === "Par dependance"}
               onChange={this.props.onChange} ></input>
              Par dépendance
             </label>
             <label className="radio">
               <input type="radio" value="Maison independante"
-              name="mitoyennete"
-              checked={this.props.mitoyennete === "Maison independante"}
+              name="agrementGeneral"
+              checked={this.props.agrementGeneral === "Maison independante"}
               onChange={this.props.onChange} ></input>
               Maison indépendante
             </label>
@@ -204,16 +204,14 @@ class Step3Super extends Component {
               <label className="radio">
                 <input type="radio" value="Bon"
                 name="standing"
-                value="Médiocre"
-                checked={this.props.standing === "Médiocre"}
+                checked={this.props.standing === "Bon"}
                 onChange={this.props.onChange}></input>
                 Bon
               </label>
               <label className="radio">
                 <input type="radio" value="Trés bon"
                 name="standing"
-                value="Médiocre"
-                checked={this.props.standing === "Médiocre"}
+                checked={this.props.standing === "Trés bon"}
                 onChange={this.props.onChange}></input>
                 Très Bon
               </label>
@@ -372,7 +370,6 @@ class Step3Super extends Component {
                   <label className="radio">
                     <input type="radio" value="Bon"
                     name="etatPortesEtFenetres"
-                    value="Médiocre"
                     checked={this.props.etatPortesEtFenetres === "Bon"}
                     onChange={this.props.onChange}></input>
                     Bon
@@ -380,7 +377,6 @@ class Step3Super extends Component {
                   <label className="radio">
                     <input type="radio" value="Trés bon"
                     name="etatPortesEtFenetres"
-                    value="Médiocre"
                     checked={this.props.etatPortesEtFenetres === "Trés bon"}
                     onChange={this.props.onChange}></input>
                     Très Bon
@@ -458,7 +454,6 @@ class Step3Super extends Component {
                   <label className="radio">
                     <input type="radio" value="Bon"
                     name="clotureTerrain"
-                    value="Médiocre"
                     checked={this.props.clotureTerrain === "Bon"}
                     onChange={this.props.onChange}></input>
                     Bon
@@ -588,14 +583,14 @@ class Step3Super extends Component {
                       </h3>
                         <div className="control">
                             <label className="radio">
-                              <input type="radio" value="Trés eloignes"
+                              <input type="radio" value="Trés éloignés"
                               name="proximiteServicesPublics"
                               checked={this.props.proximiteServicesPublics === "Trés éloignés"}
                               onChange={this.props.onChange} ></input>
                               Trés éloignés
                             </label>
                             <label className="radio">
-                              <input type="radio" value="Assez eloignes"
+                              <input type="radio" value="Assez éloignés"
                               checked={this.props.proximiteServicesPublics === "Assez éloignés"}
                               name="proximiteServicesPublics"
                               onChange={this.props.onChange} ></input>
@@ -1208,37 +1203,37 @@ class Step3Super extends Component {
                     </h3>
                       <div className="control">
                           <label className="radio">
-                            <input type="radio" value="Trés bruyant"
+                            <input type="radio" value="Trés bruyante"
                             name="expositionAuxBruits"
-                            checked={this.props.expositionSejour === "Trés bruyante"}
+                            checked={this.props.expositionAuxBruits === "Trés bruyante"}
                             onChange={this.props.onChange} ></input>
                             Trés bruyant
                           </label>
                           <label className="radio">
                             <input type="radio" value="Bruyante"
                             name="expositionAuxBruits"
-                            checked={this.props.expositionSejour === "Bruyante"}
+                            checked={this.props.expositionAuxBruits === "Bruyante"}
                             onChange={this.props.onChange} ></input>
                            Bruyant
                           </label>
                           <label className="radio">
                             <input type="radio" value="Moyenne"
                             name="expositionAuxBruits"
-                            checked={this.props.expositionSejour === "Moyenne"}
+                            checked={this.props.expositionAuxBruits === "Moyenne"}
                             onChange={this.props.onChange} ></input>
                            Moyenne
                           </label>
                           <label className="radio">
                             <input type="radio" value="Faible"
                             name="expositionAuxBruits"
-                            checked={this.props.expositionSejour === "Faible"}
+                            checked={this.props.expositionAuxBruits === "Faible"}
                             onChange={this.props.onChange} ></input>
                           Faible
                           </label>
                           <label className="radio">
                             <input type="radio" value="Trés faible"
                             name="expositionAuxBruits"
-                            checked={this.props.expositionSejour === "Trés faible"}
+                            checked={this.props.expositionAuxBruits === "Trés faible"}
                             onChange={this.props.onChange} ></input>
                             Très faible
                           </label>

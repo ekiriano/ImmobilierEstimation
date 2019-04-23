@@ -110,12 +110,15 @@ class SuperMasterForm extends Component {
             valorisationTerrain: "",
             valorisationTerrainR: "",
             renove: "",
+            renoveR: "",
             affichageNetVendeur: "",
-            methodeReferenceSelected: "0",
-            methodeComparaisonSelected: "0",
-            prix_comparaison: "",
-            prix_reference: "",
-            prix_final: ""
+            methodeReferenceSelected: "",
+            methodeComparaisonSelected: "",
+            prix_comparaison: "0",
+            prix_reference: "0",
+            prix_final: "0",
+            textePredifiniR: "",
+            textePredifini: "",
         }
 
         this.onChange = this.onChange.bind(this);
@@ -397,6 +400,9 @@ class SuperMasterForm extends Component {
                         valorisationTerrain={this.state.valorisationTerrain}
                         valorisationTerrainR={this.state.valorisationTerrainR}
                         renove={this.state.renove}
+                        renoveR={this.state.renoveR}
+                        textePredifini={this.state.textePredifini}
+                        textePredifiniR={this.state.textePredifiniR}
                         affichageNetVendeur={this.state.affichageNetVendeur}
                         methodeReferenceSelected={this.state.methodeReferenceSelected}
                         methodeComparaisonSelected={this.state.methodeComparaisonSelected}
