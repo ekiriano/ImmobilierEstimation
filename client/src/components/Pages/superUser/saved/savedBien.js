@@ -69,7 +69,7 @@ class savedBiens extends Component {
                     </div>
                     <p>Estimmé a : {bien.prix_final} €</p>
                     <a class="button is-success is-small" onClick={() => this.openModal()}>Plus de détails</a>
-                    <Modal visible={this.state.visible} width="600" height="700" effect="fadeInUp" onClickAway={() => this.closeModal()}>
+                    <Modal visible={this.state.visible} width="65%" height="80%" effect="fadeInUp" onClickAway={() => this.closeModal()}>
                       <div>
                         <h1>{bien.ville}</h1> <hr/>
                           <div className="columns">
