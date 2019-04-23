@@ -124,22 +124,28 @@ class Step2Super extends Component {
                 </div>
               </div>
             </div>
-            <div className="field is-horizontal">
-              <div className="field-label is-normal">
-                <label className="label">Type de Bien</label>
-              </div>
-              <div className="field-body">
-                <div className="field is-big">
-                  <div className="control">
-                    <div className="select is-fullwidth">
-                      <select>
-                        <option>Veuillez selectionner un type</option>
-                        <option>Maison</option>
-                        <option>Appartement</option>
+            <div className="field">
+              <div className="control">
+                  <div
+                    className={classnames("select is-medium", {
+                      "is-danger": errors.DPE
+                    })}
+                  >
+                      <select
+                         name="DPE"
+                         value={this.props.typeBienAffiche}
+                         onChange={this.props.onChange}
+                      >
+                          <option>Type de bien</option>
+                          <option value="maison">Maison</option>
+                          <option value="appartement">Appartement</option>
                       </select>
-                    </div>
                   </div>
-                </div>
+                  {errors.typeBienAffiche && (
+                    <p className="help is-danger">
+                      {errors.typeBienAffiche}
+                    </p>
+                  )}
               </div>
             </div>
             <div className="field is-horizontal">
@@ -317,100 +323,103 @@ class Step2Super extends Component {
                 </label>
               </div>
             </label>
-          </div>
-
-          <div className="field">
-            <div className="control">
-                <div
-                  className={classnames("select is-medium", {
-                    "is-danger": errors.DPE
-                  })}
-                >
-                    <select
-                       name="DPE"
-                       value={this.props.DPE}
-                       onChange={this.props.onChange}
-                    >
-                        <option>Diag. Perf. Energetique</option>
-                        <option value="A++">A++</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                        <option value="E">E</option>
-                        <option value="F">F</option>
-                    </select>
-                </div>
-                {errors.DPE && (
-                  <p className="help is-danger">
-                    {errors.DPE}
-                  </p>
-                )}
-            </div>
-          </div>
-          <div className="field">
-            <div className="control">
-                <div
-                  className={classnames("select is-medium", {
-                    "is-danger": errors.GES
-                  })}
-                >
-                    <select
-                       name="GES"
-                       value={this.props.GES}
-                       onChange={this.props.onChange}
-                    >
-                        <option>Diag. Perf. Energetique</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                        <option value="E">E</option>
-                        <option value="F">F</option>
-                    </select>
-                </div>
-                {errors.GES && (
-                  <p className="help is-danger">
-                    {errors.GES}
-                  </p>
-                )}
-            </div>
-          </div>
-          <div className="field is-horizontal">
-            <div className="field-label is-normal">
-              <label className="label">Prix mandat</label>
-            </div>
-            <div className="field-body">
-              <div className="field">
-                <p className="control">
-                  <input
-                    className="input"
-                    type="number"
-                    placeholder="$"
-                    name="prixMandat"
-                    value={this.props.prixMandat}
-                    onChange={this.props.onChange}
-                    required
-                  />
-                </p>
+            <textarea
+              className="textarea"
+              name="titreDossier"
+              placeholder="Titre du dossier"
+              value={this.props.titreDossier}
+              onChange={this.props.onChange}
+              required
+            />
+            <textarea
+              className="textarea"
+              name="descriptifBien"
+              placeholder="Description"
+              value={this.props.descriptifBien}
+              onChange={this.props.onChange}
+              required
+            />
+            <div className="field">
+              <div className="control">
+                  <div
+                    className={classnames("select is-medium", {
+                      "is-danger": errors.DPE
+                    })}
+                  >
+                      <select
+                         name="DPE"
+                         value={this.props.DPE}
+                         onChange={this.props.onChange}
+                      >
+                          <option>Diag. Perf. Energetique</option>
+                          <option value="A++">A++</option>
+                          <option value="B">B</option>
+                          <option value="C">C</option>
+                          <option value="D">D</option>
+                          <option value="E">E</option>
+                          <option value="F">F</option>
+                      </select>
+                  </div>
+                  {errors.DPE && (
+                    <p className="help is-danger">
+                      {errors.DPE}
+                    </p>
+                  )}
               </div>
             </div>
+            <div className="field">
+              <div className="control">
+                  <div
+                    className={classnames("select is-medium", {
+                      "is-danger": errors.GES
+                    })}
+                  >
+                      <select
+                         name="GES"
+                         value={this.props.GES}
+                         onChange={this.props.onChange}
+                      >
+                          <option>Diag. Perf. Energetique</option>
+                          <option value="A">A</option>
+                          <option value="B">B</option>
+                          <option value="C">C</option>
+                          <option value="D">D</option>
+                          <option value="E">E</option>
+                          <option value="F">F</option>
+                      </select>
+                  </div>
+                  {errors.GES && (
+                    <p className="help is-danger">
+                      {errors.GES}
+                    </p>
+                  )}
+              </div>
+            </div>
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label className="label">Prix mandat</label>
+              </div>
+              <div className="field-body">
+                <div className="field">
+                  <p className="control">
+                    <input
+                      className="input"
+                      type="number"
+                      placeholder="$"
+                      name="prixMandat"
+                      value={this.props.prixMandat}
+                      onChange={this.props.onChange}
+                      required
+                    />
+                  </p>
+                </div>
+              </div>
+            </div>
+
+
           </div>
-          <textarea
-            className="textarea"
-            name="titreDossier"
-            placeholder="Titre du dossier"
-            value={this.props.titreDossier}
-            onChange={this.props.onChange}
-            required
-          />
-          <textarea
-            className="textarea"
-            name="descriptifBien"
-            placeholder="Description"
-            value={this.props.descriptifBien}
-            onChange={this.props.onChange}
-            required
-          />
+
+
           <div className="column">
             <h1>Charges et impots</h1> <hr />
             <div className="field is-horizontal">
