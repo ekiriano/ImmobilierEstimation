@@ -119,6 +119,7 @@ class SuperMasterForm extends Component {
     this.addPointFort = this.addPointFort.bind(this);
     this.deletePointFort = this.deletePointFort.bind(this);
     this.addPointFaible = this.addPointFaible.bind(this);
+    this.deletePointFaible = this.deletePointFaible.bind(this);
   }
 
   addPointFort(pointfort) {
@@ -129,9 +130,9 @@ class SuperMasterForm extends Component {
     // this.setState({ pointfortInputValue: "" });
   }
   deletePointFort(index) {
-    var newArray = this.state.pointforts;
+    var newArray = this.state.pointsForts;
     newArray.splice(index, 1);
-    this.setState({ pointforts: newArray });
+    this.setState({ pointsForts: newArray });
   }
 
   addPointFaible(pointfaible) {
@@ -141,6 +142,13 @@ class SuperMasterForm extends Component {
     newArray.push(pointfaible);
     this.setState({ pointsFaibles: newArray });
     // this.setState({ pointfortInputValue: "" });
+  }
+
+  deletePointFaible(index) {
+    console.log("hit");
+    var newArray = this.state.pointsFaibles;
+    newArray.splice(index, 1);
+    this.setState({ pointsFaibles: newArray });
   }
 
   onChange(e) {
@@ -352,6 +360,7 @@ class SuperMasterForm extends Component {
             addPointFort={this.addPointFort}
             addPointFaible={this.addPointFaible}
             deletePointFort={this.deletePointFort}
+            deletePointFaible={this.deletePointFaible}
           />
           <Step3
             currentStep={this.state.currentStep}

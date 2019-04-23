@@ -24,6 +24,34 @@ class Step2Super extends Component {
     if (this.props.currentStep !== 2) {
       return null;
     }
+    var listePointsForts = this.props.pointsForts.map((pointfort, i) => {
+      return (
+        <div key={i}>
+          <p>{pointfort}</p>
+          <button
+            onClick={this.props.deletePointFort.bind(this, i)}
+            type="button"
+            className="button is-danger "
+          >
+            <i className="uil uil-trash-alt" /> Supprimer
+          </button>
+        </div>
+      );
+    });
+    var listePointsFaibles = this.props.pointsFaibles.map((pointfaible, i) => {
+      return (
+        <div key={i}>
+          <p>{pointfaible}</p>
+          <button
+            onClick={this.props.deletePointFaible.bind(this, i)}
+            type="button"
+            className="button is-danger "
+          >
+            <i className="uil uil-trash-alt" /> Supprimer
+          </button>
+        </div>
+      );
+    });
     return (
       <div>
         <div className="columns">
@@ -496,15 +524,8 @@ class Step2Super extends Component {
               </div>
             </div>
             <h1>Points forts et faibles</h1> <hr />
-            <ul>
-              <li className="">
-                Un point fort
-                <Link to="#" className="button is-danger">
-                  <i className="uil uil-trash-alt" />
-                </Link>
-              </li>
-            </ul>
             <div className="fort">
+              {listePointsForts}
               <div className="field">
                 <div className="control">
                   <input
@@ -528,9 +549,9 @@ class Step2Super extends Component {
                 <i className="uil uil-plus" />
                 Ajouter point fort
               </button>
-              <button>plus</button>
             </div>
             <div className="faible">
+              {listePointsFaibles}
               <div className="field">
                 <div className="control">
                   <input
@@ -548,12 +569,11 @@ class Step2Super extends Component {
                 className="button is-success"
                 onClick={this.props.addPointFaible.bind(
                   this,
-                  this.state.pointFortValueInput
+                  this.state.pointFaibleValueInput
                 )}
               >
                 <i className="uil uil-plus" /> Ajouter point faible
               </button>
-              <button>plus</button>
             </div>
             <h1>Commentaires confidentiels</h1> <hr />
             <textarea
