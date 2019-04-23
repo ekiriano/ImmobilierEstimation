@@ -7,37 +7,27 @@ import {
 } from "../../../../actions/superBienActions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import Modal from "react-awesome-modal";
 
 class savedBiens extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      biens: [],
-      errors: {},
-      visible: false
-    };
-  }
+    constructor(props){
+        super(props);
+        this.state = {
+            biens : [],
+            errors :{}
+        }
+    }
 
+    componentDidMount(){
+        this.props.getSavedBiens();
+    }
+
+    onClickDelete(id){
+        this.props.deleteSavedBien(id);
+    };
   componentDidMount() {
     this.props.getSavedBiens();
-  }
+  };
 
-  onClickDelete(id) {
-    this.props.deleteSavedBien(id);
-  }
-
-  openModal() {
-    this.setState({
-      visible: true
-    });
-  }
-
-  closeModal() {
-    this.setState({
-      visible: false
-    });
-  }
 
   render() {
     var bienCards = this.props.savedBiens.map((bien, i) => {
@@ -104,6 +94,7 @@ class savedBiens extends Component {
                       <p>etage : {bien.etage}</p>
                       <p>nombre etage total : {bien.nombre_etage_total}</p>
                     </div>
+<<<<<<< HEAD
                   </div>
                   <a
                     href="javascript:void(0);"
@@ -111,6 +102,9 @@ class savedBiens extends Component {
                   >
                     Close
                   </a>
+=======
+                    <p>Estimmé a : {bien.prix_final} €</p>
+>>>>>>> c217dc641986e2e856cbbefd390e44d55ec51127
                 </div>
               </Modal>
             </div>
