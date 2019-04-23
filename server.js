@@ -10,23 +10,6 @@ const users = require("./routes/api/users");
 const defaultEstimation = require("./routes/api/estimation/default");
 const superEstimation = require("./routes/api/estimation/super");
 const app = express();
-const pdf = require('html-pdf');
-const pdftemplate = require('./index.js')
-
-// post / pdf generation and fetching of the data 
-app.post('/create-pdf', (req, res) => {
-	pdf.create(pdftemplate(req.data), {}).toFile('result.pdf', (err) => {
-		if(err){
-			res.send(Promise.reject());
-		}
-		res.send(Promise.resolve());
-	});
-});
-
-// get / send the generated pdf to client
-app.get('/fetch-pdf', (req,res) => {
-	res.sendFile(`${__dirname}/result.pdf`)
-});
 
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
