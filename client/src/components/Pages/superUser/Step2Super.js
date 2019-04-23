@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import classnames from "classnames";
 import { Link } from "react-router-dom";
-//import { Editor } from "react-draft-wysiwyg";
+import { EditorState, convertToRaw, ContentState } from "draft-js";
+import { Editor } from "react-draft-wysiwyg";
+import draftToHtml from "draftjs-to-html";
+import htmlToDraft from "html-to-draftjs";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 class Step2Super extends Component {
@@ -9,7 +12,11 @@ class Step2Super extends Component {
     super(props);
     this.state = {
       pointFortValueInput: "",
-      pointFaibleValueInput: ""
+      pointFaibleValueInput: "",
+      commentairesConfidentiels: EditorState.createEmpty(),
+      descriptifsBien: EditorState.createEmpty(),
+      commentaire: "",
+      descriptif: ""
     };
     this.onChange = this.onChange.bind(this);
   }
@@ -19,11 +26,33 @@ class Step2Super extends Component {
       [e.target.name]: e.target.value
     });
   }
+
+  onCommentaireConfEditorStateChange: Function = commentairesConfidentiels => {
+    //onsole.log(editorState);
+    this.setState({
+      commentairesConfidentiels: commentairesConfidentiels
+    });
+    this.setState({
+      commentaire: draftToHtml(
+        convertToRaw(commentairesConfidentiels.getCurrentContent())
+      )
+    });
+  };
+  onDescriptifStateChange: Function = descriptif => {
+    //onsole.log(editorState);
+    this.setState({
+      descriptifsBien: descriptif
+    });
+    this.setState({
+      descriptif: draftToHtml(convertToRaw(descriptif.getCurrentContent()))
+    });
+  };
   render() {
     const errors = this.props.errors;
     if (this.props.currentStep !== 2) {
       return null;
     }
+    const { commentairesConfidentiels, descriptifsBien } = this.state;
     var listePointsForts = this.props.pointsForts.map((pointfort, i) => {
       return (
         <div key={i}>
@@ -355,14 +384,15 @@ class Step2Super extends Component {
                 </label>
               </div>
             </label>
-            <textarea
-              className="textarea"
+            <input
+              className="input"
               name="titreDossier"
               placeholder="Titre du dossier"
               value={this.props.titreDossier}
               onChange={this.props.onChange}
               required
             />
+            {/*
             <textarea
               className="textarea"
               name="descriptifBien"
@@ -370,7 +400,20 @@ class Step2Super extends Component {
               value={this.props.descriptifBien}
               onChange={this.props.onChange}
               required
-            />
+            />*/}
+            <div className="descriptif">
+              <Editor
+                editorState={descriptifsBien}
+                onEditorStateChange={this.onDescriptifStateChange}
+                toolbar={{
+                  inline: { inDropdown: true },
+                  list: { inDropdown: true },
+                  textAlign: { inDropdown: true },
+                  link: { inDropdown: true },
+                  history: { inDropdown: true }
+                }}
+              />
+            </div>
             <div className="field">
               <div className="control">
                 <div
@@ -407,7 +450,7 @@ class Step2Super extends Component {
                     value={this.props.GES}
                     onChange={this.props.onChange}
                   >
-                    <option>Diag. Perf. Energetique</option>
+                    <option>GES</option>
                     <option value="A">A</option>
                     <option value="B">B</option>
                     <option value="C">C</option>
@@ -576,6 +619,20 @@ class Step2Super extends Component {
               </button>
             </div>
             <h1>Commentaires confidentiels</h1> <hr />
+            <div className="commentairesConfidentioels">
+              <Editor
+                editorState={commentairesConfidentiels}
+                onEditorStateChange={this.onCommentaireConfEditorStateChange}
+                toolbar={{
+                  inline: { inDropdown: true },
+                  list: { inDropdown: true },
+                  textAlign: { inDropdown: true },
+                  link: { inDropdown: true },
+                  history: { inDropdown: true }
+                }}
+              />
+            </div>
+            {/*
             <textarea
               className="textarea"
               name="commentairesConfidentiels"
@@ -583,14 +640,7 @@ class Step2Super extends Component {
               value={this.props.commentairesConfidentiels}
               onChange={this.props.onChange}
               required
-            />
-            {/* <Editor
-             editorState={this.props.commentairesConfidentiels}
-             toolbarClassName="toolbarClassName"
-             wrapperClassName="wrapperClassName"
-             editorClassName="editorClassName"
-             onEditorStateChange={this.onEditorStateChange}
-             /> */}
+            />*/}
           </div>
         </div>
       </div>
