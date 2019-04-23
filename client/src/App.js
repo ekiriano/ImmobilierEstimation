@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
+} from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utilities/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
@@ -64,40 +69,43 @@ class App extends Component {
 
             <ToastContainer position="bottom-center" />
             <div className="contenu">
-              <Route exact path="/" component={HomePage} />
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
+              <Switch>
+                <Route exact path="/" component={HomePage} />
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/login" component={Login} />
 
-              <Route
-                exact
-                path="/estimmation/simple"
-                component={SimpleUserRootForm}
-              />
+                <Route
+                  exact
+                  path="/estimmation/simple"
+                  component={SimpleUserRootForm}
+                />
 
-              <Route
-                exact
-                path="/estimmation/simple/maison"
-                component={CardMaisonForm}
-              />
-              <Route
-                exact
-                path="/estimmation/simple/appartement"
-                component={CardAppartementForm}
-              />
+                <Route
+                  exact
+                  path="/estimmation/simple/maison"
+                  component={CardMaisonForm}
+                />
+                <Route
+                  exact
+                  path="/estimmation/simple/appartement"
+                  component={CardAppartementForm}
+                />
 
-              <Route
-                exact
-                path="/dashboard"
-                component={requireAuth(Dashboard)}
-              />
-              <Route exact path="/premium" component={requireAuth(Premium)} />
-              <Route
-                exact
-                path="/super"
-                component={requireAuth(SuperUserForm)}
-              />
-              <Route component={Page404} />
+                <Route
+                  exact
+                  path="/dashboard"
+                  component={requireAuth(Dashboard)}
+                />
+                <Route exact path="/premium" component={requireAuth(Premium)} />
+                <Route
+                  exact
+                  path="/super"
+                  component={requireAuth(SuperUserForm)}
+                />
+                <Route component={Page404} />
+              </Switch>
             </div>
+
             <Footer />
           </div>
         </Router>
