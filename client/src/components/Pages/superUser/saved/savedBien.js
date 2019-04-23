@@ -9,25 +9,24 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 class savedBiens extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            biens : [],
-            errors :{}
-        }
-    }
-
-    componentDidMount(){
-        this.props.getSavedBiens();
-    }
-
-    onClickDelete(id){
-        this.props.deleteSavedBien(id);
+  constructor(props) {
+    super(props);
+    this.state = {
+      biens: [],
+      errors: {}
     };
+  }
+
   componentDidMount() {
     this.props.getSavedBiens();
-  };
+  }
 
+  onClickDelete(id) {
+    this.props.deleteSavedBien(id);
+  }
+  componentDidMount() {
+    this.props.getSavedBiens();
+  }
 
   render() {
     var bienCards = this.props.savedBiens.map((bien, i) => {
@@ -42,8 +41,8 @@ class savedBiens extends Component {
                 <div className="column is-half">
                   <p>
                     {" "}
-                    <i className="uil uil-ruler-combined" />surface :{" "}
-                    {bien.surface}m²
+                    <i className="uil uil-ruler-combined" />
+                    surface : {bien.surface}m²
                   </p>
                   <p>nombre pièces : {bien.nombre_pieces}</p>
                   <p>nombre salle bain : {bien.nombre_salle_bain}</p>
@@ -52,12 +51,12 @@ class savedBiens extends Component {
                 </div>
                 <div className="column is-half">
                   <p>
-                    <i className="uil uil-clock-two" />année construction :{" "}
-                    {bien.annee_construction}
+                    <i className="uil uil-clock-two" />
+                    année construction : {bien.annee_construction}
                   </p>
                   <p>
-                    <i className="uil uil-bolt-alt" />DPE :{" "}
-                    {bien.diagnostic_performance_energetique}{" "}
+                    <i className="uil uil-bolt-alt" />
+                    DPE : {bien.diagnostic_performance_energetique}{" "}
                   </p>
                   <p>etat bien : {bien.etat_bien}</p>
                   <p>qualité luminosité : {bien.luminosite}</p>
@@ -72,52 +71,37 @@ class savedBiens extends Component {
               >
                 Plus de détails
               </a>
-              <Modal
-                visible={this.state.visible}
-                width="65%"
-                height="80%"
-                effect="fadeInUp"
-                onClickAway={() => this.closeModal()}
-              >
-                <div>
-                  <h1>{bien.ville}</h1> <hr />
-                  <div className="columns">
-                    <div className="column is-half">
-                      <p>nombre pièces : {bien.nombre_pieces}</p>
-                      <p>nombre salle bain : {bien.nombre_salle_bain}</p>
-                      <p>etage : {bien.etage}</p>
-                      <p>nombre etage total : {bien.nombre_etage_total}</p>
-                    </div>
-                    <div className="column is-half">
-                      <p>nombre pièces : {bien.nombre_pieces}</p>
-                      <p>nombre salle bain : {bien.nombre_salle_bain}</p>
-                      <p>etage : {bien.etage}</p>
-                      <p>nombre etage total : {bien.nombre_etage_total}</p>
-                    </div>
-<<<<<<< HEAD
+
+              <div>
+                <h1>{bien.ville}</h1> <hr />
+                <div className="columns">
+                  <div className="column is-half">
+                    <p>nombre pièces : {bien.nombre_pieces}</p>
+                    <p>nombre salle bain : {bien.nombre_salle_bain}</p>
+                    <p>etage : {bien.etage}</p>
+                    <p>nombre etage total : {bien.nombre_etage_total}</p>
                   </div>
-                  <a
-                    href="javascript:void(0);"
-                    onClick={() => this.closeModal()}
-                  >
-                    Close
-                  </a>
-=======
-                    <p>Estimmé a : {bien.prix_final} €</p>
->>>>>>> c217dc641986e2e856cbbefd390e44d55ec51127
+                  <div className="column is-half">
+                    <p>nombre pièces : {bien.nombre_pieces}</p>
+                    <p>nombre salle bain : {bien.nombre_salle_bain}</p>
+                    <p>etage : {bien.etage}</p>
+                    <p>nombre etage total : {bien.nombre_etage_total}</p>
+                  </div>
+                  <p>Estimmé a : {bien.prix_final} €</p>
                 </div>
-              </Modal>
+              </div>
             </div>
+
+            <footer className="card-footer">
+              <button
+                onClick={this.onClickDelete.bind(this, bien._id)}
+                type="button"
+                className="button is-warning card-footer-item"
+              >
+                <i className="uil uil-trash-alt" /> Supprimer
+              </button>
+            </footer>
           </div>
-          <footer className="card-footer">
-            <button
-              onClick={this.onClickDelete.bind(this, bien._id)}
-              type="button"
-              className="button is-warning card-footer-item"
-            >
-              <i className="uil uil-trash-alt" /> Supprimer
-            </button>
-          </footer>
         </div>
       );
     });
