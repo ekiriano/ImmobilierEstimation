@@ -231,17 +231,17 @@ class Step4Super extends Component {
               <p>Prix final: {this.props.prix_final}</p>
               */}
 
-              <div class="card">
-              <header class="card-header">
-                <p class="card-header-title">
+              <div className="card">
+              <header className="card-header">
+                <p className="card-header-title">
                   Synthése de l'étude
                 </p>
               </header>
               <div className="card-content">
 
                 <div className="content">
-                <header class="card-header">
-                  <p class="card-header-title">
+                <header className="card-header">
+                  <p className="card-header-title">
                     1. Les methodes utilisées
                   </p>
                 </header>
@@ -251,26 +251,26 @@ class Step4Super extends Component {
                   name="methodeReferenceSelected"
                   checked={this.props.methodeReferenceSelected === "1"}
                   onChange={this.props.onChange}></input>
-                    méthode par référence
+                    méthode par référence: {this.props.prix_reference}€
                 </label>
               <label className="checkbox">
                 <input type="checkbox" value="1"
                 name="methodeComparaisonSelected"
                 checked={this.props.methodeComparaisonSelected === "1"}
                 onChange={this.props.onChange}></input>
-                  la méthode par comparaison
+                  méthode par comparaison: {this.props.prix_comparaison}€
               </label>
                 </div>
-                <header class="card-header">
-                  <p class="card-header-title">
+                <header className="card-header">
+                  <p className="card-header-title">
                     La moyenne des méthodes:
                   </p>
                 </header>
                 </div>
 
                 <div className="content">
-                <header class="card-header">
-                  <p class="card-header-title">
+                <header className="card-header">
+                  <p className="card-header-title">
                     2. Le prix et les honoraires
                   </p>
                 </header>
@@ -294,14 +294,14 @@ class Step4Super extends Component {
                 </div>
 
                 <div className="content">
-                <header class="card-header">
-                  <p class="card-header-title">
+                <header className="card-header">
+                  <p className="card-header-title">
                     3. Le prix final et remarques
                   </p>
                 </header>
-                <header class="card-header">
-                  <p class="card-header-title">
-                    Le prix final des methodes:
+                <header className="card-header">
+                  <p className="card-header-title">
+                    Le prix final des méthodes: {this.props.prix_final}€
                   </p>
                 </header>
                 <p>
