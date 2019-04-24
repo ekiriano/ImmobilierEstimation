@@ -5,6 +5,9 @@ import classnames from "classnames";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import { Link } from "react-router-dom";
+
+import logo from "../partials/logo.png";
+
 class Register extends Component {
   constructor() {
     super();
@@ -61,12 +64,9 @@ class Register extends Component {
           <div id="card_log" className="card-content has-background-white">
             <section className="section">
               <div className="has-text-centered">
-                <img
-                  src="/static/media/estimmo_logo.bd1438a3.png"
-                  alt="logo"
-                  width="60%"
-                />
+                <img src={logo} alt="logo" width="60%" />
               </div>
+              <br />
               <form noValidate onSubmit={this.onSubmit}>
                 <div className="field">
                   <label className="label">Username</label>
