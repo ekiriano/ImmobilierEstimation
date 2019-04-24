@@ -50,6 +50,7 @@ class Step3Super extends Component {
                     Très Bon
                   </label>
               </div>
+              {errors.etatQualiteGrosOeuvre && <p className="help is-danger">{errors.etatQualiteGrosOeuvre}</p>}
 
 
             <h3>
@@ -92,6 +93,7 @@ class Step3Super extends Component {
                     Très recherchée
                   </label>
               </div>
+              {errors.epoqueConstruction && <p className="help is-danger">{errors.epoqueConstruction}</p>}
 
             <h3>
             Mitoyenneté
@@ -133,6 +135,7 @@ class Step3Super extends Component {
                     Maison indépendante
                   </label>
               </div>
+              {errors.mitoyennete && <p className="help is-danger">{errors.mitoyennete}</p>}
 
 
             <h3>
@@ -175,6 +178,7 @@ class Step3Super extends Component {
               Maison indépendante
             </label>
               </div>
+              {errors.agrementGeneral && <p className="help is-danger">{errors.agrementGeneral}</p>}
 
             <h3>
             Standing
@@ -216,6 +220,7 @@ class Step3Super extends Component {
                 Très Bon
               </label>
               </div>
+              {errors.standing && <p className="help is-danger">{errors.standing}</p>}
 
             <h3>
             accessibilite
@@ -257,6 +262,7 @@ class Step3Super extends Component {
                     Très facile
                   </label>
               </div>
+              {errors.accessibilite && <p className="help is-danger">{errors.accessibilite}</p>}
 
             <h3>
             Tout à l'égout
@@ -298,6 +304,7 @@ class Step3Super extends Component {
                     Complet
                   </label>
               </div>
+              {errors.toutAEgout && <p className="help is-danger">{errors.toutAEgout}</p>}
 
             <h1>Autre Elements</h1> <hr/>
 
@@ -341,6 +348,7 @@ class Step3Super extends Component {
                     Très bonne
                   </label>
               </div>
+              {errors.qualiteArchitecturale && <p className="help is-danger">{errors.qualiteArchitecturale}</p>}
 
               <h3>
               Etat des portes et fenetres
@@ -382,6 +390,7 @@ class Step3Super extends Component {
                     Très Bon
                   </label>
                 </div>
+                {errors.etatPortesEtFenetres && <p className="help is-danger">{errors.etatPortesEtFenetres}</p>}
 
                 <h3>
                 Etat des toitures
@@ -425,6 +434,7 @@ class Step3Super extends Component {
                       Très Bon
                     </label>
                   </div>
+                  {errors.etatDesToitures && <p className="help is-danger">{errors.etatDesToitures}</p>}
 
                   <h3>
                   Cloture Terrain(état/qualité)
@@ -459,6 +469,7 @@ class Step3Super extends Component {
                     Bon
                   </label>
                 </div>
+                {errors.clotureTerrain && <p className="help is-danger">{errors.clotureTerrain}</p>}
 
                 <h1>Environement</h1><hr/>
 
@@ -495,6 +506,7 @@ class Step3Super extends Component {
                       Calme
                       </label>
                   </div>
+                  {errors.nuissanceSonore && <p className="help is-danger">{errors.nuissanceSonore}</p>}
 
                   <h3>
                   Voisinage/ vis-à-vis
@@ -536,6 +548,7 @@ class Step3Super extends Component {
                         Aucun
                         </label>
                     </div>
+                    {errors.voisinageVisaVis && <p className="help is-danger">{errors.voisinageVisaVis}</p>}
 
                     <h3>
                     Qualité de l'environnement
@@ -577,6 +590,7 @@ class Step3Super extends Component {
                             Très bonne
                           </label>
                       </div>
+                      {errors.qualiteEnvironnement && <p className="help is-danger">{errors.qualiteEnvironnement}</p>}
 
                       <h3>
                       Proximite des services publiques
@@ -618,6 +632,7 @@ class Step3Super extends Component {
                               Très proches
                             </label>
                         </div>
+                        {errors.proximiteServicesPublics && <p className="help is-danger">{errors.proximiteServicesPublics}</p>}
 
 
 
@@ -656,6 +671,7 @@ class Step3Super extends Component {
                       Bonne
                       </label>
                   </div>
+                  {errors.qualiteDistribution && <p className="help is-danger">{errors.qualiteDistribution}</p>}
 
                   <h3>
                   Etat des murs et des plafonds
@@ -697,6 +713,7 @@ class Step3Super extends Component {
                           Neuf
                         </label>
                     </div>
+                    {errors.etatMursPlafonds && <p className="help is-danger">{errors.etatMursPlafonds}</p>}
 
                     <h3>
                     Sols et revetement de sols
@@ -738,6 +755,7 @@ class Step3Super extends Component {
                             Très bon
                           </label>
                       </div>
+                      {errors.solsEtRevetementSols && <p className="help is-danger">{errors.solsEtRevetementSols}</p>}
 
                 <h1>Séjour</h1><hr/>
 
@@ -781,6 +799,7 @@ class Step3Super extends Component {
                         Très grand
                       </label>
                   </div>
+                  {errors.tailleSejour && <p className="help is-danger">{errors.tailleSejour}</p>}
 
                   <h3>
                   Exposition du séjour
@@ -822,6 +841,7 @@ class Step3Super extends Component {
                           Très bonne
                         </label>
                     </div>
+                    {errors.expositionSejour && <p className="help is-danger">{errors.expositionSejour}</p>}
 
                     <h3>
                     Vu du séjour
@@ -863,6 +883,7 @@ class Step3Super extends Component {
                             Exeptionnelle
                           </label>
                       </div>
+                      {errors.vueSejour && <p className="help is-danger">{errors.vueSejour}</p>}
 
                       <h3>
                       Luminosité
@@ -904,6 +925,7 @@ class Step3Super extends Component {
                               Trés bonne
                             </label>
                         </div>
+                        {errors.luminosite && <p className="help is-danger">{errors.luminosite}</p>}
 
                         <h3>
                         cheminée
@@ -945,6 +967,7 @@ class Step3Super extends Component {
                                 Exeptionnelle
                               </label>
                           </div>
+                          {errors.cheminee && <p className="help is-danger">{errors.cheminee}</p>}
 
 
                 <h1>Cuisine</h1><hr/>
@@ -989,6 +1012,7 @@ class Step3Super extends Component {
                         Trés Grande
                       </label>
                   </div>
+                  {errors.taille && <p className="help is-danger">{errors.taille}</p>}
 
                   <h3>
                   Equipement
@@ -1030,6 +1054,7 @@ class Step3Super extends Component {
                           Très bon
                         </label>
                     </div>
+                    {errors.equipement && <p className="help is-danger">{errors.equipement}</p>}
 
                     <h3>
                     Etat général
@@ -1071,6 +1096,7 @@ class Step3Super extends Component {
                           Très bon
                         </label>
                     </div>
+                    {errors.etatGeneral && <p className="help is-danger">{errors.etatGeneral}</p>}
 
                       <h3>
                       Agrément
@@ -1112,6 +1138,7 @@ class Step3Super extends Component {
                               Très agréable
                             </label>
                         </div>
+                        {errors.agrement && <p className="help is-danger">{errors.agrement}</p>}
 
 
                 <h1>Chambre</h1><hr/>
@@ -1156,6 +1183,7 @@ class Step3Super extends Component {
                         Trés Grande
                       </label>
                   </div>
+                  {errors.tailleDesPieces && <p className="help is-danger">{errors.tailleDesPieces}</p>}
 
                   <h3>
                   Etat des pièces
@@ -1197,6 +1225,7 @@ class Step3Super extends Component {
                           Très bon
                         </label>
                     </div>
+                    {errors.etatDesPieces && <p className="help is-danger">{errors.etatDesPieces}</p>}
 
                     <h3>
                     Exposition aux bruits
@@ -1238,6 +1267,7 @@ class Step3Super extends Component {
                             Très faible
                           </label>
                       </div>
+                      {errors.expositionAuxBruits && <p className="help is-danger">{errors.expositionAuxBruits}</p>}
 
 
                 <h1>Sanitaire</h1><hr/>
@@ -1282,6 +1312,7 @@ class Step3Super extends Component {
                     Trés Grande
                   </label>
                   </div>
+                  {errors.taillePiecesSanitaires && <p className="help is-danger">{errors.taillePiecesSanitaires}</p>}
 
                   <h3>
                   Nombre de sanitaire
@@ -1323,6 +1354,7 @@ class Step3Super extends Component {
                           Très elevé
                         </label>
                     </div>
+                    {errors.nombreDeSanitaires && <p className="help is-danger">{errors.nombreDeSanitaires}</p>}
 
                     <h3>
                     Qualité et etat des sanitaires
@@ -1364,6 +1396,7 @@ class Step3Super extends Component {
                         Très Bon
                       </label>
                       </div>
+                      {errors.qualiteEtatSanitaires && <p className="help is-danger">{errors.qualiteEtatSanitaires}</p>}
 
                 <h1>Energie</h1><hr/>
 
@@ -1407,6 +1440,7 @@ class Step3Super extends Component {
                         Très faible
                       </label>
                   </div>
+                  {errors.factureEnergetique && <p className="help is-danger">{errors.factureEnergetique}</p>}
 
                   <h3>
                   Installation électrique
@@ -1448,6 +1482,7 @@ class Step3Super extends Component {
                       Très bonne
                     </label>
                     </div>
+                    {errors.installationElectrique && <p className="help is-danger">{errors.installationElectrique}</p>}
 
                     <h3>
                     Installation du gaz
@@ -1489,6 +1524,7 @@ class Step3Super extends Component {
                         Très bonne
                       </label>
                       </div>
+                      {errors.installationGaz && <p className="help is-danger">{errors.installationGaz}</p>}
 
                 <h1>Annexes</h1><hr/>
 
@@ -1532,6 +1568,7 @@ class Step3Super extends Component {
                       Trés Bien
                       </label>
                   </div>
+                  {errors.balconLogiaTerasse && <p className="help is-danger">{errors.balconLogiaTerasse}</p>}
 
                   <h3>
                   Cave / sous-sol
@@ -1573,6 +1610,7 @@ class Step3Super extends Component {
                         Exeptionnel
                         </label>
                     </div>
+                    {errors.caveSousSol && <p className="help is-danger">{errors.caveSousSol}</p>}
 
                     <h3>
                     Agrément du jardin
@@ -1614,6 +1652,7 @@ class Step3Super extends Component {
                           Remarquable
                           </label>
                       </div>
+                      {errors.agrementJardin && <p className="help is-danger">{errors.agrementJardin}</p>}
 
                       <h3>
                       Garage ou parking couvert
@@ -1655,6 +1694,7 @@ class Step3Super extends Component {
                             Exceptionnel
                             </label>
                         </div>
+                        {errors.garageOuParkingOuvert && <p className="help is-danger">{errors.garageOuParkingOuvert}</p>}
 
                         <h3>
                         Combles
@@ -1696,6 +1736,7 @@ class Step3Super extends Component {
                               Trés Bien
                               </label>
                           </div>
+                          {errors.combles && <p className="help is-danger">{errors.combles}</p>}
 
 
 
