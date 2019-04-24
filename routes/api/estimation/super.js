@@ -3,7 +3,9 @@ const router = express.Router();
 const passport = require("passport");
 
 const {
-  EstimationComparaison, EstimationReference, EstimationCapitalisation
+  EstimationComparaison,
+  EstimationReference,
+  EstimationCapitalisation
 } = require("../../../estimation_methodes/superusermtd");
 
 // Super Validation
@@ -30,93 +32,99 @@ router.post(
     }
 
     const newSuperBien = new SuperBien({
-          user: req.user.id,
-          nom: req.body.nom,
-          prenom: req.body.prenom,
-          adressePostale: req.body.ville,
-          email: req.body.email,
-          numero: req.body.umero,
-          voie: req.body.voie,
-          codePostal: req.body.codePostal,
-          ville: req.body.ville,
-          anneeConstruction: req.body.anneeConstruction,
-          typeBienAffiche: req.body.typeBienAffiche,
-          nombrePieces: req.body.nombrePieces,
-          nombreChambres: req.body.nombreChambres,
-          surfaceHabitable: req.body.surfaceHabitable,
-          surfaceTerrain: req.body.surfaceTerrain,
-          nombreNiveaux: req.body.nombreNiveaux,
-          ascenseur: req.body.ascenseur,
-          balconOuTerrasse: req.body.balconOuTerrasse,
-          LibreALaVente: req.body.LibreALaVente,
-          titreDossier: req.body.titreDossier,
-          descriptifBien: req.body.descriptifBien,
-          DPE: req.body.DPE,
-          GES: req.body.GES,
-          prixMandat: req.body.prixMandat,
-          chargesAnnuellesTotales: req.body.chargesAnnuellesTotales,
-          chargesDeCopropriete: req.body.chargesDeCopropriete,
-          impotsFonciers: req.body.impotsFonciers,
-          annexes: req.body.annexes,
-          pointsForts: req.body.pointsForts,
-          pointsFaibles: req.body.pointsFaibles,
-          commentairesConfidentiels: req.body.commentairesConfidentiels,
-          etatQualiteGrosOeuvre: req.body.etatQualiteGrosOeuvre,
-          epoqueConstruction: req.body.epoqueConstruction,
-          mitoyennete: req.body.mitoyennete,
-          agrementGeneral: req.body.agrementGeneral,
-          standing: req.body.standing,
-          accessibilite: req.body.accessibilite,
-          toutAEgout: req.body.toutAEgout,
-          qualiteArchitecturale: req.body.qualiteArchitecturale,
-          etatPortesEtFenetres: req.body.etatPortesEtFenetres,
-          etatDesToitures: req.body.etatDesToitures,
-          clotureTerrain: req.body.clotureTerrain,
-          nuissanceSonore: req.body.nuissanceSonore,
-          voisinageVisaVis: req.body.voisinageVisaVis,
-          qualiteEnvironnement: req.body.qualiteEnvironnement,
-          proximiteServicesPublics: req.body.proximiteServicesPublics,
-          qualiteDistribution: req.body.qualiteDistribution,
-          etatMursPlafonds: req.body.etatMursPlafonds,
-          solsEtRevetementSols: req.body.solsEtRevetementSols,
-          tailleSejour: req.body.tailleSejour,
-          expositionSejour: req.body.expositionSejour,
-          vueSejour: req.body.vueSejour,
-          luminosite: req.body.luminosite,
-          cheminee: req.body.cheminee,
-          taille: req.body.taille,
-          equipement: req.body.equipement,
-          etatGeneral: req.body.etatGeneral,
-          agrement: req.body.agrement,
-          tailleDesPieces: req.body.tailleDesPieces,
-          etatDesPieces: req.body.etatDesPieces,
-          expositionAuxBruits: req.body.expositionAuxBruits,
-          taillePiecesSanitaires: req.body.taillePiecesSanitaires,
-          nombreDeSanitaires: req.body.nombreDeSanitaires,
-          qualiteEtatSanitaires: req.body.qualiteEtatSanitaires,
-          factureEnergetique: req.body.factureEnergetique,
-          installationElectrique: req.body.installationElectrique,
-          installationGaz: req.body.installationGaz,
-          balconLogiaTerasse: req.body.balconOuTerrasse,
-          caveSousSol: req.body.caveSousSol,
-          agrementJardin: req.body.agrementJardin,
-          garageOuParkingOuvert: req.body.garageOuParkingOuvert,
-          combles: req.body.combles,
-          decoteBienOccupe: req.body.decoteBienOccupe,
-          decoteBienOccupeR: req.body.decoteBienOccupeR,
-          autresElements: req.body.autresElements,
-          autresElementsR: req.body.autresElementsR,
-          travauxARealiser: req.body.travauxARealiser,
-          travauxARealiserR: req.body.travauxARealiserR,
-          renove: req.body.renove,
-          renoveR: req.body.renoveR,
-          prix_comparaison: req.body.prix_estimation,
-          prix_reference: req.body.prix_reference,
-          prix_final: req.body.prix_final
+      user: req.user.id,
+      nom: req.body.nom,
+      prenom: req.body.prenom,
+      adressePostale: req.body.ville,
+      email: req.body.email,
+      numero: req.body.umero,
+      voie: req.body.voie,
+      codePostal: req.body.codePostal,
+      ville: req.body.ville,
+      anneeConstruction: req.body.anneeConstruction,
+      typeBienAffiche: req.body.typeBienAffiche,
+      nombrePieces: req.body.nombrePieces,
+      nombreChambres: req.body.nombreChambres,
+      surfaceHabitable: req.body.surfaceHabitable,
+      surfaceTerrain: req.body.surfaceTerrain,
+      nombreNiveaux: req.body.nombreNiveaux,
+      ascenseur: req.body.ascenseur,
+      balconOuTerrasse: req.body.balconOuTerrasse,
+      LibreALaVente: req.body.LibreALaVente,
+      titreDossier: req.body.titreDossier,
+      descriptifBien: req.body.descriptifBien,
+      DPE: req.body.DPE,
+      GES: req.body.GES,
+      prixMandat: req.body.prixMandat,
+      chargesAnnuellesTotales: req.body.chargesAnnuellesTotales,
+      chargesDeCopropriete: req.body.chargesDeCopropriete,
+      impotsFonciers: req.body.impotsFonciers,
+      annexes: req.body.annexes,
+      pointsForts: req.body.pointsForts,
+      pointsFaibles: req.body.pointsFaibles,
+      commentairesConfidentiels: req.body.commentairesConfidentiels,
+      etatQualiteGrosOeuvre: req.body.etatQualiteGrosOeuvre,
+      epoqueConstruction: req.body.epoqueConstruction,
+      mitoyennete: req.body.mitoyennete,
+      agrementGeneral: req.body.agrementGeneral,
+      standing: req.body.standing,
+      accessibilite: req.body.accessibilite,
+      toutAEgout: req.body.toutAEgout,
+      qualiteArchitecturale: req.body.qualiteArchitecturale,
+      etatPortesEtFenetres: req.body.etatPortesEtFenetres,
+      etatDesToitures: req.body.etatDesToitures,
+      clotureTerrain: req.body.clotureTerrain,
+      nuissanceSonore: req.body.nuissanceSonore,
+      voisinageVisaVis: req.body.voisinageVisaVis,
+      qualiteEnvironnement: req.body.qualiteEnvironnement,
+      proximiteServicesPublics: req.body.proximiteServicesPublics,
+      qualiteDistribution: req.body.qualiteDistribution,
+      etatMursPlafonds: req.body.etatMursPlafonds,
+      solsEtRevetementSols: req.body.solsEtRevetementSols,
+      tailleSejour: req.body.tailleSejour,
+      expositionSejour: req.body.expositionSejour,
+      vueSejour: req.body.vueSejour,
+      luminosite: req.body.luminosite,
+      cheminee: req.body.cheminee,
+      taille: req.body.taille,
+      equipement: req.body.equipement,
+      etatGeneral: req.body.etatGeneral,
+      agrement: req.body.agrement,
+      tailleDesPieces: req.body.tailleDesPieces,
+      etatDesPieces: req.body.etatDesPieces,
+      expositionAuxBruits: req.body.expositionAuxBruits,
+      taillePiecesSanitaires: req.body.taillePiecesSanitaires,
+      nombreDeSanitaires: req.body.nombreDeSanitaires,
+      qualiteEtatSanitaires: req.body.qualiteEtatSanitaires,
+      factureEnergetique: req.body.factureEnergetique,
+      installationElectrique: req.body.installationElectrique,
+      installationGaz: req.body.installationGaz,
+      balconLogiaTerasse: req.body.balconOuTerrasse,
+      caveSousSol: req.body.caveSousSol,
+      agrementJardin: req.body.agrementJardin,
+      garageOuParkingOuvert: req.body.garageOuParkingOuvert,
+      combles: req.body.combles,
+      decoteBienOccupe: req.body.decoteBienOccupe,
+      decoteBienOccupeR: req.body.decoteBienOccupeR,
+      autresElements: req.body.autresElements,
+      autresElementsR: req.body.autresElementsR,
+      travauxARealiser: req.body.travauxARealiser,
+      travauxARealiserR: req.body.travauxARealiserR,
+      renove: req.body.renove,
+      renoveR: req.body.renoveR,
+      prix_comparaison: req.body.prix_estimation,
+      prix_reference: req.body.prix_reference,
+      prix_final: req.body.prix_final
     });
-    if(newSuperBien.methodeComparaisonSelected !== false){
-    EstimatedSuperBien = EstimationComparaison(newSuperBien);
-  }
+    if (newSuperBien.methodeComparaisonSelected === true) {
+      EstimatedSuperBien = EstimationComparaison(newSuperBien);
+    }
+    if (newSuperBien.methodeCapitalisationSelected === true) {
+      //EstimatedSuperBien = EstimationCapitalisation(newSuperBien);
+    }
+    if (newSuperBien.methodeReferenceSelected === true) {
+      // EstimatedSuperBien = EstimationReference(newSuperBien);
+    }
     EstimatedSuperBien.save()
       .then(superBien => res.json(superBien))
       .catch(err => console.log(err));
@@ -130,23 +138,24 @@ router.post(
  */
 
 router.get(
-  '/biens/saved',
-passport.authenticate("jwt", {session: false}),
-(req,res) => {
- var user = {
-   id : req.user.id
- }
- SuperBien.find({"user" : user.id})
- .then(data => {
-    if(data){
-       res.json(data);
-    } else{
-      return res.status(400).json({error : "pas de biens sauvegardes trouvées"});
-    }
- })
- .catch(err => console.log(err));
-
-}
+  "/biens/saved",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    var user = {
+      id: req.user.id
+    };
+    SuperBien.find({ user: user.id })
+      .then(data => {
+        if (data) {
+          res.json(data);
+        } else {
+          return res
+            .status(400)
+            .json({ error: "pas de biens sauvegardes trouvées" });
+        }
+      })
+      .catch(err => console.log(err));
+  }
 );
 
 /**
@@ -156,21 +165,25 @@ passport.authenticate("jwt", {session: false}),
  */
 
 router.delete(
-  '/biens/saved/:id',
-  passport.authenticate('jwt',{session:false}),
-  (req,res) => {
-    SuperBien.find({user : req.user.id}).then( biens => {
+  "/biens/saved/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    SuperBien.find({ user: req.user.id }).then(biens => {
       SuperBien.findById(req.params.id)
-      .then(bien => {
-        // check estimation ownership
-        if(bien.user.toString() != req.user.id){
-          return res.status(401).json({notauthorized : "utilisateur pas autorisé"});
-        }
-        //delete
-        bien.remove().then( () => res.json({success : true}));
-      })
-      .catch(err => res.status(404).json({error : "pas d'estimation de bien trouvé"}));
-    })
+        .then(bien => {
+          // check estimation ownership
+          if (bien.user.toString() != req.user.id) {
+            return res
+              .status(401)
+              .json({ notauthorized: "utilisateur pas autorisé" });
+          }
+          //delete
+          bien.remove().then(() => res.json({ success: true }));
+        })
+        .catch(err =>
+          res.status(404).json({ error: "pas d'estimation de bien trouvé" })
+        );
+    });
   }
 );
 
