@@ -55,14 +55,7 @@ class Dashboard extends Component {
                 <i class="uil uil-user-circle" /> {this.props.user.name}
               </h1>
               <h3>{this.props.user.user_type} User</h3>
-              {/*
-              <button className="button is-link is-rounded mb-is-0_5" onClick={this.onClickshowMaisons.bind(this)} >Mes estimations de maisons</button>
-              <button className="button is-link is-rounded mb-is-0_5" onClick={this.onClickshowAppartments.bind(this)}>Mes estimations d'appartements</button>
-              {
-              this.props.user.user_type === "super"
-              ? <button className="button is-link is-rounded" onClick={this.onClickshowBiens.bind(this)}>Mes estimations de biens</button>
-              : <button className="button is-link is-rounded" onClick={this.onClickshowBiens.bind(this)}>Mes estimations de biens(displaying it for regular for demo purposes)</button>
-            }*/}
+
               <aside className="menu has-text-left  ">
                 <p className="menu-label">Estimmations Regulières</p>
                 <ul className="menu-list">
@@ -105,18 +98,11 @@ class Dashboard extends Component {
                 </ul>
               </aside>
             </div>
-            {/* TODO: Switch to a menu like this would be better : https://bulma.io/documentation/components/menu/*/}
+
             <div className="column">
-              <div className="columns">
-                <div className="column is-10">
-                  {this.state.showAppartments ? <SavedAppartements /> : null}
-                  {this.state.showMaisons ? <SavedMaisons /> : null}
-                  {this.state.showBiens ? <SavedBiens /> : null}
-                </div>
-                <div className="column is-2">
-                  <h3>Filter Methods</h3>
-                </div>
-              </div>
+              {this.state.showAppartments ? <SavedAppartements /> : null}
+              {this.state.showMaisons ? <SavedMaisons /> : null}
+              {this.state.showBiens ? <SavedBiens /> : null}
             </div>
           </div>
         </div>
