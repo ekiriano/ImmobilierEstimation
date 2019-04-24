@@ -10,7 +10,6 @@ const SuperBienSchema = new Schema({
       adressePostale: {type: String,required: true  },
       email: {type: String,required: true  },
       telephone: {type: Number,  },
-      numero: {type: Number,  },
       voie: {type: String,required: true  },
       codePostal: {type: Number, required: true },
       ville: {type: String, required: true },

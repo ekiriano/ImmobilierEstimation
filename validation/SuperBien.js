@@ -76,11 +76,6 @@ if (Validator.isEmpty(data.telephone)){
 //   errors.numero =
 //     "street number is no symbol";
 // }
-
-if(Validator.isEmpty(data.numero)){
-    errors.numero =
-    "street number is required";
-}
 //
 if (Validator.isEmpty(data.voie)) {
   errors.voie = "street name is required";

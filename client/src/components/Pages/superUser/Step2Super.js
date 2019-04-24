@@ -90,31 +90,6 @@ class Step2Super extends Component {
             <h1>Localisation du bien</h1> <hr />
             <div className="field is-horizontal">
               <div className="field-label is-normal">
-                <label className="label">N°</label>
-              </div>
-              <div className="field-body">
-                <div className="field">
-                  <p className="control">
-                    <input
-                      className={classnames("input ", {
-                        "is-danger": errors.numero
-                      })}
-                      type="number"
-                      placeholder="Numéro"
-                      name="numero"
-                      onChange={this.props.onChange}
-                      value={this.props.numero}
-                      required
-                    />
-                    {errors.prenom && (
-                      <p className="help is-danger">{errors.numero}</p>
-                    )}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="field is-horizontal">
-              <div className="field-label is-normal">
                 <label className="label">Voie</label>
               </div>
               <div className="field-body">
