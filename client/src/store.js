@@ -11,7 +11,8 @@ const store = createStore(
   initialState,
   compose(
     applyMiddleware(...middleware),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // allows redux chrom dev tool
+    //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // allows redux chrom dev tool
+    window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 );
 
