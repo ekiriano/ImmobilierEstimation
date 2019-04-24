@@ -83,7 +83,7 @@ if(Validator.isEmpty(data.numero)){
 }
 //
 if (Validator.isEmpty(data.voie)) {
-  errors.ville = "street name is required";
+  errors.voie = "street name is required";
 }
 
 if(Validator.isEmpty(data.codePostal)){
