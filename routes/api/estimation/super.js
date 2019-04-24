@@ -118,22 +118,22 @@ router.post(
       moyenne_des_methodes: req.body.moyenne_des_methodes,
       prix_comparaison: req.body.prix_estimation,
       prix_reference: req.body.prix_reference,
+      prix_capitalisation: req.body.prix_capitalisation,
       prix_final: req.body.prix_final
-
     });
 
     var EstimatedSuperBien;
 
-    if (newSuperBien.methodeComparaisonSelected === true) {
+    if (req.body.methodeComparaisonSelected === true) {
       EstimatedSuperBien = EstimationComparaison(newSuperBien);
     }
-    if (newSuperBien.methodeCapitalisationSelected === true) {
+    if (req.body.methodeCapitalisationSelected === true) {
       EstimatedSuperBien = EstimationCapitalisation(newSuperBien);
     }
-    if (newSuperBien.methodeReferenceSelected === true) {
+    if (req.body.methodeReferenceSelected === true) {
       EstimatedSuperBien = EstimationReference(newSuperBien);
     }
-
+    console.log(EstimatedSuperBien);
     EstimatedSuperBien.save()
       .then(superBien => res.json(superBien))
       .catch(err => console.log(err));
