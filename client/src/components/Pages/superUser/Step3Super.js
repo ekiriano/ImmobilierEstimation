@@ -554,7 +554,7 @@ class Step3Super extends Component {
                   type="radio"
                   value="Bon"
                   name="etatDesToitures"
-                  value="Médiocre"
+                  value="Bon"
                   checked={this.props.etatDesToitures === "Bon"}
                   onChange={this.props.onChange}
                 />
@@ -565,7 +565,7 @@ class Step3Super extends Component {
                   type="radio"
                   value="Trés bon"
                   name="etatDesToitures"
-                  value="Médiocre"
+                  value="Trés bon"
                   checked={this.props.etatDesToitures === "Trés bon"}
                   onChange={this.props.onChange}
                 />

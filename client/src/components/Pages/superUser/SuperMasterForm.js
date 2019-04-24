@@ -257,6 +257,8 @@ class SuperMasterForm extends Component {
       valorisationTerrainR: this.state.valorisationTerrainR,
       autresElements: this.state.autresElements,
       autresElementsR: this.state.autresElementsR,
+      decoteBienOccupe: this.state.decoteBienOccupe,
+      decoteBienOccupeR: this.decoteBienOccupeR,
       travauxARealiser: this.state.travauxARealiser,
       travauxARealiserR: this.state.travauxARealiserR,
       methodeCapitalisationSelected: this.state.methodeCapitalisationSelected,
@@ -266,7 +268,9 @@ class SuperMasterForm extends Component {
       moyenne_des_methodes: this.state.moyenne_des_methodes,
       prix_capitalisation: this.state.prix_capitalisation,
       prix_reference: this.state.prix_reference,
-      prix_final: this.state.prix_final
+      prix_final: this.state.prix_final,
+      textePredifini: this.state.textePredifini,
+      textePredifiniR: this.state.textePredifiniR
     };
     this.props.submitSuperBienSave(newBienSuper);
   }

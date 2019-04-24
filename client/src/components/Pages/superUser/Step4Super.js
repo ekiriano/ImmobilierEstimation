@@ -329,7 +329,7 @@ class Step4Super extends Component {
                   <textarea
                     className="textarea"
                     name="textePredifini"
-                    placeholder="Titre du dossier"
+                    placeholder=""
                     value={this.props.textePredifini}
                     onChange={this.props.onChange}
                     required
