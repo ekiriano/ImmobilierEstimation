@@ -30,7 +30,7 @@ class savedBiens extends Component {
       return (
         <div className="card mb-is-1" key={i}>
           <header className="card-header">
-            <p className="card-header-title">Addresse :{bien.ville}</p>
+            <p className="card-header-title">Addresse :{bien.voie}, {bien.codePostal} {bien.ville}</p>
           </header>
           <div className="card-content">
             <div className="content">
@@ -39,25 +39,25 @@ class savedBiens extends Component {
                   <p>
                     {" "}
                     <i className="uil uil-ruler-combined" />
-                    surface : {bien.surfaceTerrain}m²
+                    Surface : {bien.surfaceTerrain}m²
                   </p>
-                  <p>nombre pièces : {bien.nombrePieces}</p>
-                  <p>nombre salle bain : {bien.nombreDeSanitaires}</p>
-                  <p>Type Bien : {bien.typeBienAffiche}</p>
-                  <p>nombre etage total : {bien.nombreNiveaux}</p>
+                  <p>Nombre pièces : {bien.nombrePieces}</p>
+                  <p>Charges annuelles : {bien.chargesAnnuellesTotales}</p>
+                  <p>Impots fonciers: {bien.impotsFonciers}</p>
+                  <p>Nombre etage total : {bien.nombreNiveaux}</p>
                 </div>
                 <div className="column is-half">
                   <p>
                     <i className="uil uil-clock-two" />
-                    année construction : {bien.anneeConstruction}
+                    Année construction : {bien.anneeConstruction}
                   </p>
                   <p>
                     <i className="uil uil-bolt-alt" />
                     DPE : {bien.DPE}{" "}
                   </p>
-                  <p>etat bien : {bien.etatGeneral}</p>
-                  <p>qualité luminosité : {bien.luminosite}</p>
-                  <p>Proximité: {bien.proximiteServicesPublics}</p>
+                  <p>Etat bien : {bien.etatGeneral}</p>
+                  <p>Luminosité : {bien.luminosite}</p>
+                  <p>Type Bien : {bien.typeBienAffiche}</p>
                 </div>
               </div>
               <p>Estimmé a : {bien.moyenne_des_methodes} €</p>
