@@ -37,23 +37,20 @@ class Nav extends Component {
     );
 
     const dashboard = (
-      <Link
-      to="/dashboard"
-      className="button is-info"
-      >
+      <Link to="/dashboard" className="button is-info">
         <strong> Dashboard </strong>
       </Link>
-    )
+    );
 
     return (
-      <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      <nav
+        className="navbar is-fixed-top"
+        role="navigation"
+        aria-label="main navigation"
+      >
         <div className="navbar-brand">
           <Link className="navbar-item" to="/">
-            <img
-              src={logo}
-              
-              alt="logo"
-            />
+            <img src={logo} alt="logo" />
           </Link>
 
           <Link
@@ -76,21 +73,25 @@ class Nav extends Component {
               Estimmer votre bien gratuitement
             </Link>
 
-            {this.props.isLoggedIn ? (
-               <Link to="/premium" className="navbar-item">
-               Devenir un utilisateur Premium
+            {this.props.isLoggedIn &&
+            this.props.user.user_type.localeCompare("super") !== 0 ? (
+              <Link to="/premium" className="navbar-item">
+                Devenir un utilisateur Premium
               </Link>
+            ) : null}
 
-            ) : null} 
-
-           
-
+            {this.props.isLoggedIn &&
+            this.props.user.user_type.localeCompare("super") === 0 ? (
+              <Link to="/super" className="navbar-item">
+                Estimmation détaillée
+              </Link>
+            ) : null}
           </div>
 
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-              {this.props.isLoggedIn ? dashboard : null}
+                {this.props.isLoggedIn ? dashboard : null}
                 {this.props.isLoggedIn ? logout : auth}
               </div>
             </div>
@@ -106,7 +107,8 @@ Nav.propTypes = {
   isLoggedIn: PropTypes.bool.isRequired
 };
 const mapStateToProps = state => ({
-  isLoggedIn: state.auth.isAuthenticated
+  isLoggedIn: state.auth.isAuthenticated,
+  user: state.auth.user
 });
 
 export default connect(
