@@ -158,13 +158,13 @@ class SuperMasterForm extends Component {
 
   onChange(e) {
     const target = e.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
 
     this.setState({
       [name]: value
     });
-    console.log('name', value);
+    console.log("name", value);
   }
   onChangeComConf(commenConf) {
     this.setState({ commentairesConfidentiels: commenConf });
@@ -283,9 +283,11 @@ class SuperMasterForm extends Component {
         prix_capitalisation: nextProps.newEstimationBien.prix_capitalisation,
         moyenne_des_methodes: nextProps.newEstimationBien.moyenne_des_methodes
       });
-      if (this.state.methodeReferenceSelected
-      || this.state.methodeComparaisonSelected
-      || this.state.methodeCapitalisationSelected) {
+      if (
+        this.state.methodeReferenceSelected ||
+        this.state.methodeComparaisonSelected ||
+        this.state.methodeCapitalisationSelected
+      ) {
         this.next();
       }
     }
