@@ -34,8 +34,8 @@ const SuperBienSchema = new Schema({
       chargesDeCopropriete: {type: Number,  min: 0},
       impotsFonciers: {type: Number,   min: 0},
       annexes: {type: String},
-      pointsForts:[{ content: { type: String } }],
-      pointsFaibles:[{ content: { type: String } }],
+      pointsForts:[String],
+      pointsFaibles:[String],
       commentairesConfidentiels: {type: String, },
         etatQualiteGrosOeuvre: {
         type: String,
