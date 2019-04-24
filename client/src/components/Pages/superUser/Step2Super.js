@@ -121,10 +121,17 @@ class Step2Super extends Component {
                 <div className="field">
                   <p className="control">
                     <input
+<<<<<<< HEAD
                       className={classnames("input ", {
                         "is-danger": errors.voie
                       })}
                       type="texte"
+=======
+                    className={classnames("input ", {
+                     "is-danger": errors.voie
+                    })}
+                      type="text"
+>>>>>>> 15c5104eb3545d7e95d247a6553e4864dc389934
                       placeholder="Voie"
                       name="voie"
                       value={this.props.voie}
@@ -146,10 +153,17 @@ class Step2Super extends Component {
                 <div className="field">
                   <p className="control">
                     <input
+<<<<<<< HEAD
                       className={classnames("input ", {
                         "is-danger": errors.codePostal
                       })}
                       type="texte"
+=======
+                    className={classnames("input ", {
+                     "is-danger": errors.codePostal
+                    })}
+                      type="number"
+>>>>>>> 15c5104eb3545d7e95d247a6553e4864dc389934
                       placeholder="Code postal"
                       name="codePostal"
                       value={this.props.codePostal}
@@ -171,10 +185,17 @@ class Step2Super extends Component {
                 <div className="field">
                   <p className="control">
                     <input
+<<<<<<< HEAD
                       className={classnames("input ", {
                         "is-danger": errors.ville
                       })}
                       type="texte"
+=======
+                    className={classnames("input ", {
+                     "is-danger": errors.ville
+                    })}
+                      type="text"
+>>>>>>> 15c5104eb3545d7e95d247a6553e4864dc389934
                       placeholder="Ville"
                       name="ville"
                       value={this.props.ville}
@@ -646,12 +667,21 @@ class Step2Super extends Component {
                 <div className="field">
                   <p className="control">
                     <input
+<<<<<<< HEAD
                       className={classnames("input ", {
                         "is-danger": errors.annexes
                       })}
                       type="number"
                       placeholder="Impots fonciers"
                       name="Annexes"
+=======
+                    className={classnames("input ", {
+                     "is-danger": errors.annexes
+                    })}
+                      type="text"
+                      placeholder="Annexes"
+                      name="annexes"
+>>>>>>> 15c5104eb3545d7e95d247a6553e4864dc389934
                       value={this.props.annexes}
                       onChange={this.props.onChange}
                       required
