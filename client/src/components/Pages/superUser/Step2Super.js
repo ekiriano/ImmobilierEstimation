@@ -122,7 +122,7 @@ class Step2Super extends Component {
                     className={classnames("input ", {
                      "is-danger": errors.voie
                     })}
-                      type="texte"
+                      type="text"
                       placeholder="Voie"
                       name="voie"
                       value={this.props.voie}
@@ -145,7 +145,7 @@ class Step2Super extends Component {
                     className={classnames("input ", {
                      "is-danger": errors.codePostal
                     })}
-                      type="texte"
+                      type="number"
                       placeholder="Code postal"
                       name="codePostal"
                       value={this.props.codePostal}
@@ -168,7 +168,7 @@ class Step2Super extends Component {
                     className={classnames("input ", {
                      "is-danger": errors.ville
                     })}
-                      type="texte"
+                      type="text"
                       placeholder="Ville"
                       name="ville"
                       value={this.props.ville}
@@ -605,9 +605,9 @@ class Step2Super extends Component {
                     className={classnames("input ", {
                      "is-danger": errors.annexes
                     })}
-                      type="number"
-                      placeholder="Impots fonciers"
-                      name="Annexes"
+                      type="text"
+                      placeholder="Annexes"
+                      name="annexes"
                       value={this.props.annexes}
                       onChange={this.props.onChange}
                       required
