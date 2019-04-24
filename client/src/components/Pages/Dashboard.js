@@ -49,9 +49,8 @@ class Dashboard extends Component {
       <div className="">
         <div className="row">
           <div className="columns">
-            <div className="column is-2 primary-bg">
+            <div className="column is-2 primary-bg min-is-100vh is-fixed ">
               <h1>
-                {" "}
                 <i class="uil uil-user-circle" /> {this.props.user.name}
               </h1>
               <h3>{this.props.user.user_type} User</h3>

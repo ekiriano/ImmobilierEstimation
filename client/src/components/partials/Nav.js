@@ -83,7 +83,7 @@ class Nav extends Component {
             {this.props.isLoggedIn &&
             this.props.user.user_type.localeCompare("super") === 0 ? (
               <Link to="/super" className="navbar-item">
-                Estimmation détaillée
+                Estimmations détaillées
               </Link>
             ) : null}
           </div>

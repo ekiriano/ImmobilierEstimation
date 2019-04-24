@@ -2,7 +2,12 @@ nav {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   height: 80px;
 }
-
+.min-is-100vh {
+  min-height: 100vh;
+}
+.is-fixed {
+  position: fixed;
+}
 .hero {
   height: 100%;
   background-position: center;
