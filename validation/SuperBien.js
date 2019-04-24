@@ -244,10 +244,10 @@ if (Validator.isEmpty(data.impotsFonciers)) {
 // // end of bienImmobillier photos_plan validation
 //
 // // bienImmobillier annexes validation
-if (Validator.isEmpty(data.annexes)) {
-  errors.annexes =
-    "annexes is required";
-}
+// if (Validator.isEmpty(data.annexes)) {
+//   errors.annexes =
+//     "annexes is required";
+// }
 // // end of bienImmobillier annexes validation
 //
 // // bienImmobillier points validation
