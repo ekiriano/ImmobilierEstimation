@@ -6,6 +6,10 @@ import './map.css'
 // import DeckGL, { GeoJsonLayer } from "deck.gl";
 
 
+import PropTypes from "prop-types";
+import {connect} from "react-redux";
+
+
 
 const TOKEN =
   "pk.eyJ1IjoidGVyMjAxOSIsImEiOiJjanJsdjhxczMwYnE1M3lvNWM3MHo5bHZrIn0.4jZb3pG3_OwR8dY2w7qJEA";
@@ -13,7 +17,7 @@ const TOKEN =
 class Map extends Component {
   state = {
     viewport: {
-      width: 250,
+      width: '100%',
       height: 750,
       latitude: 43.6,
       longitude: 3.8833,
@@ -51,6 +55,19 @@ class Map extends Component {
     })
   }
 
+  componentWillReceiveProps(nextProps){
+    if(nextProps.coordinates){
+      const nextViewport = {
+        width: "100%",
+        height: 600,
+        latitude: nextProps.coordinates.latitude,
+        longitude: nextProps.coordinates.longitude,
+        zoom: 16,
+      }
+      this.setState({viewport : nextViewport })
+    }
+  }
+
   render() {
     return (
       <div>
@@ -64,4 +81,11 @@ class Map extends Component {
     )
   }
 }
+
+Map.propTypes = {
+  coordinates : PropTypes.object.isRequired
+}
+const mapStateToProps = state => ({
+  coordinates : state.map.coordinates,
+});
 export default Map;

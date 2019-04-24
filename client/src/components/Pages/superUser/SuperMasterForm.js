@@ -25,7 +25,6 @@ class SuperMasterForm extends Component {
       adressePostale: "",
       email: "",
       telephone: "",
-      numero: "",
       voie: "",
       codePostal: "",
       ville: "",
@@ -184,7 +183,6 @@ class SuperMasterForm extends Component {
       adressePostale: this.state.adressePostale,
       telephone: this.state.telephone,
       email: this.state.email,
-      numero: this.state.numero,
       voie: this.state.voie,
       codePostal: this.state.codePostal,
       ville: this.state.ville,
@@ -384,7 +382,6 @@ class SuperMasterForm extends Component {
                       currentStep={this.state.currentStep}
                       onChange={this.onChange}
                       errors={this.state.errors}
-                      numero={this.state.numero}
                       voie={this.state.voie}
                       codePostal={this.state.codePostal}
                       ville={this.state.ville}
