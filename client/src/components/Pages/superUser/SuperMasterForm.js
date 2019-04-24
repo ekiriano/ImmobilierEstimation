@@ -262,7 +262,6 @@ class SuperMasterForm extends Component {
       prix_reference: this.state.prix_reference,
       prix_final: this.state.prix_final,
     };
-    console.log("state", this.state.errors);
     this.props.submitSuperBienSave(newBienSuper);
   }
 

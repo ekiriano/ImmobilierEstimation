@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require("passport");
 
 const {
-  superEstimationBien,
+  EstimationComparaison, EstimationReference, EstimationCapitalisation
 } = require("../../../estimation_methodes/superusermtd");
 
 // Super Validation
@@ -106,7 +106,9 @@ router.post(
           prix_reference: req.body.prix_reference,
           prix_final: req.body.prix_final
     });
+    if(newSuperBien.methodeComparaisonSelected !== false){
     EstimatedSuperBien = EstimationComparaison(newSuperBien);
+  }
     EstimatedSuperBien.save()
       .then(superBien => res.json(superBien))
       .catch(err => console.log(err));

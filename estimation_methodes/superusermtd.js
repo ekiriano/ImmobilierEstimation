@@ -36,54 +36,54 @@ module.exports = {
     var bienSimilaire;
 
     for(var bien=0;bien<json.maisons.length;bien++){
-      if(json.maisons[bien].informations.surfaceHabitable-5<=Bien.informations.surfaceHabitable || Bien.informations.surfaceHabitable <= json.maisons[bien].informations.surfaceHabitable+5){
+      if(json.maisons[bien].informations.surfaceHabitable-5<=Bien.surfaceHabitable || Bien.surfaceHabitable <= json.maisons[bien].informations.surfaceHabitable+5){
         bienSimilaire=json.maisons[bien];
       }
     }
 
       var a= bienSimilaire.informations.surfaceHabitable;
-      var b= Bien.informations.surfaceHabitable;
+      var b= Bien.surfaceHabitable;
       var c = bienSimilaire.estimation.prix_estimation.methodereference;
-      Bien.estimation.prix_estimation.methodereference= (b*c)/a;
+      Bien.prix_reference= (b*c)/a;
 
-    if(bienSimilaire.informations.nombrePieces > Bien.informations.nombrePieces ){
-      Bien.estimation.prix_estimation.methodereference= Bien.estimation.prix_estimation.methodereference + (1000*(bienSimilaire.informations.nombrePieces-Bien.informations.nombrePieces));
+    if(bienSimilaire.informations.nombrePieces > Bien.nombrePieces ){
+      Bien.prix_reference= Bien.prix_reference + (1000*(bienSimilaire.informations.nombrePieces-Bien.nombrePieces));
     }
-    if(Bien.informations.nombrePieces > bienSimilaire.informations.nombrePieces ){
-      Bien.estimation.prix_estimation.methodereference= Bien.estimation.prix_estimation.methodereference - (1000*(Bien.informations.nombrePieces-bienSimilaire.informations.nombrePieces));
+    if(Bien.nombrePieces > bienSimilaire.informations.nombrePieces ){
+      Bien.prix_reference= Bien.prix_reference - (1000*(Bien.nombrePieces-bienSimilaire.informations.nombrePieces));
     }
     ////////////
-    if(bienSimilaire.informations.nombreChambres > Bien.informations.nombreChambres){
-      Bien.estimation.prix_estimation.methodereference= Bien.estimation.prix_estimation.methodereference + (1000*(bienSimilaire.informations.nombreChambres-Bien.informations.nombreChambres));
+    if(bienSimilaire.informations.nombreChambres > Bien.nombreChambres){
+      Bien.prix_reference= Bien.prix_reference + (1000*(bienSimilaire.informations.nombreChambres-Bien.nombreChambres));
     }
-    if(Bien.informations.nombreChambres > bienSimilaire.informations.nombreChambres){
-      Bien.estimation.prix_estimation.methodereference= Bien.estimation.prix_estimation.methodereference - (1000*(Bien.informations.nombreChambres-bienSimilaire.informations.nombreChambres));
+    if(Bien.nombreChambres > bienSimilaire.informations.nombreChambres){
+      Bien.prix_reference= Bien.prix_reference - (1000*(Bien.nombreChambres-bienSimilaire.informations.nombreChambres));
     }
     ///////////
-    if(bienSimilaire.informations.nombreNiveaux > Bien.informations.nombreNiveaux){
-      Bien.estimation.prix_estimation.methodereference= Bien.estimation.prix_estimation.methodereference + (1000*(bienSimilaire.informations.nombreNiveaux-Bien.informations.nombreNiveaux));
+    if(bienSimilaire.informations.nombreNiveaux > Bien.nombreNiveaux){
+      Bien.prix_reference= Bien.prix_reference + (1000*(bienSimilaire.informations.nombreNiveaux-Bien.nombreNiveaux));
     }
-    if(Bien.informations.nombreNiveaux > bienSimilaire.informations.nombreNiveaux){
-      Bien.estimation.prix_estimation.methodereference= Bien.estimation.prix_estimation.methodereference - (1000*(Bien.informations.nombreNiveaux-bienSimilaire.informations.nombreNiveaux));
+    if(Bien.nombreNiveaux > bienSimilaire.informations.nombreNiveaux){
+      Bien.prix_reference= Bien.prix_reference - (1000*(Bien.nombreNiveaux-bienSimilaire.informations.nombreNiveaux));
     }
     //////////
-    if(bienSimilaire.informations.prixm2 > Bien.informations.prixm2){
-      Bien.estimation.prix_estimation.methodereference= Bien.estimation.prix_estimation.methodereference + (1000*(bienSimilaire.informations.prixm2-Bien.informations.prixm2));
+    if(bienSimilaire.informations.prixm2 > Bien.prixm2){
+      Bien.prix_reference= Bien.prix_reference + (1000*(bienSimilaire.informations.prixm2-Bien.prixm2));
     }
-    if(Bien.informations.prixm2 > bienSimilaire.informations.prixm2){
-      Bien.estimation.prix_estimation.methodereference= Bien.estimation.prix_estimation.methodereference - (1000*(Bien.informations.prixm2-bienSimilaire.informations.prixm2));
+    if(Bien.prixm2 > bienSimilaire.informations.prixm2){
+      Bien.prix_reference= Bien.prix_reference - (1000*(Bien.prixm2-bienSimilaire.informations.prixm2));
     }
 
-    Bien.estimation.prix_estimation.methodereference=Bien.estimation.prix_estimation.methodereference-(Bien.estimation.decoteBienOccupe+Bien.estimation.autresElements+Bien.estimation.travauxARealiser+Bien.estimation.valorisationTerrain+Bien.estimation.renove);
-        console.log(Math.round(Bien.estimation.prix_estimation.methodereference));
+    Bien.prix_reference=Bien.prix_reference-(Bien.decoteBienOccupe+Bien.autresElements+Bien.travauxARealiser+Bien.valorisationTerrain+Bien.renove);
+        console.log(Math.round(Bien.prix_reference));
 
   },
 
   EstimationCapitalisation: Bien => {
 
-    Bien.estimation.prix_estimation.methodecapitalisation= (Bien.informations.valeurLocative * 12)/ (Bien.informations.tauxCapitalisation/100);
-    Bien.estimation.prix_estimation.methodecapitalisation=Bien.estimation.prix_estimation.methodecapitalisation-(Bien.estimation.decoteBienOccupe+Bien.estimation.autresElements+Bien.estimation.travauxARealiser+Bien.estimation.valorisationTerrain+Bien.estimation.renove);
-    console.log(Math.round(Bien.estimation.prix_estimation.methodecapitalisation));
+    Bien.prix_capitalisation= (Bien.valeurLocative * 12)/ (Bien.tauxCapitalisation/100);
+    Bien.prix_capitalisation=Bien.prix_capitalisation-(Bien.decoteBienOccupe+Bien.autresElements+Bien.travauxARealiser+Bien.valorisationTerrain+Bien.renove);
+    console.log(Math.round(Bien.prix_capitalisation));
 
   },
 
