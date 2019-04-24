@@ -41,7 +41,7 @@ import Premium from "./components/Pages/BecomePremium";
 import requireAuth from "./routes/requireAuth";
 import requireSuper from "./routes/requireSuper";
 
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import Page404 from "./components/Pages/Page404";
@@ -70,7 +70,7 @@ class App extends Component {
             <Nav />
 
             <ToastContainer position="bottom-center" />
-            <div className="contenu">
+            <div className="contenu min-is-100vh ">
               <Switch>
                 <Route exact path="/" component={HomePage} />
                 <Route exact path="/register" component={Register} />
