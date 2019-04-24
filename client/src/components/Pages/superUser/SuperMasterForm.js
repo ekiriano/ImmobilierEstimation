@@ -258,7 +258,7 @@ class SuperMasterForm extends Component {
       autresElements: this.state.autresElements,
       autresElementsR: this.state.autresElementsR,
       decoteBienOccupe: this.state.decoteBienOccupe,
-      decoteBienOccupeR: this.decoteBienOccupeR,
+      decoteBienOccupeR: this.state.decoteBienOccupeR,
       travauxARealiser: this.state.travauxARealiser,
       travauxARealiserR: this.state.travauxARealiserR,
       methodeCapitalisationSelected: this.state.methodeCapitalisationSelected,
