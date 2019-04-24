@@ -77,8 +77,8 @@ class savedBiens extends Component {
                     <p>etage : {bien.etage}</p>
                     <p>nombre etage total : {bien.nombre_etage_total}</p>
                   </div>
-                  <p>Estimmé a : {bien.prix_final} €</p>
                 </div>
+                <p>Estimmé a : {bien.prix_final} €</p>
               </div>
             </div>
 
