@@ -103,11 +103,14 @@ class SuperMasterForm extends Component {
       renove: "",
       renoveR: "",
       affichageNetVendeur: "",
-      methodeReferenceSelected: "",
-      methodeComparaisonSelected: "",
-      prix_comparaison: "0",
-      prix_reference: "0",
-      prix_final: "0",
+      methodeReferenceSelected: false,
+      methodeComparaisonSelected: false,
+      methodeCapitalisationSelected: false,
+      prix_capitalisation: 0,
+      prix_comparaison: 0,
+      prix_reference: 0,
+      prix_final: 0,
+      moyenne_des_methodes: 0,
       textePredifiniR: "",
       textePredifini: ""
     };
@@ -169,6 +172,7 @@ class SuperMasterForm extends Component {
     e.preventDefault();
 
     const newBienSuper = {
+      civilite: this.state.civilite,
       nom: this.state.nom,
       prenom: this.state.prenom,
       adressePostale: this.state.adressePostale,
@@ -241,11 +245,37 @@ class SuperMasterForm extends Component {
       agrementJardin: this.state.agrementJardin,
       garageOuParkingOuvert: this.state.garageOuParkingOuvert,
       combles: this.state.combles,
-      prix_comparaison: this.state.prix_estimation,
-      prix_reference: this.state.prix_reference
+      renove: this.state.renove,
+      renoveR: this.state.renoveR,
+      valorisationTerrain: this.state.valorisationTerrain,
+      valorisationTerrainR: this.state.valorisationTerrainR,
+      autresElements: this.state.autresElements,
+      autresElementsR: this.state.autresElementsR,
+      travauxARealiser: this.state.travauxARealiser,
+      travauxARealiserR: this.state.travauxARealiserR,
+      methodeCapitalisationSelected: this.methodeCapitalisationSelected,
+      methodeReferenceSelected: this.methodeReferenceSelected,
+      methodeComparaisonSelected: this.methodeComparaisonSelected,
+      prix_comparaison: this.state.prix_comparaison,
+      moyenne_des_methodes: this.state.moyenne_des_methodes,
+      prix_capitalisation: this.state.prix_capitalisation,
+      prix_reference: this.state.prix_reference,
+      prix_final: this.state.prix_final,
     };
-    // console.log("state", this.state);
+    console.log("state", this.state.errors);
     this.props.submitSuperBienSave(newBienSuper);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+    if(nextProps.newEstimationBien){
+      this.setState({
+        prix_comparaison: nextProps.newEstimationBien.prix_comparaison,
+        moyenne_des_methodes: nextProps.newEstimationBien.moyenne_des_methodes
+      });
+    }
   }
 
   next() {
@@ -438,6 +468,9 @@ class SuperMasterForm extends Component {
             affichageNetVendeur={this.state.affichageNetVendeur}
             methodeReferenceSelected={this.state.methodeReferenceSelected}
             methodeComparaisonSelected={this.state.methodeComparaisonSelected}
+            methodeCapitalisationSelected={this.state.methodeCapitalisationSelected}
+            moyenne_des_methodes={this.props.moyenne_des_methodes}
+            prix_capitalisation={this.state.prix_capitalisation}
             prix_comparaison={this.state.prix_comparaison}
             prix_reference={this.state.prix_reference}
             prix_final={this.state.prix_final}
@@ -468,5 +501,3 @@ export default connect(
   mapStateProps,
   { submitSuperBienSave }
 )(SuperMasterForm);
-
-// export default SuperMasterForm;

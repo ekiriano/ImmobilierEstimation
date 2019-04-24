@@ -22,44 +22,72 @@ class Step1Super extends Component {
           <div>
             <h1>Test 1 </h1> <hr/>
 
-            <div className="control">
+            <label className="radio">
+              Civilité
+              <div className="control">
                 <label className="radio">
-                  <input type="radio" value="Aucun" name="civilite"
-                  checked={this.props.civilite === "Aucun"}
-                  onChange={this.props.onChange}></input>
-                  Aucun.
+                  <input
+                    type="radio"
+                    name="civilite"
+                    value="Aucun"
+                    checked={this.props.civilite === "Aucun"}
+                    onChange={this.props.onChange}
+                  />
+                  Aucun
                 </label>
                 <label className="radio">
-                  <input type="radio" value="Monsieur" name="civilite"
-                  checked={this.props.civilite === "Monsieur"}
-                  onChange={this.props.onChange}></input>
-                  Monsieur.
+                  <input
+                    type="radio"
+                    name="civilite"
+                    value="Monsieur"
+                    checked={this.props.civilite === "Monsieur"}
+                    onChange={this.props.onChange}
+                  />
+                  Monsieur
                 </label>
                 <label className="radio">
-                  <input type="radio" value="Madame" name="civilite"
-                  checked={this.props.civilite === "Madame"}
-                  onChange={this.props.onChange}></input>
-                  Madame.
+                  <input
+                    type="radio"
+                    name="civilite"
+                    value="Madame"
+                    checked={this.props.civilite === "Madame"}
+                    onChange={this.props.onChange}
+                  />
+                  Madame
                 </label>
                 <label className="radio">
-                  <input type="radio" value="MonsieurEtMadame" name="civilite"
-                  checked={this.props.civilite === "MonsieurEtMadame"}
-                  onChange={this.props.onChange}></input>
-                  Monsieur et Madame.
+                  <input
+                    type="radio"
+                    name="civilite"
+                    value="Monsieur et madame"
+                    checked={this.props.civilite === "Monsieur et madame"}
+                    onChange={this.props.onChange}
+                  />
+                  Monsieur et madame
                 </label>
                 <label className="radio">
-                  <input type="radio" value="Messieurs" name="civilite"
-                  checked={this.props.civilite === "Messieurs"}
-                  onChange={this.props.onChange}></input>
-                  Messieurs.
+                  <input
+                    type="radio"
+                    name="civilite"
+                    value="Messieurs"
+                    checked={this.props.civilite === "Messieurs"}
+                    onChange={this.props.onChange}
+                  />
+                  Messieurs
                 </label>
                 <label className="radio">
-                  <input type="radio" value="Mesdames" name="civilite"
-                  checked={this.props.civilite === "Mesdames"}
-                  onChange={this.props.onChange}></input>
-                  Mesdames.
+                  <input
+                    type="radio"
+                    name="civilite"
+                    value="Mesdames"
+                    checked={this.props.civilite === "Mesdames"}
+                    onChange={this.props.onChange}
+                  />
+                  Mesdames
                 </label>
-            </div>
+              </div>
+            </label>
+            {errors.civilite && <p class="help is-danger">{errors.civilite}</p>}
 
             <div className="field is-horizontal">
               <div className="field-label is-normal">
@@ -68,11 +96,16 @@ class Step1Super extends Component {
               <div className="field-body">
                 <div className="field">
                   <p className="control">
-                    <input className="input" type="texte" placeholder="Prénom"
+                    <input
+                    className={classnames("input ", {
+                     "is-danger": errors.prenom
+                    })}
+                     type="texte" placeholder="Prénom"
                     name="prenom"
                     onChange={this.props.onChange}
                     value={this.props.prenom}
                     required/>
+                    {errors.prenom && <p class="help is-danger">{errors.prenom}</p>}
                   </p>
                 </div>
               </div>
@@ -85,11 +118,18 @@ class Step1Super extends Component {
               <div className="field-body">
                 <div className="field">
                   <p className="control">
-                    <input className="input" type="texte" placeholder="Nom"
+                    <input
+                    className={classnames("input", {
+                       "is-danger": errors.nom
+                    })}
+                   type="texte" placeholder="Nom"
                     name="nom"
                     onChange={this.props.onChange}
                     value={this.props.nom}
                     required/>
+                    {errors.nom && (
+                      <p class="help is-danger">{errors.nom}</p>
+                    )}
                   </p>
                 </div>
               </div>
@@ -102,11 +142,16 @@ class Step1Super extends Component {
               <div className="field-body">
                 <div className="field">
                   <p className="control">
-                    <input className="input" type="texte" placeholder="Adresse Postale"
+                    <input
+                    className={classnames("input ", {
+                     "is-danger": errors.adressePostale
+                    })}
+                    type="texte" placeholder="Adresse Postale"
                     name="adressePostale"
                     onChange={this.props.onChange}
                     value={this.props.adressePostale}
                     required/>
+                    {errors.adressePostale && <p class="help is-danger">{errors.adressePostale}</p>}
                   </p>
                 </div>
               </div>
@@ -119,11 +164,15 @@ class Step1Super extends Component {
               <div className="field-body">
                 <div className="field">
                   <p className="control">
-                    <input className="input" type="email" placeholder="Email"
+                    <input className={classnames("input ", {
+                     "is-danger": errors.email
+                    })}
+                     type="email" placeholder="Email"
                     name="email"
                     onChange={this.props.onChange}
                     value={this.props.email}
                     required/>
+                    {errors.email && <p class="help is-danger">{errors.email}</p>}
                   </p>
                 </div>
               </div>
@@ -136,11 +185,15 @@ class Step1Super extends Component {
               <div className="field-body">
                 <div className="field">
                   <p className="control">
-                    <input className="input" type="texte" placeholder="Téléphone"
+                    <input className={classnames("input ", {
+                     "is-danger": errors.telephone
+                    })}
+                    type="number" placeholder="Téléphone"
                     name="telephone"
                     onChange={this.props.onChange}
                     value={this.props.telephone}
                     required/>
+                    {errors.telephone && <p class="help is-danger">{errors.telephone}</p>}
                   </p>
                 </div>
               </div>

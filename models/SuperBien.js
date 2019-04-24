@@ -4,23 +4,23 @@ const Schema = mongoose.Schema;
 // Create Schema
 const SuperBienSchema = new Schema({
       user: { type: Schema.Types.ObjectId,  ref: "users" },
-      civilite: { type: String, required: true },
+      civilite: { type: String,},
       prenom: {type: String, required: true  },
-      nom: {type: String, required: true },
-      adressePostale: {type: String, required: true },
-      email: {type: String, required: true },
-      telephone: {type: Number, required: true  },
-      numero: {type: Number, required: true },
-      voie: {type: String, required: true },
+      nom: {type: String,required: true  },
+      adressePostale: {type: String,required: true  },
+      email: {type: String,required: true  },
+      telephone: {type: Number,  },
+      numero: {type: Number,  },
+      voie: {type: String,required: true  },
       codePostal: {type: Number, required: true },
       ville: {type: String, required: true },
       anneeConstruction: {type: Number,  min: 1000},
-      typeBienAffiche: {type: String, required: true },
-      nombrePieces: {type: Number,  min: 0, required: true},
-      nombreChambres: {type: Number,   min: 0, required: true},
-      surfaceHabitable: {type: Number, min: 0, required: true},
-      surfaceTerrain: { type: Number,  min: 0, required: true},
-      nombreNiveaux: {type: Number,  min: 0, required: true},
+      typeBienAffiche: {type: String,  },
+      nombrePieces: {type: Number,  min: 0, },
+      nombreChambres: {type: Number,   min: 0, },
+      surfaceHabitable: {type: Number, min: 0, },
+      surfaceTerrain: { type: Number,  min: 0, },
+      nombreNiveaux: {type: Number,  min: 0, },
       ascenseur: {type: String, },
       balconOuTerrasse: {type: String, },
       LibreALaVente: {type: String, },
@@ -33,7 +33,7 @@ const SuperBienSchema = new Schema({
       chargesAnnuellesTotales: {type: Number,  min: 0},
       chargesDeCopropriete: {type: Number,  min: 0},
       impotsFonciers: {type: Number,   min: 0},
-      annexes: [{ content: { type: String } }],
+      annexes: {type: String},
       pointsForts:[{ content: { type: String } }],
       pointsFaibles:[{ content: { type: String } }],
       commentairesConfidentiels: {type: String, },
@@ -246,9 +246,45 @@ const SuperBienSchema = new Schema({
     },
     textePredifiniR: {
       type: String
+    },
+    methodeReferenceSelected: {
+      type: Number,
+    },
+    methodeComparaisonSelected: {
+      type:Number,
+    },
+    methodeCapitalisationSelected: {
+      type:Number,
+    },
+    moyenne_des_methodes: {
+      type: Number,
+      min: 0
+    },
+    prix_final: {
+      type: Number,
+      min: 0
+    },
+    prix_comparaison: {
+      type: Number,
+      min: 0
+    },
+    prix_reference: {
+      type: Number,
+      min: 0
+    },
+    prix_capitalisation: {
+      type: Number,
+      min: 0
     }
 
   // add longtitude latitude
 });
+
+SuperBienSchema.pre('save', function(next) {
+    this.moyenne_des_methodes = (this.prix_capitalisation+this.prix_reference+this.prix_comparaison)/3;
+    // need to add if's
+  next();
+});
+
 
 module.exports = SuperBien = mongoose.model("SuperBien", SuperBienSchema);

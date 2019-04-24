@@ -247,18 +247,22 @@ class Step4Super extends Component {
                 </header>
                 <div className="control">
                 <label className="checkbox">
-                  <input type="checkbox" value="1"
-                  name="methodeReferenceSelected"
-                  checked={this.props.methodeReferenceSelected === "1"}
+                  <input type="checkbox"
+                  checked={this.props.methodeReferenceSelected}
                   onChange={this.props.onChange}></input>
                     méthode par référence: {this.props.prix_reference}€
                 </label>
               <label className="checkbox">
-                <input type="checkbox" value="1"
-                name="methodeComparaisonSelected"
-                checked={this.props.methodeComparaisonSelected === "1"}
+                <input type="checkbox"
+                checked={this.props.methodeComparaisonSelected}
                 onChange={this.props.onChange}></input>
                   méthode par comparaison: {this.props.prix_comparaison}€
+              </label>
+              <label className="checkbox">
+                <input type="checkbox"
+                checked={this.props.methodeCapitalisationSelected}
+                onChange={this.props.onChange}></input>
+                  méthode par capitalisation: {this.props.prix_capitalisation}€
               </label>
                 </div>
                 <header className="card-header">

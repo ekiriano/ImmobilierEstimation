@@ -97,7 +97,7 @@ class Step2Super extends Component {
                   <p className="control">
                     <input
                       className="input"
-                      type="texte"
+                      type="number"
                       placeholder="Numéro"
                       name="numero"
                       onChange={this.props.onChange}
