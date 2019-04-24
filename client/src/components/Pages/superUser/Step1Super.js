@@ -10,20 +10,19 @@ import classnames from "classnames";
 - telephone
 */
 
-
-
 class Step1Super extends Component {
-    render() {
-        const errors = this.props.errors;
-        if (this.props.currentStep !== 1) {
-          return null;
-        }
-        return (
-          <div>
-            <h1>Test 1 </h1> <hr/>
-
+  render() {
+    const errors = this.props.errors;
+    if (this.props.currentStep !== 1) {
+      return null;
+    }
+    return (
+      <div>
+        <div class="card mt-is-0_5">
+          <div class="card-content">
+            <h1>Informations sur le Client </h1> <hr />
             <label className="radio">
-              Civilité
+              <b>Civilité</b>
               <div className="control">
                 <label className="radio">
                   <input
@@ -88,7 +87,6 @@ class Step1Super extends Component {
               </div>
             </label>
             {errors.civilite && <p class="help is-danger">{errors.civilite}</p>}
-
             <div className="field is-horizontal">
               <div className="field-label is-normal">
                 <label className="label">Prénom</label>
@@ -97,20 +95,23 @@ class Step1Super extends Component {
                 <div className="field">
                   <p className="control">
                     <input
-                    className={classnames("input ", {
-                     "is-danger": errors.prenom
-                    })}
-                     type="texte" placeholder="Prénom"
-                    name="prenom"
-                    onChange={this.props.onChange}
-                    value={this.props.prenom}
-                    required/>
-                    {errors.prenom && <p class="help is-danger">{errors.prenom}</p>}
+                      className={classnames("input ", {
+                        "is-danger": errors.prenom
+                      })}
+                      type="texte"
+                      placeholder="Prénom"
+                      name="prenom"
+                      onChange={this.props.onChange}
+                      value={this.props.prenom}
+                      required
+                    />
+                    {errors.prenom && (
+                      <p class="help is-danger">{errors.prenom}</p>
+                    )}
                   </p>
                 </div>
               </div>
             </div>
-
             <div className="field is-horizontal">
               <div className="field-label is-normal">
                 <label className="label">Nom</label>
@@ -119,22 +120,21 @@ class Step1Super extends Component {
                 <div className="field">
                   <p className="control">
                     <input
-                    className={classnames("input", {
-                       "is-danger": errors.nom
-                    })}
-                   type="texte" placeholder="Nom"
-                    name="nom"
-                    onChange={this.props.onChange}
-                    value={this.props.nom}
-                    required/>
-                    {errors.nom && (
-                      <p class="help is-danger">{errors.nom}</p>
-                    )}
+                      className={classnames("input", {
+                        "is-danger": errors.nom
+                      })}
+                      type="texte"
+                      placeholder="Nom"
+                      name="nom"
+                      onChange={this.props.onChange}
+                      value={this.props.nom}
+                      required
+                    />
+                    {errors.nom && <p class="help is-danger">{errors.nom}</p>}
                   </p>
                 </div>
               </div>
             </div>
-
             <div className="field is-horizontal">
               <div className="field-label is-normal">
                 <label className="label">Adresse Postale</label>
@@ -143,20 +143,23 @@ class Step1Super extends Component {
                 <div className="field">
                   <p className="control">
                     <input
-                    className={classnames("input ", {
-                     "is-danger": errors.adressePostale
-                    })}
-                    type="texte" placeholder="Adresse Postale"
-                    name="adressePostale"
-                    onChange={this.props.onChange}
-                    value={this.props.adressePostale}
-                    required/>
-                    {errors.adressePostale && <p class="help is-danger">{errors.adressePostale}</p>}
+                      className={classnames("input ", {
+                        "is-danger": errors.adressePostale
+                      })}
+                      type="texte"
+                      placeholder="Adresse Postale"
+                      name="adressePostale"
+                      onChange={this.props.onChange}
+                      value={this.props.adressePostale}
+                      required
+                    />
+                    {errors.adressePostale && (
+                      <p class="help is-danger">{errors.adressePostale}</p>
+                    )}
                   </p>
                 </div>
               </div>
             </div>
-
             <div className="field is-horizontal">
               <div className="field-label is-normal">
                 <label className="label">Email</label>
@@ -164,20 +167,24 @@ class Step1Super extends Component {
               <div className="field-body">
                 <div className="field">
                   <p className="control">
-                    <input className={classnames("input ", {
-                     "is-danger": errors.email
-                    })}
-                     type="email" placeholder="Email"
-                    name="email"
-                    onChange={this.props.onChange}
-                    value={this.props.email}
-                    required/>
-                    {errors.email && <p class="help is-danger">{errors.email}</p>}
+                    <input
+                      className={classnames("input ", {
+                        "is-danger": errors.email
+                      })}
+                      type="email"
+                      placeholder="Email"
+                      name="email"
+                      onChange={this.props.onChange}
+                      value={this.props.email}
+                      required
+                    />
+                    {errors.email && (
+                      <p class="help is-danger">{errors.email}</p>
+                    )}
                   </p>
                 </div>
               </div>
             </div>
-
             <div className="field is-horizontal">
               <div className="field-label is-normal">
                 <label className="label">Téléphone</label>
@@ -185,24 +192,29 @@ class Step1Super extends Component {
               <div className="field-body">
                 <div className="field">
                   <p className="control">
-                    <input className={classnames("input ", {
-                     "is-danger": errors.telephone
-                    })}
-                    type="number" placeholder="Téléphone"
-                    name="telephone"
-                    onChange={this.props.onChange}
-                    value={this.props.telephone}
-                    required/>
-                    {errors.telephone && <p class="help is-danger">{errors.telephone}</p>}
+                    <input
+                      className={classnames("input ", {
+                        "is-danger": errors.telephone
+                      })}
+                      type="number"
+                      placeholder="Téléphone"
+                      name="telephone"
+                      onChange={this.props.onChange}
+                      value={this.props.telephone}
+                      required
+                    />
+                    {errors.telephone && (
+                      <p class="help is-danger">{errors.telephone}</p>
+                    )}
                   </p>
                 </div>
               </div>
             </div>
-
-
           </div>
-        );
-      }
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Step1Super;
