@@ -59,6 +59,8 @@ if (localStorage.jwtToken) {
   }
 }
 
+//TODO /  switch /super to requireSuper at final push
+
 class App extends Component {
   render() {
     return (
