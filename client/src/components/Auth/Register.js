@@ -54,15 +54,19 @@ class Register extends Component {
 
     return (
       <div className="columns">
-        <div className="column is-8 is-paddingless">
-          <div className="homepage hero is-paddingless"/>
+        <div className="column is-8 is-paddingless min-is-100vh">
+          <div className="homepage hero is-paddingless" />
         </div>
-        <div className="login column is-4 is-paddingless">
+        <div className="login column is-4 is-paddingless centerall">
           <div id="card_log" className="card-content has-background-white">
             <section className="section">
-                <div className="has-text-centered">
-                  <img src="/static/media/estimmo_logo.bd1438a3.png" alt="logo" width="60%"/>
-                </div>
+              <div className="has-text-centered">
+                <img
+                  src="/static/media/estimmo_logo.bd1438a3.png"
+                  alt="logo"
+                  width="60%"
+                />
+              </div>
               <form noValidate onSubmit={this.onSubmit}>
                 <div className="field">
                   <label className="label">Username</label>
@@ -81,7 +85,7 @@ class Register extends Component {
                       onChange={this.onChange}
                     />
                     <span class="icon is-small is-left">
-                      <i class="fa fa-user"></i>
+                      <i class="fa fa-user" />
                     </span>
                     {errors.name && (
                       <div className="invalid-feedback">{errors.name}</div>
@@ -105,7 +109,7 @@ class Register extends Component {
                       onChange={this.onChange}
                     />
                     <span class="icon is-small is-left">
-                      <i class="fa fa-envelope"></i>
+                      <i class="fa fa-envelope" />
                     </span>
                     {errors.email && (
                       <div className="invalid-feedback">{errors.email}</div>
@@ -129,7 +133,7 @@ class Register extends Component {
                       onChange={this.onChange}
                     />
                     <span className="icon is-small is-left">
-                      <i className="fa fa-key"></i>
+                      <i className="fa fa-key" />
                     </span>
                     {errors.password && (
                       <div className="invalid-feedback">{errors.password}</div>
@@ -153,7 +157,7 @@ class Register extends Component {
                       onChange={this.onChange}
                     />
                     <span className="icon is-small is-left">
-                      <i className="fa fa-key"></i>
+                      <i className="fa fa-key" />
                     </span>
                     {errors.password2 && (
                       <div className="invalid-feedback">{errors.password2}</div>
@@ -161,11 +165,16 @@ class Register extends Component {
                   </div>
                 </div>
                 <div className="has-text-centered">
-                  <button type="submit" className="button is-vcentered is-primary is-outlined">Sign Up!</button>
+                  <button
+                    type="submit"
+                    className="button is-vcentered is-primary is-outlined"
+                  >
+                    Sign Up!
+                  </button>
                 </div>
                 <div className="has-text-centered">
                   <p>
-                    Already have an account? 
+                    Already have an account?
                     <Link to="login">Log in now !</Link>
                   </p>
                 </div>

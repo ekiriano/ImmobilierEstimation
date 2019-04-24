@@ -51,11 +51,11 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="columns">
+      <div className="columns min-is-100vh">
         <div className="column is-8 is-paddingless">
           <div className="homepage hero is-paddingless" />
         </div>
-        <div className="login column is-4 is-paddingless">
+        <div className="login column is-4 is-paddingless centerall">
           <div id="card_log" className="card-content has-background-white">
             <section className="section has-background-white">
               <div className="column">
