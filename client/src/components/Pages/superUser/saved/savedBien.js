@@ -39,47 +39,28 @@ class savedBiens extends Component {
                   <p>
                     {" "}
                     <i className="uil uil-ruler-combined" />
-                    surface : {bien.surface}m²
+                    surface : {bien.surfaceTerrain}m²
                   </p>
-                  <p>nombre pièces : {bien.nombre_pieces}</p>
-                  <p>nombre salle bain : {bien.nombre_salle_bain}</p>
-                  <p>etage : {bien.etage}</p>
-                  <p>nombre etage total : {bien.nombre_etage_total}</p>
+                  <p>nombre pièces : {bien.nombrePieces}</p>
+                  <p>nombre salle bain : {bien.nombreDeSanitaires}</p>
+                  <p>Type Bien : {bien.typeBienAffiche}</p>
+                  <p>nombre etage total : {bien.nombreNiveaux}</p>
                 </div>
                 <div className="column is-half">
                   <p>
                     <i className="uil uil-clock-two" />
-                    année construction : {bien.annee_construction}
+                    année construction : {bien.anneeConstruction}
                   </p>
                   <p>
                     <i className="uil uil-bolt-alt" />
-                    DPE : {bien.diagnostic_performance_energetique}{" "}
+                    DPE : {bien.DPE}{" "}
                   </p>
-                  <p>etat bien : {bien.etat_bien}</p>
+                  <p>etat bien : {bien.etatGeneral}</p>
                   <p>qualité luminosité : {bien.luminosite}</p>
-                  <p>calme : {bien.calme}</p>
-                  <p>proximité : {bien.proximite_transports}</p>
+                  <p>Proximité: {bien.proximiteServicesPublics}</p>
                 </div>
               </div>
-              <p>Estimmé a : {bien.prix_final} €</p>>
-              <div>
-                <h1>{bien.ville}</h1> <hr />
-                <div className="columns">
-                  <div className="column is-half">
-                    <p>nombre pièces : {bien.nombre_pieces}</p>
-                    <p>nombre salle bain : {bien.nombre_salle_bain}</p>
-                    <p>etage : {bien.etage}</p>
-                    <p>nombre etage total : {bien.nombre_etage_total}</p>
-                  </div>
-                  <div className="column is-half">
-                    <p>nombre pièces : {bien.nombre_pieces}</p>
-                    <p>nombre salle bain : {bien.nombre_salle_bain}</p>
-                    <p>etage : {bien.etage}</p>
-                    <p>nombre etage total : {bien.nombre_etage_total}</p>
-                  </div>
-                </div>
-                <p>Estimmé a : {bien.prix_final} €</p>
-              </div>
+              <p>Estimmé a : {bien.moyenne_des_methodes} €</p>
             </div>
 
             <footer className="card-footer">
