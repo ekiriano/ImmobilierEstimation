@@ -47,7 +47,7 @@ class SuperMasterForm extends Component {
       chargesAnnuellesTotales: "",
       chargesDeCopropriete: "",
       impotsFonciers: "",
-      annexes: "",
+      annexes: [],
       pointsForts: [],
       pointsFaibles: [],
       commentairesConfidentiels: "",
@@ -141,11 +141,12 @@ class SuperMasterForm extends Component {
   }
 
   addPointFaible(pointfaible) {
-    console.log("hit");
     if (pointfaible === "") return;
+
     var newArray = this.state.pointsFaibles;
     newArray.push(pointfaible);
     this.setState({ pointsFaibles: newArray });
+
     // this.setState({ pointfortInputValue: "" });
   }
 
