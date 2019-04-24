@@ -47,7 +47,7 @@ class SuperMasterForm extends Component {
       chargesAnnuellesTotales: "",
       chargesDeCopropriete: "",
       impotsFonciers: "",
-      annexes: [],
+      annexes: "",
       pointsForts: [],
       pointsFaibles: [],
       commentairesConfidentiels: "",
