@@ -55,7 +55,7 @@ class Dashboard extends Component {
               </h1>
               <h3>{this.props.user.user_type} User</h3>
 
-              <aside className="menu has-text-left  ">
+              <aside className="menu has-text-left ml-is-0_10   ">
                 <p className="menu-label">Estimmations Regulières</p>
                 <ul className="menu-list">
                   <li>
