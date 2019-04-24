@@ -112,19 +112,28 @@ router.post(
       travauxARealiserR: req.body.travauxARealiserR,
       renove: req.body.renove,
       renoveR: req.body.renoveR,
+      methodeReferenceSelected: req.body.methodeReferenceSelected,
+      methodeComparaisonSelected: req.body.methodeComparaisonSelected,
+      methodeCapitalisationSelected: req.body.methodeCapitalisationSelected,
+      moyenne_des_methodes: req.body.moyenne_des_methodes,
       prix_comparaison: req.body.prix_estimation,
       prix_reference: req.body.prix_reference,
       prix_final: req.body.prix_final
+
     });
+
+    var EstimatedSuperBien;
+
     if (newSuperBien.methodeComparaisonSelected === true) {
       EstimatedSuperBien = EstimationComparaison(newSuperBien);
     }
     if (newSuperBien.methodeCapitalisationSelected === true) {
-      //EstimatedSuperBien = EstimationCapitalisation(newSuperBien);
+      EstimatedSuperBien = EstimationCapitalisation(newSuperBien);
     }
     if (newSuperBien.methodeReferenceSelected === true) {
-      // EstimatedSuperBien = EstimationReference(newSuperBien);
+      EstimatedSuperBien = EstimationReference(newSuperBien);
     }
+
     EstimatedSuperBien.save()
       .then(superBien => res.json(superBien))
       .catch(err => console.log(err));

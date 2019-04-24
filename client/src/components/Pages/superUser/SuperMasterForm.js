@@ -496,7 +496,7 @@ class SuperMasterForm extends Component {
                       methodeCapitalisationSelected={
                         this.state.methodeCapitalisationSelected
                       }
-                      moyenne_des_methodes={this.props.moyenne_des_methodes}
+                      moyenne_des_methodes={this.state.moyenne_des_methodes}
                       prix_capitalisation={this.state.prix_capitalisation}
                       prix_comparaison={this.state.prix_comparaison}
                       prix_reference={this.state.prix_reference}
