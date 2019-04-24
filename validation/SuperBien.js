@@ -1076,9 +1076,9 @@ if (Validator.isEmpty(data.decoteBienOccupe)) {
     "decote Bien Occupe is required";
 }
 
-// if(Validator.isEmpty(data.decoteBienOccupeR)){
-//   errors.decoteBienOccupeR = "is required";
-// }
+if(Validator.isEmpty(data.decoteBienOccupeR)){
+  errors.decoteBienOccupeR = "is required";
+}
 //
 // // if (
 // //
