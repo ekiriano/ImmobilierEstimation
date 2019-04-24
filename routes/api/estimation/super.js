@@ -115,10 +115,9 @@ router.post(
       methodeComparaisonSelected: req.body.methodeComparaisonSelected,
       methodeCapitalisationSelected: req.body.methodeCapitalisationSelected,
       moyenne_des_methodes: req.body.moyenne_des_methodes,
-      prix_comparaison: req.body.prix_estimation,
+      prix_comparaison: req.body.prix_comparaison,
       prix_reference: req.body.prix_reference,
       prix_capitalisation: req.body.prix_capitalisation,
-      prix_final: req.body.prix_final
     });
 
     var EstimatedSuperBien;

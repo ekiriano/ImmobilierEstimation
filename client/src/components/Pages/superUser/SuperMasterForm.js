@@ -10,6 +10,7 @@ import Step1 from "./Step1Super";
 import Step2 from "./Step2Super";
 import Step3 from "./Step3Super";
 import Step4 from "./Step4Super";
+import FinalStepSuper from "./FinalStepSuper";
 import "./step.css";
 
 class SuperMasterForm extends Component {
@@ -108,7 +109,6 @@ class SuperMasterForm extends Component {
       prix_capitalisation: 0,
       prix_comparaison: 0,
       prix_reference: 0,
-      prix_final: 0,
       moyenne_des_methodes: 0,
       textePredifiniR: "",
       textePredifini: ""
@@ -266,7 +266,6 @@ class SuperMasterForm extends Component {
       moyenne_des_methodes: this.state.moyenne_des_methodes,
       prix_capitalisation: this.state.prix_capitalisation,
       prix_reference: this.state.prix_reference,
-      prix_final: this.state.prix_final,
       textePredifini: this.state.textePredifini,
       textePredifiniR: this.state.textePredifiniR
     };
@@ -280,14 +279,21 @@ class SuperMasterForm extends Component {
     if (nextProps.newEstimationBien) {
       this.setState({
         prix_comparaison: nextProps.newEstimationBien.prix_comparaison,
+        prix_reference: nextProps.newEstimationBien.prix_reference,
+        prix_capitalisation: nextProps.newEstimationBien.prix_capitalisation,
         moyenne_des_methodes: nextProps.newEstimationBien.moyenne_des_methodes
       });
+      if (this.state.methodeReferenceSelected
+      || this.state.methodeComparaisonSelected
+      || this.state.methodeCapitalisationSelected) {
+        this.next();
+      }
     }
   }
 
   next() {
     let currentStep = this.state.currentStep;
-    currentStep = currentStep >= 3 ? 4 : currentStep + 1;
+    currentStep = currentStep >= 4 ? 5 : currentStep + 1;
     this.setState({
       currentStep: currentStep
     });
@@ -303,7 +309,7 @@ class SuperMasterForm extends Component {
 
   get previousButton() {
     let currentStep = this.state.currentStep;
-    if (currentStep !== 1) {
+    if (currentStep !== 1 && currentStep !== 5) {
       return (
         <div className="bottom-left">
           <button
@@ -497,8 +503,17 @@ class SuperMasterForm extends Component {
                       prix_capitalisation={this.state.prix_capitalisation}
                       prix_comparaison={this.state.prix_comparaison}
                       prix_reference={this.state.prix_reference}
-                      prix_final={this.state.prix_final}
                       ville={this.state.ville}
+                    />
+
+                    <FinalStepSuper
+                      currentStep={this.state.currentStep}
+                      onChange={this.onChange}
+                      errors={this.state.errors}
+                      prix_reference={this.state.prix_reference}
+                      prix_comparaison={this.state.prix_comparaison}
+                      prix_capitalisation={this.state.prix_capitalisation}
+                      moyenne_des_methodes={this.state.moyenne_des_methodes}
                     />
 
                     {this.previousButton}

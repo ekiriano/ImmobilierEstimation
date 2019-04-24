@@ -348,12 +348,7 @@ class Step4Super extends Component {
                 <div className="content">
                 <header className="card-header">
                   <p className="card-header-title">
-                    3. Le prix final et remarques
-                  </p>
-                </header>
-                <header className="card-header">
-                  <p className="card-header-title">
-                    Le prix final des méthodes: {this.props.prix_final}€
+                    3. Les remarques de l'expert
                   </p>
                 </header>
                 <p>
