@@ -106,11 +106,10 @@ router.post(
           prix_reference: req.body.prix_reference,
           prix_final: req.body.prix_final
     });
-    const EstimatedSuperBien = newSuperBien;
+    EstimatedSuperBien = EstimationComparaison(newSuperBien);
     EstimatedSuperBien.save()
       .then(superBien => res.json(superBien))
       .catch(err => console.log(err));
-    console.log('new estimated bien', newSuperBien );
   }
 );
 

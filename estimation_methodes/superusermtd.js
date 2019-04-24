@@ -3,28 +3,29 @@ module.exports = {
 
   	var json = require('../datasets/superBien.json');
 
-    var nbr=0;
-    var estime=0;
-    var surfacemoy=0;
-    for(var bien=0;bien<json.maisons.length;bien++){
-      if(json.maisons[bien].bienImmobillier.localisationBien.codePostal== Bien.bienImmobillier.localisationBien.codePostal){
-      estime=estime+json.maisons[bien].estimation.prix_estimation.methodecomparaison;
-      surfacemoy=surfacemoy + json.maisons[bien].informations.surfaceHabitable;
-      nbr++;
-    }
-  }
-  surfacemoy=surfacemoy/nbr;
-
-
-  estime=estime/nbr;
-
-  var a= surfacemoy;
-  var b= Bien.informations.surfaceHabitable;
-  var c = estime;
-  var estimmation = Math.round( (b*c)/a);
-  Bien.estimation.prix_estimation.methodecomparaison=estimmation;
-    Bien.estimation.prix_estimation.methodecomparaison=Bien.estimation.prix_estimation.methodecomparaison-(Bien.estimation.decoteBienOccupe+Bien.estimation.autresElements+Bien.estimation.travauxARealiser+Bien.estimation.valorisationTerrain+Bien.estimation.renove);
-    console.log(Bien.estimation.prix_estimation.methodecomparaison);
+  //   var nbr=0;
+  //   var estime=0;
+  //   var surfacemoy=0;
+  //   for(var bien=0;bien<json.maisons.length;bien++){
+  //     if(json.maisons[bien].bienImmobillier.localisationBien.codePostal== Bien.codePostal){
+  //     estime=estime+json.maisons[bien].estimation.prix_estimation.methodecomparaison;
+  //     surfacemoy=surfacemoy + json.maisons[bien].informations.surfaceHabitable;
+  //     nbr++;
+  //   }
+  // }
+  // surfacemoy=surfacemoy/nbr;
+  //
+  //
+  // estime=estime/nbr;
+  //
+  // var a= surfacemoy;
+  // var b= Bien.surfaceHabitable;
+  // var c = estime;
+  // var estimmation = Math.round( (b*c)/a);
+  // Bien.prix_comparaison=estimmation;
+  //   Bien.prix_comparaison=Bien.prix_comparaison-(Bien.decoteBienOccupe+Bien.autresElements+Bien.travauxARealiser+Bien.valorisationTerrain+Bien.renove);
+  //   console.log(Bien.prix_comparaison);
+  Bien.prix_comparaison = 1000;
 
     return Bien;
   },
@@ -79,7 +80,7 @@ module.exports = {
   },
 
   EstimationCapitalisation: Bien => {
-    
+
     Bien.estimation.prix_estimation.methodecapitalisation= (Bien.informations.valeurLocative * 12)/ (Bien.informations.tauxCapitalisation/100);
     Bien.estimation.prix_estimation.methodecapitalisation=Bien.estimation.prix_estimation.methodecapitalisation-(Bien.estimation.decoteBienOccupe+Bien.estimation.autresElements+Bien.estimation.travauxARealiser+Bien.estimation.valorisationTerrain+Bien.estimation.renove);
     console.log(Math.round(Bien.estimation.prix_estimation.methodecapitalisation));
@@ -93,7 +94,7 @@ module.exports = {
       "localisationBien": {
       "codePostal": 34000 }
       },
-  
+
 
   "informations": {
       "surfaceHabitable": 100,

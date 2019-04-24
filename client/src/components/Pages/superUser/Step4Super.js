@@ -267,7 +267,7 @@ class Step4Super extends Component {
                 </div>
                 <header className="card-header">
                   <p className="card-header-title">
-                    La moyenne des méthodes:
+                    La moyenne des méthodes: {this.state.moyenne_des_methodes}
                   </p>
                 </header>
                 </div>
