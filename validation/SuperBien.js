@@ -1070,6 +1070,15 @@ if (Validator.isEmpty(data.valorisationTerrain)) {
   errors.valorisationTerrain =
     "valorisationTerrain is required";
 }
+
+if (Validator.isEmpty(data.decoteBienOccupe)) {
+  errors.decoteBienOccupe =
+    "decote Bien Occupe is required";
+}
+
+// if(Validator.isEmpty(data.decoteBienOccupeR)){
+//   errors.decoteBienOccupeR = "is required";
+// }
 //
 // // if (
 // //
@@ -1110,6 +1119,10 @@ if(  Validator.isEmpty(data.travauxARealiserR)){
 if (Validator.isEmpty(data.autresElements)) {
   errors.autresElements =
     "autresElements is required";
+}
+
+if(Validator.isEmpty(data.autresElementsR)){
+  errors.autresElementsR = "is required";
 }
 //
 // // if (

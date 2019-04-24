@@ -32,10 +32,16 @@ class Step4Super extends Component {
                   <div className="field-body">
                     <div className="field">
                       <p className="control">
-                        <input className="input is-small" type="texte" placeholder="decoteBienOccupe"
+                        <input className={classnames("input is-small ", {
+                          "is-danger": errors.decoteBienOccupe
+                        })}
+                        type="number"
+                        placeholder="decoteBienOccupe"
                         name="decoteBienOccupe"
                         value={this.props.decoteBienOccupe}
-                        onChange={this.props.onChange} required/>
+                        onChange={this.props.onChange}
+                        required/>
+                        {errors.decoteBienOccupe && (<p className="help is-danger">{errors.decoteBienOccupe}</p>)}
                       </p>
                     </div>
                   </div>
@@ -56,6 +62,7 @@ class Step4Super extends Component {
                       %
                     </label>
                 </div>
+                {errors.decoteBienOccupeR && (<p className="help is-danger">{errors.decoteBienOccupeR}</p>)}
 
                 <div className="field is-horizontal">
                   <div className="field-label is-small">
@@ -64,10 +71,14 @@ class Step4Super extends Component {
                   <div className="field-body">
                     <div className="field">
                       <p className="control">
-                        <input className="input is-small" type="texte" placeholder="autresElements"
+                        <input className={classnames("input is-small ", {
+                          "is-danger": errors.autresElements
+                        })}
+                         type="number" placeholder="autresElements"
                         name="autresElements"
                         value={this.props.autresElements}
                         onChange={this.props.onChange} required/>
+                        {errors.autresElements && (<p className="help is-danger">{errors.autresElements}</p>)}
                       </p>
                     </div>
                   </div>
@@ -88,6 +99,7 @@ class Step4Super extends Component {
                   %
                 </label>
                 </div>
+                {errors.autresElementsR && (<p className="help is-danger">{errors.autresElementsR}</p>)}
 
                 <div className="field is-horizontal">
                   <div className="field-label is-small">
@@ -96,7 +108,16 @@ class Step4Super extends Component {
                   <div className="field-body">
                     <div className="field">
                       <p className="control">
-                        <input className="input is-small" type="texte" placeholder="travauxARealiser" name="travauxARealiser" onChange={this.props.onChange} required/>
+                        <input className={classnames("input is-small ", {
+                          "is-danger": errors.travauxARealiser
+                        })}
+                         type="number"
+                        placeholder="travauxARealiser"
+                        name="travauxARealiser"
+                        value={this.props.travauxARealiser}
+                        onChange={this.props.onChange}
+                        required/>
+                        {errors.travauxARealiser && (<p className="help is-danger">{errors.travauxARealiser}</p>)}
                       </p>
                     </div>
                   </div>
@@ -117,6 +138,7 @@ class Step4Super extends Component {
                   %
                 </label>
                 </div>
+                {errors.travauxARealiserR && (<p className="help is-danger">{errors.travauxARealiserR}</p>)}
 
                 <div className="field is-horizontal">
                   <div className="field-label is-small">
@@ -125,7 +147,16 @@ class Step4Super extends Component {
                   <div className="field-body">
                     <div className="field">
                       <p className="control">
-                        <input className="input is-small" type="texte" placeholder="valorisationTerrain" name="valorisationTerrain" onChange={this.props.onChange} required/>
+                        <input className={classnames("input is-small ", {
+                          "is-danger": errors.valorisationTerrain
+                        })}
+                        type="number"
+                        placeholder="valorisationTerrain"
+                        name="valorisationTerrain"
+                        value={this.props.valorisationTerrain}
+                        onChange={this.props.onChange}
+                        required/>
+                        {errors.valorisationTerrain && (<p className="help is-danger">{errors.valorisationTerrain}</p>)}
                       </p>
                     </div>
                   </div>
@@ -146,6 +177,7 @@ class Step4Super extends Component {
                   %
                 </label>
                 </div>
+                {errors.valorisationTerrainR && (<p className="help is-danger">{errors.valorisationTerrainR}</p>)}
 
                 <div className="field is-horizontal">
                   <div className="field-label is-small">
@@ -154,7 +186,16 @@ class Step4Super extends Component {
                   <div className="field-body">
                     <div className="field">
                       <p className="control">
-                        <input className="input is-small" type="texte" placeholder="renove" name="renove" onChange={this.props.onChange} required/>
+                        <input className={classnames("input is-small ", {
+                          "is-danger": errors.renove
+                        })}
+                        type="number"
+                        placeholder="renove"
+                        name="renove"
+                        value={this.props.renove}
+                        onChange={this.props.onChange}
+                        required/>
+                        {errors.renove && (<p className="help is-danger">{errors.renove}</p>)}
                       </p>
                     </div>
                   </div>
@@ -175,6 +216,7 @@ class Step4Super extends Component {
                   %
                 </label>
                 </div>
+                {errors.renoveR && (<p className="help is-danger">{errors.renoveR}</p>)}
 
                 </div>
                 </div>
