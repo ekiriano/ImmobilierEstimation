@@ -530,6 +530,9 @@ class Step2Super extends Component {
                 {errors.GES && <p className="help is-danger">{errors.GES}</p>}
               </div>
             </div>
+          </div>
+
+          <div className="column">
             <div className="field is-horizontal">
               <div className="field-label is-normal">
                 <label className="label">Prix mandat</label>
@@ -555,9 +558,6 @@ class Step2Super extends Component {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="column">
             <h1>Charges et impots</h1> <hr />
             <div className="field is-horizontal">
               <div className="field-label is-normal">

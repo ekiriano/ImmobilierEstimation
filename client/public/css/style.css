@@ -67,6 +67,9 @@ img.rounded {
 .mb-is-0_5 {
   margin-bottom: 25px;
 }
+.mt-is-0_5 {
+  margin-top: 25px;
+}
 .customInput {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.02);
   border-radius: 6px;
