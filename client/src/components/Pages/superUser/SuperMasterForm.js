@@ -103,9 +103,9 @@ class SuperMasterForm extends Component {
       renove: "",
       renoveR: "",
       affichageNetVendeur: "",
-      methodeReferenceSelected: false,
-      methodeComparaisonSelected: false,
-      methodeCapitalisationSelected: false,
+      methodeReferenceSelected: true,
+      methodeComparaisonSelected: true,
+      methodeCapitalisationSelected: true,
       prix_capitalisation: 0,
       prix_comparaison: 0,
       prix_reference: 0,
@@ -158,9 +158,14 @@ class SuperMasterForm extends Component {
   }
 
   onChange(e) {
+    const target = e.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
     this.setState({
-      [e.target.name]: e.target.value
+      [name]: value
     });
+    console.log('name', value);
   }
   onChangeComConf(commenConf) {
     this.setState({ commentairesConfidentiels: commenConf });
@@ -254,9 +259,9 @@ class SuperMasterForm extends Component {
       autresElementsR: this.state.autresElementsR,
       travauxARealiser: this.state.travauxARealiser,
       travauxARealiserR: this.state.travauxARealiserR,
-      methodeCapitalisationSelected: this.methodeCapitalisationSelected,
-      methodeReferenceSelected: this.methodeReferenceSelected,
-      methodeComparaisonSelected: this.methodeComparaisonSelected,
+      methodeCapitalisationSelected: this.state.methodeCapitalisationSelected,
+      methodeReferenceSelected: this.state.methodeReferenceSelected,
+      methodeComparaisonSelected: this.state.methodeComparaisonSelected,
       prix_comparaison: this.state.prix_comparaison,
       moyenne_des_methodes: this.state.moyenne_des_methodes,
       prix_capitalisation: this.state.prix_capitalisation,
