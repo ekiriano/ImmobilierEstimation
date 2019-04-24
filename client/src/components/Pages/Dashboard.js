@@ -98,7 +98,7 @@ class Dashboard extends Component {
               </aside>
             </div>
 
-            <div className="column">
+            <div className="column is-offset-2">
               {this.state.showAppartments ? <SavedAppartements /> : null}
               {this.state.showMaisons ? <SavedMaisons /> : null}
               {this.state.showBiens ? <SavedBiens /> : null}
