@@ -117,7 +117,7 @@ router.post(
       moyenne_des_methodes: req.body.moyenne_des_methodes,
       prix_comparaison: req.body.prix_comparaison,
       prix_reference: req.body.prix_reference,
-      prix_capitalisation: req.body.prix_capitalisation,
+      prix_capitalisation: req.body.prix_capitalisation
     });
 
     var EstimatedSuperBien;
@@ -182,13 +182,41 @@ router.delete(
           if (bien.user.toString() != req.user.id) {
             return res
               .status(401)
-              .json({ notauthorized: "utilisateur pas autorisé" });
+              .json({ notauthorized: "utilisateur non autorisé" });
           }
           //delete
           bien.remove().then(() => res.json({ success: true }));
         })
         .catch(err =>
           res.status(404).json({ error: "pas d'estimation de bien trouvé" })
+        );
+    });
+  }
+);
+
+/**
+ * @route   GET /api/estimation/super/biens/saved/:id
+ * @desc    Delete the estimation made by the user
+ * @access  Auth Users
+ */
+router.get(
+  "/biens/saved/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    SuperBien.find({ user: req.user.id }).then(biens => {
+      SuperBien.findById(req.params.id)
+        .then(bien => {
+          // check estimation ownership
+          if (bien.user.toString() != req.user.id) {
+            return res
+              .status(401)
+              .json({ notauthorized: "utilisateur non autorisé" });
+          }
+          //return
+          res.json(bien);
+        })
+        .catch(err =>
+          res.status(404).json({ error: "estimmation non trouvé" })
         );
     });
   }

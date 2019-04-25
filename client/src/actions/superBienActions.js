@@ -3,7 +3,8 @@ import {
   GET_ERRORS,
   GET_SUPER_SAVED_BIENS,
   NEW_SUPER_ESTIMATION_BIEN,
-  DELETE_SUPER_SAVED_BIEN
+  DELETE_SUPER_SAVED_BIEN,
+  GET_SUPER_BIEN
 } from "./types";
 
 import { toast } from "react-toastify";
@@ -65,6 +66,26 @@ export const deleteSavedBien = id => dispatch => {
       });
       toast.error(
         "Une Erreur a eu lieu lors de la suppression de cette estimmation : Veuillez réessayer plus tard"
+      );
+    });
+};
+
+export const getSuperBien = id => dispatch => {
+  axios
+    .get(`/api/estimation/super/biens/saved/${id}`)
+    .then(res =>
+      dispatch({
+        type: GET_SUPER_BIEN,
+        payload: res.data
+      })
+    )
+    .catch(err => {
+      dispatch({
+        type: GET_SUPER_BIEN,
+        payload: null
+      });
+      toast.error(
+        "Une Erreur a eu lieu lors de la recupération de cette estimmation : Veuillez réessayer plus tard"
       );
     });
 };

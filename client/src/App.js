@@ -38,6 +38,9 @@ import CardMaisonForm from "./components/Pages/simpleUser/maison/CardMaisonForm"
 import SimpleUserRootForm from "./components/Pages/simpleUser/rootForm";
 import Premium from "./components/Pages/BecomePremium";
 
+import Bien from "./components/Pages/superUser/saved/Bien";
+
+//HOC
 import requireAuth from "./routes/requireAuth";
 import requireSuper from "./routes/requireSuper";
 
@@ -103,6 +106,11 @@ class App extends Component {
                   exact
                   path="/super"
                   component={requireAuth(SuperUserForm)}
+                />
+                <Route
+                  exact
+                  path="/saved/superbien/:id"
+                  component={requireAuth(Bien)}
                 />
                 <Route component={Page404} />
               </Switch>

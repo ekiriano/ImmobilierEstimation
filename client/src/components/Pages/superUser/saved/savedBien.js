@@ -30,7 +30,15 @@ class savedBiens extends Component {
       return (
         <div className="card mb-is-1" key={i}>
           <header className="card-header">
-            <p className="card-header-title">Addresse :{bien.voie}, {bien.codePostal} {bien.ville}</p>
+            <p className="card-header-title">
+              Addresse :{bien.voie}, {bien.codePostal} {bien.ville}
+            </p>
+            <Link
+              to={"/saved/superbien/" + bien._id}
+              className="button is-success"
+            >
+              Voir estimmation complète
+            </Link>
           </header>
           <div className="card-content">
             <div className="content">
