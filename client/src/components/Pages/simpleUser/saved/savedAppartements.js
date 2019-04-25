@@ -7,7 +7,6 @@ import {
 } from "../../../../actions/defaultAppartementActions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import MaisonMasterForm from "../maison/MaisonMasterForm";
 
 class savedAppartements extends Component {
   constructor(props) {

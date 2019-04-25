@@ -4,10 +4,25 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { withRouter } from "react-router-dom";
-
+import classnames from "classnames";
 import logo from "./logo_navbar.png";
 
 class Nav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      burgerMenuExtended: false
+    };
+    this.onClickToggleBurger = this.onClickToggleBurger.bind(this);
+  }
+
+  onClickToggleBurger() {
+    if (this.state.burgerMenuExtended === true) {
+      this.setState({ burgerMenuExtended: false });
+    } else {
+      this.setState({ burgerMenuExtended: true });
+    }
+  }
   onLogoutClick(e) {
     e.preventDefault();
     this.props.logoutUser();
@@ -53,21 +68,28 @@ class Nav extends Component {
             <img src={logo} alt="logo" />
           </Link>
 
-          <Link
-            to="#"
+          <div
             role="button"
-            className="navbar-burger burger"
+            className={classnames("navbar-burger burger ", {
+              "is-active": this.state.burgerMenuExtended
+            })}
             aria-label="menu"
             aria-expanded="false"
             data-target="navbarBasicExample"
+            onClick={this.onClickToggleBurger}
           >
             <span aria-hidden="true" />
             <span aria-hidden="true" />
             <span aria-hidden="true" />
-          </Link>
+          </div>
         </div>
 
-        <div id="navbarBasicExample" className="navbar-menu">
+        <div
+          id="navbarBasicExample"
+          className={classnames("navbar-menu  ", {
+            "is-active": this.state.burgerMenuExtended
+          })}
+        >
           <div className="navbar-start">
             <Link to="/estimmation/simple" className="navbar-item">
               Estimmer votre bien gratuitement

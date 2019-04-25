@@ -1,7 +1,7 @@
 nav {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  height: 80px;
 }
+/*height: 80px;*/
 .min-is-100vh {
   min-height: 100vh;
 }
@@ -167,11 +167,23 @@ img.rounded {
   border-radius: 6px;
   display: block;
 }
+/*
 .contenu {
   margin-top: 80px;
-}
+}*/
 
 div.DraftEditor-root {
   background-color: #fff;
   border: #ececec solid 1px;
+}
+
+.mapboxgl-canvas-container {
+  width: 0;
+}
+
+#map-container {
+  padding-bottom: 0;
+  padding-top: 0;
+  height: 100%;
+  overflow: hidden;
 }

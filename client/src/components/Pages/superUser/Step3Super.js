@@ -11,8 +11,8 @@ class Step3Super extends Component {
       <div>
         <div className="columns">
           <div className="column">
-            <div class="card mt-is-0_5">
-              <div class="card-content">
+            <div className="card mt-is-0_5">
+              <div className="card-content">
                 <h1> 1 - Elements Principaux</h1> <hr />
                 <h3>
                   {" "}
@@ -441,8 +441,8 @@ class Step3Super extends Component {
                 )}
               </div>
             </div>
-            <div class="card mt-is-0_5">
-              <div class="card-content">
+            <div className="card mt-is-0_5">
+              <div className="card-content">
                 <h1> 2 - Autre Elements</h1> <hr />
                 <h3>
                   {" "}
@@ -608,7 +608,6 @@ class Step3Super extends Component {
                       type="radio"
                       value="Bon"
                       name="etatDesToitures"
-                      value="Bon"
                       checked={this.props.etatDesToitures === "Bon"}
                       onChange={this.props.onChange}
                     />
@@ -619,7 +618,6 @@ class Step3Super extends Component {
                       type="radio"
                       value="Trés bon"
                       name="etatDesToitures"
-                      value="Trés bon"
                       checked={this.props.etatDesToitures === "Trés bon"}
                       onChange={this.props.onChange}
                     />
@@ -680,8 +678,8 @@ class Step3Super extends Component {
                 )}
               </div>
             </div>
-            <div class="card mt-is-0_5">
-              <div class="card-content">
+            <div className="card mt-is-0_5">
+              <div className="card-content">
                 <h1> 3 - Environement</h1>
                 <hr />
                 <h3>
@@ -926,8 +924,8 @@ class Step3Super extends Component {
                 )}
               </div>
             </div>
-            <div class="card mt-is-0_5">
-              <div class="card-content">
+            <div className="card mt-is-0_5">
+              <div className="card-content">
                 <h1> 4 - Critère Généraux</h1>
                 <hr />
                 <h3>
@@ -1101,8 +1099,8 @@ class Step3Super extends Component {
                 )}
               </div>
             </div>
-            <div class="card mt-is-0_5">
-              <div class="card-content">
+            <div className="card mt-is-0_5">
+              <div className="card-content">
                 <h1> 4 - Séjour</h1>
                 <hr />
                 <h3>
@@ -1404,8 +1402,8 @@ class Step3Super extends Component {
             </div>
           </div>
           <div className="column">
-            <div class="card mt-is-0_5">
-              <div class="card-content">
+            <div className="card mt-is-0_5">
+              <div className="card-content">
                 <h1> 5 - Cuisine</h1>
                 <hr />
 
@@ -1650,8 +1648,8 @@ class Step3Super extends Component {
                 )}
               </div>{" "}
             </div>
-            <div class="card mt-is-0_5">
-              <div class="card-content">
+            <div className="card mt-is-0_5">
+              <div className="card-content">
                 <h1> 6 - Chambre</h1>
                 <hr />
 
@@ -1838,8 +1836,8 @@ class Step3Super extends Component {
                 )}
               </div>
             </div>
-            <div class="card mt-is-0_5">
-              <div class="card-content">
+            <div className="card mt-is-0_5">
+              <div className="card-content">
                 <h1> 7 - Sanitaire</h1>
                 <hr />
 
@@ -2034,8 +2032,8 @@ class Step3Super extends Component {
                 )}
               </div>{" "}
             </div>
-            <div class="card mt-is-0_5">
-              <div class="card-content">
+            <div className="card mt-is-0_5">
+              <div className="card-content">
                 <h1> 8 - Energie</h1>
                 <hr />
 
@@ -2224,8 +2222,8 @@ class Step3Super extends Component {
                 )}
               </div>
             </div>
-            <div class="card mt-is-0_5">
-              <div class="card-content">
+            <div className="card mt-is-0_5">
+              <div className="card-content">
                 <h1> 9 -Annexes</h1>
                 <hr />
 
