@@ -7,7 +7,7 @@ export default class CardMaisonForm extends Component {
   render() {
     return (
       <div>
-        <div className="column is-12">
+        <div className="column is-12 mt-is-5percent">
           <div className="dashboard-main">
             <div className="dashboard-main-header" />
             <div className="row">
