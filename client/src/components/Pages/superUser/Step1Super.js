@@ -18,8 +18,8 @@ class Step1Super extends Component {
     }
     return (
       <div>
-        <div class="card mt-is-0_5">
-          <div class="card-content">
+        <div className="card mt-is-0_5">
+          <div className="card-content">
             <h1>Informations sur le Client </h1> <hr />
             <label className="radio">
               <b>Civilité</b>
@@ -86,7 +86,9 @@ class Step1Super extends Component {
                 </label>
               </div>
             </label>
-            {errors.civilite && <p class="help is-danger">{errors.civilite}</p>}
+            {errors.civilite && (
+              <p className="help is-danger">{errors.civilite}</p>
+            )}
             <div className="field is-horizontal">
               <div className="field-label is-normal">
                 <label className="label">Prénom</label>
@@ -106,7 +108,7 @@ class Step1Super extends Component {
                       required
                     />
                     {errors.prenom && (
-                      <p class="help is-danger">{errors.prenom}</p>
+                      <p className="help is-danger">{errors.prenom}</p>
                     )}
                   </p>
                 </div>
@@ -130,7 +132,9 @@ class Step1Super extends Component {
                       value={this.props.nom}
                       required
                     />
-                    {errors.nom && <p class="help is-danger">{errors.nom}</p>}
+                    {errors.nom && (
+                      <p className="help is-danger">{errors.nom}</p>
+                    )}
                   </p>
                 </div>
               </div>
@@ -154,7 +158,7 @@ class Step1Super extends Component {
                       required
                     />
                     {errors.adressePostale && (
-                      <p class="help is-danger">{errors.adressePostale}</p>
+                      <p className="help is-danger">{errors.adressePostale}</p>
                     )}
                   </p>
                 </div>
@@ -179,7 +183,7 @@ class Step1Super extends Component {
                       required
                     />
                     {errors.email && (
-                      <p class="help is-danger">{errors.email}</p>
+                      <p className="help is-danger">{errors.email}</p>
                     )}
                   </p>
                 </div>
@@ -204,7 +208,7 @@ class Step1Super extends Component {
                       required
                     />
                     {errors.telephone && (
-                      <p class="help is-danger">{errors.telephone}</p>
+                      <p className="help is-danger">{errors.telephone}</p>
                     )}
                   </p>
                 </div>

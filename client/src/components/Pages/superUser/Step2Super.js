@@ -88,8 +88,8 @@ class Step2Super extends Component {
         <div className="container">
           <div className="columns">
             <div className="column">
-              <div class="card mt-is-0_5">
-                <div class="card-content">
+              <div className="card mt-is-0_5">
+                <div className="card-content">
                   <h1>Localisation du bien</h1> <hr />
                   <div className="field is-horizontal">
                     <div className="field-label is-normal">
@@ -170,8 +170,8 @@ class Step2Super extends Component {
                   </div>
                 </div>
               </div>
-              <div class="card mt-is-0_5">
-                <div class="card-content">
+              <div className="card mt-is-0_5">
+                <div className="card-content">
                   <h1> Informations </h1> <hr />
                   <div className="field is-horizontal">
                     <div className="field-label is-normal">
@@ -551,8 +551,8 @@ class Step2Super extends Component {
             </div>
 
             <div className="column">
-              <div class="card mt-is-0_5">
-                <div class="card-content">
+              <div className="card mt-is-0_5">
+                <div className="card-content">
                   <h1>Charges et impots</h1> <hr />
                   <div className="field is-horizontal">
                     <div className="field-label is-normal">
@@ -662,8 +662,8 @@ class Step2Super extends Component {
                   </div>
                 </div>
               </div>
-              <div class="card mt-is-0_5">
-                <div class="card-content">
+              <div className="card mt-is-0_5">
+                <div className="card-content">
                   <h1>Points forts et faibles</h1> <hr />
                   <div className="fort">
                     {listePointsForts}
@@ -720,8 +720,8 @@ class Step2Super extends Component {
                   </div>
                 </div>
               </div>
-              <div class="card mt-is-0_5">
-                <div class="card-content">
+              <div className="card mt-is-0_5">
+                <div className="card-content">
                   <h1>Commentaires confidentiels</h1> <hr />
                   <div className="commentairesConfidentioels">
                     <Editor

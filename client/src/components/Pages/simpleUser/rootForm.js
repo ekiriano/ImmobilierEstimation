@@ -10,7 +10,7 @@ export default class rootForm extends Component {
               to="/estimmation/simple/appartement"
               className="button is-info is-medium is-pd-4"
             >
-              <i class="uil uil-home" />
+              <i className="uil uil-home" />
               Appartement
             </Link>
           </div>
@@ -19,7 +19,7 @@ export default class rootForm extends Component {
               to="/estimmation/simple/maison"
               className="button is-success is-medium is-pd-4"
             >
-              <i class="uil uil-building" />
+              <i className="uil uil-building" />
               Maison
             </Link>
           </div>
