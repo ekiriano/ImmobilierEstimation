@@ -204,48 +204,27 @@ const SuperBienSchema = new Schema({
       type: Number,
 
     },
-    decoteBienOccupeR: {
-      type: String,
 
-    },
     autresElements: {
       type: Number,
 
     },
-    autresElementsR: {
-      type: String,
 
-    },
     travauxARealiser: {
       type: Number,
 
     },
-    travauxARealiserR: {
-      type: String,
 
-    },
     valorisationTerrain: {
       type: Number,
 
     },
-    valorisationTerrainR: {
-      type: String,
 
-    },
     renove: {
       type: Number,
 
     },
-    renoveR: {
-      type: String,
 
-    },
-    textePredifini: {
-      type: String,
-    },
-    textePredifiniR: {
-      type: String
-    },
     methodeReferenceSelected: {
       type: Number,
     },

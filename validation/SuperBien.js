@@ -939,128 +939,32 @@ if(Validator.isEmpty(data.installationGaz)){
 }
 //
 // // end of caracteristiques energie validation
-//
-// // caracteristiques annexes validation
-//
-// // if (
-// //   !Validator.matches(
-// //     data.balconLogiaTerasse,
-// //     'Aucun',
-// //     'Médiocre',
-// //     'Moyen',
-// //     'Bien',
-// //     'Trés bien'
-// //   )
-// // ) {
-// //   errors.balconLogiaTerasse =
-// //     "balcon is required";
-// // }
-//
+
 if(Validator.isEmpty(data.balconLogiaTerasse)){
   errors.balconLogiaTerasse = " Balcon/Logia/Terasseis required";
 }
-//
-// // if (
-// //   !Validator.matches(
-// //     data.caveSousSol,
-// //     'Aucun',
-// //     'Médiocre',
-// //     'Moyen',
-// //     'Bien',
-// //     'Exceptionnel'
-// //   )
-// // ) {
-// //   errors.caveSousSol =
-// //     "cave is required";
-// // }
-//
+
 if(Validator.isEmpty(data.caveSousSol)){
   errors.caveSousSol = "Cave/Sous-sol is required";
 }
-//
-// // if (
-// //
-// //   !Validator.matches(
-// //     data.agrementJardin,
-// //     'Trés médiocre',
-// //     'Médiocre',
-// //     'Moyen',
-// //     'Bien',
-// //     'Remarquable'
-// //   )
-// // ) {
-// //   errors.agrementJardin =
-// //     "agrementJardin is required";
-// // }
-//
+
 if(Validator.isEmpty(data.agrementJardin)){
   errors.agrementJardin = "L'agrément jardin is required";
 }
-//
-// // if (
-// //   !Validator.matches(
-// //     data.garageOuParkingOuvert,
-// //     'Sans',
-// //     'Médiocre',
-// //     'Moyen',
-// //     'Bien',
-// //     'Exceptionnel'
-// //   )
-// // ) {
-// //   errors.garageOuParkingOuvert =
-// //     "garageOuParkingOuvert is required";
-// // }
-//
+
 if(Validator.isEmpty(data.garageOuParkingOuvert)){
   errors.garageOuParkingOuvert = "Garage/Parking ouvert is required";
 }
-//
-// // if (
-// //   !Validator.matches(
-// //     data.combles,
-// //     'Aucune',
-// //     'Peu',
-// //     'Moyenne',
-// //     'Bonne',
-// //     'Exceptionnelle'
-// //   )
-// // ) {
-// //   errors.combles =
-// //     "comble is required";
-// // }
-//
+
 if(Validator.isEmpty(data.combles)){
   errors.combles = "Combles is required";
 }
-//
-// // end of caracteristiques annexes validation
-//
-//
-//
-// ///////////////////////////// end of caracteristiques validation ////////////////////////////////
-//
-// ///////////////////////////// estimation validation ////////////////////////////////
-//
+
 if (Validator.isEmpty(data.renove)) {
   errors.renove =
     "renove is required";
 }
-//
-// // if (
-// //   !Validator.matches(
-// //     data.caracteristiques.renoveR,
-// //     '$',
-// //     '%'
-// //   )
-// // ) {
-// //   errors.renoveR =
-// //     "choix renove is required";
-// // }
-//
-if(Validator.isEmpty(data.renoveR)){
-  errors.renoveR = "Please choose between % or $";
-}
-//
+
 if (Validator.isEmpty(data.valorisationTerrain)) {
   errors.valorisationTerrain =
     "La valorisation terrain is required";
@@ -1071,44 +975,9 @@ if (Validator.isEmpty(data.decoteBienOccupe)) {
     "decote Bien Occupe is required";
 }
 
-if(Validator.isEmpty(data.decoteBienOccupeR)){
-  errors.decoteBienOccupeR = "Please choose between % or $";
-}
-//
-// // if (
-// //
-// //   !Validator.matches(
-// //     data.caracteristiques.valorisationTerrainR,
-// //     '$',
-// //     '%'
-// //   )
-// // ) {
-// //   errors.valorisationTerrainR =
-// //     "choix valorisationTerrain is required";
-// // }
-//
-if(Validator.isEmpty(data.valorisationTerrainR)){
-  errors.valorisationTerrainR = "Please choose between % or $";
-}
-
 if (Validator.isEmpty(data.travauxARealiser)) {
   errors.travauxARealiser =
     "Travaux a réaliser  is required";
-}
-//
-// // if (
-// //   !Validator.matches(
-// //     data.caracteristiques.travauxARealiserR,
-// //     '$',
-// //     '%'
-// //   )
-// // ) {
-// //   errors.travauxARealiserR =
-// //     "travauxARealiserR required";
-// // }
-//
-if(  Validator.isEmpty(data.travauxARealiserR)){
-  errors.travauxARealiserR = "Please choose between % or $";
 }
 
 if (Validator.isEmpty(data.autresElements)) {
@@ -1116,27 +985,12 @@ if (Validator.isEmpty(data.autresElements)) {
     "Autres élements  is required";
 }
 
-if(Validator.isEmpty(data.autresElementsR)){
-  errors.autresElementsR = "Please choose between % or $";
-}
-//
-// // if (
-// //   !Validator.matches(
-// //     data.caracteristiques.travauxARealiserR,
-// //     '$',
-// //     '%'
-// //   )
-// // ) {
-// //   errors.travauxARealiserR =
-// //     "travauxARealiserR is required";
-// // }
-//
-if(Validator.isEmpty(data.travauxARealiserR)){
-  errors.travauxARealiserR = "Please choose between % or $";
-}
-
-
-
+if(!data.methodeReferenceSelected
+  && !data.methodeComparaisonSelected
+  && !data.methodeCapitalisationSelected){
+    errors.methodes =
+    "Please make sure you choose at least one method before estimate";
+  }
 
 ///////////////////////////// end of estimation validation ////////////////////////////////
 

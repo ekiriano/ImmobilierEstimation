@@ -93,26 +93,18 @@ class SuperMasterForm extends Component {
       garageOuParkingOuvert: "",
       combles: "",
       decoteBienOccupe: "",
-      decoteBienOccupeR: "",
       autresElements: "",
-      autresElementsR: "",
       travauxARealiser: "",
-      travauxARealiserR: "",
       valorisationTerrain: "",
-      valorisationTerrainR: "",
       renove: "",
-      renoveR: "",
-      affichageNetVendeur: "",
       methodeReferenceSelected: false,
       methodeComparaisonSelected: false,
       methodeCapitalisationSelected: false,
       prix_capitalisation: 0,
       prix_comparaison: 0,
       prix_reference: 0,
-      moyenne_des_methodes: 0,
-      textePredifiniR: "",
-      textePredifini: ""
-    };
+      moyenne_des_methodes: 0
+     };
 
     this.onChange = this.onChange.bind(this);
     this.next = this.next.bind(this);
@@ -250,15 +242,10 @@ class SuperMasterForm extends Component {
       garageOuParkingOuvert: this.state.garageOuParkingOuvert,
       combles: this.state.combles,
       renove: this.state.renove,
-      renoveR: this.state.renoveR,
       valorisationTerrain: this.state.valorisationTerrain,
-      valorisationTerrainR: this.state.valorisationTerrainR,
       autresElements: this.state.autresElements,
-      autresElementsR: this.state.autresElementsR,
       decoteBienOccupe: this.state.decoteBienOccupe,
-      decoteBienOccupeR: this.state.decoteBienOccupeR,
       travauxARealiser: this.state.travauxARealiser,
-      travauxARealiserR: this.state.travauxARealiserR,
       methodeCapitalisationSelected: this.state.methodeCapitalisationSelected,
       methodeReferenceSelected: this.state.methodeReferenceSelected,
       methodeComparaisonSelected: this.state.methodeComparaisonSelected,
@@ -266,8 +253,6 @@ class SuperMasterForm extends Component {
       moyenne_des_methodes: this.state.moyenne_des_methodes,
       prix_capitalisation: this.state.prix_capitalisation,
       prix_reference: this.state.prix_reference,
-      textePredifini: this.state.textePredifini,
-      textePredifiniR: this.state.textePredifiniR
     };
     this.props.submitSuperBienSave(newBienSuper);
   }
@@ -480,18 +465,10 @@ class SuperMasterForm extends Component {
                       onChange={this.onChange}
                       errors={this.state.errors}
                       decoteBienOccupe={this.state.decoteBienOccupe}
-                      decoteBienOccupeR={this.state.decoteBienOccupeR}
                       autresElements={this.state.autresElements}
-                      autresElementsR={this.state.autresElementsR}
                       travauxARealiser={this.state.travauxARealiser}
-                      travauxARealiserR={this.state.travauxARealiserR}
                       valorisationTerrain={this.state.valorisationTerrain}
-                      valorisationTerrainR={this.state.valorisationTerrainR}
                       renove={this.state.renove}
-                      renoveR={this.state.renoveR}
-                      textePredifini={this.state.textePredifini}
-                      textePredifiniR={this.state.textePredifiniR}
-                      affichageNetVendeur={this.state.affichageNetVendeur}
                       methodeReferenceSelected={
                         this.state.methodeReferenceSelected
                       }
