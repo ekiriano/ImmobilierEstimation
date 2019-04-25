@@ -16,6 +16,8 @@ class Step4Super extends Component {
 
           <div className="columns">
               <div className="column is-half">
+              <div className="card">
+                <div className="card-content">
               <div className="field is-horizontal">
                 <div className="field-label is-small">
                   <label className="label">Decote si bien vendu occupé: </label>
@@ -122,6 +124,8 @@ class Step4Super extends Component {
                     </p>
                   </div>
                 </div>
+              </div>
+              </div>
               </div>
           </div> {/* closing the first half column*/}
 
