@@ -70,7 +70,7 @@ class Bien extends Component {
                         {this.props.bien.nombreNiveaux}
                       </p>
                       <p>GES : {this.props.bien.GES}</p>
-                      <p>Charges de copropriete : {this.props.bien.chargesDeCopropriete}</p>
+                      <p>Charges de copropriete : {this.props.bien.chargesDeCopropriete} €</p>
                       <p>
                         Nombre etage total : {this.props.bien.nombreNiveaux}
                       </p>
@@ -93,7 +93,7 @@ class Bien extends Component {
                         <i className="uil uil-bolt-alt" />
                         DPE : {this.props.bien.DPE}{" "}
                       </p>
-                      <p>Charges annuelles totales : {this.props.bien.chargesAnnuellesTotales}</p>
+                      <p>Charges annuelles totales : {this.props.bien.chargesAnnuellesTotales} €</p>
                       <p>Type de bien : {this.props.bien.typeBienAffiche}</p>
                       <p>
                         Points faibles : {this.props.bien.pointsFaibles}
@@ -288,7 +288,40 @@ class Bien extends Component {
                       <p>Combles : {this.props.bien.combles}</p>
                       </div>
                     </div>
-                  <p>Estimmé a : {this.props.bien.moyenne_des_methodes} €</p>
+
+                    <h1>Détails sur l'estimation</h1> <hr/>
+                    <h4>Détails</h4>
+                    <div className="columns">
+                      <div className="column is-half">
+                        <p>
+                          {" "}
+                          Decote si bien vendu occupé: {this.props.bien.decoteBienOccupe}
+                        </p>
+                        <p>Autres élements: {this.props.bien.autresElements}</p>
+                        <p>Travaux à réaliser: {this.props.bien.travauxARealiser}</p>
+                      </div>
+                      <div className="column is-half">
+                      <p>
+                        {" "}
+                        Valorisation du terrain: {this.props.bien.valorisationTerrain}
+                      </p>
+                      <p>Rénové: {this.props.bien.renove}</p>
+                      </div>
+                    </div>
+
+                    <h4>Méthodes</h4>
+                    <div className="columns">
+                      <div className="column is-half">
+                        <p>Par capitalisation: {this.props.bien.prix_capitalisation} €</p>
+                        <p>Par comparaison : {this.props.bien.prix_comparaison} €</p>
+                      </div>
+                      <div className="column is-half">
+                      <p>Par référence : {this.props.bien.prix_reference} €</p>
+                      </div>
+                    </div>
+
+
+                  <p>La moyenne des méthodes: {this.props.bien.moyenne_des_methodes} €</p>
                 </div>
 
                 <footer className="card-footer">
