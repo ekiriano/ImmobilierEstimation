@@ -11,7 +11,7 @@ export default () => {
           <img src={logo} alt="logo" height="50" width="50%" />
         </div>
       </header>
-
+      {/*
       <section className="presentation">
         <div className="container">
           <div className="row">
@@ -93,7 +93,7 @@ export default () => {
             </div>
           </div>
         </div>
-      </section>
+</section>*/}
     </div>
   );
 };
