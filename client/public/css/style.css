@@ -190,3 +190,7 @@ div.DraftEditor-root {
   height: 100%;
   overflow: hidden;
 }
+
+.pt-is-10percent {
+  margin-top: 10%;
+}
