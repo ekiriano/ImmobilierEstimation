@@ -56,8 +56,8 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="columns">
-        <div className="column is-8 is-paddingless min-is-100vh">
+      <div className="columns min-is-100vh ">
+        <div className="column is-8 is-paddingless ">
           <div className="homepage hero is-paddingless" />
         </div>
         <div className="login column is-4 is-paddingless centerall">
