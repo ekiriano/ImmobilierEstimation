@@ -186,62 +186,62 @@ class Step4Super extends Component {
               </div>
             </div>{" "}
             {/* closing the first half column*/}
-            <div className="column is-half">
-              <div className="card">
-                <header className="card-header">
-                  <p className="card-header-title">Les méthodes utilisées</p>
-                </header>
-                <div className="card-content">
-                  <div className="content">
-                    <div className="control">
-                      <label className="checkbox">
-                        <input
-                          type="checkbox"
-                          name="methodeReferenceSelected"
-                          checked={this.props.methodeReferenceSelected}
-                          onChange={this.props.onChange}
-                        />
-                        méthode par référence
-                      </label>
-                    </div>
-                  </div>
-
-                  <div className="content">
-                    <div className="control">
-                      <label className="checkbox">
-                        <input
-                          type="checkbox"
-                          name="methodeComparaisonSelected"
-                          checked={this.props.methodeComparaisonSelected}
-                          onChange={this.props.onChange}
-                        />
-                        méthode par comparaison
-                      </label>
-                    </div>
-                  </div>
-
-                  <div className="content">
-                    <div className="control">
-                      <label className="checkbox">
-                        <input
-                          type="checkbox"
-                          name="methodeCapitalisationSelected"
-                          checked={this.props.methodeCapitalisationSelected}
-                          onChange={this.props.onChange}
-                        />
-                        méthode par capitalisation
-                      </label>
-                    </div>
-                  </div>
-
-                  {errors.methodes && (
-                    <p className="help is-danger">{errors.methodes}</p>
-                  )}
-                </div>
-              </div>
-            </div>{" "}
-            {/*closing the second column div*/}
           </div>
+          <div className="column is-half">
+            <div className="card">
+              <header className="card-header">
+                <p className="card-header-title">Les méthodes utilisées</p>
+              </header>
+              <div className="card-content">
+                <div className="content">
+                  <div className="control">
+                    <label className="checkbox">
+                      <input
+                        type="checkbox"
+                        name="methodeReferenceSelected"
+                        checked={this.props.methodeReferenceSelected}
+                        onChange={this.props.onChange}
+                      />
+                      méthode par référence
+                    </label>
+                  </div>
+                </div>
+
+                <div className="content">
+                  <div className="control">
+                    <label className="checkbox">
+                      <input
+                        type="checkbox"
+                        name="methodeComparaisonSelected"
+                        checked={this.props.methodeComparaisonSelected}
+                        onChange={this.props.onChange}
+                      />
+                      méthode par comparaison
+                    </label>
+                  </div>
+                </div>
+
+                <div className="content">
+                  <div className="control">
+                    <label className="checkbox">
+                      <input
+                        type="checkbox"
+                        name="methodeCapitalisationSelected"
+                        checked={this.props.methodeCapitalisationSelected}
+                        onChange={this.props.onChange}
+                      />
+                      méthode par capitalisation
+                    </label>
+                  </div>
+                </div>
+
+                {errors.methodes && (
+                  <p className="help is-danger">{errors.methodes}</p>
+                )}
+              </div>
+            </div>
+          </div>{" "}
+          {/*closing the second column div*/}
         </div>
       </div>
     );
