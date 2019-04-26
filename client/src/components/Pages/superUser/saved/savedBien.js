@@ -33,12 +33,6 @@ class savedBiens extends Component {
             <p className="card-header-title">
               Addresse :{bien.voie}, {bien.codePostal} {bien.ville}
             </p>
-            <Link
-              to={"/saved/superbien/" + bien._id}
-              className="button is-success"
-            >
-              Voir estimmation complète
-            </Link>
           </header>
           <div className="card-content">
             <div className="content">
@@ -72,13 +66,22 @@ class savedBiens extends Component {
             </div>
 
             <footer className="card-footer">
-              <button
-                onClick={this.onClickDelete.bind(this, bien._id)}
-                type="button"
-                className="button is-warning card-footer-item"
-              >
-                <i className="uil uil-trash-alt" /> Supprimer
-              </button>
+              <div className="card-footer-item">
+                <button
+                  onClick={this.onClickDelete.bind(this, bien._id)}
+                  type="button"
+                  className="button is-warning "
+                >
+                  <i className="uil uil-trash-alt" /> Supprimer
+                </button>
+                <Link
+                  to={"/saved/superbien/" + bien._id}
+                  className="button is-success ml-is-0_10"
+                >
+                  <i class="uil uil-search-plus" />
+                  Voir estimmation complète
+                </Link>
+              </div>
             </footer>
           </div>
         </div>
@@ -89,7 +92,20 @@ class savedBiens extends Component {
       <div>
         <h1 className="mb-is-0_5">Mes Estimations de biens</h1>
         <div className="columns is-centered">
-          <div className="column is-6">{bienCards}</div>
+          <div className="column is-6">
+            {this.props.savedBiens.length === 0 ? (
+              <div>
+                <p>
+                  <b>Vous n'avez aucune estimation détaillée sauvegardée </b>
+                </p>
+                <Link to="/super" className="button is-success mt-is-0_5">
+                  <i class="uil uil-plus-circle" /> Estimmer Maintenant
+                </Link>
+              </div>
+            ) : (
+              bienCards
+            )}
+          </div>
         </div>
       </div>
     );

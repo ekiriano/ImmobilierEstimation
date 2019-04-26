@@ -1,9 +1,15 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import {
-  getSuperBien,
-  deleteSavedBien
-} from "../../../../actions/superBienActions";
+  PDFDownloadLink,
+  Document,
+  Page,
+  Text,
+  View,
+  StyleSheet
+} from "@react-pdf/renderer";
+import ReactDOM, { PDFViewer } from "@react-pdf/renderer";
+import PropTypes from "prop-types";
+import { getSuperBien } from "../../../../actions/superBienActions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import DOMPurify from "dompurify";
@@ -20,21 +26,45 @@ class Bien extends Component {
     this.props.getSuperBien(this.props.match.params.id);
     this.setState({ bien: this.props.bien });
   }
-  onClickDelete(id) {
-    this.props.deleteSavedBien(id);
-  }
 
   render() {
-    if(this.props.bien.pointsForts){
-    var pointsFortsList = this.props.bien.pointsForts.map(pointfort => (
-      <li class="has-text-left">{pointfort}</li>
-    ));
-  }
-  if(this.props.bien.pointsFaibles){
-  var pointsFaiblesList = this.props.bien.pointsFaibles.map(pointfaible => (
-    <li class="has-text-left">{pointfaible}</li>
-  ));
-}
+    if (this.props.bien.pointsForts) {
+      var pointsFortsList = this.props.bien.pointsForts.map(pointfort => (
+        <li class="has-text-left">{pointfort}</li>
+      ));
+    }
+    if (this.props.bien.pointsFaibles) {
+      var pointsFaiblesList = this.props.bien.pointsFaibles.map(pointfaible => (
+        <li class="has-text-left">{pointfaible}</li>
+      ));
+    }
+
+    const styles = StyleSheet.create({
+      page: {
+        flexDirection: "row",
+        backgroundColor: "#E4E4E4"
+      },
+      section: {
+        margin: 10,
+        padding: 10,
+        flexGrow: 1
+      }
+    });
+
+    // Create Document Component
+    const MyDocument = () => (
+      <Document>
+        <Page size="A4" style={styles.page}>
+          <View style={styles.section}>
+            <Text>Addresse :</Text>
+          </View>
+          <View style={styles.section}>
+            <Text>Section #2</Text>
+          </View>
+        </Page>
+      </Document>
+    );
+
     return (
       <div className="container">
         <div className="columns">
@@ -71,8 +101,12 @@ class Bien extends Component {
                         <i className="uil uil-ruler-combined" />
                         Surface terrain : {this.props.bien.surfaceTerrain}m²
                       </p>
-                      <p class="has-text-left">Nombre pièces : {this.props.bien.nombrePieces}</p>
-                      <p class="has-text-left">Nombre de nivaux : {this.props.bien.nombreNiveaux}</p>
+                      <p class="has-text-left">
+                        Nombre pièces : {this.props.bien.nombrePieces}
+                      </p>
+                      <p class="has-text-left">
+                        Nombre de nivaux : {this.props.bien.nombreNiveaux}
+                      </p>
                       <p class="has-text-left">GES : {this.props.bien.GES}</p>
                       <p class="has-text-left">
                         Charges de copropriete :{" "}
@@ -94,7 +128,7 @@ class Bien extends Component {
                             )
                           }}
                         />
-                        </p>
+                      </p>
                       <div>
                         <ul>{pointsFortsList}</ul>
                       </div>
@@ -120,7 +154,9 @@ class Bien extends Component {
                         Charges annuelles totales :{" "}
                         {this.props.bien.chargesAnnuellesTotales} €
                       </p>
-                      <p class="has-text-left">Type de bien : {this.props.bien.typeBienAffiche}</p>
+                      <p class="has-text-left">
+                        Type de bien : {this.props.bien.typeBienAffiche}
+                      </p>
                       <p class="has-text-left">
                         Points faibles :{" "}
                         <div
@@ -130,14 +166,15 @@ class Bien extends Component {
                             )
                           }}
                         />
-                        </p>
+                      </p>
                       <div>
                         <ul>{pointsFaiblesList}</ul>
                       </div>
                     </div>
                   </div>
                   <p class="has-text-left">Commentaire confidentiel: </p>
-                  <div class="has-text-left"
+                  <div
+                    class="has-text-left"
                     dangerouslySetInnerHTML={{
                       __html: DOMPurify.sanitize(
                         this.props.bien.commentairesConfidentiels
@@ -157,15 +194,24 @@ class Bien extends Component {
                         Epoque de construction :{" "}
                         {this.props.bien.epoqueConstruction}
                       </p>
-                      <p class="has-text-left">Mitoyenneté : {this.props.bien.mitoyennete}</p>
+                      <p class="has-text-left">
+                        Mitoyenneté : {this.props.bien.mitoyennete}
+                      </p>
                       <p class="has-text-left">
                         Agrément général : {this.props.bien.agrementGeneral}{" "}
                       </p>
                     </div>
                     <div className="column is-half">
-                      <p class="has-text-left"> Standing : {this.props.bien.standing}</p>
-                      <p class="has-text-left">Accéssibilité : {this.props.bien.accessibilite}</p>
-                      <p class="has-text-left">Tout a l'égout : {this.props.bien.toutAEgout}</p>
+                      <p class="has-text-left">
+                        {" "}
+                        Standing : {this.props.bien.standing}
+                      </p>
+                      <p class="has-text-left">
+                        Accéssibilité : {this.props.bien.accessibilite}
+                      </p>
+                      <p class="has-text-left">
+                        Tout a l'égout : {this.props.bien.toutAEgout}
+                      </p>
                     </div>
                   </div>
                   <h4 class="has-text-left">Autres éléments</h4> <hr />
@@ -240,27 +286,47 @@ class Bien extends Component {
                   <h4 class="has-text-left">Séjour</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
-                      <p class="has-text-left"> Taille du sejour : {this.props.bien.tailleSejour}</p>
+                      <p class="has-text-left">
+                        {" "}
+                        Taille du sejour : {this.props.bien.tailleSejour}
+                      </p>
                       <p class="has-text-left">
                         Exposition du séjour :{" "}
                         {this.props.bien.expositionSejour}
                       </p>
-                      <p class="has-text-left">Vu du séjour : {this.props.bien.vueSejour}</p>
+                      <p class="has-text-left">
+                        Vu du séjour : {this.props.bien.vueSejour}
+                      </p>
                     </div>
                     <div className="column is-half">
-                      <p class="has-text-left"> Luminosité : {this.props.bien.luminosite}</p>
-                      <p class="has-text-left">cheminée : {this.props.bien.cheminee}</p>
+                      <p class="has-text-left">
+                        {" "}
+                        Luminosité : {this.props.bien.luminosite}
+                      </p>
+                      <p class="has-text-left">
+                        cheminée : {this.props.bien.cheminee}
+                      </p>
                     </div>
                   </div>
                   <h4 class="has-text-left">Cuisine</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
-                      <p class="has-text-left"> Taille de la cuisine : {this.props.bien.taille}</p>
-                      <p class="has-text-left">Equipement : {this.props.bien.equipement}</p>
+                      <p class="has-text-left">
+                        {" "}
+                        Taille de la cuisine : {this.props.bien.taille}
+                      </p>
+                      <p class="has-text-left">
+                        Equipement : {this.props.bien.equipement}
+                      </p>
                     </div>
                     <div className="column is-half">
-                      <p class="has-text-left"> Agrément : {this.props.bien.agrement}</p>
-                      <p class="has-text-left">Etat général : {this.props.bien.etatGeneral}</p>
+                      <p class="has-text-left">
+                        {" "}
+                        Agrément : {this.props.bien.agrement}
+                      </p>
+                      <p class="has-text-left">
+                        Etat général : {this.props.bien.etatGeneral}
+                      </p>
                     </div>
                   </div>
                   <h4 class="has-text-left">Chambres</h4> <hr />
@@ -270,7 +336,9 @@ class Bien extends Component {
                         {" "}
                         Taille des pièces : {this.props.bien.tailleDesPieces}
                       </p>
-                      <p class="has-text-left">Etat des pièces : {this.props.bien.etatDesPieces}</p>
+                      <p class="has-text-left">
+                        Etat des pièces : {this.props.bien.etatDesPieces}
+                      </p>
                     </div>
                     <div className="column is-half">
                       <p class="has-text-left">
@@ -329,7 +397,9 @@ class Bien extends Component {
                         Balcon Loggia Terasse:{" "}
                         {this.props.bien.balconLogiaTerasse}
                       </p>
-                      <p class="has-text-left">Cave / sous-sol : {this.props.bien.caveSousSol}</p>
+                      <p class="has-text-left">
+                        Cave / sous-sol : {this.props.bien.caveSousSol}
+                      </p>
                       <p class="has-text-left">
                         Agrément du jardin : {this.props.bien.agrementJardin}
                       </p>
@@ -340,7 +410,9 @@ class Bien extends Component {
                         Garage ou parking couvert :{" "}
                         {this.props.bien.garageOuParkingOuvert}
                       </p>
-                      <p class="has-text-left">Combles : {this.props.bien.combles}</p>
+                      <p class="has-text-left">
+                        Combles : {this.props.bien.combles}
+                      </p>
                     </div>
                   </div>
                   <h1 class="has-text-left">Détails sur l'estimation</h1> <hr />
@@ -352,7 +424,9 @@ class Bien extends Component {
                         Decote si bien vendu occupé:{" "}
                         {this.props.bien.decoteBienOccupe}
                       </p>
-                      <p class="has-text-left">Autres élements: {this.props.bien.autresElements}</p>
+                      <p class="has-text-left">
+                        Autres élements: {this.props.bien.autresElements}
+                      </p>
                       <p class="has-text-left">
                         Travaux à réaliser: {this.props.bien.travauxARealiser}
                       </p>
@@ -363,7 +437,9 @@ class Bien extends Component {
                         Valorisation du terrain:{" "}
                         {this.props.bien.valorisationTerrain}
                       </p>
-                      <p class="has-text-left">Rénové: {this.props.bien.renove}</p>
+                      <p class="has-text-left">
+                        Rénové: {this.props.bien.renove}
+                      </p>
                       <p class="has-text-left">
                         Taux de capitalisation:{" "}
                         {this.props.bien.tauxCapitalisation}
@@ -394,16 +470,36 @@ class Bien extends Component {
                 </div>
 
                 <footer className="card-footer">
-                  <button
-                    onClick={this.onClickDelete.bind(this, this.props.bien._id)}
-                    type="button"
-                    className="button is-warning card-footer-item"
-                  >
-                    <i className="uil uil-trash-alt" /> Supprimer
-                  </button>
+                  <div className="card-footer-item">
+                    <PDFDownloadLink
+                      className="button is-success "
+                      document={<MyDocument />}
+                      fileName={this.props.bien._id + ".pdf"}
+                    >
+                      {({ blob, url, loading, error }) =>
+                        loading ? (
+                          "Loading document..."
+                        ) : (
+                          <p>
+                            {" "}
+                            <i class="uil uil-down-arrow" />
+                            Exportez en PDF
+                          </p>
+                        )
+                      }
+                    </PDFDownloadLink>
+                  </div>
                 </footer>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="columns">
+          <div className="column">
+            <h1>Exportation pdf</h1>
+            <PDFViewer>
+              <MyDocument />
+            </PDFViewer>
           </div>
         </div>
       </div>

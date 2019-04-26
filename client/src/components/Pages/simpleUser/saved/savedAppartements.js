@@ -71,13 +71,15 @@ class savedAppartements extends Component {
               </div>
             </div>
             <footer className="card-footer">
-              <button
-                onClick={this.onClickDelete.bind(this, appartement._id)}
-                type="button"
-                className="button is-warning card-footer-item"
-              >
-                <i className="uil uil-trash-alt" /> Supprimer
-              </button>
+              <div className="card-footer-item">
+                <button
+                  onClick={this.onClickDelete.bind(this, appartement._id)}
+                  type="button"
+                  className="button is-warning "
+                >
+                  <i className="uil uil-trash-alt" /> Supprimer
+                </button>
+              </div>
             </footer>
           </div>
         );
