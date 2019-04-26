@@ -19,6 +19,7 @@
     "body-parser": "^1.18.3",
     "cheerio": "^1.0.0-rc.2",
     "concurrently": "^4.1.0",
+    "dompurify": "^1.0.10",
     "dummy-json": "^2.0.0",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.4.0",

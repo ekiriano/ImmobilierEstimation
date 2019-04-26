@@ -25,12 +25,12 @@ class Bien extends Component {
   }
 
   render() {
-    // const pointsForts = this.props.bien.pointsForts.map((item) =>
-    //     <li key={item}>{item}</li>
-    // );
-    // const pointsFaibles = this.props.bien.pointsFaibles.map((item) =>
-    //     <li key={item}>{item}</li>
-    // );
+    // var pointsForts = "<ul>";
+    // for (var i = 0; i < this.props.bien.pointsForts.length; i++) {
+    //   pointsForts += "<li>" + this.props.bien.pointsForts[i] + "</li>";
+    // }
+    // pointsForts += "</ul>"
+
     return (
       <div className="container">
         <div className="columns">
@@ -72,7 +72,7 @@ class Bien extends Component {
                         Nombre etage total : {this.props.bien.nombreNiveaux}
                       </p>
                       <p>
-                        Points forts : {this.props.bien.pointsForts}
+                        Points forts : <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(this.props.bien.pointsForts)}} />
                       </p>
                     </div>
                     <div className="column is-half">
