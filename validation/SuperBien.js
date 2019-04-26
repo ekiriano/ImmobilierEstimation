@@ -75,7 +75,7 @@ if (Validator.isEmpty(data.telephone)){
   errors.telephone = "Telephone is required";
 }
 
-if(!data.telephone.match(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/)){
+if(data.telephone<0){
     errors.telephone="telephone ne correspond pas au bon format!";
   }
 
