@@ -30,33 +30,19 @@ class Bien extends Component {
             <h1>Recapitulatif complet de votre estimmation : </h1>
             <div className="card mt-is-5percentgit p mb-is-1">
               <header className="card-header">
-                <p className="card-header-title">
-                  Addresse :{this.props.bien.voie} ,{this.props.bien.codePostal}{" "}
+                <p className="card-header-title is-centered">
+                    Addresse :{this.props.bien.voie} ,{this.props.bien.codePostal}{" "}
                   {this.props.bien.ville}
                 </p>
               </header>
               <div className="card-content">
                 <div className="content">
-                <h1>Client</h1> <hr/>
-                  <div className="columns">
-                    <div className="column is-half">
-                      <p>
-                        {" "}
-                        Nom : {this.props.bien.nom}
-                      </p>
-                      <p>Email : {this.props.bien.email}</p>
-                    </div>
-                    <div className="column is-half">
-                      <p>
-                        Prénom : {this.props.bien.prenom}
-                      </p>
-                      <p>
-                        Télephone : {this.props.bien.telephone}{" "}
-                      </p>
-                    </div>
-                  </div>
 
-                  <h1>Information sur le Bien</h1> <hr/>
+                <p>A l'attention de monsieur {this.props.bien.nom} {this.props.bien.prenom}, ayant les coordonnées:</p>
+                <p>Tél: {this.props.bien.telephone}, Email: {this.props.bien.email}</p>
+
+
+                  <h1 class="has-text-left">Votre Bien</h1> <hr/>
                   <div className="columns">
                     <div className="column is-half">
                       <p>
@@ -104,8 +90,8 @@ class Bien extends Component {
                     </div>
                   </div>
 
-                  <h1>Elements du bien</h1> <hr/>
-                  <h4>Elements pricipaux</h4> <hr/>
+                  <h1 class="has-text-left">Elements du bien</h1> <hr/>
+                  <h4 class="has-text-left">Elements pricipaux</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -132,7 +118,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Autres éléments</h4> <hr/>
+                    <h4 class="has-text-left">Autres éléments</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -150,7 +136,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Environnement</h4> <hr/>
+                    <h4 class="has-text-left">Environnement</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -168,7 +154,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Critère Généraux</h4> <hr/>
+                    <h4 class="has-text-left">Critère Généraux</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -185,7 +171,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Séjour</h4> <hr/>
+                    <h4 class="has-text-left">Séjour</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -204,7 +190,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Cuisine</h4> <hr/>
+                    <h4 class="has-text-left">Cuisine</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -222,7 +208,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Chambres</h4> <hr/>
+                    <h4 class="has-text-left">Chambres</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -239,7 +225,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Sanitaires</h4> <hr/>
+                    <h4 class="has-text-left">Sanitaires</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -256,7 +242,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Energie</h4> <hr/>
+                    <h4 class="has-text-left">Energie</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -273,7 +259,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Annexes</h4> <hr/>
+                    <h4 class="has-text-left">Annexes</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -292,8 +278,8 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h1>Détails sur l'estimation</h1> <hr/>
-                    <h4>Détails</h4> <hr/>
+                    <h1 class="has-text-left">Détails sur l'estimation</h1> <hr/>
+                    <h4 class="has-text-left">Détails</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -313,7 +299,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Méthodes</h4> <hr/>
+                    <h4 class="has-text-left">Méthodes</h4> <hr/>
                     <div className="columns">
                       <div className="column is-4">
                         <p>Par capitalisation: {this.props.bien.prix_capitalisation} €</p>
