@@ -626,7 +626,7 @@ module.exports = {
 },
 
 
-  /*EstimationCapitalisation: Bien => {
+  EstimationCapitalisation: Bien => {
     Bien.prix_capitalisation = (Bien.valeurLocative * 12) / (Bien.tauxCapitalisation / 100);
     Bien.prix_capitalisation= Bien.prix_capitalisation - Bien.decoteBienOccupe;
     Bien.prix_capitalisation= Bien.prix_capitalisation - Bien.autresElements;
@@ -640,7 +640,7 @@ module.exports = {
 
     console.log(Bien.prix_capitalisation);
     return Bien;
-  }*/
+  }
 
 
 
