@@ -57,7 +57,7 @@ module.exports = function validateDefaultHouseInput(data) {
     errors.rue = "rue field is required";
   }
 
-  if(!data.rue.match(/\d{3}\s+rue+\s\w+/)){
+  if(!data.rue.match(/\d{3}\s\w+/)){
     errors.rue = "rue ne correspond pas au bon format!";
   }
 
