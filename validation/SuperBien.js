@@ -22,9 +22,7 @@ if (Validator.isEmpty(data.civilite)) {
     "Civilite is required";
 }
 
-if(!data.civilite.match(/[^0-9]/)){
-    errors.civilite="civilite ne correspond pas au bon format!";
-  }
+
 
 // if(!Validator.matches(
 //     data.civilite,
