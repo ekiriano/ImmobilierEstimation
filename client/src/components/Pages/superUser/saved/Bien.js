@@ -77,6 +77,9 @@ class Bien extends Component {
                       <p>
                         Points forts : {this.props.bien.pointsForts}
                       </p>
+                      <p>
+                        Valeur Locative : {this.props.bien.valeurLocative} €
+                      </p>
                     </div>
                     <div className="column is-half">
                       <p>
@@ -306,6 +309,7 @@ class Bien extends Component {
                         Valorisation du terrain: {this.props.bien.valorisationTerrain}
                       </p>
                       <p>Rénové: {this.props.bien.renove}</p>
+                      <p>Taux de capitalisation: {this.props.bien.tauxCapitalisation}</p>
                       </div>
                     </div>
 

@@ -112,6 +112,8 @@ router.post(
       methodeComparaisonSelected: req.body.methodeComparaisonSelected,
       methodeCapitalisationSelected: req.body.methodeCapitalisationSelected,
       moyenne_des_methodes: req.body.moyenne_des_methodes,
+      valeurLocative: req.body.valeurLocative,
+      tauxCapitalisation: req.body.tauxCapitalisation,
       prix_comparaison: req.body.prix_comparaison,
       prix_reference: req.body.prix_reference,
       prix_capitalisation: req.body.prix_capitalisation

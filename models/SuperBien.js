@@ -31,6 +31,7 @@ const SuperBienSchema = new Schema({
       // prixm2: {type: Number,  min:0},
       chargesAnnuellesTotales: {type: Number,  min: 0},
       chargesDeCopropriete: {type: Number,  min: 0},
+      valeurLocative: {type:Number, min:0},
       impotsFonciers: {type: Number,   min: 0},
       annexes: {type: String},
       pointsForts:[String],
@@ -216,6 +217,10 @@ const SuperBienSchema = new Schema({
     },
 
     valorisationTerrain: {
+      type: Number,
+
+    },
+    tauxCapitalisation: {
       type: Number,
 
     },

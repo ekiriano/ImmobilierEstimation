@@ -610,6 +610,33 @@ class Step2Super extends Component {
                       </div>
                     </div>
                   </div>
+                    <div className="field is-horizontal">
+                      <div className="field-label is-normal">
+                        <label className="label">Valeur locative</label>
+                      </div>
+                      <div className="field-body">
+                        <div className="field">
+                          <p className="control">
+                            <input
+                              className={classnames("input ", {
+                                "is-danger": errors.valeurLocative
+                              })}
+                              type="number"
+                              placeholder="Charges annuelles totales"
+                              name="chargesAnnuellesTotales"
+                              value={this.props.valeurLocative}
+                              onChange={this.props.onChange}
+                              required
+                            />
+                            {errors.valeurLocative && (
+                              <p className="help is-danger">
+                                {errors.valeurLocative}
+                              </p>
+                            )}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   <div className="field is-horizontal">
                     <div className="field-label is-normal">
                       <label className="label">Impots fonciers</label>

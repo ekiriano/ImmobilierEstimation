@@ -125,8 +125,31 @@ class Step4Super extends Component {
                   </div>
                 </div>
               </div>
+              <div className="field is-horizontal">
+                <div className="field-label is-small">
+                  <label className="label">Taux capitalisation </label>
+                </div>
+                <div className="field-body">
+                  <div className="field">
+                    <p className="control">
+                      <input className={classnames("input is-small ", {
+                        "is-danger": errors.tauxCapitalisation
+                      })}
+                      type="number"
+                      placeholder="valorisationTerrain"
+                      name="valorisationTerrain"
+                      value={this.props.tauxCapitalisation}
+                      onChange={this.props.onChange}
+                      required/>
+                      {errors.tauxCapitalisation && (<p className="help is-danger">{errors.tauxCapitalisation}</p>)}
+                    </p>
+                  </div>
+                </div>
               </div>
               </div>
+              </div>
+
+
           </div> {/* closing the first half column*/}
 
 

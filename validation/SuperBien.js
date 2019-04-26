@@ -134,6 +134,11 @@ if (Validator.isEmpty(data.surfaceHabitable)) {
   errors.surfaceHabitable =
     "habitable surface is required and must be positive";
 }
+
+if (Validator.isEmpty(data.valeurLocative)) {
+  errors.valeurLocative =
+    "Valeur locative is required and must be positive";
+}
 //
 if (Validator.isEmpty(data.surfaceTerrain)) {
   errors.surfaceTerrain =
@@ -460,6 +465,10 @@ if(Validator.isEmpty(data.etatDesToitures)){
 //
 if(Validator.isEmpty(data.clotureTerrain)){
   errors.clotureTerrain = "Cloture du terrain is required";
+}
+
+if(Validator.isEmpty(data.tauxCapitalisation)){
+  errors.tauxCapitalisation = "Taux de capitalisation is required";
 }
 // // end of caracteristiques autresElements validation
 //

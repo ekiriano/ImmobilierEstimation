@@ -97,6 +97,8 @@ class SuperMasterForm extends Component {
       travauxARealiser: "",
       valorisationTerrain: "",
       renove: "",
+      valeurLocative: "",
+      tauxCapitalisation: "",
       methodeReferenceSelected: false,
       methodeComparaisonSelected: false,
       methodeCapitalisationSelected: false,
@@ -249,6 +251,8 @@ class SuperMasterForm extends Component {
       methodeCapitalisationSelected: this.state.methodeCapitalisationSelected,
       methodeReferenceSelected: this.state.methodeReferenceSelected,
       methodeComparaisonSelected: this.state.methodeComparaisonSelected,
+      valeurLocative: this.state.valeurLocative,
+      tauxCapitalisation: this.state.tauxCapitalisation,
       prix_comparaison: this.state.prix_comparaison,
       moyenne_des_methodes: this.state.moyenne_des_methodes,
       prix_capitalisation: this.state.prix_capitalisation,
@@ -396,6 +400,7 @@ class SuperMasterForm extends Component {
                       chargesAnnuellesTotales={
                         this.state.chargesAnnuellesTotales
                       }
+                      valeurLocative={this.state.valeurLocative}
                       chargesDeCopropriete={this.state.chargesDeCopropriete}
                       impotsFonciers={this.state.impotsFonciers}
                       annexes={this.state.annexes}
@@ -483,6 +488,7 @@ class SuperMasterForm extends Component {
                       prix_comparaison={this.state.prix_comparaison}
                       prix_reference={this.state.prix_reference}
                       ville={this.state.ville}
+                      tauxCapitalisation={this.state.tauxCapitalisation}
                     />
 
                     <FinalStepSuper
