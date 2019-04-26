@@ -260,28 +260,29 @@ const SuperBienSchema = new Schema({
 });
 
 SuperBienSchema.pre('save', function(next) {
+  var moyenne;
   if(this.methodeCapitalisationSelected){
     if(this.methodeReferenceSelected){
       if(this.methodeComparaisonSelected){
-        this.moyenne_des_methodes = (this.prix_capitalisation+this.prix_reference+this.prix_comparaison)/3;
+        moyenne = (this.prix_capitalisation+this.prix_reference+this.prix_comparaison)/3;
       }
       else {
-        this.moyenne_des_methodes = (this.prix_capitalisation+this.prix_reference)/2;
+        moyenne = (this.prix_capitalisation+this.prix_reference)/2;
       }
     }
     else if(this.methodeComparaisonSelected){
-      this.moyenne_des_methodes = (this.prix_capitalisation+this.prix_comparaison)/2;
+      moyenne = (this.prix_capitalisation+this.prix_comparaison)/2;
     }
     else{
-      this.moyenne_des_methodes = this.prix_capitalisation;
+      moyenne = this.prix_capitalisation;
     }
   }
   else {
-    if(this.methodeReferenceSelected && this.methodeComparaisonSelected) { this.moyenne_des_methodes = (this.prix_reference+this.prix_comparaison)/2;}
-    if(!this.methodeReferenceSelected){ this.moyenne_des_methodes = this.prix_comparaison;}
-    if(!this.methodeComparaisonSelected){ this.moyenne_des_methodes = this.prix_reference;}
+    if(this.methodeReferenceSelected && this.methodeComparaisonSelected) { moyenne = (this.prix_reference+this.prix_comparaison)/2;}
+    if(!this.methodeReferenceSelected){ moyenne = this.prix_comparaison;}
+    if(!this.methodeComparaisonSelected){ moyenne = this.prix_reference;}
   }
-    // need to add if's
+    this.moyenne_des_methodes = Math.round(moyenne);
   next();
 });
 
