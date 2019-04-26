@@ -27,12 +27,12 @@ class Bien extends Component {
   render() {
     if(this.props.bien.pointsForts){
     var pointsFortsList = this.props.bien.pointsForts.map(pointfort => (
-      <li>{pointfort}</li>
+      <li class="has-text-left">{pointfort}</li>
     ));
   }
   if(this.props.bien.pointsFaibles){
   var pointsFaiblesList = this.props.bien.pointsFaibles.map(pointfaible => (
-    <li>{pointfaible}</li>
+    <li class="has-text-left">{pointfaible}</li>
   ));
 }
     return (
@@ -66,26 +66,26 @@ class Bien extends Component {
                   <h1 class="has-text-left">Votre Bien</h1> <hr />
                   <div className="columns">
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         <i className="uil uil-ruler-combined" />
                         Surface terrain : {this.props.bien.surfaceTerrain}m²
                       </p>
-                      <p>Nombre pièces : {this.props.bien.nombrePieces}</p>
-                      <p>Nombre de nivaux : {this.props.bien.nombreNiveaux}</p>
-                      <p>GES : {this.props.bien.GES}</p>
-                      <p>
+                      <p class="has-text-left">Nombre pièces : {this.props.bien.nombrePieces}</p>
+                      <p class="has-text-left">Nombre de nivaux : {this.props.bien.nombreNiveaux}</p>
+                      <p class="has-text-left">GES : {this.props.bien.GES}</p>
+                      <p class="has-text-left">
                         Charges de copropriete :{" "}
                         {this.props.bien.chargesDeCopropriete} €
                       </p>
-                      <p>
+                      <p class="has-text-left">
                         Valeur Locative : {this.props.bien.valeurLocative} €
                       </p>
-                      <p>
+                      <p class="has-text-left">
                         Nombre etage total : {this.props.bien.nombreNiveaux}
                       </p>
 
-                      <p>
+                      <p class="has-text-left">
                         Points forts :{" "}
                         <div
                           dangerouslySetInnerHTML={{
@@ -100,28 +100,28 @@ class Bien extends Component {
                       </div>
                     </div>
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         <i className="uil uil-ruler-combined" />
                         Surface habitable : {this.props.bien.surfaceHabitable}m²
                       </p>
-                      <p>
+                      <p class="has-text-left">
                         Nombre de chambres : {this.props.bien.nombreChambres}
                       </p>
-                      <p>
+                      <p class="has-text-left">
                         <i className="uil uil-clock-two" />
                         Année construction : {this.props.bien.anneeConstruction}
                       </p>
-                      <p>
+                      <p class="has-text-left">
                         <i className="uil uil-bolt-alt" />
                         DPE : {this.props.bien.DPE}{" "}
                       </p>
-                      <p>
+                      <p class="has-text-left">
                         Charges annuelles totales :{" "}
                         {this.props.bien.chargesAnnuellesTotales} €
                       </p>
-                      <p>Type de bien : {this.props.bien.typeBienAffiche}</p>
-                      <p>
+                      <p class="has-text-left">Type de bien : {this.props.bien.typeBienAffiche}</p>
+                      <p class="has-text-left">
                         Points faibles :{" "}
                         <div
                           dangerouslySetInnerHTML={{
@@ -136,8 +136,8 @@ class Bien extends Component {
                       </div>
                     </div>
                   </div>
-                  <p>Commentaire confidentiel: </p>
-                  <div
+                  <p class="has-text-left">Commentaire confidentiel: </p>
+                  <div class="has-text-left"
                     dangerouslySetInnerHTML={{
                       __html: DOMPurify.sanitize(
                         this.props.bien.commentairesConfidentiels
@@ -148,45 +148,45 @@ class Bien extends Component {
                   <h4 class="has-text-left">Elements pricipaux</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         Etat du gros oeuvre :{" "}
                         {this.props.bien.etatQualiteGrosOeuvre}
                       </p>
-                      <p>
+                      <p class="has-text-left">
                         Epoque de construction :{" "}
                         {this.props.bien.epoqueConstruction}
                       </p>
-                      <p>Mitoyenneté : {this.props.bien.mitoyennete}</p>
-                      <p>
+                      <p class="has-text-left">Mitoyenneté : {this.props.bien.mitoyennete}</p>
+                      <p class="has-text-left">
                         Agrément général : {this.props.bien.agrementGeneral}{" "}
                       </p>
                     </div>
                     <div className="column is-half">
-                      <p> Standing : {this.props.bien.standing}</p>
-                      <p>Accéssibilité : {this.props.bien.accessibilite}</p>
-                      <p>Tout a l'égout : {this.props.bien.toutAEgout}</p>
+                      <p class="has-text-left"> Standing : {this.props.bien.standing}</p>
+                      <p class="has-text-left">Accéssibilité : {this.props.bien.accessibilite}</p>
+                      <p class="has-text-left">Tout a l'égout : {this.props.bien.toutAEgout}</p>
                     </div>
                   </div>
                   <h4 class="has-text-left">Autres éléments</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         Qualité Architecturale :{" "}
                         {this.props.bien.qualiteArchitecturale}
                       </p>
-                      <p>
+                      <p class="has-text-left">
                         Etat des portes et fenetres :{" "}
                         {this.props.bien.etatPortesEtFenetres}
                       </p>
                     </div>
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         Etat des toitures : {this.props.bien.etatDesToitures}
                       </p>
-                      <p>
+                      <p class="has-text-left">
                         Cloture Terrain(état/qualité) :{" "}
                         {this.props.bien.clotureTerrain}
                       </p>
@@ -195,22 +195,22 @@ class Bien extends Component {
                   <h4 class="has-text-left">Environnement</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         Nuisances Sonores : {this.props.bien.nuissanceSonore}
                       </p>
-                      <p>
+                      <p class="has-text-left">
                         Voisinage/ vis-à-vis :{" "}
                         {this.props.bien.voisinageVisaVis}
                       </p>
                     </div>
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         Proximite des services publiques :{" "}
                         {this.props.bien.proximiteServicesPublics}
                       </p>
-                      <p>
+                      <p class="has-text-left">
                         Qualité de l'environnement :{" "}
                         {this.props.bien.qualiteEnvironnement}
                       </p>
@@ -219,18 +219,18 @@ class Bien extends Component {
                   <h4 class="has-text-left">Critère Généraux</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         Qualité de la distribution :{" "}
                         {this.props.bien.qualiteDistribution}
                       </p>
-                      <p>
+                      <p class="has-text-left">
                         Etat des murs et des plafonds :{" "}
                         {this.props.bien.etatMursPlafonds}
                       </p>
                     </div>
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         Sols et revetement de sols :{" "}
                         {this.props.bien.solsEtRevetementSols}
@@ -240,40 +240,40 @@ class Bien extends Component {
                   <h4 class="has-text-left">Séjour</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
-                      <p> Taille du sejour : {this.props.bien.tailleSejour}</p>
-                      <p>
+                      <p class="has-text-left"> Taille du sejour : {this.props.bien.tailleSejour}</p>
+                      <p class="has-text-left">
                         Exposition du séjour :{" "}
                         {this.props.bien.expositionSejour}
                       </p>
-                      <p>Vu du séjour : {this.props.bien.vueSejour}</p>
+                      <p class="has-text-left">Vu du séjour : {this.props.bien.vueSejour}</p>
                     </div>
                     <div className="column is-half">
-                      <p> Luminosité : {this.props.bien.luminosite}</p>
-                      <p>cheminée : {this.props.bien.cheminee}</p>
+                      <p class="has-text-left"> Luminosité : {this.props.bien.luminosite}</p>
+                      <p class="has-text-left">cheminée : {this.props.bien.cheminee}</p>
                     </div>
                   </div>
                   <h4 class="has-text-left">Cuisine</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
-                      <p> Taille de la cuisine : {this.props.bien.taille}</p>
-                      <p>Equipement : {this.props.bien.equipement}</p>
+                      <p class="has-text-left"> Taille de la cuisine : {this.props.bien.taille}</p>
+                      <p class="has-text-left">Equipement : {this.props.bien.equipement}</p>
                     </div>
                     <div className="column is-half">
-                      <p> Agrément : {this.props.bien.agrement}</p>
-                      <p>Etat général : {this.props.bien.etatGeneral}</p>
+                      <p class="has-text-left"> Agrément : {this.props.bien.agrement}</p>
+                      <p class="has-text-left">Etat général : {this.props.bien.etatGeneral}</p>
                     </div>
                   </div>
                   <h4 class="has-text-left">Chambres</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         Taille des pièces : {this.props.bien.tailleDesPieces}
                       </p>
-                      <p>Etat des pièces : {this.props.bien.etatDesPieces}</p>
+                      <p class="has-text-left">Etat des pièces : {this.props.bien.etatDesPieces}</p>
                     </div>
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         Exposition aux bruits :{" "}
                         {this.props.bien.expositionAuxBruits}
@@ -283,18 +283,18 @@ class Bien extends Component {
                   <h4 class="has-text-left">Sanitaires</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         Taille des pièces sanitaires:{" "}
                         {this.props.bien.taillePiecesSanitaires}
                       </p>
-                      <p>
+                      <p class="has-text-left">
                         Nombre de sanitaire :{" "}
                         {this.props.bien.nombreDeSanitaires}
                       </p>
                     </div>
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         Qualité et etat des sanitaires :{" "}
                         {this.props.bien.qualiteEtatSanitaires}
@@ -304,18 +304,18 @@ class Bien extends Component {
                   <h4 class="has-text-left">Energie</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         Facture energitique:{" "}
                         {this.props.bien.factureEnergetique}
                       </p>
-                      <p>
+                      <p class="has-text-left">
                         Installation électrique :{" "}
                         {this.props.bien.installationElectrique}
                       </p>
                     </div>
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         Installation du gaz : {this.props.bien.installationGaz}
                       </p>
@@ -324,47 +324,47 @@ class Bien extends Component {
                   <h4 class="has-text-left">Annexes</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         Balcon Loggia Terasse:{" "}
                         {this.props.bien.balconLogiaTerasse}
                       </p>
-                      <p>Cave / sous-sol : {this.props.bien.caveSousSol}</p>
-                      <p>
+                      <p class="has-text-left">Cave / sous-sol : {this.props.bien.caveSousSol}</p>
+                      <p class="has-text-left">
                         Agrément du jardin : {this.props.bien.agrementJardin}
                       </p>
                     </div>
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         Garage ou parking couvert :{" "}
                         {this.props.bien.garageOuParkingOuvert}
                       </p>
-                      <p>Combles : {this.props.bien.combles}</p>
+                      <p class="has-text-left">Combles : {this.props.bien.combles}</p>
                     </div>
                   </div>
                   <h1 class="has-text-left">Détails sur l'estimation</h1> <hr />
                   <h4 class="has-text-left">Détails</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         Decote si bien vendu occupé:{" "}
                         {this.props.bien.decoteBienOccupe}
                       </p>
-                      <p>Autres élements: {this.props.bien.autresElements}</p>
-                      <p>
+                      <p class="has-text-left">Autres élements: {this.props.bien.autresElements}</p>
+                      <p class="has-text-left">
                         Travaux à réaliser: {this.props.bien.travauxARealiser}
                       </p>
                     </div>
                     <div className="column is-half">
-                      <p>
+                      <p class="has-text-left">
                         {" "}
                         Valorisation du terrain:{" "}
                         {this.props.bien.valorisationTerrain}
                       </p>
-                      <p>Rénové: {this.props.bien.renove}</p>
-                      <p>
+                      <p class="has-text-left">Rénové: {this.props.bien.renove}</p>
+                      <p class="has-text-left">
                         Taux de capitalisation:{" "}
                         {this.props.bien.tauxCapitalisation}
                       </p>
