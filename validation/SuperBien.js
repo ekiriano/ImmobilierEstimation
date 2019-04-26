@@ -108,9 +108,7 @@ if (Validator.isEmpty(data.voie)) {
   errors.voie = "rue is required";
 }
 
-  if(!data.voie.match(/\d{3}\s+rue+\s\w+/)){
-    errors.voie = "voie ne correspond pas au bon format!";
-  }
+ 
 
 if(Validator.isEmpty(data.codePostal)){
   errors.codePostal =
