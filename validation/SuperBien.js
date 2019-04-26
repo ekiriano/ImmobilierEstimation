@@ -9,50 +9,69 @@ const isEmpty = require("./is-empty");
  * @todo Add Types [Condo , Dupley , Triplex,Loft] In Appartment Model
  */
 
- module.exports = function validateHouseInput(data) {
+ module.exports = function validateSuperBienInput(data) {
    let errors = {};
-
-// set empty fields to empty strings
-
 
 
 // required fields validation
 
 ///////////////////////////// client validation ////////////////////////////////
 
-if (
-  Validator.isEmpty(data.client.civilite) ||
-  !Validator.matches(
-    data.civilite,
-    "aucun",
-    "monsieur",
-    "madame",
-    "monsieur et madame",
-    "messieurs",
-    "mesdames"
-  )
-) {
-  errors.client.civilite =
-    "civilite is required";
+if (Validator.isEmpty(data.civilite)) {
+  errors.civilite =
+    "Civilite is required";
 }
 
-if (Validator.isEmpty(data.client.prenom)) {
-  errors.rue = "first name is required";
+if(!data.civilite.match(/[^0-9]/)){
+    errors.civilite="civilite ne correspond pas au bon format!";
+  }
+
+// if(!Validator.matches(
+//     data.civilite,
+//     "Aucun",
+//     "Monsieur",
+//     "Madame",
+//     "Monsieur et madame",
+//     "Messieurs",
+//     "Mesdames"
+//   )) {
+//     errors.civilite = "civilite doesn't match !"
+//   }
+
+if (Validator.isEmpty(data.prenom)) {
+  errors.prenom = "Prenom is required";
 }
 
-if (Validator.isEmpty(data.client.nom)) {
-  errors.rue = "last name is required";
+
+
+if (Validator.isEmpty(data.nom)) {
+  errors.nom = "Last name is required";
 }
 
-if (Validator.isEmpty(data.client.email)) {
-  errors.codePostal = "email is required";
+
+
+if (Validator.isEmpty(data.adressePostale)) {
+  errors.adressePostale = "Adresse postale is required";
 }
 
-if (Validator.isEmpty(data.client.telephone) ||
-!Validator.isNumeric(data.client.telephone, { no_symbols: true })
-{
-  errors.client.telephone = "telephone is required";
+
+if (Validator.isEmpty(data.email)) {
+  errors.email = "Email is required";
 }
+
+
+
+if (Validator.isEmpty(data.telephone)){
+  errors.telephone = "Telephone is required";
+}
+
+
+
+
+// if (!Validator.isNumeric(data.telephone, { no_symbols: true }))
+// {
+//   errors.telephone = "telephone is required";
+// }
 
 ///////////////////////////// end of client validation ////////////////////////////////
 
@@ -60,886 +79,1048 @@ if (Validator.isEmpty(data.client.telephone) ||
 
 // bienImmobillier.validation
 
-if (
-  !Validator.isLength(data.bienImmobillier.bienImmobillier.numero, { min: 1, max: 3 }) ||
-  Validator.isEmpty(data.bienImmobillier.bienImmobillier.numero) ||
-  !Validator.isNumeric(data.bienImmobillier.bienImmobillier.numero, { no_symbols: true })
-) {
-  errors.bienImmobillier.bienImmobillier.numero =
-    "street number is required";
+// if (
+//   !Validator.isLength(data.numero, { min: 1, max: 3 })
+// ) {
+//   errors.numero =
+//     "street number is length";
+// }
+
+// if(!Validator.isNumeric(data.numero, { no_symbols: true })){
+//   errors.numero =
+//     "street number is no symbol";
+// }
+//
+if (Validator.isEmpty(data.voie)) {
+  errors.voie = "rue is required";
 }
 
-if (Validator.isEmpty(data.bienImmobillier.bienImmobillier.voie)) {
-  errors.ville = "street name is required";
+
+
+if(Validator.isEmpty(data.codePostal)){
+  errors.codePostal =
+    "code postal is required";
 }
 
-if (
-  !Validator.isLength(data.bienImmobillier.bienImmobillier.codePostal, { min: 5, max: 5 }) ||
-  Validator.isEmpty(data.bienImmobillier.bienImmobillier.codePostal) ||
-  !Validator.isNumeric(data.bienImmobillier.bienImmobillier.codePostal, { no_symbols: true })
-) {
-  errors.bienImmobillier.bienImmobillier.codePostal =
-    "code postal is required and is 5 digits and is positive";
-}
 
-if (Validator.isEmpty(data.bienImmobillier.bienImmobillier.ville)) {
-  errors.bienImmobillier.bienImmobillier.ville =
+
+
+//
+// // if (!Validator.isLength(data.codePostal, { min: 5, max: 5 })
+// // ) {
+// //   errors.codePostal =
+// //     "code postal is required and is 5 digits";
+// // }
+// //
+// // if(!Validator.isNumeric(data.codePostal, { no_symbols: true })){
+// //   errors.codePostal =
+// //     "street number is no symbol";
+// // }
+//
+if (Validator.isEmpty(data.ville)) {
+  errors.ville =
     "city name is required";
 }
 
-// end of bienImmobillier.validation
 
-// bienImmobillier informations validation
-
-if (
-  Validator.isEmpty(data.bienImmobillier.informations.anneConstruction) ||
-  !Validator.isInt(data.bienImmobillier.informations.anneConstruction, { gt: 1900, lt: 2019 })
-) {
-  errors.bienImmobillier.informations.anneConstruction =
-    "annee_construction is required and must be between 1900 and 2019";
+//
+// // end of bienImmobillier.validation
+//
+// // bienImmobillier informations validation
+//
+// // if (!Validator.isInt(data.anneeConstruction, { gt: 1900, lt: 2019 })) {
+// //   errors.anneeConstruction =
+// //     "annee_construction is required and must be between 1900 and 2019";
+// // }
+//
+if(Validator.isEmpty(data.anneeConstruction)){
+  errors.anneeConstruction = "is required";
 }
 
-if (Validator.isEmpty(data.bienImmobillier.informations.typeBienAffiche)) {
-  errors.bienImmobillier.informations.typeBienAffiche =
+
+
+
+//
+if (Validator.isEmpty(data.typeBienAffiche)) {
+  errors.typeBienAffiche =
+    "Année de construction is required";
+}
+
+
+//
+if (Validator.isEmpty(data.nombrePieces)) {
+  errors.nombrePieces =
     "number of pieces is required and must be positive";
 }
 
-if (Validator.isEmpty(data.bienImmobillier.informations.nombrePieces)) {
-  errors.bienImmobillier.informations.nombrePieces =
-    "number of pieces is required and must be positive";
-}
-
-if (Validator.isEmpty(data.bienImmobillier.informations.nombreChambres)) {
-  errors.bienImmobillier.informations.nombreChambres =
+//
+if (Validator.isEmpty(data.nombreChambres)) {
+  errors.nombreChambres =
     "number of rooms is required and must be positive";
 }
 
-if (Validator.isEmpty(data.bienImmobillier.informations.surfaceHabitable)) {
-  errors.bienImmobillier.informations.surfaceHabitable =
+
+//
+if (Validator.isEmpty(data.surfaceHabitable)) {
+  errors.surfaceHabitable =
     "habitable surface is required and must be positive";
 }
 
-if (Validator.isEmpty(data.bienImmobillier.informations.surfaceTerrain)) {
-  errors.bienImmobillier.informations.surfaceTerrain =
+
+if (Validator.isEmpty(data.valeurLocative)) {
+  errors.valeurLocative =
+    "Valeur locative is required and must be positive";
+}
+//
+if (Validator.isEmpty(data.surfaceTerrain)) {
+  errors.surfaceTerrain =
     "ground surface is required and must be positive";
 }
 
-if (Validator.isEmpty(data.bienImmobillier.informations.nombreNiveaux)) {
-  errors.bienImmobillier.informations.nombreNiveaux =
+
+//
+if (Validator.isEmpty(data.nombreNiveaux)) {
+  errors.nombreNiveaux =
     "number of levels is required and must be positive";
 }
 
-if (Validator.isEmpty(data.bienImmobillier.informations.ascenseur)) {
-  errors.bienImmobillier.informations.ascenseur =
+//
+if (Validator.isEmpty(data.ascenseur)) {
+  errors.ascenseur =
     "elevator is required";
 }
 
-if (Validator.isEmpty(data.bienImmobillier.informations.balconOuTerrasse)) {
-  errors.bienImmobillier.informations.balconOuTerrasse =
+//
+if (Validator.isEmpty(data.balconOuTerrasse)) {
+  errors.balconOuTerrasse =
     "balcony is required";
 }
 
-if (Validator.isEmpty(data.bienImmobillier.informations.LibreALaVente)) {
-  errors.bienImmobillier.informations.LibreALaVente =
-    "can sell is required";
+
+//
+if (Validator.isEmpty(data.LibreALaVente)) {
+  errors.LibreALaVente =
+    "Libre a la vente is required";
 }
 
-if (Validator.isEmpty(data.bienImmobillier.informations.titreDossier)) {
-  errors.bienImmobillier.informations.titreDossier =
-    "can sell is required";
+
+//
+if (Validator.isEmpty(data.titreDossier)) {
+  errors.titreDossier =
+    "Titre du dossier is required";
 }
 
-if (Validator.isEmpty(data.bienImmobillier.informations.descriptifBien)) {
-  errors.bienImmobillier.informations.descriptifBien =
-    "can sell is required";
+if (Validator.isEmpty(data.descriptifBien)) {
+  errors.descriptifBien =
+    "Descriptif du bien is required";
 }
 
-if (Validator.isEmpty(data.bienImmobillier.informations.DPE)) {
-  errors.bienImmobillier.informations.DPE =
-    "can sell is required";
+
+//
+// // if (!Validator.matches(
+// //   data.DPE,
+// //   'A++',
+// //   'B',
+// //   'C',
+// //   'D',
+// //   'E',
+// //   'F'
+// // )
+// // ) {
+// // errors.DPE =
+// //   "DPE is required";
+// // }
+//
+if(Validator.isEmpty(data.DPE)){
+  errors.DPE = " DPE is required"
 }
 
-if (Validator.isEmpty(data.bienImmobillier.informations.GES)) {
-  errors.bienImmobillier.informations.GES =
-    "can sell is required";
+//
+//
+// // if (!Validator.matches(
+// //   data.GES,
+// //   'A',
+// //   'B',
+// //   'C',
+// //   'D',
+// //   'E',
+// //   'F'
+// // )
+// // ) {
+// // errors.GES =
+// //   "GES is required";
+// // }
+//
+if(Validator.isEmpty(data.GES)){
+  errors.GES = "GES is required"
 }
 
-if (Validator.isEmpty(data.bienImmobillier.informations.PrixMandat)) {
-  errors.bienImmobillier.informations.PrixMandat =
-    "can sell is required";
+//
+if (Validator.isEmpty(data.prixMandat)) {
+  errors.prixMandat =
+    "Prix Mandat is required";
 }
-
-// end of masion informations validation
-
-// chargesEtImpots
-
-if (Validator.isEmpty(data.bienImmobillier.bienImmobillier.chargesEtImpots.chargesAnnuellesTotales)) {
-  errors.bienImmobillier.bienImmobillier.chargesEtImpots.chargesAnnuellesTotales =
+//
+// // end of masion informations validation
+//
+// // chargesEtImpots
+//
+if (Validator.isEmpty(data.chargesAnnuellesTotales)) {
+  errors.chargesAnnuellesTotales =
     "annual chargesEtImpots is required";
 }
 
-if (Validator.isEmpty(data.bienImmobillier.bienImmobillier.chargesEtImpots.chargesDeCopropriete)) {
-  errors.bienImmobillier.bienImmobillier.chargesEtImpots.chargesDeCopropriete =
+//
+if (Validator.isEmpty(data.chargesDeCopropriete)) {
+  errors.chargesDeCopropriete =
     "coprepriete chargesEtImpots is required";
 }
-
-if (Validator.isEmpty(data.bienImmobillier.bienImmobillier.chargesEtImpots.impotsFonciers)) {
-  errors.bienImmobillier.bienImmobillier.chargesEtImpots.impotsFonciers =
+//
+if (Validator.isEmpty(data.impotsFonciers)) {
+  errors.impotsFonciers =
     "impots is required";
 }
 
-// end of chargesEtImpots
 
-// bienImmobillier photos_plan validation
-
-
-// end of bienImmobillier photos_plan validation
-
-// bienImmobillier annexes validation
-
-
-// end of bienImmobillier annexes validation
-
-// bienImmobillier points validation
-
-
-// end of bienImmobillier points validation
-
-// bienImmobillier commentaires validation
-
-
-// end of bienImmobillier commentaires validation
-
-
-
-///////////////////////////// end of bienImmobillier validation ////////////////////////////////
-
-///////////////////////////// caracteristiques validation ////////////////////////////////
-
-// caracteristiques elementsPrincipaux validation
-
-if (
-  Validator.isEmpty(data.caracteristiques.elementsPrincipaux.etatQualiteGrosOeuvre) ||
-  !Validator.matches(
-    data.caracteristiques.elementsPrincipaux.etatQualiteGrosOeuvre,
-    'Mauvais',
-    'Mediocore',
-    'Moyen',
-    'Bon',
-    'Tres bon'
-  )
-) {
-  errors.caracteristiques.elementsPrincipaux.etatQualiteGrosOeuvre =
-    "etat is required";
+//
+// // end of chargesEtImpots
+//
+// // bienImmobillier photos_plan validation
+//
+//
+// // end of bienImmobillier photos_plan validation
+//
+// // bienImmobillier annexes validation
+if (Validator.isEmpty(data.annexes)) {
+  errors.annexes =
+    "annexes is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.elementsPrincipaux.epoqueConstruction) ||
-  !Validator.matches(
-    data.caracteristiques.elementsPrincipaux.epoqueConstruction,
-    'Pas recherché',
-    'Peu recherché'
-    'Neutre',
-    'Recherché',
-    'Trés recherché'
-  )
-) {
-  errors.caracteristiques.elementsPrincipaux.epoqueConstruction =
-    "epoque de contruction is required";
+
+// // end of bienImmobillier annexes validation
+//
+// // bienImmobillier points validation
+//
+//
+// // end of bienImmobillier points validationTrés
+//
+// // bienImmobillier commentaires validation
+//
+//
+// // end of bienImmobillier commentaires validation
+//
+//
+//
+// ///////////////////////////// end of bienImmobillier validation ////////////////////////////////
+//
+// ///////////////////////////// caracteristiques validation ////////////////////////////////
+//
+// // caracteristiques elementsPrincipaux validation
+//
+// // if (!Validator.matches(
+// //     data.etatQualiteGrosOeuvre,
+// //     'Mauvais',
+// //     'Médiocre',
+// //     'Moyen',
+// //     'Bon',
+// //     'Trés bon'
+// //   )
+// // ) {
+// //   errors.etatQualiteGrosOeuvre =
+// //     "etat is required";
+// // }
+//
+if(  Validator.isEmpty(data.etatQualiteGrosOeuvre)){
+  errors.etatQualiteGrosOeuvre = "Etat et qualite Gros Oeuvre is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.elementsPrincipaux.mitoyennete) ||
-  !Validator.matches(
-    data.caracteristiques.elementsPrincipaux.mitoyennete,
-    '3 cotés',
-    '2 cotés'
-    '1 cotés',
-    'Pas de dependance',
-    'Maison independante'
-  )
-) {
-  errors.caracteristiques.elementsPrincipaux.mitoyennete =
-    "mitoyennete is required";
+
+//
+// // if (!Validator.matches(
+// //     data.epoqueConstruction,
+// //     'Pas recherché',
+// //     'Peu recherché',
+// //     'Neutre',
+// //     'Recherché',
+// //     'Trés recherché'
+// //   )
+// // ) {
+// //   errors.epoqueConstruction =
+// //     "epoque de contruction is required";
+// // }
+//
+if(Validator.isEmpty(data.epoqueConstruction)){
+  errors.epoqueConstruction = "Epoque de construction is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.elementsPrincipaux.agrementGeneral) ||
-  !Validator.matches(
-    data.caracteristiques.elementsPrincipaux.agrementGeneral,
-    'Tres desagreable',
-    'Desagreable'
-    'Moyen',
-    'Agreable',
-    'Tres agreable'
-  )
-) {
-  errors.caracteristiques.elementsPrincipaux.agrementGeneral =
-    "general agreement is required";
+
+//
+// // if (
+// //
+// //   !Validator.matches(
+// //     data.mitoyennete,
+// //     '3 côtés',
+// //     '2 côtés',
+// //     '1 côtés',
+// //     'Par dependance',
+// //     'Maison independante'
+// //   )
+// // ) {
+// //   errors.mitoyennete =
+// //     "mitoyennete is required";
+// // }
+//
+if(Validator.isEmpty(data.mitoyennete)){
+  errors.mitoyennete = "Mitoyennete is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.elementsPrincipaux.standing) ||
-  !Validator.matches(
-    data.caracteristiques.elementsPrincipaux.standing,
-    'Mauvais',
-    'Mediocore',
-    'Moyen',
-    'Bon',
-    'Tres bon'
-  )
-) {
-  errors.caracteristiques.elementsPrincipaux.standing =
-    "standing is required";
+
+//
+// // if (!Validator.matches(
+// //     data.agrementGeneral,
+// //     'Trés desagreable',
+// //     'Desagreable',
+// //     'Moyen',
+// //     'Agreable',
+// //     'Trés agreable'
+// //   )
+// // ) {
+// //   errors.agrementGeneral =
+// //     "general agreement is required";
+// // }
+//
+if(Validator.isEmpty(data.agrementGeneral)){
+  errors.agrementGeneral = "Agrement Général is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.elementsPrincipaux.accessibilite) ||
-  !Validator.matches(
-    data.caracteristiques.elementsPrincipaux.accessibilite,
-    'Trés difficile',
-    'Difficile'
-    'Normal',
-    'Facile',
-    'Tres facile'
-  )
-) {
-  errors.caracteristiques.elementsPrincipaux.accessibilite =
-    "accessibilité is required";
+
+//
+// // if (
+// //   !Validator.matches(
+// //     data.standing,
+// //     'Mauvais',
+// //     'Médiocre',
+// //     'Moyen',
+// //     'Bon',
+// //     'Trés bon'
+// //   )
+// // ) {
+// //   errors.standing =
+// //     "standing is required";
+// // }
+//
+if(Validator.isEmpty(data.standing)){
+  errors.standing = "Standing is required"
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.elementsPrincipaux.toutAEgout) ||
-  !Validator.matches(
-    data.caracteristiques.elementsPrincipaux.toutAEgout,
-    'Rien',
-    'A revoir'
-    'Assainissement individuel',
-    'Partiel',
-    'Complet'
-  )
-) {
-  errors.caracteristiques.elementsPrincipaux.toutAEgout =
-    "tout a l'egout is required";
+
+//
+// // if (
+// //   !Validator.matches(
+// //     data.accessibilite,
+// //     'Trés difficile',
+// //     'Difficile',
+// //     'Normal',
+// //     'Facile',
+// //     'Trés facile'
+// //   )
+// // ) {
+// //   errors.accessibilite =
+// //     "accessibilité is required";
+// // }
+//
+if(Validator.isEmpty(data.accessibilite)){
+  errors.accessibilite = "Accéssibilité is required";
 }
 
-// end of caracteristiques elementsPrincipaux validation
-
-// caracteristiques autresElements validation
-
-if (
-  Validator.isEmpty(data.caracteristiques.autresElements.qualiteArchitecturale) ||
-  !Validator.matches(
-    data.caracteristiques.autresElements.qualiteArchitecturale,
-    'Mauvaise',
-    'Mediocore',
-    'Moyenne',
-    'Bonne',
-    'Tres bonne'
-  )
-) {
-  errors.caracteristiques.autresElements.qualiteArchitecturale =
-    "Qualite architecturale is required";
+//
+// // if (
+// //   !Validator.matches(
+// //     data.toutAEgout,
+// //     'Rien',
+// //     'A revoir',
+// //     'Assainissement individuel',
+// //     'Partiel',
+// //     'Complet'
+// //   )
+// // ) {
+// //   errors.toutAEgout =
+// //     "tout a l'egout is required";
+// // }
+//
+if(Validator.isEmpty(data.toutAEgout)){
+  errors.toutAEgout = "Tout a l'égout is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.autresElements.etatPortesEtFenetres) ||
-  !Validator.matches(
-    data.caracteristiques.autresElements.etatPortesEtFenetres,
-    'Mauvais',
-    'Mediocore',
-    'Moyen',
-    'Bon',
-    'Tres bon'
-  )
-) {
-  errors.caracteristiques.autresElements.etatPortesEtFenetres =
-    "etat des portes et fenetres is required";
+
+//
+// // end of caracteristiques elementsPrincipaux validation
+//
+// // caracteristiques autresElements validation
+//
+// // if (
+// //   !Validator.matches(
+// //     data.qualiteArchitecturale,
+// //     'Mauvaise',
+// //     'Médiocre',
+// //     'Moyenne',
+// //     'Bonne',
+// //     'Trés bonne'
+// //   )
+// // ) {
+// //   errors.qualiteArchitecturale =
+// //     "Qualite architecturale is required";
+// // }
+//
+if(Validator.isEmpty(data.qualiteArchitecturale)){
+  errors.qualiteArchitecturale = "Qualité architecturale is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.autresElements.etatDesToitures) ||
-  !Validator.matches(
-    data.caracteristiques.autresElements.etatDesToitures,
-    'Mauvais',
-    'Mediocore',
-    'Moyen',
-    'Bon',
-    'Tres bon'
-  )
-) {
-  errors.caracteristiques.autresElements.etatDesToitures =
-    "etat des toitures is required";
+
+//
+// // if (
+// //   !Validator.matches(
+// //     data.etatPortesEtFenetres,
+// //     'Mauvais',
+// //     'Médiocre',
+// //     'Moyen',
+// //     'Bon',
+// //     'Trés bon'
+// //   )
+// // ) {
+// //   errors.etatPortesEtFenetres =
+// //     "etat des portes et fenetres is required";
+// // }
+//
+if(Validator.isEmpty(data.etatPortesEtFenetres)){
+  errors.etatPortesEtFenetres = "Etat des portes et fenetres is required";
+}
+//
+// // if (
+// //   !Validator.matches(
+// //     data.etatDesToitures,
+// //     'Mauvais',
+// //     'Médiocre',
+// //     'Moyen',
+// //     'Bon',
+// //     'Trés bon'
+// //   )
+// // ) {
+// //   errors.etatDesToitures =
+// //     "etat des toitures is required";
+// // }
+//
+if(Validator.isEmpty(data.etatDesToitures)){
+  errors.etatDesToitures = "Etat des toitures is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.autresElements.clotureTerrain) ||
-  !Validator.matches(
-    data.caracteristiques.autresElements.clotureTerrain,
-    'Aucun/Mauvais',
-    'Mediocore',
-    'Moyen',
-    'Bon'
-  )
-) {
-  errors.caracteristiques.autresElements.clotureTerrain =
-    "Cloture terrain is required";
-}
-// end of caracteristiques autresElements validation
-
-// caracteristiques environnement validation
-
-if (
-  Validator.isEmpty(data.caracteristiques.environnement.nuissanceSonore) ||
-  !Validator.matches(
-    data.caracteristiques.environnement.nuissanceSonore,
-    'Tres bruyant',
-    'Bruyant'
-    'Normal',
-    'Calme'
-  )
-) {
-  errors.caracteristiques.environnement.nuissanceSonore =
-    "Qualite architecturale is required";
+//
+// // if (
+// //   !Validator.matches(
+// //     data.clotureTerrain,
+// //     'Aucun/Mauvais',
+// //     'Médiocre',
+// //     'Moyen',
+// //     'Bon'
+// //   )
+// // ) {
+// //   errors.clotureTerrain =
+// //     "Cloture terrain is required";
+// // }
+//
+if(Validator.isEmpty(data.clotureTerrain)){
+  errors.clotureTerrain = "Cloture du terrain is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.environnement.voisinage) ||
-  !Validator.matches(
-    data.caracteristiques.environnement.voisinage,
-    'Tres genant',
-    'Bruyant'
-    'Normal',
-    'Discret',
-    'Aucun'
-  )
-) {
-  errors.caracteristiques.environnement.voisinage =
-    "Qualite architecturale is required";
+
+if(Validator.isEmpty(data.tauxCapitalisation)){
+  errors.tauxCapitalisation = "Taux de capitalisation is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.environnement.qualiteEnvironnement) ||
-  !Validator.matches(
-    data.caracteristiques.environnement.qualiteEnvironnement,
-    'Mauvaise',
-    'Mediocore',
-    'Moyenne',
-    'Bonne',
-    'Tres bonne'
-  )
-) {
-  errors.caracteristiques.environnement.qualiteEnvironnement =
-    "Qualite architecturale is required";
+
+// // end of caracteristiques autresElements validation
+//
+// // caracteristiques environnement validation
+//
+// // if (
+// //   !Validator.matches(
+// //     data.nuissanceSonore,
+// //     'Trés bruyant',
+// //     'Bruyant',
+// //     'Normal',
+// //     'Calme'
+// //   )
+// // ) {
+// //   errors.nuissanceSonore =
+// //     "Qualite architecturale is required";
+// // }
+//
+if(Validator.isEmpty(data.nuissanceSonore)){
+  errors.nuissanceSonore = "Nuissance sonore is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.environnement.proximiteServicesPublics) ||
-  !Validator.matches(
-    data.caracteristiques.environnement.proximiteServicesPublics,
-    'Tres eloignes',
-    'Assez eloignes'
-    'Normales',
-    'Proches',
-    'Tres proches'
-  )
-) {
-  errors.caracteristiques.environnement.proximiteServicesPublics =
-    "Qualite architecturale is required";
+
+//
+// // if (
+// //   !Validator.matches(
+// //     data.voisinageVisaVis,
+// //     'Trés gênant',
+// //     'Gênant',
+// //     'Normal',
+// //     'Calme',
+// //     'Aucun'
+// //   )
+// // ) {
+// //   errors.voisinageVisaVis =
+// //     "Qualite architecturale is required";
+// // }
+//
+if(Validator.isEmpty(data.voisinageVisaVis)){
+  errors.voisinageVisaVis = "Le voisinage vis-à-vis is required";
 }
 
-// end of caracteristiques environnement validation
-
-// caracteristiques criteresGeneraux validation
-
-if (
-  Validator.isEmpty(data.caracteristiques.criteresGeneraux.qualiteDistribution) ||
-  !Validator.matches(
-    data.caracteristiques.criteresGeneraux.qualiteDistribution,
-    'Mauvaise',
-    'Mediocore',
-    'Moyenne',
-    'Bonne'
-  )
-) {
-  errors.caracteristiques.criteresGeneraux.qualiteDistribution =
-    "qualiteDistribution is required";
+//
+// // if (
+// //   !Validator.matches(
+// //     data.qualiteEnvironnement,
+// //     'Mauvaise',
+// //     'Médiocre',
+// //     'Moyenne',
+// //     'Bonne',
+// //     'Trés bonne'
+// //   )
+// // ) {
+// //   errors.qualiteEnvironnement =
+// //     "Qualite architecturale is required";
+// // }
+//
+if(Validator.isEmpty(data.qualiteEnvironnement)){
+  errors.qualiteEnvironnement = "Qualité de l'environnement is required"
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.criteresGeneraux.etatMursPlafonds) ||
-  !Validator.matches(
-    data.caracteristiques.criteresGeneraux.etatMursPlafonds,
-    'A refaire',
-    'Usage'
-    'Moyen',
-    'Recent',
-    'Neuf'
-  )
-) {
-  errors.caracteristiques.criteresGeneraux.etatMursPlafonds =
-    "etatMursPlafonds is required";
+//
+// // if (
+// //   !Validator.matches(
+// //     data.proximiteServicesPublics,
+// //     'Trés éloignés',
+// //     'Assez éloignés',
+// //     'Normales',
+// //     'Proches',
+// //     'Trés proches'
+// //   )
+// // ) {
+// //   errors.proximiteServicesPublics =
+// //     "Qualite architecturale is required";
+// // }
+//
+if(Validator.isEmpty(data.proximiteServicesPublics)){
+  errors.proximiteServicesPublics = "Proximité des services publiques is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.criteresGeneraux.solsEtRevetementSols) ||
-  !Validator.matches(
-    data.caracteristiques.criteresGeneraux.solsEtRevetementSols,
-    'A refaire',
-    'Mediocore',
-    'Convenable',
-    'Bon',
-    'Tres bon'
-  )
-) {
-  errors.caracteristiques.criteresGeneraux.solsEtRevetementSols =
-    "solsEtRevetementSols is required";
+
+//
+// // end of caracteristiques environnement validation
+//
+// // caracteristiques criteresGeneraux validation
+//
+// // if (
+// //   !Validator.matches(
+// //     data.qualiteDistribution,
+// //     'Mauvaise',
+// //     'Médiocre',
+// //     'Moyenne',
+// //     'Bonne'
+// //   )
+// // ) {
+// //   errors.qualiteDistribution =
+// //     "qualiteDistribution is required";
+// // }
+//
+if(Validator.isEmpty(data.qualiteDistribution)){
+  errors.qualiteDistribution = "Qualité de distribution is required";
 }
 
-// end of caracteristiques criteresGeneraux validation
-
-// caracteristiques sejour validation
-
-if (
-  Validator.isEmpty(data.caracteristiques.sejour.tailleSejour) ||
-  !Validator.matches(
-    data.caracteristiques.sejour.tailleSejour,
-    'Tres petit',
-    'Petit'
-    'Normal',
-    'Grand',
-    'Tres grand'
-  )
-) {
-  errors.caracteristiques.sejour.tailleSejour =
-    "tailleSejour is required";
+//
+// // if (
+// //   !Validator.matches(
+// //     data.etatMursPlafonds,
+// //     'A refaire',
+// //     'Usagé',
+// //     'Moyen',
+// //     'Récent',
+// //     'Neuf'
+// //   )
+// // ) {
+// //   errors.etatMursPlafonds =
+// //     "etatMursPlafonds is required";
+// // }
+//
+if(Validator.isEmpty(data.etatMursPlafonds)){
+  errors.etatMursPlafonds = "Etat des murs et plafonds is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.sejour.expositionSejour) ||
-  !Validator.matches(
-    data.caracteristiques.sejour.expositionSejour,
-    'Mauvaise',
-    'Mediocore',
-    'Moyenne',
-    'Bonne',
-    'Tres bonne'
-  )
-) {
-  errors.caracteristiques.sejour.expositionSejour =
-    "exposition is required";
+// // if (
+// //   !Validator.matches(
+// //     data.solsEtRevetementSols,
+// //     'A refaire',
+// //     'Médiocre',
+// //     'Convenable',
+// //     'Bon',
+// //     'Trés bon'
+// //   )
+// // ) {
+// //   errors.solsEtRevetementSols =
+// //     "solsEtRevetementSols is required";
+// // }
+//
+if(Validator.isEmpty(data.solsEtRevetementSols)){
+  errors.solsEtRevetementSols = "Sols et revetement du sols is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.sejour.vueSejour) ||
-  !Validator.matches(
-    data.caracteristiques.sejour.vueSejour,
-    'Vus-a-vis proche',
-    'Mediocore',
-    'Ordinaire',
-    'Belle',
-    'Exceptionnelle'
-  )
-) {
-  errors.caracteristiques.sejour.vueSejour =
-    "vue is required";
+
+//
+// // end of caracteristiques criteresGeneraux validation
+//
+// // caracteristiques sejour validation
+//
+// // if (
+// //   !Validator.matches(
+// //     data.tailleSejour,
+// //     'Trés petit',
+// //     'Petit',
+// //     'Normal',
+// //     'Grand',
+// //     'Trés grand'
+// //   )
+// // ) {
+// //   errors.tailleSejour =
+// //     "tailleSejour is required";
+// // }
+//
+if(Validator.isEmpty(data.tailleSejour)){
+  errors.tailleSejour = "La taille du séjour is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.sejour.luminosite) ||
-  !Validator.matches(
-    data.caracteristiques.sejour.luminosite,
-    'Mauvaise',
-    'Mediocore',
-    'Simple',
-    'Belle',
-    'Tres bonne'
-  )
-) {
-  errors.caracteristiques.sejour.luminosite =
-    "lumonisite is required";
+
+//
+// // if (
+// //   !Validator.matches(
+// //     data.expositionSejour,
+// //     'Mauvaise',
+// //     'Médiocre',
+// //     'Moyenne',
+// //     'Bonne',
+// //     'Trés bonne'
+// //   )
+// // ) {
+// //   errors.expositionSejour =
+// //     "exposition is required";
+// // }
+//
+if(  Validator.isEmpty(data.expositionSejour)){
+  errors.expositionSejour = "L'exposition du séjour is required"
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.sejour.cheminee) ||
-  !Validator.matches(
-    data.caracteristiques.sejour.cheminee,
-    'Inexistante',
-    'Mediocore',
-    'Simple',
-    'Belle',
-    'Exceptionnelle'
-  )
-) {
-  errors.caracteristiques.sejour.cheminee =
-    "cheminee is required";
+
+//
+// // if (
+// //   !Validator.matches(
+// //     data.vueSejour,
+// //     'VisAVis/Proche',
+// //     'Médiocre',
+// //     'Ordinaire',
+// //     'Belle',
+// //     'Exceptionnelle'
+// //   )
+// // ) {
+// //   errors.vueSejour =
+// //     "vue is required";
+// // }
+//
+if(Validator.isEmpty(data.vueSejour)){
+  errors.vueSejour = "La vue du séjour is required";
 }
 
-// end of caracteristiques sejour validation
 
-// caracteristiques cuisine validation
-
-if (
-  Validator.isEmpty(data.caracteristiques.cuisine.taille) ||
-  !Validator.matches(
-    data.caracteristiques.cuisine.taille,
-    'Tres petite',
-    'Petite'
-    'Normale',
-    'Grande',
-    'Tres grande'
-  )
-) {
-  errors.caracteristiques.cuisine.taille =
-    "taille is required";
+// // if (
+// //   !Validator.matches(
+// //     data.luminosite,
+// //     'Mauvaise',
+// //     'Médiocre',
+// //     'Simple',
+// //     'Bonne',
+// //     'Trés bonne'
+// //   )
+// // ) {
+// //   errors.luminosite =
+// //     "lumonisite is required";
+// // }
+//
+if(Validator.isEmpty(data.luminosite)){
+  errors.luminosite  = "Luminosité is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.cuisine.equipement) ||
-  !Validator.matches(
-    data.caracteristiques.cuisine.equipement,
-    'Inexistant',
-    'Mediocore',
-    'Moyen',
-    'Bon',
-    'Tres bon'
-  )
-) {
-  errors.caracteristiques.cuisine.equipement =
-    "equipement is required";
+
+//
+// // if (
+// //   !Validator.matches(
+// //     data.cheminee,
+// //     'Inexistante',
+// //     'Médiocre',
+// //     'Simple',
+// //     'Belle',
+// //     'Exceptionnelle'
+// //   )
+// // ) {
+// //   errors.cheminee =
+// //     "cheminee is required";
+// // }
+//
+if(  Validator.isEmpty(data.cheminee)){
+  errors.cheminee = "Cheminée is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.cuisine.etatGeneral) ||
-  !Validator.matches(
-    data.caracteristiques.cuisine.etatGeneral,
-    'Mauvais',
-    'Mediocore',
-    'Moyen',
-    'Bon',
-    'Tres bon'
-  )
-) {
-  errors.caracteristiques.cuisine.etatGeneral =
-    "etatGeneral is required";
+
+//
+// // end of caracteristiques sejour validation
+//
+// // caracteristiques cuisine validation
+//
+// // if (
+// //   !Validator.matches(
+// //     data.taille,
+// //     'Trés petite',
+// //     'Petite',
+// //     'Normale',
+// //     'Grande',
+// //     'Trés grande'
+// //   )
+// // ) {
+// //   errors.taille =
+// //     "taille is required";
+// // }
+//
+if(Validator.isEmpty(data.taille)){
+  errors.taille = "La taille de la cuisine is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.cuisine.agrement) ||
-  !Validator.matches(
-    data.caracteristiques.cuisine.agrement,
-    'Mauvais',
-    'Mediocore',
-    'Moyen',
-    'Bon',
-    'Tres bon'
-  )
-) {
-  errors.caracteristiques.cuisine.agrement =
-    "agrement is required";
+//
+// // if (
+// //   !Validator.matches(
+// //     data.equipement,
+// //     'Inexistant',
+// //     'Médiocre',
+// //     'Moyen',
+// //     'Bon',
+// //     'Trés bon'
+// //   )
+// // ) {
+// //   errors.equipement =
+// //     "equipement is required";
+// // }
+//
+if(Validator.isEmpty(data.equipement)){
+  errors.equipement = "L'equipement de la cuisine is required";
 }
 
-// end of caracteristiques cuisine validation
 
-// caracteristiques chambres validation
-
-if (
-  Validator.isEmpty(data.caracteristiques.chambres.tailleDesPieces) ||
-  !Validator.matches(
-    data.caracteristiques.chambres.tailleDesPieces,
-    'Tres petite',
-    'Petite'
-    'Normale',
-    'Grande',
-    'Tres grande'
-  )
-) {
-  errors.caracteristiques.chambres.tailleDesPieces =
-    "agrement is required";
+//
+// // if (
+// //   !Validator.matches(
+// //     data.etatGeneral,
+// //     'Mauvais',
+// //     'Médiocre',
+// //     'Moyen',
+// //     'Bon',
+// //     'Trés bon'
+// //   )
+// // ) {
+// //   errors.etatGeneral =
+// //     "etatGeneral is required";
+// // }
+//
+if(Validator.isEmpty(data.etatGeneral)){
+  errors.etatGeneral = "L'etat général is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.chambres.etatDesPieces) ||
-  !Validator.matches(
-    data.caracteristiques.chambres.etatDesPieces,
-    'Mauvais',
-    'Mediocore',
-    'Moyen',
-    'Bon',
-    'Tres bon'
-  )
-) {
-  errors.caracteristiques.chambres.etatDesPieces =
-    "etatDesPieces is required";
+
+//
+// // if (
+// //   !Validator.matches(
+// //     data.agrement,
+// //     'Mauvais',
+// //     'Médiocre',
+// //     'Moyen',
+// //     'Agreable',
+// //     'Trés agreable'
+// //   )
+// // ) {
+// //   errors.agrement =
+// //     "agrement is required";
+// // }
+//
+if(Validator.isEmpty(data.agrement)){
+  errors.agrement = "L'agrément is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.chambres.expositionAuxBruits) ||
-  !Validator.matches(
-    data.caracteristiques.chambres.expositionAuxBruits,
-    'Tres bruyante',
-    'Bruyante'
-    'Moyenne',
-    'Faible',
-    'Tres faible'
-  )
-) {
-  errors.caracteristiques.chambres.expositionAuxBruits =
-    "expositionAuxBruits is required";
+
+//
+// // end of caracteristiques cuisine validation
+//
+// // caracteristiques chambres validation
+//
+// // if (
+// //   !Validator.matches(
+// //     data.tailleDesPieces,
+// //     'Trés petite',
+// //     'Petite',
+// //     'Normale',
+// //     'Grande',
+// //     'Trés grande'
+// //   )
+// // ) {
+// //   errors.tailleDesPieces =
+// //     "agrement is required";
+// // }
+//
+if(Validator.isEmpty(data.tailleDesPieces)){
+  errors.tailleDesPieces = "La taille des pièces is required";
 }
 
-// end of caracteristiques chambres validation
 
-// caracteristiques sanitaires validation
-
-if (
-  Validator.isEmpty(data.caracteristiques.sanitaires.taillePiecesSanitaires) ||
-  !Validator.matches(
-    data.caracteristiques.sanitaires.taillePiecesSanitaires,
-    'Tres petite',
-    'Petite'
-    'Normale',
-    'Grande',
-    'Tres grande'
-  )
-) {
-  errors.caracteristiques.sanitaires.taillePiecesSanitaires =
-    "taille is required";
+//
+// // if (
+// //   !Validator.matches(
+// //     data.etatDesPieces,
+// //     'Mauvais',
+// //     'Médiocre',
+// //     'Moyen',
+// //     'Bon',
+// //     'Trés bon'
+// //   )
+// // ) {
+// //   errors.etatDesPieces =
+// //     "etatDesPieces is required";
+// // }
+//
+if(Validator.isEmpty(data.etatDesPieces)){
+  errors.etatDesPieces = "L'etat des pièces is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.sanitaires.nombreDeSanitaires) ||
-  !Validator.matches(
-    data.caracteristiques.sanitaires.nombreDeSanitaires,
-    'Inexistant',
-    'Insuffisant'
-    'Normal',
-    'Eleve',
-    'Tres eleve'
-  )
-) {
-  errors.caracteristiques.sanitaires.nombreDeSanitaires =
-    "nombre is required";
+
+//
+// // if (
+// //   !Validator.matches(
+// //     data.expositionAuxBruits,
+// //     'Trés bruyante',
+// //     'Bruyante',
+// //     'Moyenne',
+// //     'Faible',
+// //     'Trés faible'
+// //   )
+// // ) {
+// //   errors.expositionAuxBruits =
+// //     "expositionAuxBruits is required";
+// // }
+//
+if(Validator.isEmpty(data.expositionAuxBruits)){
+  errors.expositionAuxBruits = "L'exposition aux bruits is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.sanitaires.qualiteEtatSanitairesfactureEnergetique) ||
-  !Validator.matches(
-    data.caracteristiques.sanitaires.qualiteEtatSanitairesfactureEnergetique,
-    'Mauvais',
-    'Mediocore',
-    'Moyen',
-    'Bon',
-    'Tres bon'
-  )
-) {
-  errors.caracteristiques.sanitaires.qualiteEtatSanitairesfactureEnergetique =
-    "qualite is required";
+
+//
+// // end of caracteristiques chambres validation
+//
+// // caracteristiques sanitaires validation
+//
+// // if (
+// //   !Validator.matches(
+// //     data.taillePiecesSanitaires,
+// //     'Trés petite',
+// //     'Petite',
+// //     'Normale',
+// //     'Grande',
+// //     'Trés grande'
+// //   )
+// // ) {
+// //   errors.taillePiecesSanitaires =
+// //     "taille is required";
+// // }
+//
+if(Validator.isEmpty(data.taillePiecesSanitaires)){
+  errors.taillePiecesSanitaires = "La taille des pièces sanitaires is required";
 }
 
-// end of caracteristiques sanitaires validation
-
-// caracteristiques energie validation
-
-if (
-  Validator.isEmpty(data.caracteristiques.energie.factureEnergetique) ||
-  !Validator.matches(
-    data.caracteristiques.energie.factureEnergetique,
-    'Tres Elevee',
-    'Elevee'
-    'Moyenne',
-    'Faible',
-    'Tres faible'
-  )
-) {
-  errors.caracteristiques.energie.factureEnergetique =
-    "factureEnergetique is required";
+//
+// // if (
+// //   !Validator.matches(
+// //     data.nombreDeSanitaires,
+// //     'Inexistant',
+// //     'Insuffisant',
+// //     'Normal',
+// //     'Elevé',
+// //     'Trés elevé'
+// //   )
+// // ) {
+// //   errors.nombreDeSanitaires =
+// //     "nombre is required";
+// // }
+//
+if(  Validator.isEmpty(data.nombreDeSanitaires)){
+  errors.nombreDeSanitaires = "Le nombre des pièces sanitaires is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.energie.installationElectriqueinstallationGaz) ||
-  !Validator.matches(
-    data.caracteristiques.energie.installationElectriqueinstallationGaz,
-    'Mauvaise',
-    'Mediocore',
-    'Moyenne',
-    'Bonne',
-    'Tres bonne'
-  )
-) {
-  errors.caracteristiques.energie.installationElectriqueinstallationGaz =
-    "installation_electrique is required";
+
+//
+// // if (
+// //   !Validator.matches(
+// //     data.qualiteEtatSanitaires,
+// //     'Mauvaise',
+// //     'Médiocre',
+// //     'Moyenne',
+// //     'Bonne',
+// //     'Trés bonne'
+// //   )
+// // ) {
+// //   errors.qualiteEtatSanitaires =
+// //     "qualite is required";
+// // }
+//
+if(Validator.isEmpty(data.qualiteEtatSanitaires)){
+  errors.qualiteEtatSanitaires = "La qualité des sanitaires is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.energie.installationGaz) ||
-  !Validator.matches(
-    data.caracteristiques.energie.installationGaz,
-    'Mauvaise',
-    'Mediocore',
-    'Moyenne',
-    'Bonne',
-    'Tres bonne'
-  )
-) {
-  errors.caracteristiques.energie.installationGaz =
-    "installation_gaz is required";
+
+//
+// // end of caracteristiques sanitaires validation
+//
+// // caracteristiques energie validation
+//
+// // if (
+// //   !Validator.matches(
+// //     data.factureEnergetique,
+// //     'Trés elevée',
+// //     'Elevée',
+// //     'Moyenne',
+// //     'Faible',
+// //     'Trés faible'
+// //   )
+// // ) {
+// //   errors.factureEnergetique =
+// //     "factureEnergetique is required";
+// // }
+//
+if(Validator.isEmpty(data.factureEnergetique)){
+  errors.factureEnergetique = "La facuture énérgitique is required";
 }
 
-// end of caracteristiques energie validation
-
-// caracteristiques annexes validation
-
-if (
-  Validator.isEmpty(data.caracteristiques.annexes.balconLogiaTerasse) ||
-  !Validator.matches(
-    data.caracteristiques.annexes.balconLogiaTerasse,
-    'Aucun/Mediocore',
-    'moyen',
-    'Bien',
-    'Tres bien'
-  )
-) {
-  errors.caracteristiques.annexes.balconLogiaTerasse =
-    "balcon is required";
+//
+// // if (
+// //   !Validator.matches(
+// //     data.installationElectrique,
+// //     'Mauvaise',
+// //     'Médiocre',
+// //     'Moyenne',
+// //     'Bonne',
+// //     'Trés bonne'
+// //   )
+// // ) {
+// //   errors.installationElectrique =
+// //     "installation_electrique is required";
+// // }
+//
+if(Validator.isEmpty(data.installationElectrique)){
+  errors.installationElectrique = "L'installation éléctronique is reuqired";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.annexes.caveSousSol) ||
-  !Validator.matches(
-    data.caracteristiques.annexes.caveSousSol,
-    'Aucun',
-    'Mediocore',
-    'Moyen',
-    'Bien',
-    'Exceptionnel'
-  )
-) {
-  errors.caracteristiques.annexes.caveSousSol =
-    "cave is required";
+//
+// // if (
+// //
+// //   !Validator.matches(
+// //     data.installationGaz,
+// //     'Mauvaise',
+// //     'Médiocre',
+// //     'Moyenne',
+// //     'Bonne',
+// //     'Trés bonne'
+// //   )
+// // ) {
+// //   errors.installationGaz =
+// //     "installation_gaz is required";
+// // }
+//
+if(Validator.isEmpty(data.installationGaz)){
+  errors.installationGaz = "L'installation du gaz is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.annexes.agrementJardin) ||
-  !Validator.matches(
-    data.caracteristiques.annexes.agrementJardin,
-    'Tres medicore',
-    'Mediocore',
-    'Aucun/Moyen',
-    'Bien',
-    'Remarquable'
-  )
-) {
-  errors.caracteristiques.annexes.agrementJardin =
-    "agrementJardin is required";
+
+//
+// // end of caracteristiques energie validation
+
+if(Validator.isEmpty(data.balconLogiaTerasse)){
+  errors.balconLogiaTerasse = " Balcon/Logia/Terasseis required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.annexes.garageOuParkingOuvert) ||
-  !Validator.matches(
-    data.caracteristiques.annexes.garageOuParkingOuvert,
-    'Sans',
-    'Mediocore',
-    'Moyen',
-    'Bien',
-    'Exceptionnel'
-  )
-) {
-  errors.caracteristiques.annexes.garageOuParkingOuvert =
-    "garageOuParkingOuvert is required";
+
+
+if(Validator.isEmpty(data.caveSousSol)){
+  errors.caveSousSol = "Cave/Sous-sol is required";
 }
 
-if (
-  Validator.isEmpty(data.caracteristiques.annexes.comble) ||
-  !Validator.matches(
-    data.caracteristiques.annexes.comble,
-    'Aucune/Peu',
-    'Moyenne',
-    'Bonne',
-    'Exceptionnelle'
-  )
-) {
-  errors.caracteristiques.annexes.comble =
-    "comble is required";
+
+
+if(Validator.isEmpty(data.agrementJardin)){
+  errors.agrementJardin = "L'agrément jardin is required";
 }
 
-// end of caracteristiques annexes validation
+
+if(Validator.isEmpty(data.garageOuParkingOuvert)){
+  errors.garageOuParkingOuvert = "Garage/Parking ouvert is required";
+}
 
 
+if(Validator.isEmpty(data.combles)){
+  errors.combles = "Combles is required";
+}
 
-///////////////////////////// end of caracteristiques validation ////////////////////////////////
 
-///////////////////////////// estimation validation ////////////////////////////////
-
-if (Validator.isEmpty(data.estimation.renove)) {
-  errors.estimation.renove =
+if (Validator.isEmpty(data.renove)) {
+  errors.renove =
     "renove is required";
 }
 
-if (
-  Validator.isEmpty(data.estimation.renoveR) ||
-  !Validator.matches(
-    data.caracteristiques.renoveR,
-    '$',
-    '%'
-  )
-) {
-  errors.estimation.renoveR =
-    "choix renove is required";
-}
 
-if (Validator.isEmpty(data.estimation.valorisationTerrain)) {
-  errors.estimation.valorisationTerrain =
-    "valorisationTerrain is required";
-}
-
-if (
-  Validator.isEmpty(data.estimation.valorisationTerrainR) ||
-  !Validator.matches(
-    data.caracteristiques.valorisationTerrainR,
-    '$',
-    '%'
-  )
-) {
-  errors.estimation.valorisationTerrainR =
-    "choix valorisationTerrain is required";
-}
-
-if (Validator.isEmpty(data.estimation.travauxARealiser)) {
-  errors.estimation.travauxARealiser =
-    "travauxARealiser is required";
-}
-
-if (
-  Validator.isEmpty(data.estimation.travauxARealiserR) ||
-  !Validator.matches(
-    data.caracteristiques.travauxARealiserR,
-    '$',
-    '%'
-  )
-) {
-  errors.estimation.travauxARealiserR =
-    "travauxARealiserR required";
-}
-
-if (Validator.isEmpty(data.estimation.autresElements)) {
-  errors.estimation.autresElements =
-    "autresElements is required";
-}
-
-if (
-  Validator.isEmpty(data.estimation.travauxARealiserR) ||
-  !Validator.matches(
-    data.caracteristiques.travauxARealiserR,
-    '$',
-    '%'
-  )
-) {
-  errors.estimation.travauxARealiserR =
-    "travauxARealiserR is required";
+if (Validator.isEmpty(data.valorisationTerrain)) {
+  errors.valorisationTerrain =
+    "La valorisation terrain is required";
 }
 
 
+if (Validator.isEmpty(data.decoteBienOccupe)) {
+  errors.decoteBienOccupe =
+    "decote Bien Occupe is required";
+}
+
+
+if (Validator.isEmpty(data.travauxARealiser)) {
+  errors.travauxARealiser =
+    "Travaux a réaliser  is required";
+}
+
+
+if (Validator.isEmpty(data.autresElements)) {
+  errors.autresElements =
+    "Autres élements  is required";
+}
+
+
+
+if(!data.methodeReferenceSelected
+  && !data.methodeComparaisonSelected
+  && !data.methodeCapitalisationSelected){
+    errors.methodes =
+    "Please make sure you choose at least one method before estimate";
+  }
 
 
 ///////////////////////////// end of estimation validation ////////////////////////////////
@@ -953,3 +1134,4 @@ return {
   isValid: isEmpty(errors)
 };
 };
+
