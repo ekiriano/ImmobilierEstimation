@@ -6,6 +6,8 @@ import {
 } from "../../../../actions/superBienActions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import DOMPurify from 'dompurify';
+
 class Bien extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +25,12 @@ class Bien extends Component {
   }
 
   render() {
+    // const pointsForts = this.props.bien.pointsForts.map((item) =>
+    //     <li key={item}>{item}</li>
+    // );
+    // const pointsFaibles = this.props.bien.pointsFaibles.map((item) =>
+    //     <li key={item}>{item}</li>
+    // );
     return (
       <div className="container">
         <div className="columns">
@@ -40,7 +48,7 @@ class Bien extends Component {
 
                 <p>A l'attention de monsieur {this.props.bien.nom} {this.props.bien.prenom}, ayant les coordonnées:</p>
                 <p>Tél: {this.props.bien.telephone}, Email: {this.props.bien.email}</p>
-
+                <p>Descriptif du bien:</p><div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(this.props.bien.descriptifBien)}} />
 
                   <h1 class="has-text-left">Votre Bien</h1> <hr/>
                   <div className="columns">
@@ -58,13 +66,13 @@ class Bien extends Component {
                       <p>GES : {this.props.bien.GES}</p>
                       <p>Charges de copropriete : {this.props.bien.chargesDeCopropriete} €</p>
                       <p>
+                        Valeur Locative : {this.props.bien.valeurLocative} €
+                      </p>
+                      <p>
                         Nombre etage total : {this.props.bien.nombreNiveaux}
                       </p>
                       <p>
                         Points forts : {this.props.bien.pointsForts}
-                      </p>
-                      <p>
-                        Valeur Locative : {this.props.bien.valeurLocative} €
                       </p>
                     </div>
                     <div className="column is-half">
@@ -89,6 +97,7 @@ class Bien extends Component {
                       </p>
                     </div>
                   </div>
+                  <p>Commentaire confidentiel: </p><div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(this.props.bien.commentairesConfidentiels)}} />
 
                   <h1 class="has-text-left">Elements du bien</h1> <hr/>
                   <h4 class="has-text-left">Elements pricipaux</h4> <hr/>
