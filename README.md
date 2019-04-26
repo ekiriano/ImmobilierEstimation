@@ -18,6 +18,12 @@ cd client npm i
 cd ../
 npm run dev 
 ```
+users accounts : 
+You can use the following accounts to test the application
+```
+Type : Regular ::: johndoe-regular@test.com : secret123
+Type : Super ::: johndoe-super@test.com : secret123
+```
 
 ## Versioning
 
