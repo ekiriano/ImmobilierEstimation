@@ -18,9 +18,7 @@ module.exports = function validateDefaultAppartmentInput(data) {
     errors.rue = "rue field is required";
   }
 
-  if (!data.rue.match(/\d{3}\s+rue+\s\w+/)) {
-    errors.rue = "rue ne correspond pas au bon format!";
-  }
+
 
   if (Validator.isEmpty(data.code_postal)) {
     errors.code_postal =
