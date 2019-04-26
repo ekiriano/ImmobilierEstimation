@@ -63,7 +63,7 @@ class Bien extends Component {
                       __html: DOMPurify.sanitize(this.props.bien.descriptifBien)
                     }}
                   />
-                  <h1 class="has-text-left">Votre Bien</h1> <hr />
+                  <h1 class="has-text-left has-text-weight-bold	">Votre Bien</h1> <hr />
                   <div className="columns">
                     <div className="column is-half">
                       <p class="has-text-left">
@@ -86,6 +86,7 @@ class Bien extends Component {
                       </p>
 
                       <p class="has-text-left">
+                      <i class='uil uil-plus-circle'></i>
                         Points forts :{" "}
                         <div
                           dangerouslySetInnerHTML={{
@@ -122,6 +123,7 @@ class Bien extends Component {
                       </p>
                       <p class="has-text-left">Type de bien : {this.props.bien.typeBienAffiche}</p>
                       <p class="has-text-left">
+                      <i class='uil uil-minus-circle'></i>
                         Points faibles :{" "}
                         <div
                           dangerouslySetInnerHTML={{
@@ -144,8 +146,8 @@ class Bien extends Component {
                       )
                     }}
                   />
-                  <h1 class="has-text-left">Elements du bien</h1> <hr />
-                  <h4 class="has-text-left">Elements pricipaux</h4> <hr />
+                  <h1 class="has-text-left has-text-weight-bold	">Elements du bien</h1> <hr />
+                  <h4 class="has-text-left has-text-weight-bold">Elements pricipaux</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
                       <p class="has-text-left">
@@ -168,7 +170,7 @@ class Bien extends Component {
                       <p class="has-text-left">Tout a l'égout : {this.props.bien.toutAEgout}</p>
                     </div>
                   </div>
-                  <h4 class="has-text-left">Autres éléments</h4> <hr />
+                  <h4 class="has-text-left has-text-weight-bold	">Autres éléments</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
                       <p class="has-text-left">
@@ -192,7 +194,7 @@ class Bien extends Component {
                       </p>
                     </div>
                   </div>
-                  <h4 class="has-text-left">Environnement</h4> <hr />
+                  <h4 class="has-text-left has-text-weight-bold	">Environnement</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
                       <p class="has-text-left">
@@ -216,7 +218,7 @@ class Bien extends Component {
                       </p>
                     </div>
                   </div>
-                  <h4 class="has-text-left">Critère Généraux</h4> <hr />
+                  <h4 class="has-text-left has-text-weight-bold	">Critère Généraux</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
                       <p class="has-text-left">
@@ -237,7 +239,7 @@ class Bien extends Component {
                       </p>
                     </div>
                   </div>
-                  <h4 class="has-text-left">Séjour</h4> <hr />
+                  <h4 class="has-text-left has-text-weight-bold	">Séjour</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
                       <p class="has-text-left"> Taille du sejour : {this.props.bien.tailleSejour}</p>
@@ -252,7 +254,7 @@ class Bien extends Component {
                       <p class="has-text-left">cheminée : {this.props.bien.cheminee}</p>
                     </div>
                   </div>
-                  <h4 class="has-text-left">Cuisine</h4> <hr />
+                  <h4 class="has-text-left has-text-weight-bold	">Cuisine</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
                       <p class="has-text-left"> Taille de la cuisine : {this.props.bien.taille}</p>
@@ -263,7 +265,7 @@ class Bien extends Component {
                       <p class="has-text-left">Etat général : {this.props.bien.etatGeneral}</p>
                     </div>
                   </div>
-                  <h4 class="has-text-left">Chambres</h4> <hr />
+                  <h4 class="has-text-left has-text-weight-bold	">Chambres</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
                       <p class="has-text-left">
@@ -280,7 +282,7 @@ class Bien extends Component {
                       </p>
                     </div>
                   </div>
-                  <h4 class="has-text-left">Sanitaires</h4> <hr />
+                  <h4 class="has-text-left has-text-weight-bold	">Sanitaires</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
                       <p class="has-text-left">
@@ -301,7 +303,7 @@ class Bien extends Component {
                       </p>
                     </div>
                   </div>
-                  <h4 class="has-text-left">Energie</h4> <hr />
+                  <h4 class="has-text-left has-text-weight-bold	">Energie</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
                       <p class="has-text-left">
@@ -321,7 +323,7 @@ class Bien extends Component {
                       </p>
                     </div>
                   </div>
-                  <h4 class="has-text-left">Annexes</h4> <hr />
+                  <h4 class="has-text-left has-text-weight-bold	">Annexes</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
                       <p class="has-text-left">
@@ -343,8 +345,8 @@ class Bien extends Component {
                       <p class="has-text-left">Combles : {this.props.bien.combles}</p>
                     </div>
                   </div>
-                  <h1 class="has-text-left">Détails sur l'estimation</h1> <hr />
-                  <h4 class="has-text-left">Détails</h4> <hr />
+                  <h1 class="has-text-left has-text-weight-bold	">Détails sur l'estimation</h1> <hr />
+                  <h4 class="has-text-left has-text-weight-bold	">Détails</h4> <hr />
                   <div className="columns">
                     <div className="column is-half">
                       <p class="has-text-left">
@@ -370,7 +372,7 @@ class Bien extends Component {
                       </p>
                     </div>
                   </div>
-                  <h4 class="has-text-left">Méthodes</h4> <hr />
+                  <h4 class="has-text-left has-text-weight-bold	">Méthodes</h4> <hr />
                   <div className="columns">
                     <div className="column is-4">
                       <p>
