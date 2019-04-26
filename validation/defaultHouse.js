@@ -10,10 +10,8 @@ const isEmpty = require("./is-empty");
 
 module.exports = function validateDefaultHouseInput(data) {
   let errors = {};
-
-  // Set empty fields to empty string
-
-  data.rue = !isEmpty(data.rue) ? data.rue : "";
+  
+    data.rue = !isEmpty(data.rue) ? data.rue : "";
   data.code_postal = !isEmpty(data.code_postal) ? data.code_postal : "";
   data.ville = !isEmpty(data.ville) ? data.ville : "";
   data.surface_habitable = !isEmpty(data.surface_habitable)
@@ -54,46 +52,88 @@ module.exports = function validateDefaultHouseInput(data) {
   data.qualite_toiture = !isEmpty(data.qualite_toiture)
     ? data.qualite_toiture
     : "";
-  // END OF EMPTY STRING
 
-  // FIELDS MUST BE REQUIRED
   if (Validator.isEmpty(data.rue)) {
     errors.rue = "rue field is required";
+  }
+
+  if(!data.rue.match(/\d{3}\s+rue+\s\w+/)){
+    errors.rue = "rue ne correspond pas au bon format!";
   }
 
   if (Validator.isEmpty(data.code_postal)) {
     errors.code_postal = "code postal is required";
   }
 
+  if(!data.code_postal.match(/^\d{5}(?:[-\s]\d{4})?$/)){
+    errors.code_postal = "code postal ne correspond pas au bon format!";
+  }
+
   if (Validator.isEmpty(data.ville)) {
     errors.ville = "ville is required";
+  }
+
+  if(!data.ville.match(/^([a-zA-Z]+|[a-zA-Z]+\s[a-zA-Z]+)$/)){
+    errors.ville="ville ne correspond pas au bon format!";
   }
 
   if (Validator.isEmpty(data.surface_habitable)) {
     errors.surface_habitable = "surface_habitable is required";
   }
 
+  if(data.surface_habitable<0){
+    errors.surface_habitable="surface_habitable doit etre un chiffre positive";
+  }
+
   if (Validator.isEmpty(data.surface_totale_terrain)) {
     errors.surface_totale_terrain = "surface_totale_terrain is required";
   }
+
+  if(data.surface_totale_terrain<0){
+    errors.surface_totale_terrain="surface_totale_terrain doit etre un chiffre positive";
+  }
+
+
   if (Validator.isEmpty(data.surface_habitable_constructible)) {
     errors.surface_habitable_constructible =
       "surface_habitable_constructible is required";
   }
 
+  if(data.surface_habitable_constructible<0){
+    errors.surface_habitable_constructible="surface_habitable_constructible doit etre un chiffre positive";
+  }
+
   if (Validator.isEmpty(data.nombre_pieces)) {
     errors.nombre_pieces = "nombre_pieces is required";
   }
+
+  if(data.nombre_pieces<0){
+    errors.nombre_pieces="nombre_pieces doit etre un chiffre positive";
+  }
+
+
   if (Validator.isEmpty(data.nombre_salle_bain)) {
     errors.nombre_salle_bain = "nombre_salle_bain is required";
+  }
+
+  if(data.nombre_salle_bain<0){
+    errors.nombre_salle_bain="nombre_salle_bain doit etre un chiffre positive";
   }
 
   if (Validator.isEmpty(data.nombre_niveaux)) {
     errors.nombre_niveaux = "nombre_niveaux is required";
   }
 
+  if(data.nombre_niveaux<0){
+    errors.nombre_niveaux="nombre_niveaux doit etre un chiffre positive";
+  }
+
   if (Validator.isEmpty(data.annee_construction)) {
     errors.annee_construction = "annee_construction is required";
+  }
+
+  if(!data.annee_construction.match(/^\d{4}$/)){
+    errors.annee_construction="annee_construction ne correspond pas au bon format!";
   }
 
   if (Validator.isEmpty(data.diagnostic_performance_energetique)) {
@@ -101,167 +141,58 @@ module.exports = function validateDefaultHouseInput(data) {
       "diagnostic_performance_energetique is required";
   }
 
+  if(!data.diagnostic_performance_energetique.match(/[^0-9]/)){
+    errors.diagnostic_performance_energetique="diagnostic_performance_energetique ne correspond pas au bon format!";
+  }
+
   if (Validator.isEmpty(data.etat_bien)) {
     errors.etat_bien = "etat_bien is required";
+  }
+
+  if(!data.etat_bien.match(/[^0-9]/)){
+    errors.etat_bien="etat_bien ne correspond pas au bon format!";
   }
 
   if (Validator.isEmpty(data.qualite_maison)) {
     errors.qualite_maison = "qualite_maison is required";
   }
 
+  if(!data.qualite_maison.match(/[^0-9]/)){
+    errors.qualite_maison="qualite_maison ne correspond pas au bon format!";
+  }
+
   if (Validator.isEmpty(data.luminosite)) {
     errors.luminosite = "luminosite is required";
+  }
+
+  if(!data.luminosite.match(/[^0-9]/)){
+    errors.luminosite="luminosite ne correspond pas au bon format!";
   }
 
   if (Validator.isEmpty(data.calme)) {
     errors.calme = "calme is required";
   }
 
+  if(!data.calme.match(/[^0-9]/)){
+    errors.calme="calme ne correspond pas au bon format!";
+  }
+
   if (Validator.isEmpty(data.proximite_transports)) {
     errors.proximite_transports = "proximite_transports is required";
+  }
+
+  if(!data.proximite_transports.match(/[^0-9]/)){
+    errors.proximite_transports="proximite_transports ne correspond pas au bon format!";
   }
 
   if (Validator.isEmpty(data.qualite_toiture)) {
     errors.qualite_toiture = "qualite_toiture is required";
   }
 
-  // END OF REQUIRED FIELDS
-
-  // SPECIFIC RULES FIELDS
-  /*
-  if (
-    !Validator.isLength(data.code_postal, { min: 5, max: 5 }) ||
-    !Validator.isNumeric(data.code_postal, { no_symbols: true })
-  ) {
-    errors.code_postal = "code postal msut be 5 digits and positive";
+  if(!data.qualite_toiture.match(/[^0-9]/)){
+    errors.qualite_toiture="qualite_toiture ne correspond pas au bon format!";
   }
 
-  if (!Validator.isNumeric(data.surface_habitable, { no_symbols: true })) {
-    errors.surface_habitable = "surface_habitable must be greater than 0";
-  }
-  if (!Validator.isNumeric(data.surface_totale_terrain, { no_symbols: true })) {
-    errors.surface_totale_terrain =
-      "surface_totale_terrain  must be greater than 0";
-  }
-
-  if (
-    !Validator.isNumeric(data.surface_habitable_constructible, {
-      no_symbols: true
-    })
-  ) {
-    errors.surface_habitable_constructible =
-      "surface_habitable_constructible must be equal or greater than 0";
-  }
-
-  if (!Validator.isNumeric(data.nombre_pieces, { no_symbols: true })) {
-    errors.nombre_pieces = "nombre_pieces must be greater than 0";
-  }
-
-  if (!Validator.isNumeric(data.nombre_salle_bain, { no_symbols: true })) {
-    errors.nombre_salle_bain = "nombre_salle_bain must be greater than 0";
-  }
-
-  if (!Validator.isNumeric(data.nombre_niveaux, { no_symbols: true })) {
-    errors.nombre_niveaux = "nombre_niveaux must be greater than 0";
-  }
-
-  if (!Validator.isInt(data.annee_construction, { gt: 1900, lt: 2019 })) {
-    errors.annee_construction =
-      "annee_construction and must be between 1900 and 2019";
-  }
-
-  if (
-    !Validator.matches(
-      data.diagnostic_performance_energetique,
-      "A",
-      "B",
-      "C",
-      "D",
-      "E",
-      "F",
-      "G"
-    )
-  ) {
-    errors.diagnostic_performance_energetique =
-      "diagnostic_performance_energetique must match the given elements in the select";
-  }
-
-  if (
-    !Validator.matches(
-      data.etat_bien,
-      "standard",
-      "rafraichissment_necessaire",
-      "travaux_importants_necessaires"
-    )
-  ) {
-    errors.etat_bien = "etat_bien must match the given elements in the select";
-  }
-
-  if (
-    !Validator.matches(
-      data.qualite_maison,
-      "inferieure",
-      "comparable",
-      "suprerieure"
-    )
-  ) {
-    errors.qualite_maison =
-      "qualite_maison must match the given elements in the select";
-  }
-
-  if (
-    !Validator.matches(
-      data.luminosite,
-      "sombre",
-      "peu_clair",
-      "standard",
-      "clair",
-      "tres_clair"
-    )
-  ) {
-    errors.luminosite =
-      "luminosite must match the given elements in the select";
-  }
-
-  if (
-    !Validator.matches(
-      data.calme,
-      "tres_bruyant",
-      "bruyant",
-      "standard",
-      "calme",
-      "tres_calme"
-    )
-  ) {
-    errors.calme = "calme must match the given elements in the select";
-  }
-
-  if (
-    !Validator.matches(
-      data.proximite_transports,
-      "tres_elogoignees",
-      "eloigne",
-      "standard",
-      "proche",
-      "tres_proche"
-    )
-  ) {
-    errors.proximite_transports =
-      "proximite_transports must match the given elements in the select";
-  }
-
-  if (
-    !Validator.matches(
-      data.qualite_toiture,
-      "a_renover",
-      "standard",
-      "refaite_a_neuf"
-    )
-  ) {
-    errors.qualite_toiture =
-      "qualite_toiture must match the given elements in the select";
-  }
-*/
   return {
     errors,
     isValid: isEmpty(errors)
