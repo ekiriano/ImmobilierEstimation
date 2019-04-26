@@ -10,8 +10,9 @@ export const setUserTypeToSuper = user => dispatch => {
         type: SET_USER_TYPE_TO_SUPER,
         payload: res.data
       });
+      dispatch({});
       toast.success(
-        "Félicitation vous êtes desormais un uttilisateur premium !"
+        "Félicitation vous êtes desormais un uttilisateur premium ! Veuillez vous deconnecter et vous reconnecter afin de bénéficier de vos avantages !!"
       );
     })
     .catch(err => {

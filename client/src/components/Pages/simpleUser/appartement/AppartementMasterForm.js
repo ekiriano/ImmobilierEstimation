@@ -33,10 +33,10 @@ class AppartementMasterForm extends Component {
       etat_bien: "",
       luminosite: "",
       calme: "",
-      qualite_appartement : "",
+      qualite_appartement: "",
       proximite_transports: "",
-      prix_estimation : "",
-      errors: {},
+      prix_estimation: "",
+      errors: {}
     };
     this.onChange = this.onChange.bind(this);
     this.next = this.next.bind(this);
@@ -51,14 +51,13 @@ class AppartementMasterForm extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-   
-  changeVille(ville){
+  changeVille(ville) {
     this.setState({ ville: ville });
   }
-  changeRue(rue){
+  changeRue(rue) {
     this.setState({ rue: rue });
   }
-  changeCodePostal(code_postal){
+  changeCodePostal(code_postal) {
     this.setState({ code_postal: code_postal });
   }
 
@@ -80,12 +79,15 @@ class AppartementMasterForm extends Component {
       etat_bien: this.state.etat_bien,
       luminosite: this.state.luminosite,
       calme: this.state.calme,
-      qualite_appartement:this.state.qualite_appartement,
+      qualite_appartement: this.state.qualite_appartement,
       proximite_transports: this.state.proximite_transports,
-      prix_estimation : this.state.prix_estimation
+      prix_estimation: this.state.prix_estimation
     };
 
-    if (this.props.user.user_type === "regular" || this.props.user.user_type === "super") {
+    if (
+      this.props.user.user_type === "regular" ||
+      this.props.user.user_type === "super"
+    ) {
       this.props.submitDefaultAppartementSave(newDefautAppartement);
     } else {
       this.props.submitDefaultAppartement(newDefautAppartement);
@@ -167,9 +169,11 @@ class AppartementMasterForm extends Component {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
     }
-    if(nextProps.newEstimationAppartement){
-      this.setState({prix_estimation : nextProps.newEstimationAppartement.prix_estimation})
-      if(nextProps.newEstimationAppartement.prix_estimation > 0) {
+    if (nextProps.newEstimationAppartement) {
+      this.setState({
+        prix_estimation: nextProps.newEstimationAppartement.prix_estimation
+      });
+      if (nextProps.newEstimationAppartement.prix_estimation > 0) {
         this.next();
       }
     }
@@ -201,9 +205,7 @@ class AppartementMasterForm extends Component {
             errors={this.state.errors}
             surface={this.state.surface}
             nombre_pieces={this.state.nombre_pieces}
-            nombre_salle_bain={
-              this.state.nombre_salle_bain
-            }
+            nombre_salle_bain={this.state.nombre_salle_bain}
           />
           <Step3
             currentStep={this.state.currentStep}
@@ -217,7 +219,9 @@ class AppartementMasterForm extends Component {
             currentStep={this.state.currentStep}
             onChange={this.onChange}
             errors={this.state.errors}
-            diagnostic_performance_energetique={this.state.diagnostic_performance_energetique}
+            diagnostic_performance_energetique={
+              this.state.diagnostic_performance_energetique
+            }
             etat_bien={this.state.etat_bien}
           />
           <Step5
@@ -228,14 +232,13 @@ class AppartementMasterForm extends Component {
             luminosite={this.state.luminosite}
             calme={this.state.calme}
             proximite_transports={this.state.proximite_transports}
-            
           />
 
           <FinalStepApartement
-             currentStep={this.state.currentStep}
-             onChange={this.onChange}
-             errors={this.state.errors}
-             prix_estimation={this.state.prix_estimation}
+            currentStep={this.state.currentStep}
+            onChange={this.onChange}
+            errors={this.state.errors}
+            prix_estimation={this.state.prix_estimation}
           />
 
           {this.previousButton}
@@ -256,7 +259,7 @@ AppartementMasterForm.propTypes = {
 const mapStateProps = state => ({
   user: state.auth.user,
   errors: state.errors,
-  newEstimationAppartement : state.simpleAppartements.newEstimationAppartement,
+  newEstimationAppartement: state.simpleAppartements.newEstimationAppartement
 });
 
 export default connect(
