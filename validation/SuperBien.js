@@ -107,6 +107,10 @@ if(data.telephone<0){
 if (Validator.isEmpty(data.voie)) {
   errors.voie = "rue is required";
 }
+  
+  if(!data.rue.match(/\d{1}\s\w+/)){
+    errors.rue = "rue ne correspond pas au bon format!";
+}
 
  
 
