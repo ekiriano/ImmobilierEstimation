@@ -6,6 +6,7 @@
     "algolia-places-react": "^1.4.0",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
+    "dompurify": "^1.0.10",
     "draft-js": "^0.10.5",
     "draftjs-to-html": "^0.8.4",
     "html-to-draftjs": "^1.4.0",
