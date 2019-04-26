@@ -622,8 +622,8 @@ class Step2Super extends Component {
                                 "is-danger": errors.valeurLocative
                               })}
                               type="number"
-                              placeholder="Charges annuelles totales"
-                              name="chargesAnnuellesTotales"
+                              placeholder="Valeur locative"
+                              name="valeurLocative"
                               value={this.props.valeurLocative}
                               onChange={this.props.onChange}
                               required

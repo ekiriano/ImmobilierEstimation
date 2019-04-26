@@ -136,8 +136,8 @@ class Step4Super extends Component {
                         "is-danger": errors.tauxCapitalisation
                       })}
                       type="number"
-                      placeholder="valorisationTerrain"
-                      name="valorisationTerrain"
+                      placeholder="Taux capitalisation"
+                      name="tauxCapitalisation"
                       value={this.props.tauxCapitalisation}
                       onChange={this.props.onChange}
                       required/>
