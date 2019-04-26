@@ -81,20 +81,25 @@ class Dashboard extends Component {
                     </Link>
                   </li>
                 </ul>
-                <p className="menu-label">Estimmations Detaillées</p>
-                <ul className="menu-list">
-                  <li>
-                    <Link
-                      to="#"
-                      className={classnames("", {
-                        "is-active": this.state.showBiens
-                      })}
-                      onClick={this.onClickshowBiens.bind(this)}
-                    >
-                      Estimmations
-                    </Link>
-                  </li>
-                </ul>
+                {this.props.user.user_type.localeCompare("super") !==
+                0 ? null : (
+                  <div>
+                    <p className="menu-label">Estimmations Detaillées</p>
+                    <ul className="menu-list">
+                      <li>
+                        <Link
+                          to="#"
+                          className={classnames("", {
+                            "is-active": this.state.showBiens
+                          })}
+                          onClick={this.onClickshowBiens.bind(this)}
+                        >
+                          Estimmations
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                )}
               </aside>
             </div>
 

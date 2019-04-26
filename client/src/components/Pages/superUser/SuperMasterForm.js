@@ -106,7 +106,7 @@ class SuperMasterForm extends Component {
       prix_comparaison: 0,
       prix_reference: 0,
       moyenne_des_methodes: 0
-     };
+    };
 
     this.onChange = this.onChange.bind(this);
     this.next = this.next.bind(this);
@@ -256,7 +256,7 @@ class SuperMasterForm extends Component {
       prix_comparaison: this.state.prix_comparaison,
       moyenne_des_methodes: this.state.moyenne_des_methodes,
       prix_capitalisation: this.state.prix_capitalisation,
-      prix_reference: this.state.prix_reference,
+      prix_reference: this.state.prix_reference
     };
     this.props.submitSuperBienSave(newBienSuper);
   }
@@ -272,9 +272,11 @@ class SuperMasterForm extends Component {
         prix_capitalisation: nextProps.newEstimationBien.prix_capitalisation,
         moyenne_des_methodes: nextProps.newEstimationBien.moyenne_des_methodes
       });
-      if (nextProps.newEstimationBien.methodeComparaisonSelected
-        || nextProps.newEstimationBien.methodeReferenceSelected
-        || nextProps.newEstimationBien.methodeCapitalisationSelected) {
+      if (
+        nextProps.newEstimationBien.methodeComparaisonSelected ||
+        nextProps.newEstimationBien.methodeReferenceSelected ||
+        nextProps.newEstimationBien.methodeCapitalisationSelected
+      ) {
         this.next();
       }
     }
@@ -498,10 +500,11 @@ class SuperMasterForm extends Component {
                       prix_capitalisation={this.state.prix_capitalisation}
                       moyenne_des_methodes={this.state.moyenne_des_methodes}
                     />
-
-                    {this.previousButton}
-                    {this.nextButton}
-                    {this.submitButton}
+                    <div className="multistep-buttons-wrapper">
+                      {this.previousButton}
+                      {this.nextButton}
+                      {this.submitButton}
+                    </div>
                   </form>
                 </Fragment>
               </div>
