@@ -25,16 +25,16 @@ class Bien extends Component {
   }
 
   render() {
-    // var pointsForts = "<ul>";
-    // for (var i = 0; i < this.props.bien.pointsForts.length; i++) {
-    //   pointsForts += "<li>" + this.props.bien.pointsForts[i] + "</li>";
-    // }
-    // pointsForts += "</ul>"
-    console.log(this.props.bien.pointsForts);
-    /*
+    if(this.props.bien.pointsForts){
     var pointsFortsList = this.props.bien.pointsForts.map(pointfort => (
       <li>{pointfort}</li>
-    ));*/
+    ));
+  }
+  if(this.props.bien.pointsFaibles){
+  var pointsFaiblesList = this.props.bien.pointsFaibles.map(pointfaible => (
+    <li>{pointfaible}</li>
+  ));
+}
     return (
       <div className="container">
         <div className="columns">
@@ -84,20 +84,20 @@ class Bien extends Component {
                       <p>
                         Nombre etage total : {this.props.bien.nombreNiveaux}
                       </p>
-                      {/*
+
                       <p>
                         Points forts :{" "}
                         <div
                           dangerouslySetInnerHTML={{
                             __html: DOMPurify.sanitize(
-                              this.props.bien.pointsForts
+                              this.props.bien.pointsFortsList
                             )
                           }}
                         />
                         </p>
                       <div>
                         <ul>{pointsFortsList}</ul>
-                      </div>*/}
+                      </div>
                     </div>
                     <div className="column is-half">
                       <p>
@@ -121,7 +121,19 @@ class Bien extends Component {
                         {this.props.bien.chargesAnnuellesTotales} €
                       </p>
                       <p>Type de bien : {this.props.bien.typeBienAffiche}</p>
-                      <p>Points faibles : {this.props.bien.pointsFaibles}</p>
+                      <p>
+                        Points faibles :{" "}
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: DOMPurify.sanitize(
+                              this.props.bien.pointsFaiblesList
+                            )
+                          }}
+                        />
+                        </p>
+                      <div>
+                        <ul>{pointsFaiblesList}</ul>
+                      </div>
                     </div>
                   </div>
                   <p>Commentaire confidentiel: </p>
