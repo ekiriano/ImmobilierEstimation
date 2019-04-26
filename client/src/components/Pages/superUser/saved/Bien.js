@@ -1,18 +1,12 @@
 import React, { Component } from "react";
-import {
-  PDFDownloadLink,
-  Document,
-  Page,
-  Text,
-  View,
-  StyleSheet
-} from "@react-pdf/renderer";
-import ReactDOM, { PDFViewer } from "@react-pdf/renderer";
+
 import PropTypes from "prop-types";
 import { getSuperBien } from "../../../../actions/superBienActions";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+
 import DOMPurify from "dompurify";
+
+import ExportPDFButton from "./ExportPDFButton";
 
 class Bien extends Component {
   constructor(props) {
@@ -38,17 +32,8 @@ class Bien extends Component {
       ));
     }
 
-    const styles = StyleSheet.create({
-      page: {
-        flexDirection: "row",
-        backgroundColor: "#E4E4E4"
-      },
-      section: {
-        margin: 10,
-        padding: 10,
-        flexGrow: 1
-      }
-    });
+    /*
+    const styles = StyleSheet.create({});
 
     // Create Document Component
 
@@ -56,19 +41,28 @@ class Bien extends Component {
       <Document>
         <Page size="A4" style={styles.page}>
           <View style={styles.section}>
-            <Text>Addresse :</Text>
+            <Text>
+              A l'attention de {this.props.civilite} {this.props.bien.nom}{" "}
+              {this.props.bien.prenom}, ayant les coordonnées:{" "}
+            </Text>
+            <Text>* Tél: {this.props.bien.telephone}</Text>
+            <Text>* Email: {this.props.bien.email}</Text>
+            <Text>Votre Bien :</Text>
           </View>
           <View style={styles.section}>
-            <Text>Section #2</Text>
+            <Text>
+              Estimation de votre bien de type
+              {" " + this.props.bien.typeBienAffiche} :{" "}
+            </Text>
           </View>
         </Page>
       </Document>
-    );
+    );*/
 
     return (
       <div className="container">
         <div className="columns">
-          <div className="column">
+          <div className="column" id="pdf">
             <h1>Recapitulatif complet de votre estimmation : </h1>
             <div className="card mt-is-5percentgit p mb-is-1">
               <header className="card-header">
@@ -80,7 +74,7 @@ class Bien extends Component {
               <div className="card-content">
                 <div className="content">
                   <p>
-                    A l'attention de monsieur {this.props.bien.nom}{" "}
+                    A l'attention de {this.props.civilite} {this.props.bien.nom}{" "}
                     {this.props.bien.prenom}, ayant les coordonnées:
                   </p>
                   <p>
@@ -518,35 +512,21 @@ class Bien extends Component {
 
                 <footer className="card-footer">
                   <div className="card-footer-item">
-                    <PDFDownloadLink
-                      className="button is-success "
-                      document={<MyDocument />}
-                      fileName={this.props.bien._id + ".pdf"}
-                    >
-                      {({ blob, url, loading, error }) =>
-                        loading ? (
-                          "Loading document..."
-                        ) : (
-                          <p>
-                            {" "}
-                            <i className="uil uil-down-arrow" />
-                            Exportez en PDF
-                          </p>
-                        )
+                    <ExportPDFButton
+                      id={"pdf"}
+                      label={
+                        <p>
+                          {" "}
+                          <i className="uil uil-down-arrow" />
+                          Exportez en PDF
+                        </p>
                       }
-                    </PDFDownloadLink>
+                      name={this.props.bien._id}
+                    />
                   </div>
                 </footer>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="columns">
-          <div className="column">
-            <h1>Exportation pdf</h1>
-            <PDFViewer>
-              <MyDocument />
-            </PDFViewer>
           </div>
         </div>
       </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import logo from "../partials/estimmo_logo.png";
 

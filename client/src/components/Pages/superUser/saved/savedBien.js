@@ -74,6 +74,7 @@ class savedBiens extends Component {
                 >
                   <i className="uil uil-trash-alt" /> Supprimer
                 </button>
+                <br />
                 <Link
                   to={"/saved/superbien/" + bien._id}
                   className="button is-success ml-is-0_10"
@@ -98,6 +99,7 @@ class savedBiens extends Component {
                 <p>
                   <b>Vous n'avez aucune estimation détaillée sauvegardée </b>
                 </p>
+
                 <Link to="/super" className="button is-success mt-is-0_5">
                   <i class="uil uil-plus-circle" /> Estimmer Maintenant
                 </Link>

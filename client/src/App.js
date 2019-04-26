@@ -100,12 +100,12 @@ class App extends Component {
                 <Route
                   exact
                   path="/super"
-                  component={requireAuth(SuperUserForm)}
+                  component={requireSuper(SuperUserForm)}
                 />
                 <Route
                   exact
                   path="/saved/superbien/:id"
-                  component={requireAuth(Bien)}
+                  component={requireSuper(Bien)}
                 />
                 <Route component={Page404} />
               </Switch>

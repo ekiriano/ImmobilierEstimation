@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import classnames from "classnames";
 import { Link } from "react-router-dom";
-import { EditorState, convertToRaw, ContentState } from "draft-js";
+import { EditorState, convertToRaw } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import draftToHtml from "draftjs-to-html";
-import htmlToDraft from "html-to-draftjs";
+
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 class Step2Super extends Component {
@@ -610,33 +610,33 @@ class Step2Super extends Component {
                       </div>
                     </div>
                   </div>
-                    <div className="field is-horizontal">
-                      <div className="field-label is-normal">
-                        <label className="label">Valeur locative</label>
-                      </div>
-                      <div className="field-body">
-                        <div className="field">
-                          <p className="control">
-                            <input
-                              className={classnames("input ", {
-                                "is-danger": errors.valeurLocative
-                              })}
-                              type="number"
-                              placeholder="Valeur locative"
-                              name="valeurLocative"
-                              value={this.props.valeurLocative}
-                              onChange={this.props.onChange}
-                              required
-                            />
-                            {errors.valeurLocative && (
-                              <p className="help is-danger">
-                                {errors.valeurLocative}
-                              </p>
-                            )}
-                          </p>
-                        </div>
+                  <div className="field is-horizontal">
+                    <div className="field-label is-normal">
+                      <label className="label">Valeur locative</label>
+                    </div>
+                    <div className="field-body">
+                      <div className="field">
+                        <p className="control">
+                          <input
+                            className={classnames("input ", {
+                              "is-danger": errors.valeurLocative
+                            })}
+                            type="number"
+                            placeholder="Valeur locative"
+                            name="valeurLocative"
+                            value={this.props.valeurLocative}
+                            onChange={this.props.onChange}
+                            required
+                          />
+                          {errors.valeurLocative && (
+                            <p className="help is-danger">
+                              {errors.valeurLocative}
+                            </p>
+                          )}
+                        </p>
                       </div>
                     </div>
+                  </div>
                   <div className="field is-horizontal">
                     <div className="field-label is-normal">
                       <label className="label">Impots fonciers</label>
