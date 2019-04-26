@@ -32,33 +32,6 @@ class Bien extends Component {
       ));
     }
 
-    /*
-    const styles = StyleSheet.create({});
-
-    // Create Document Component
-
-    const MyDocument = () => (
-      <Document>
-        <Page size="A4" style={styles.page}>
-          <View style={styles.section}>
-            <Text>
-              A l'attention de {this.props.civilite} {this.props.bien.nom}{" "}
-              {this.props.bien.prenom}, ayant les coordonnées:{" "}
-            </Text>
-            <Text>* Tél: {this.props.bien.telephone}</Text>
-            <Text>* Email: {this.props.bien.email}</Text>
-            <Text>Votre Bien :</Text>
-          </View>
-          <View style={styles.section}>
-            <Text>
-              Estimation de votre bien de type
-              {" " + this.props.bien.typeBienAffiche} :{" "}
-            </Text>
-          </View>
-        </Page>
-      </Document>
-    );*/
-
     return (
       <div className="container">
         <div className="columns">
