@@ -93,7 +93,7 @@ class Step4Super extends Component {
                         "is-danger": errors.valorisationTerrain
                       })}
                       type="number"
-                      placeholder="valorisationTerrain"
+                      placeholder="Valorisation terrain"
                       name="valorisationTerrain"
                       value={this.props.valorisationTerrain}
                       onChange={this.props.onChange}

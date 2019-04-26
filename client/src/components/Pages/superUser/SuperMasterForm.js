@@ -272,11 +272,9 @@ class SuperMasterForm extends Component {
         prix_capitalisation: nextProps.newEstimationBien.prix_capitalisation,
         moyenne_des_methodes: nextProps.newEstimationBien.moyenne_des_methodes
       });
-      if (
-        this.state.methodeReferenceSelected ||
-        this.state.methodeComparaisonSelected ||
-        this.state.methodeCapitalisationSelected
-      ) {
+      if (nextProps.newEstimationBien.methodeComparaisonSelected
+        || nextProps.newEstimationBien.methodeReferenceSelected
+        || nextProps.newEstimationBien.methodeCapitalisationSelected) {
         this.next();
       }
     }

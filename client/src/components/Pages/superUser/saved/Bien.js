@@ -105,7 +105,7 @@ class Bien extends Component {
                   </div>
 
                   <h1>Elements du bien</h1> <hr/>
-                  <h4>Elements pricipaux</h4>
+                  <h4>Elements pricipaux</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -132,7 +132,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Autres éléments</h4>
+                    <h4>Autres éléments</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -150,7 +150,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Environnement</h4>
+                    <h4>Environnement</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -168,7 +168,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Critère Généraux</h4>
+                    <h4>Critère Généraux</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -185,7 +185,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Séjour</h4>
+                    <h4>Séjour</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -204,7 +204,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Cuisine</h4>
+                    <h4>Cuisine</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -222,7 +222,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Chambres</h4>
+                    <h4>Chambres</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -239,7 +239,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Sanitaires</h4>
+                    <h4>Sanitaires</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -256,7 +256,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Energie</h4>
+                    <h4>Energie</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -273,7 +273,7 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Annexes</h4>
+                    <h4>Annexes</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -293,7 +293,7 @@ class Bien extends Component {
                     </div>
 
                     <h1>Détails sur l'estimation</h1> <hr/>
-                    <h4>Détails</h4>
+                    <h4>Détails</h4> <hr/>
                     <div className="columns">
                       <div className="column is-half">
                         <p>
@@ -313,13 +313,15 @@ class Bien extends Component {
                       </div>
                     </div>
 
-                    <h4>Méthodes</h4>
+                    <h4>Méthodes</h4> <hr/>
                     <div className="columns">
-                      <div className="column is-half">
+                      <div className="column is-4">
                         <p>Par capitalisation: {this.props.bien.prix_capitalisation} €</p>
+                      </div>
+                      <div className="column is-4">
                         <p>Par comparaison : {this.props.bien.prix_comparaison} €</p>
                       </div>
-                      <div className="column is-half">
+                      <div className="column is-4">
                       <p>Par référence : {this.props.bien.prix_reference} €</p>
                       </div>
                     </div>
