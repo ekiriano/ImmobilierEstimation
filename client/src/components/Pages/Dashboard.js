@@ -48,8 +48,8 @@ class Dashboard extends Component {
     return (
       <div className="">
         <div className="row">
-          <div className="columns">
-            <div className="column is-2 primary-bg min-is-100vh is-fixed ">
+          <div className="columns is-mobile min-is-100vh">
+            <div className="column is-3 primary-bg min-is-100vh is-fixed ">
               <h1>
                 <i class="uil uil-user-circle" /> {this.props.user.name}
               </h1>
@@ -98,7 +98,7 @@ class Dashboard extends Component {
               </aside>
             </div>
 
-            <div className="column is-offset-2">
+            <div className="column is-offset-3">
               {this.state.showAppartments ? <SavedAppartements /> : null}
               {this.state.showMaisons ? <SavedMaisons /> : null}
               {this.state.showBiens ? <SavedBiens /> : null}
