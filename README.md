@@ -10,7 +10,7 @@ Node.js  : https://nodejs.org/en/
 npm : npm install npm -g
 concurrently : npm i concurrently -g
 ```
-
+The following procedure must be followed to run the project on your local machine : 
 ```
 git clone https://github.com/ekiriano/Estimmo.git
 npm i 
