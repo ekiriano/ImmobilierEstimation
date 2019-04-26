@@ -76,7 +76,7 @@ class Register extends Component {
                       className={classnames(
                         "form-control input form-control-lg",
                         {
-                          "is-invalid": errors.name
+                          "is-danger": errors.name
                         }
                       )}
                       placeholder="Name"
@@ -85,10 +85,10 @@ class Register extends Component {
                       onChange={this.onChange}
                     />
                     <span class="icon is-small is-left">
-                      <i class="fa fa-user" />
+                      <i class="uil uil-user-circle" />
                     </span>
                     {errors.name && (
-                      <div className="invalid-feedback">{errors.name}</div>
+                      <div className="help is-danger">{errors.name}</div>
                     )}
                   </div>
                 </div>
@@ -100,7 +100,7 @@ class Register extends Component {
                       className={classnames(
                         "form-control input form-control-lg",
                         {
-                          "is-invalid": errors.email
+                          "is-danger": errors.email
                         }
                       )}
                       placeholder="Email Address"
@@ -109,10 +109,10 @@ class Register extends Component {
                       onChange={this.onChange}
                     />
                     <span class="icon is-small is-left">
-                      <i class="fa fa-envelope" />
+                      <i class="uil uil-envelope" />
                     </span>
                     {errors.email && (
-                      <div className="invalid-feedback">{errors.email}</div>
+                      <div className="help is-danger">{errors.email}</div>
                     )}
                   </div>
                 </div>
@@ -124,7 +124,7 @@ class Register extends Component {
                       className={classnames(
                         "form-control  input form-control-lg",
                         {
-                          "is-invalid": errors.password
+                          "is-danger": errors.password
                         }
                       )}
                       placeholder="Password"
@@ -133,10 +133,10 @@ class Register extends Component {
                       onChange={this.onChange}
                     />
                     <span className="icon is-small is-left">
-                      <i className="fa fa-key" />
+                      <i class="uil uil-keyhole-circle" />
                     </span>
                     {errors.password && (
-                      <div className="invalid-feedback">{errors.password}</div>
+                      <div className="help is-danger">{errors.password}</div>
                     )}
                   </div>
                 </div>
@@ -148,7 +148,7 @@ class Register extends Component {
                       className={classnames(
                         "form-control input form-control-lg",
                         {
-                          "is-invalid": errors.password2
+                          "is-danger": errors.password2
                         }
                       )}
                       placeholder="Confirm Password"
@@ -157,10 +157,10 @@ class Register extends Component {
                       onChange={this.onChange}
                     />
                     <span className="icon is-small is-left">
-                      <i className="fa fa-key" />
+                      <i class="uil uil-keyhole-circle" />
                     </span>
                     {errors.password2 && (
-                      <div className="invalid-feedback">{errors.password2}</div>
+                      <div className="help is-danger">{errors.password2}</div>
                     )}
                   </div>
                 </div>

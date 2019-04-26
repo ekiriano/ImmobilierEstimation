@@ -70,7 +70,12 @@ class Login extends Component {
                     <label className="label">Email</label>
                     <div className="control has-icons-left">
                       <input
-                        className="input"
+                        className={classnames(
+                          "form-control input form-control-lg",
+                          {
+                            "is-danger": errors.email
+                          }
+                        )}
                         type="email"
                         placeholder="Email"
                         name="email"
@@ -81,7 +86,7 @@ class Login extends Component {
                         <i class="uil uil-user-circle" />
                       </span>
                       {errors.email && (
-                        <div className="invalid-feedback">{errors.email}</div>
+                        <div className="help is-danger">{errors.email}</div>
                       )}
                     </div>
                   </div>
@@ -89,7 +94,12 @@ class Login extends Component {
                     <label className="label">Password</label>
                     <div className="control has-icons-left">
                       <input
-                        className="input "
+                        className={classnames(
+                          "form-control input form-control-lg",
+                          {
+                            "is-danger": errors.password
+                          }
+                        )}
                         type="password"
                         placeholder="Password"
                         name="password"
@@ -100,9 +110,7 @@ class Login extends Component {
                         <i class="uil uil-keyhole-circle" />
                       </span>
                       {errors.password && (
-                        <div className="invalid-feedback">
-                          {errors.password}
-                        </div>
+                        <div className="help is-danger">{errors.password}</div>
                       )}
                     </div>
                   </div>
