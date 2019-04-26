@@ -1,5 +1,5 @@
 # Estimmo
-Estimmo  is a single page web application made with the MERN stack that allows users to estimate their real estate properties
+Estimmo  is a single page web application made with the MERN stack that allows users to estimate real estate properties
 
 ## Getting Started
 
