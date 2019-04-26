@@ -3,8 +3,16 @@ Estimmo  is a single page web application made with the MERN stack that allows u
 
 ## Getting Started
 
+Must be installed on your machine : 
+
 ```
-git clone ttps://github.com/ekiriano/Estimmo.git
+Node.js  : https://nodejs.org/en/
+npm : npm install npm -g
+concurrently : npm i concurrently -g
+```
+
+```
+git clone https://github.com/ekiriano/Estimmo.git
 npm i 
 cd client npm i 
 cd ../
