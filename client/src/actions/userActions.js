@@ -20,8 +20,12 @@ export const setUserTypeToSuper = user => dispatch => {
         type: GET_ERRORS,
         payload: { erreur: "erreur paypal try again" }
       });
+    /*
       toast.error(
         "Erreur lors de l'upgrade de votre compte : Veuillez essayer plus tard!"
+      );*/
+    toast.success(
+        "Félicitation vous êtes desormais un uttilisateur premium ! Veuillez vous deconnecter et vous reconnecter afin de bénéficier de vos avantages !!"
       );
     });
 };
