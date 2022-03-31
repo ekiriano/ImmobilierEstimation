@@ -14,7 +14,7 @@ import "./App.css";
 
 // Partials
 import Nav from "./components/partials/Nav";
-import Footer from "./components/partials/Footer";
+import {Footer} from "./components/partials/Footer";
 
 // Auth
 import Register from "./components/Auth/Register";

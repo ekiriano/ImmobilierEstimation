@@ -5,8 +5,6 @@ import classnames from "classnames";
 import { loginUser } from "../../actions/authActions";
 import { Link } from "react-router-dom";
 
-import logo from "../partials/logo.png";
-
 class Login extends Component {
   constructor() {
     super();
@@ -62,7 +60,7 @@ class Login extends Component {
             <section className="section has-background-white">
               <div className="column">
                 <div className="has-text-centered">
-                  <img src={logo} alt="logo" width="60%" />
+                  <img src="../partials/logo.png" alt="logo" width="60%" />
                 </div>
                 <br />
                 <form onSubmit={this.onSubmit}>

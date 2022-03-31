@@ -1,8 +1,7 @@
 import React from "react";
 
-import logo from "../partials/estimmo_logo.png";
-
 export default () => {
+  const logo = "../partials/estimmo_logo.png";
   return (
     <div>
       <header className="hero homepage full-vh ">

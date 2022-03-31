@@ -5,13 +5,12 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { withRouter } from "react-router-dom";
 import classnames from "classnames";
-import logo from "./logo_navbar.png";
 
 class Nav extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      burgerMenuExtended: false
+      burgerMenuExtended: false,
     };
     this.onClickToggleBurger = this.onClickToggleBurger.bind(this);
   }
@@ -65,13 +64,13 @@ class Nav extends Component {
       >
         <div className="navbar-brand">
           <Link className="navbar-item" to="/">
-            <img src={logo} alt="logo" />
+            <img src="./logo_navbar.png" alt="logo" />
           </Link>
 
           <div
             role="button"
             className={classnames("navbar-burger burger ", {
-              "is-active": this.state.burgerMenuExtended
+              "is-active": this.state.burgerMenuExtended,
             })}
             aria-label="menu"
             aria-expanded="false"
@@ -87,7 +86,7 @@ class Nav extends Component {
         <div
           id="navbarBasicExample"
           className={classnames("navbar-menu  ", {
-            "is-active": this.state.burgerMenuExtended
+            "is-active": this.state.burgerMenuExtended,
           })}
         >
           <div className="navbar-start">
@@ -126,14 +125,11 @@ class Nav extends Component {
 
 Nav.propTypes = {
   logoutUser: PropTypes.func.isRequired,
-  isLoggedIn: PropTypes.bool.isRequired
+  isLoggedIn: PropTypes.bool.isRequired,
 };
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   isLoggedIn: state.auth.isAuthenticated,
-  user: state.auth.user
+  user: state.auth.user,
 });
 
-export default connect(
-  mapStateToProps,
-  { logoutUser }
-)(withRouter(Nav));
+export default connect(mapStateToProps, { logoutUser })(withRouter(Nav));

@@ -8,7 +8,10 @@
     "start": "node server.js",
     "server": "nodemon",
     "client": "npm start --prefix client",
+    "client-ref": "npm start --prefix client-refactor",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev-refactor": "concurrently \"npm run server\" \"npm run client-ref\"",
+
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm i --prefix client && npm run build --prefix client",
     "fake-data": " cd datasets && dummyjson MaisonTemplate.hbs > HouseData.json && dummyjson AppartementTemplate.hbs > AppartementData.json && dummyjson SuperTemplate.hbs > superBien.json"
   },

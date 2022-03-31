@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 //path module
-const path = require('path');
+const path = require("path");
 
 // Api Routes Importation
 const users = require("./routes/api/users");
@@ -16,18 +16,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // DB Config
-const db = require("./config/keys").mongoURI;
+//const db = require("./config/keys").mongoURI;
 
 // Connect to MongoDB
 mongoose
-  .connect(db, { useNewUrlParser: true })
+  .connect(
+    "mongodb+srv://Estimmo:aksadairja3@cluster0.efzvy.mongodb.net/estimmo",
+    { useNewUrlParser: true }
+  )
   .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
+  .catch((err) => console.log(err));
 
 // Passport middleware
 app.use(passport.initialize());
-
-
 
 // Passport Config
 require("./config/passport")(passport);
@@ -38,10 +39,10 @@ app.use("/api/estimation/default", defaultEstimation);
 app.use("/api/estimation/super", superEstimation);
 
 // For heroku deploy
-if(process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname,'client','build','index.html'));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
 
