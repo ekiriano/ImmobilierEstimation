@@ -7,11 +7,17 @@ import * as yup from "yup";
 import logo from "../../assets/images/logo.png";
 import { useAuth } from "../../contexts/AuthContext";
 import { Errors } from "../partials/Errors";
-
+import { useState } from "react";
 
 interface IFormInput {
   email: string;
   password: string;
+}
+
+interface IAuthErrors {
+  data: {
+    [key: string]: string;
+  }
 }
 
 const schema = yup.object({
@@ -20,13 +26,15 @@ const schema = yup.object({
 });
 
 export const Login = () => {
-  const { login, authErrors, setAuthErrors } = useAuth();
+  const { login } = useAuth();
+  const [loginError, setLoginError] = useState<{[key: string]: string;} |null>(null);
+
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm<IFormInput>( {resolver: yupResolver(schema)} );
-  const onSubmit: SubmitHandler<IFormInput> = (data) => login(data);
+    formState: { errors, isSubmitting, isSubmitSuccessful },
+  } = useForm<IFormInput>({ resolver: yupResolver(schema) });
+  const onSubmit: SubmitHandler<IFormInput> = (data) => login(data).catch(({response}:{response: IAuthErrors} ) => { setLoginError(response.data); console.log(response.data)});
 
   return (
     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 flex flex-col max-w-3xl mx-auto my-40 bg">
@@ -36,9 +44,7 @@ export const Login = () => {
             <img src={logo} alt="Home Page" className="w-30 h-30" />
           </Link>
         </div>
-        {
-          authErrors ? <Errors errors={authErrors} /> : "" 
-        }
+        {loginError ? <Errors data={loginError} /> : ""}
         <div className="mb-4">
           <label
             htmlFor="email"
@@ -67,7 +73,11 @@ export const Login = () => {
             type="password"
             {...register("password")}
           />
-          {<p className="text-sm text-red-500 mt-1">{errors.password?.message}</p>}
+          {
+            <p className="text-sm text-red-500 mt-1">
+              {errors.password?.message}
+            </p>
+          }
         </div>
 
         <div className="flex items-center justify-between">
@@ -81,7 +91,6 @@ export const Login = () => {
           <Link
             to="/register"
             className="hover:text-emerald-400 underline decoration-solid"
-            onClick={() => { setAuthErrors({}); }}
           >
             Don't have an account ?
           </Link>

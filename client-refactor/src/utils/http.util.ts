@@ -5,7 +5,7 @@ http.interceptors.request.use(
   (config: AxiosRequestConfig) => {
     const token: string | null = localStorage.getItem("token");
     if (token) {
-      config.headers ? config.headers.Authorization = `Bearer ${token}` : "";
+      config.headers ? (config.headers.Authorization = token) : "";
     }
     return config;
   },
@@ -22,14 +22,14 @@ http.interceptors.request.use(
 
 */
 
-http.interceptors.response.use( function (response) {
+http.interceptors.response.use(function (response) {
   return response;
 }),
-function (error: { response: { status: number; }; }) {
-  if(error.response.status === 401) {
-    localStorage.clear();
-    window.location.href = "/login";
-  }
-}
+  function (error: { response: { status: number } }) {
+    if (error.response.status === 401) {
+      localStorage.clear();
+      window.location.href = "/login";
+    }
+  };
 
 export { http };

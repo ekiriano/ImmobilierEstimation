@@ -17,4 +17,8 @@ export class AuthService {
       passwordConfirmation: params.passwordConfirmation,
     });
   }
+
+  async getCurrentUser() {
+    return http.get("/users/current");
+  }
 }

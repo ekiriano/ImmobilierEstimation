@@ -7,12 +7,19 @@ import * as yup from "yup";
 import logo from "../../assets/images/logo.png";
 import { useAuth } from "../../contexts/AuthContext";
 import { Errors } from "../partials/Errors";
+import { useState } from "react";
 
 interface IFormInput {
   name: string;
   email: string;
   password: string;
   passwordConfirmation: string;
+}
+
+interface IAuthErrors {
+  data: {
+    [key: string]: string;
+  }
 }
 
 const schema = yup.object({
@@ -26,12 +33,15 @@ const schema = yup.object({
 
 export const Register = () => {
   const auth = useAuth();
+  const [registerError, setRegisterError] = useState<{
+    [key: string]: string;
+  } |null>(null);
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<IFormInput>({ resolver: yupResolver(schema) });
-  const onSubmit: SubmitHandler<IFormInput> = (data) => auth.register(data);
+  const onSubmit: SubmitHandler<IFormInput> = (data) => auth.register(data).catch(({response}:{response: IAuthErrors} ) => setRegisterError(response.data));
 
   return (
     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 flex flex-col max-w-3xl mx-auto my-40 bg">
@@ -41,9 +51,7 @@ export const Register = () => {
             <img src={logo} alt="Home Page" className="w-30 h-30" />
           </Link>
         </div>
-        {
-          auth.authErrors ? <Errors errors={auth.authErrors} /> : "" 
-        }
+        {registerError ? <Errors data={registerError} /> : ""}
         <div className="mb-4">
           <label
             htmlFor="username"
@@ -125,7 +133,6 @@ export const Register = () => {
           <Link
             to="/login"
             className="hover:text-emerald-400 underline decoration-solid"
-            onClick={() => { auth.setAuthErrors({}); }}
           >
             Already a member ?
           </Link>

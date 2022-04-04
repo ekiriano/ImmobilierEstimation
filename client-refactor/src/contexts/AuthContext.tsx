@@ -18,85 +18,73 @@ const initialState: IState = {
   isLoggedIn: false,
 };
 
-type authErrors = {
-  [key: string]: string
-}
 
 interface AuthContextType {
   state: IState;
-  authErrors: authErrors
-  setAuthErrors: (state: authErrors) => void;
+  setState: (state: IState) => void;
   token?: string;
-  login: (params: loginParams) => void;
+  login: (params: loginParams) => Promise<void>;
   logout: () => void;
-  register: (params: registerParams) => void;
+  register: (params: registerParams) => Promise<void>;
 }
 
 const authCtxDefaultValue = {
   state: initialState,
-  authErrors: {},
-  setAuthErrors: (state: authErrors) => {},
-  token: "",
+  setState: (state: IState) => {},
+  token: null,
   login: () => {},
   register: () => {},
   logout: () => {},
-}
+};
 
-
-
-const AuthContext = createContext<AuthContextType>(authCtxDefaultValue);
+const AuthContext = createContext<AuthContextType | null>(null);
 
 function AuthProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState(initialState);
   const [token, setToken] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [loadingInitial, setLoadingInitial] = useState<boolean>(true);
-  const [authErrors, setAuthErrors] = useState(authCtxDefaultValue.authErrors);
   const auth = new AuthService();
+
+  const handleLoginResponse = ({data} : {data: any}) => {
+    setToken(data.token)
+    setState(
+      {
+        name: data.name,
+        type: data.use_type,
+        isLoggedIn: true
+      }
+    )
+    localStorage.setItem("token", data.token);
+
+    window.location.href = "/";
+  }
+
   const login = (params: loginParams) => {
-    
-    auth
+     return auth
       .login(params)
-      .then((response) => {
-        const token: string = response.data.token;
-        setToken(token);
-        setState((previousState) => {
-          return {
-            ...previousState,
-            name: response.data.name,
-            type: response.data.user_type,
-            isLoggedIn: true,
-          };
-        });
-        localStorage.setItem("token", token);
-        //window.location.href = "/";
-      })
-      .catch((error) => {
-        setAuthErrors(error.response.data);
-      });
+      .then(handleLoginResponse)
   };
 
   const register = (params: registerParams) => {
-    auth
+    return auth
       .register(params)
       .then((response) => {
         console.log(response.status);
-         })
-      .catch((error) => {
-        console.log(error); setAuthErrors(error.response.data) });
+      })
   };
 
-  const logout = () => {
-    if (token) {
+  const logout = async () => {
+    if (token != null) {
       localStorage.removeItem("token");
     }
-    setState((previousState) => {
-      return { ...previousState, isLoggedIn: false };
-    });
+    setState(initialState);
   };
 
   return (
-    <AuthContext.Provider value={{ state, authErrors, setAuthErrors, login, register, logout,  }}>
+    <AuthContext.Provider
+      value={{ state, setState, login, register, logout }}
+    >
       {children}
     </AuthContext.Provider>
   );
