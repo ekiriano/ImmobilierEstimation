@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { QueryClientProvider, QueryClient } from "react-query";
+import {ReactQueryDevtools} from "react-query/devtools"
 import "./App.css";
 import { Dashboard } from "./components/Dashboard";
 import { HomePage } from "./components/HomePage";
@@ -9,6 +11,7 @@ import { AuthService } from "./services/AuthService/auth.service";
 function App() {
 
   const { state, setState } = useAuth();
+  const queryClient = new QueryClient();
 
   async function getUser() {
     const auth = new AuthService
@@ -37,7 +40,10 @@ function App() {
     <>
       
       {
-        state.isLoggedIn ? (<> <Nav /> <Dashboard /> </>) : <HomePage />
+        state.isLoggedIn ? 
+        (<QueryClientProvider client={queryClient}> <Nav /> <Dashboard /> <ReactQueryDevtools /></QueryClientProvider>) 
+        : 
+        <HomePage />
       }
       
       
