@@ -2,22 +2,20 @@ import { useEffect, useState } from "react";
 import { ICurrentUser } from "./APIResponsesTypes";
 import "./App.css";
 import { AuthenticatedApp } from "./AuthenticatedApp";
-import { FullPageSpinner } from "./components/lib";
 import { useAuth } from "./contexts/AuthContext";
 import { AuthService } from "./services/AuthService/auth.service";
 import { UnauthenticatedApp } from "./UnauthenticatedApp";
-/* eslint-disable */
+
 function App() {
   const { user, setUser } = useAuth();
-  const [initialLoading, setInitialLoading] = useState<boolean>(false);
 
   async function getUser() {
-    setInitialLoading(true);
     const auth = new AuthService();
     let user: ICurrentUser | null = null;
 
-    const response = await auth.getCurrentUser();
-    user = response.data;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const {data}: {data: ICurrentUser} = await auth.getCurrentUser();
+    user = data;
     if (user) {
       setUser({
         name: user.name,
@@ -30,7 +28,7 @@ function App() {
   }
 
   useEffect(() => {
-    getUser();
+    void getUser();
   }, []);
 
   return <>{user.isLoggedIn ? <AuthenticatedApp /> : <UnauthenticatedApp />}</>;

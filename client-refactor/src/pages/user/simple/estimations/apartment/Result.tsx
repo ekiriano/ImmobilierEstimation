@@ -1,7 +1,13 @@
 /** @jsxImportSource @emotion/react */
+import { useEffect, useState } from "react";
 import { IProperty } from "./PropertyType";
 
-export const Result = ({ property }: { property: IProperty }) => {
+export const Result = ({ property, clearForm }: { property: IProperty, clearForm: () => void }) => {
+  const [price, setPrice] = useState<string>("")
+  useEffect(() => {
+    setPrice(property.prix_estimation)
+    clearForm()
+  }, [])
   return (
     <div>
       <div
@@ -13,7 +19,7 @@ export const Result = ({ property }: { property: IProperty }) => {
         }}
       >
         <p css={{ fontSize: "x-large" }}>
-          <b>Your Apartment Is Estimated At</b> : {property.prix_estimation} €
+          <b>Your Apartment Is Estimated At</b> : {price} €
         </p>
       </div>
     </div>

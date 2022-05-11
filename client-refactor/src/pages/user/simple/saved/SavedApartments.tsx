@@ -27,7 +27,6 @@ export const SavedApartments = () => {
       http.delete(`/estimation/default/appartements/saved/${id}`),
     { onSettled: () => queryClient.invalidateQueries("savedApartments") }
   );
-  console.log(savedApartments);
   //To do : style the list of saved properties
   return (
     <div>

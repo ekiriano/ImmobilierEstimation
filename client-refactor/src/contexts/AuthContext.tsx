@@ -5,7 +5,7 @@ import {
 } from "../services/AuthService/AuthService";
 import { AuthService } from "../services/AuthService/auth.service";
 import { createContext } from "react";
-import { ICurrentUser, LoginAPIResponse } from "../APIResponsesTypes";
+import { LoginAPIResponse } from "../APIResponsesTypes";
 
 interface IUser {
   name: string;
