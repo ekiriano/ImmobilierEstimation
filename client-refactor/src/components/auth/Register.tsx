@@ -19,7 +19,7 @@ interface IFormInput {
 interface IAuthErrors {
   data: {
     [key: string]: string;
-  }
+  };
 }
 
 const schema = yup.object({
@@ -35,13 +35,18 @@ export const Register = () => {
   const auth = useAuth();
   const [registerError, setRegisterError] = useState<{
     [key: string]: string;
-  } |null>(null);
+  } | null>(null);
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<IFormInput>({ resolver: yupResolver(schema) });
-  const onSubmit: SubmitHandler<IFormInput> = (data) => auth.register(data).catch(({response}:{response: IAuthErrors} ) => setRegisterError(response.data));
+  const onSubmit: SubmitHandler<IFormInput> = (data) =>
+    auth
+      .register(data)
+      .catch(({ response }: { response: IAuthErrors }) =>
+        setRegisterError(response.data)
+      );
 
   return (
     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 flex flex-col max-w-3xl mx-auto my-40 bg">

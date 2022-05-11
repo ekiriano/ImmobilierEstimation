@@ -1,54 +1,39 @@
-import { useEffect } from "react";
-import { QueryClientProvider, QueryClient } from "react-query";
-import {ReactQueryDevtools} from "react-query/devtools"
+import { useEffect, useState } from "react";
+import { ICurrentUser } from "./APIResponsesTypes";
 import "./App.css";
-import { Dashboard } from "./components/Dashboard";
-import { HomePage } from "./components/HomePage";
-import { Footer, Nav } from "./components/partials";
+import { AuthenticatedApp } from "./AuthenticatedApp";
+import { FullPageSpinner } from "./components/lib";
 import { useAuth } from "./contexts/AuthContext";
 import { AuthService } from "./services/AuthService/auth.service";
+import { UnauthenticatedApp } from "./UnauthenticatedApp";
 /* eslint-disable */
 function App() {
-
-  const { state, setState } = useAuth();
-  const queryClient = new QueryClient();
+  const { user, setUser } = useAuth();
+  const [initialLoading, setInitialLoading] = useState<boolean>(false);
 
   async function getUser() {
-    const auth = new AuthService
-    let user: any = null;
+    setInitialLoading(true);
+    const auth = new AuthService();
+    let user: ICurrentUser | null = null;
 
     const response = await auth.getCurrentUser();
     user = response.data;
-
-    if(response.status === 200) {
-      setState(
-        {
-          name: user.name,
-          type: user.use_type,
-          isLoggedIn: true
-        }
-      )
+    if (user) {
+      setUser({
+        name: user.name,
+        type: user.user_type,
+        isLoggedIn: true,
+      });
     }
 
     return user;
   }
 
   useEffect(() => {
-    getUser()
-  }, [])
-  return (
-    <>
-      
-      {
-        state.isLoggedIn ? 
-        (<QueryClientProvider client={queryClient}> <Nav /> <Dashboard /> <ReactQueryDevtools /></QueryClientProvider>) 
-        : 
-        <HomePage />
-      }
-      
-      
-    </>
-  );
+    getUser();
+  }, []);
+
+  return <>{user.isLoggedIn ? <AuthenticatedApp /> : <UnauthenticatedApp />}</>;
 }
 
 export default App;

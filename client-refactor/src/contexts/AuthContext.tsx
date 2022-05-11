@@ -5,86 +5,72 @@ import {
 } from "../services/AuthService/AuthService";
 import { AuthService } from "../services/AuthService/auth.service";
 import { createContext } from "react";
-/* eslint-disable */
-interface IState {
+import { ICurrentUser, LoginAPIResponse } from "../APIResponsesTypes";
+
+interface IUser {
   name: string;
   type: string;
   isLoggedIn: boolean;
 }
 
-const initialState: IState = {
+const initialState: IUser = {
   name: "",
   type: "",
   isLoggedIn: false,
 };
 
-
 interface AuthContextType {
-  state: IState;
-  setState: (state: IState) => void;
+  user: IUser;
+  setUser: (user: IUser) => void;
   token?: string;
   login: (params: loginParams) => Promise<void>;
   logout: () => void;
   register: (params: registerParams) => Promise<void>;
 }
 
-const authCtxDefaultValue = {
-  state: initialState,
-  setState: (state: IState) => {},
-  token: null,
-  login: () => {},
-  register: () => {},
-  logout: () => {},
-};
-
 const AuthContext = createContext<AuthContextType | null>(null);
+AuthContext.displayName = "AuthContext";
 
 function AuthProvider({ children }: { children: ReactNode }) {
-  const [state, setState] = useState(initialState);
+  const [user, setUser] = useState(initialState);
   const [token, setToken] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false);
-  const [loadingInitial, setLoadingInitial] = useState<boolean>(true);
   const auth = new AuthService();
 
-  const handleLoginResponse = ({data} : {data: any}) => {
-    setToken(data.token)
-    setState(
-      {
-        name: data.name,
-        type: data.use_type,
-        isLoggedIn: true
-      }
-    )
-    localStorage.setItem("token", data.token);
+  const handleLoginResponse = ({
+    data: { name, user_type, token },
+  }: {
+    data: LoginAPIResponse;
+  }) => {
+    setToken(token);
+    setUser({
+      name: name,
+      type: user_type,
+      isLoggedIn: true,
+    });
+    localStorage.setItem("token", token);
 
-    window.location.href = "/";
-  }
+    window.location.href = "/dashboard";
+  };
 
   const login = (params: loginParams) => {
-     return auth
-      .login(params)
-      .then(handleLoginResponse)
+    return auth.login(params).then(handleLoginResponse);
   };
 
   const register = (params: registerParams) => {
-    return auth
-      .register(params)
-      .then((response) => {
-        console.log(response.status);
-      })
+    return auth.register(params).then((response) => {
+      console.log(response.status);
+    });
   };
 
-  const logout = async () => {
+  const logout = () => {
     if (token != null) {
       localStorage.removeItem("token");
     }
-    setState(initialState);
+    setUser(initialState);
   };
 
   return (
-    <AuthContext.Provider
-      value={{ state, setState, login, register, logout }}
-    >
+    <AuthContext.Provider value={{ user, setUser, login, register, logout }}>
       {children}
     </AuthContext.Provider>
   );

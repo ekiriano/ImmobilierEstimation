@@ -8,6 +8,7 @@ import logo from "../../assets/images/logo.png";
 import { useAuth } from "../../contexts/AuthContext";
 import { Errors } from "../partials/Errors";
 import { useState } from "react";
+import { Spinner } from "../lib";
 
 interface IFormInput {
   email: string;
@@ -17,7 +18,7 @@ interface IFormInput {
 interface IAuthErrors {
   data: {
     [key: string]: string;
-  }
+  };
 }
 
 const schema = yup.object({
@@ -25,16 +26,24 @@ const schema = yup.object({
   password: yup.string().min(6).required(),
 });
 
+//To do: update this to use the created Form and Input Components, same goes for Register
+
 export const Login = () => {
   const { login } = useAuth();
-  const [loginError, setLoginError] = useState<{[key: string]: string;} |null>(null);
+  const [loginError, setLoginError] = useState<{
+    [key: string]: string;
+  } | null>(null);
 
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
   } = useForm<IFormInput>({ resolver: yupResolver(schema) });
-  const onSubmit: SubmitHandler<IFormInput> = (data) => login(data).catch(({response}:{response: IAuthErrors} ) => { setLoginError(response.data); console.log(response.data)});
+  const onSubmit: SubmitHandler<IFormInput> = (data) =>
+    login(data).catch(({ response }: { response: IAuthErrors }) => {
+      setLoginError(response.data);
+      console.log(response.data);
+    });
 
   return (
     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 flex flex-col max-w-3xl mx-auto my-40 bg">
@@ -86,7 +95,7 @@ export const Login = () => {
             disabled={isSubmitting}
             type="submit"
           >
-            Sign in
+            {isSubmitting ? <Spinner /> : "Sign in"}
           </button>
           <Link
             to="/register"

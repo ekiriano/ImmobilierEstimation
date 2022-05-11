@@ -13,7 +13,8 @@
     "parserOptions": {
       "ecmaVersion": 2022,
       "sourceType": "module",
-      "project": ["./tsconfig.json"],
+      "project": ["./client-refactor/tsconfig.json"],
+      "tsconfigRootDir": "c:/users/abed/desktop/estimmo-spa",
       "ecmaFeatures": {
         "jsx": true
       }

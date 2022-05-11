@@ -4,22 +4,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Login } from "./components/auth/Login";
-import { Register } from "./components/auth/Register";
-import { AuthProvider } from "./contexts/AuthContext";
+import { AppProviders } from "./contexts";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
-  </React.StrictMode>,
+  <AppProviders>
+    <App />
+  </AppProviders>,
   document.getElementById("root")
 );
 

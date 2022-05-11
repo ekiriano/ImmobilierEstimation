@@ -4,7 +4,7 @@ const passport = require("passport");
 
 const {
   defaultEstimationHouse,
-  defaultEstimationAppartment
+  defaultEstimationAppartment,
 } = require("../../../estimation_methodes/defaultmtd");
 
 // Load Input Validation
@@ -46,7 +46,7 @@ router.post("/house", (req, res) => {
     luminosite: req.body.luminosite,
     calme: req.body.calme,
     proximite_transports: req.body.proximite_transports,
-    qualite_toiture: req.body.qualite_toiture
+    qualite_toiture: req.body.qualite_toiture,
   });
 
   const EstimatedDefaultHouse = defaultEstimationHouse(newDefaultHouse);
@@ -82,12 +82,11 @@ router.post("/appartement", (req, res) => {
     qualite_appartement: req.body.qualite_appartement,
     luminosite: req.body.luminosite,
     calme: req.body.calme,
-    proximite_transports: req.body.proximite_transports
+    proximite_transports: req.body.proximite_transports,
   });
 
-  const EstimatedDefaultAppartment = defaultEstimationAppartment(
-    newDefaultAppartment
-  );
+  const EstimatedDefaultAppartment =
+    defaultEstimationAppartment(newDefaultAppartment);
   res.json(EstimatedDefaultAppartment);
 });
 
@@ -127,12 +126,12 @@ router.post(
       luminosite: req.body.luminosite,
       calme: req.body.calme,
       proximite_transports: req.body.proximite_transports,
-      qualite_toiture: req.body.qualite_toiture
+      qualite_toiture: req.body.qualite_toiture,
     });
     const EstimatedDefaultHouse = defaultEstimationHouse(newDefaultHouse);
     EstimatedDefaultHouse.save()
-      .then(defaultHouse => res.json(defaultHouse))
-      .catch(err => console.log(err));
+      .then((defaultHouse) => res.json(defaultHouse))
+      .catch((err) => console.log(err));
   }
 );
 
@@ -146,12 +145,12 @@ router.post(
   "/appartement/save",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    const { errors, isValid } = validateDefaultAppartmentInput(req.body);
+    /* const { errors, isValid } = validateDefaultAppartmentInput(req.body);
     // Check validation
     if (!isValid) {
       console.log(errors); // at final es lint handle properly the errors and no logs
       return res.status(400).json(errors);
-    }
+    } */
 
     const newDefaultAppartment = new DefaultAppartment({
       user: req.user.id,
@@ -170,17 +169,15 @@ router.post(
       qualite_appartement: req.body.qualite_appartement,
       luminosite: req.body.luminosite,
       calme: req.body.calme,
-      proximite_transports: req.body.proximite_transports
+      proximite_transports: req.body.proximite_transports,
     });
-    const EstimatedDefaultAppartment = defaultEstimationAppartment(
-      newDefaultAppartment
-    );
+    const EstimatedDefaultAppartment =
+      defaultEstimationAppartment(newDefaultAppartment);
     EstimatedDefaultAppartment.save()
-      .then(defaultAppartment => res.json(defaultAppartment))
-      .catch(err => console.log(err));
+      .then((defaultAppartment) => res.json(defaultAppartment))
+      .catch((err) => console.log(err));
   }
 );
-
 
 /**
  * @route   GET /api/estimation/default/appartements/saved
@@ -189,23 +186,24 @@ router.post(
  */
 
 router.get(
-  '/appartements/saved',
-passport.authenticate("jwt", {session: false}),
-(req,res) => {
- var user = {
-   id : req.user.id
- }
- DefaultAppartment.find({"user" : user.id})
- .then(data => {
-    if(data){
-       res.json(data);
-    } else{
-      return res.status(400).json({error : "pas d'appartements sauvegardes trouvées"});
-    }
- })
- .catch(err => console.log(err));
- 
-}
+  "/appartements/saved",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    var user = {
+      id: req.user.id,
+    };
+    DefaultAppartment.find({ user: user.id })
+      .then((data) => {
+        if (data) {
+          res.json(data);
+        } else {
+          return res
+            .status(400)
+            .json({ error: "pas d'appartements sauvegardes trouvées" });
+        }
+      })
+      .catch((err) => console.log(err));
+  }
 );
 
 /**
@@ -214,72 +212,81 @@ passport.authenticate("jwt", {session: false}),
  * @access  Auth Users
  */
 router.get(
-  '/maisons/saved',
-passport.authenticate("jwt", {session: false}),
-(req,res) => {
- var user = {
-   id : req.user.id
- }
- DefaultHouse.find({"user" : user.id})
- .then(data => {
-    if(data){
-       res.json(data);
-    } else{
-      return res.status(400).json({error : "pas de maisons sauvegardés trouvées"});
-    }
- })
- .catch(err => console.log(err));
- 
-}
+  "/maisons/saved",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    var user = {
+      id: req.user.id,
+    };
+    DefaultHouse.find({ user: user.id })
+      .then((data) => {
+        if (data) {
+          res.json(data);
+        } else {
+          return res
+            .status(400)
+            .json({ error: "pas de maisons sauvegardés trouvées" });
+        }
+      })
+      .catch((err) => console.log(err));
+  }
 );
 
 /**
  * @route   DELETE /api/estimation/default/maisons/saved/:id
- * @desc    Delete the estimation made by the user 
+ * @desc    Delete the estimation made by the user
  * @access  Auth Users
  */
 
 router.delete(
-  '/maisons/saved/:id',
-  passport.authenticate('jwt',{session:false}),
-  (req,res) => {
-    DefaultHouse.find({user : req.user.id}).then( houses => {
+  "/maisons/saved/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    DefaultHouse.find({ user: req.user.id }).then((houses) => {
       DefaultHouse.findById(req.params.id)
-      .then(house => {
-        // check estimation ownership
-        if(house.user.toString() != req.user.id){
-          return res.status(401).json({notauthorized : "User not authorized"});
-        }
-        //delete
-        house.remove().then( () => res.json({success : true}));
-      })
-      .catch(err => res.status(404).json({error : "no house estimation found"}));
-    })
+        .then((house) => {
+          // check estimation ownership
+          if (house.user.toString() != req.user.id) {
+            return res
+              .status(401)
+              .json({ notauthorized: "User not authorized" });
+          }
+          //delete
+          house.remove().then(() => res.json({ success: true }));
+        })
+        .catch((err) =>
+          res.status(404).json({ error: "no house estimation found" })
+        );
+    });
   }
 );
 
- /**
+/**
  * @route   DELETE /api/estimation/default/appartment/saved/:id
- * @desc    Delete the estimation made by the user 
+ * @desc    Delete the estimation made by the user
  * @access  Auth Users
  */
 
 router.delete(
-  '/appartements/saved/:id',
-  passport.authenticate('jwt',{session:false}),
-  (req,res) => {
-    DefaultAppartment.find({user : req.user.id}).then( houses => {
+  "/appartements/saved/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    DefaultAppartment.find({ user: req.user.id }).then((houses) => {
       DefaultAppartment.findById(req.params.id)
-      .then(house => {
-        // check estimation ownership
-        if(house.user.toString() != req.user.id){
-          return res.status(401).json({notauthorized : "User not authorized"});
-        }
-        //delete
-        house.remove().then( () => res.json({success : true}));
-      })
-      .catch(err => res.status(404).json({error : "no appartement estimation found"}));
-    })
+        .then((house) => {
+          // check estimation ownership
+          if (house.user.toString() != req.user.id) {
+            return res
+              .status(401)
+              .json({ notauthorized: "User not authorized" });
+          }
+          //delete
+          house.remove().then(() => res.json({ success: true }));
+        })
+        .catch((err) =>
+          res.status(404).json({ error: "no appartement estimation found" })
+        );
+    });
   }
 );
 

@@ -22,15 +22,17 @@ http.interceptors.request.use(
 
 */
 
-http.interceptors.response.use(function (response) {
-  return response;
-}),
+http.interceptors.response.use(
+  function (response) {
+    return response;
+  },
   function (error: { response: { status: number } }) {
     if (error.response.status === 401) {
       localStorage.clear();
-      window.location.href = "/login";
-      return Promise.reject({message: 'Please re-authenticate ta mère!'})
+      //window.location.href = "/login"
+      return Promise.reject({ message: "Please re-authenticate ta mère!" });
     }
-  };
+  }
+);
 
 export { http };

@@ -1,10 +1,13 @@
-interface IUser {
-  id: number;
+export interface LoginAPIResponse {
   name: string;
   user_type: string;
-}
-export interface loginAPIResponse {
-  payload: IUser;
   token: string;
   success: boolean;
+}
+
+export interface ICurrentUser {
+  id: string;
+  name: string;
+  email: string;
+  user_type: string;
 }

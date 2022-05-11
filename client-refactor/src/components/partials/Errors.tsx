@@ -1,4 +1,4 @@
-export const Errors = ({data}: {data: { [key: string] : string}}) => {
+export const Errors = ({ data }: { data: { [key: string]: string } }) => {
   const values = [];
 
   for (const error in data) {
