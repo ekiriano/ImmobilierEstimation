@@ -1,4 +1,5 @@
 export type IProperty = {
+  _id?: number;
   rue: string;
   code_postal: string;
   ville: string;

@@ -10,6 +10,7 @@ import {
   Spinner,
 } from "../../../../components/lib";
 import { http } from "../../../../utils/http.util";
+import { IProperty } from "../estimations/apartment/PropertyType";
 /* eslint-disable */
 export const SavedApartments = () => {
   const queryClient = useQueryClient();
@@ -22,10 +23,23 @@ export const SavedApartments = () => {
     http.get("/estimation/default/appartements/saved").then((res) => res.data)
   );
 
-  const { mutate: remove, isLoading: isDeleting } = useMutation(
+  const { mutate: remove } = useMutation(
     ({ id }: { id: number }) =>
       http.delete(`/estimation/default/appartements/saved/${id}`),
-    { onSettled: () => queryClient.invalidateQueries("savedApartments") }
+    { onMutate(removedProperty) {
+        const previousProperties = queryClient.getQueriesData("savedApartments")
+
+        queryClient.setQueriesData("savedApartments", (old: any) => {
+          return old.filter((property: IProperty) => property._id !== removedProperty.id)
+        })
+
+        return () => queryClient.setQueriesData("savedApartments", previousProperties)
+      },
+      onSettled: () => queryClient.invalidateQueries("savedApartments"),
+      onError: (err, variables, recover) =>
+      typeof recover === 'function' ? recover() : null,
+      
+      }
   );
   //To do : style the list of saved properties
   return (
@@ -53,7 +67,7 @@ export const SavedApartments = () => {
                 variant="primary"
                 onClick={() => remove({ id: property._id })}
               >
-                {isDeleting ? <Spinner /> : "Delete"}
+                Delete
               </Button>
             </PropertyListItem>
           ))}

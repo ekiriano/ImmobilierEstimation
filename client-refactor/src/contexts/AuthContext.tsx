@@ -1,11 +1,13 @@
-import { ReactNode, useContext, useState } from "react";
+import { ReactNode, useContext, useEffect, useState } from "react";
 import {
   loginParams,
   registerParams,
 } from "../services/AuthService/AuthService";
 import { AuthService } from "../services/AuthService/auth.service";
 import { createContext } from "react";
-import { LoginAPIResponse } from "../APIResponsesTypes";
+import { ICurrentUser, LoginAPIResponse } from "../APIResponsesTypes";
+import { FullPageSpinner } from "../components/lib";
+import { useNavigate } from "react-router-dom";
 
 interface IUser {
   name: string;
@@ -34,7 +36,13 @@ AuthContext.displayName = "AuthContext";
 function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState(initialState);
   const [token, setToken] = useState<string>("");
+  const [initialLoading, setInitialLoading] = useState<boolean>(false)
+  const navigate = useNavigate()
   const auth = new AuthService();
+
+  useEffect(() => {
+    void getUser()
+  }, [])
 
   const handleLoginResponse = ({
     data: { name, user_type, token },
@@ -48,9 +56,26 @@ function AuthProvider({ children }: { children: ReactNode }) {
       isLoggedIn: true,
     });
     localStorage.setItem("token", token);
-
-    window.location.href = "/dashboard";
+    navigate('/dashboard')
   };
+
+  async function getUser() {
+    if(localStorage.getItem('token')) {
+
+        const auth = new AuthService();
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        const { data, status }: {data: ICurrentUser, status: number} = await auth.getCurrentUser();
+        if (status === 200) {
+        setUser({
+        name: data.name,
+        type: data.user_type,
+        isLoggedIn: true,
+        })
+        }
+        setInitialLoading(false)
+    }
+    
+}
 
   const login = (params: loginParams) => {
     return auth.login(params).then(handleLoginResponse);
@@ -68,6 +93,10 @@ function AuthProvider({ children }: { children: ReactNode }) {
     }
     setUser(initialState);
   };
+
+  if(initialLoading) {
+    return <FullPageSpinner />
+  }
 
   return (
     <AuthContext.Provider value={{ user, setUser, login, register, logout }}>

@@ -29,7 +29,7 @@ http.interceptors.response.use(
   function (error: { response: { status: number } }) {
     if (error.response.status === 401) {
       localStorage.clear();
-      //window.location.href = "/login"
+      window.location.href = "/login"
       return Promise.reject({ message: "Please re-authenticate ta mère!" });
     }
   }

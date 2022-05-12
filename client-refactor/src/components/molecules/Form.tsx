@@ -14,13 +14,11 @@ import {
 
 import { TypeOf, AnyObjectSchema } from "yup";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface UseFormProps<T extends AnyObjectSchema>
   extends UseHookFormProps<TypeOf<T>> {
   schema: T;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const useForm = <T extends AnyObjectSchema>({
   schema,
   ...formConfig
