@@ -7,29 +7,31 @@ import { Step3 } from "./Step3";
 import { Step4 } from "./Step4";
 import { Step5 } from "./Step5";
 import { Result } from "./Result";
-import { IApartmentProperty } from "../PropertyType";
+import { IHouseProperty } from "../PropertyType";
 
 const initialProperty = {
   rue: "",
   code_postal: "",
   ville: "",
-  surface: "",
+  surface_habitable: "",
+  surface_totale_terrain: "",
+  surface_habitable_constructible: "",
   nombre_pieces: "",
   nombre_salle_bain: "",
-  etage: "",
-  nombre_etage_total: "",
+  nombre_niveaux: "",
   annee_construction: "",
   diagnostic_performance_energetique: "",
   etat_bien: "",
+  qualite_maison: "",
   luminosite: "",
   calme: "",
-  qualite_appartement: "",
   proximite_transports: "",
+  qualite_toiture: "",
   prix_estimation: "",
 };
 
 export const MasterForm = () => {
-  const [property, setProperty] = useState<IApartmentProperty>(initialProperty);
+  const [property, setProperty] = useState<IHouseProperty>(initialProperty);
 
   const onChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
@@ -53,7 +55,7 @@ export const MasterForm = () => {
       }}
     >
       <h1 css={{ fontWeight: "bold", fontSize: "2rem" }}>
-        Apartment Estimation Form
+        House Estimation Form
       </h1>
       <Routes>
         <Route

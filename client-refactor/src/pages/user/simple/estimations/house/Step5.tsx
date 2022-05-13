@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 
 import * as yup from "yup";
-import { IApartmentProperty } from "../PropertyType";
+import { IHouseProperty } from "../PropertyType";
 import { Button } from "../../../../../components/atoms/button";
 
 import { useForm, Form } from "../../../../../components/molecules/Form";
@@ -13,8 +13,9 @@ import { Spinner } from "../../../../../components/lib";
 
 const schema = yup.object({
   calme: yup.string().required(),
-  qualite_appartement: yup.string().required(),
+  qualite_toiture: yup.string().required(),
   proximite_transports: yup.string().required(),
+  luminosite: yup.string().required(),
 });
 
 export const Step5 = ({
@@ -22,8 +23,8 @@ export const Step5 = ({
   property,
   onChange,
 }: {
-  setProperty: React.Dispatch<React.SetStateAction<IApartmentProperty>>;
-  property: IApartmentProperty;
+  setProperty: React.Dispatch<React.SetStateAction<IHouseProperty>>;
+  property: IHouseProperty;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }) => {
   const navigate = useNavigate();
@@ -34,14 +35,13 @@ export const Step5 = ({
 
   const onSubmit = () => {
     http
-      .post("/estimation/default/appartement/save", property)
+      .post("/estimation/default/house/save", property)
       .then((response: { data: { prix_estimation: string } }) => {
-        console.log(response);
         setProperty((previousState) => ({
           ...previousState,
           prix_estimation: response.data.prix_estimation,
         }));
-        navigate("/apartment/results");
+        navigate("/house/results");
       })
       .catch((error) => console.log(error));
   };
@@ -69,10 +69,10 @@ export const Step5 = ({
         })}
       />
       <Input
-        label="Property Quality"
-        placeholder="Property Quality"
-        value={property.qualite_appartement}
-        {...form.register("qualite_appartement", {
+        label="Roof Quality"
+        placeholder="Roof Quality"
+        value={property.qualite_toiture}
+        {...form.register("qualite_toiture", {
           onChange: (e: ChangeEvent<HTMLInputElement>) => onChange(e),
         })}
       />
@@ -84,12 +84,20 @@ export const Step5 = ({
           onChange: (e: ChangeEvent<HTMLInputElement>) => onChange(e),
         })}
       />
+      <Input
+        label="Lighting"
+        placeholder="Lighting"
+        value={property.luminosite}
+        {...form.register("luminosite", {
+          onChange: (e: ChangeEvent<HTMLInputElement>) => onChange(e),
+        })}
+      />
       <div css={{ display: "flex", gap: "2%" }}>
         <Button
           css={{ width: "48%" }}
           variant="primary"
           type="button"
-          onClick={() => navigate("/apartment/step4")}
+          onClick={() => navigate("/house/step4")}
           disabled={form.formState.isSubmitting}
         >
           Back{" "}

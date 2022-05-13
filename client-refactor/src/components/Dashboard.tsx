@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { SavedApartments } from "../pages/user/simple/saved/SavedApartments";
+import { SavedHouses } from "../pages/user/simple/saved/SavedHouses";
 
 export const Dashboard = () => {
   return (
@@ -12,7 +13,16 @@ export const Dashboard = () => {
       }}
     >
       <h1 css={{ fontWeight: "bold", fontSize: "2rem" }}>Dashboard</h1>
-      <SavedApartments />
+      <div
+        css={{
+          display: "flex",
+          flexFlow: "row wrap",
+          justifyContent: "space-around",
+        }}
+      >
+        <SavedApartments />
+        <SavedHouses />
+      </div>
     </div>
   );
 };

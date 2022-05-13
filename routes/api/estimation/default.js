@@ -100,12 +100,12 @@ router.post(
   "/house/save",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    const { errors, isValid } = validateDefaultHouseInput(req.body);
+    /* const { errors, isValid } = validateDefaultHouseInput(req.body);
     // Check validation
     if (!isValid) {
       console.log(errors); // at final es lint handle properly the errors and no logs
       return res.status(400).json(errors);
-    }
+    } */
 
     const newDefaultHouse = new DefaultHouse({
       user: req.user.id,

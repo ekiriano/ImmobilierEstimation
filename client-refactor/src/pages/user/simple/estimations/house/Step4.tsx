@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 
 import * as yup from "yup";
-import { IApartmentProperty } from "../PropertyType";
+import { IHouseProperty } from "../PropertyType";
 import { Button } from "../../../../../components/atoms/button";
 
 import { useForm, Form } from "../../../../../components/molecules/Form";
@@ -11,15 +11,16 @@ import { ChangeEvent } from "react";
 
 const schema = yup.object({
   diagnostic_performance_energetique: yup.string().required(),
+  annee_construction: yup.string().required(),
   etat_bien: yup.string().required(),
-  luminosite: yup.string().required(),
+  qualite_maison: yup.string().required(),
 });
 
 export const Step4 = ({
   property,
   onChange,
 }: {
-  property: IApartmentProperty;
+  property: IHouseProperty;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }) => {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ export const Step4 = ({
   });
 
   const onSubmit = () => {
-    navigate("/apartment/step5");
+    navigate("/house/step5");
   };
 
   return (
@@ -57,16 +58,24 @@ export const Step4 = ({
       <Input
         label="Property Condition"
         placeholder="Property Condition"
-        value={property.etat_bien}
+        value={Number(property.etat_bien)}
         {...form.register("etat_bien", {
           onChange: (e: ChangeEvent<HTMLInputElement>) => onChange(e),
         })}
       />
       <Input
-        label="Luminosity"
-        placeholder="Luminosity"
-        value={property.luminosite}
-        {...form.register("luminosite", {
+        label="Construction Year"
+        placeholder="Construction Year"
+        value={property.annee_construction}
+        {...form.register("annee_construction", {
+          onChange: (e: ChangeEvent<HTMLInputElement>) => onChange(e),
+        })}
+      />
+      <Input
+        label="Property Quality"
+        placeholder="Property Quality"
+        value={property.qualite_maison}
+        {...form.register("qualite_maison", {
           onChange: (e: ChangeEvent<HTMLInputElement>) => onChange(e),
         })}
       />
@@ -75,7 +84,7 @@ export const Step4 = ({
           css={{ width: "48%" }}
           variant="primary"
           type="button"
-          onClick={() => navigate("/apartment/step3")}
+          onClick={() => navigate("/house/step3")}
         >
           Back{" "}
         </Button>

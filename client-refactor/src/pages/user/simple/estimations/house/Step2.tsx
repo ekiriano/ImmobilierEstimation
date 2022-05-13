@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 
 import * as yup from "yup";
-import { IApartmentProperty } from "../PropertyType";
+import { IHouseProperty } from "../PropertyType";
 import { Button } from "../../../../../components/atoms/button";
 
 import { useForm, Form } from "../../../../../components/molecules/Form";
@@ -10,16 +10,16 @@ import { Input } from "../../../../../components/atoms/Input";
 import { ChangeEvent } from "react";
 
 const schema = yup.object({
-  diagnostic_performance_energetique: yup.string().required(),
-  etat_bien: yup.string().required(),
-  luminosite: yup.string().required(),
+  surface_habitable: yup.string().required(),
+  surface_habitable_constructible: yup.string().required(),
+  surface_totale_terrain: yup.string().required(),
 });
 
-export const Step4 = ({
+export const Step2 = ({
   property,
   onChange,
 }: {
-  property: IApartmentProperty;
+  property: IHouseProperty;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }) => {
   const navigate = useNavigate();
@@ -29,9 +29,8 @@ export const Step4 = ({
   });
 
   const onSubmit = () => {
-    navigate("/apartment/step5");
+    navigate("/house/step3");
   };
-
   return (
     <Form
       form={form}
@@ -45,28 +44,28 @@ export const Step4 = ({
         gap: "2rem",
       }}
     >
-      <h2 css={{ fontWeight: "bold", fontSize: "1.5rem" }}>Step 4</h2>
+      <h2 css={{ fontWeight: "bold", fontSize: "1.5rem" }}>Step 2</h2>
       <Input
-        label="Energetic Performance"
-        placeholder="Energetic Performance"
-        value={property.diagnostic_performance_energetique}
-        {...form.register("diagnostic_performance_energetique", {
+        label="Living Space"
+        placeholder="Living Space"
+        value={property.surface_habitable}
+        {...form.register("surface_habitable", {
           onChange: (e: ChangeEvent<HTMLInputElement>) => onChange(e),
         })}
       />
       <Input
-        label="Property Condition"
-        placeholder="Property Condition"
-        value={property.etat_bien}
-        {...form.register("etat_bien", {
+        label="Contructable Living Area Land"
+        placeholder="Contructable Living Area Land"
+        value={property.surface_habitable_constructible}
+        {...form.register("surface_habitable_constructible", {
           onChange: (e: ChangeEvent<HTMLInputElement>) => onChange(e),
         })}
       />
       <Input
-        label="Luminosity"
-        placeholder="Luminosity"
-        value={property.luminosite}
-        {...form.register("luminosite", {
+        label="Total Land Area"
+        placeholder="Total Land Area"
+        value={property.surface_totale_terrain}
+        {...form.register("surface_totale_terrain", {
           onChange: (e: ChangeEvent<HTMLInputElement>) => onChange(e),
         })}
       />
@@ -75,7 +74,7 @@ export const Step4 = ({
           css={{ width: "48%" }}
           variant="primary"
           type="button"
-          onClick={() => navigate("/apartment/step3")}
+          onClick={() => navigate("/house")}
         >
           Back{" "}
         </Button>
@@ -87,4 +86,4 @@ export const Step4 = ({
   );
 };
 
-export default Step4;
+export default Step2;

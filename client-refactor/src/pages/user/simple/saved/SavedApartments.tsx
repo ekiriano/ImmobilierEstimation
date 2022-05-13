@@ -7,10 +7,9 @@ import {
   Link,
   PropertyList,
   PropertyListItem,
-  Spinner,
 } from "../../../../components/lib";
 import { http } from "../../../../utils/http.util";
-import { IProperty } from "../estimations/apartment/PropertyType";
+import { IApartmentProperty } from "../estimations/PropertyType";
 /* eslint-disable */
 export const SavedApartments = () => {
   const queryClient = useQueryClient();
@@ -28,12 +27,12 @@ export const SavedApartments = () => {
       http.delete(`/estimation/default/appartements/saved/${id}`),
     {
       onMutate(removedProperty) {
-        const previousProperties =
-          queryClient.getQueriesData("savedApartments");
+        const previousProperties = queryClient.getQueryData("savedApartments");
 
-        queryClient.setQueriesData("savedApartments", (old: any) => {
+        queryClient.setQueryData("savedApartments", (old: any) => {
           return old.filter(
-            (property: IProperty) => property._id !== removedProperty.id
+            (property: IApartmentProperty) =>
+              property._id !== removedProperty.id
           );
         });
 
@@ -49,7 +48,7 @@ export const SavedApartments = () => {
   return (
     <div>
       <h2 css={{ fontWeight: "bold", fontSize: "1.5rem" }}>
-        appartements estimés
+        Estimated Apartments
       </h2>
       {isLoading ? <FullPageSpinner /> : null}
 

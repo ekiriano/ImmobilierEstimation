@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 
 import * as yup from "yup";
-import { IApartmentProperty } from "../PropertyType";
+import { IHouseProperty } from "../PropertyType";
 import { Button } from "../../../../../components/atoms/button";
 
 import { useForm, Form } from "../../../../../components/molecules/Form";
@@ -19,7 +19,7 @@ export const Step1 = ({
   property,
   onChange,
 }: {
-  property: IApartmentProperty;
+  property: IHouseProperty;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }) => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ export const Step1 = ({
   });
 
   const onSubmit = () => {
-    navigate("/apartment/step2");
+    navigate("/house/step2");
   };
 
   return (
