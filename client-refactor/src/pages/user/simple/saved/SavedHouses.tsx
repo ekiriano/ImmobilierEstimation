@@ -1,5 +1,4 @@
 /** @jsxImportSource @emotion/react */
-import { FaPlusCircle } from "react-icons/fa";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 
 import {

@@ -58,7 +58,7 @@ export const Step4 = ({
       <Input
         label="Property Condition"
         placeholder="Property Condition"
-        value={Number(property.etat_bien)}
+        value={property.etat_bien}
         {...form.register("etat_bien", {
           onChange: (e: ChangeEvent<HTMLInputElement>) => onChange(e),
         })}

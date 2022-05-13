@@ -1,4 +1,4 @@
-import { ReactNode, useContext, useEffect, useState } from "react";
+import { Dispatch, ReactNode, useContext, useEffect, useState } from "react";
 import {
   loginParams,
   registerParams,
@@ -9,13 +9,13 @@ import { ICurrentUser, LoginAPIResponse } from "../APIResponsesTypes";
 import { FullPageSpinner } from "../components/lib";
 import { useNavigate } from "react-router-dom";
 
-interface IUser {
+export interface IUser {
   name: string;
   type: string;
   isLoggedIn: boolean;
 }
 
-const initialState: IUser = {
+const initialState = {
   name: "",
   type: "",
   isLoggedIn: false,
@@ -23,7 +23,7 @@ const initialState: IUser = {
 
 interface AuthContextType {
   user: IUser;
-  setUser: (user: IUser) => void;
+  setUser: Dispatch<React.SetStateAction<IUser>>;
   token?: string;
   login: (params: loginParams) => Promise<void>;
   logout: () => void;
@@ -34,7 +34,7 @@ const AuthContext = createContext<AuthContextType | null>(null);
 AuthContext.displayName = "AuthContext";
 
 function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState(initialState);
+  const [user, setUser] = useState<IUser>(initialState);
   const [token, setToken] = useState<string>("");
   const [initialLoading, setInitialLoading] = useState<boolean>(false);
   const navigate = useNavigate();
