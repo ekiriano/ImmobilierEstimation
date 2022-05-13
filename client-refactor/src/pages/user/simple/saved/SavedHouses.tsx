@@ -6,6 +6,7 @@ import {
   Button,
   FullPageSpinner,
   Link,
+  PropertyCard,
   PropertyList,
   PropertyListItem,
 } from "../../../../components/lib";
@@ -56,7 +57,11 @@ export const SavedHouses = () => {
   return (
     <div>
       {isLoading ? <FullPageSpinner /> : null}
-      <h2 css={{ fontWeight: "bold", fontSize: "1.5rem" }}>Estimated Houses</h2>
+      <h2
+        css={{ fontWeight: "bold", fontSize: "1.5rem", marginBottom: "2rem" }}
+      >
+        Estimated Houses
+      </h2>
       {savedHouses?.length === 0 ? (
         <div>
           <p>
@@ -70,13 +75,36 @@ export const SavedHouses = () => {
         <PropertyList>
           {savedHouses?.map((house: IHouseProperty) => (
             <PropertyListItem key={house._id}>
-              {house.rue}{" "}
-              <Button
-                variant="primary"
-                onClick={() => (house._id ? remove({ id: house._id }) : null)}
-              >
-                Delete
-              </Button>
+              <PropertyCard>
+                <header className="card-header">
+                  <p className="card-header-title">
+                    <b>
+                      Addresse : {house.rue}, {house.code_postal} {house.ville}
+                    </b>
+                  </p>
+                </header>
+                <div
+                  css={{
+                    display: "flex",
+                    justifyContent: "space-around",
+                    width: "100%",
+                  }}
+                >
+                  <div>
+                    <p>Area : {house.surface_totale_terrain}m²</p>
+                  </div>
+                  <div>
+                    <p>Construction Year : {house.annee_construction}</p>
+                  </div>
+                </div>
+                <Button
+                  css={{ width: "100%" }}
+                  variant="danger"
+                  onClick={() => (house._id ? remove({ id: house._id }) : null)}
+                >
+                  Delete
+                </Button>
+              </PropertyCard>
             </PropertyListItem>
           ))}
         </PropertyList>

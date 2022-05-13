@@ -5,6 +5,7 @@ import {
   Button,
   FullPageSpinner,
   Link,
+  PropertyCard,
   PropertyList,
   PropertyListItem,
 } from "../../../../components/lib";
@@ -47,7 +48,9 @@ export const SavedApartments = () => {
   //To do : style the list of saved properties
   return (
     <div>
-      <h2 css={{ fontWeight: "bold", fontSize: "1.5rem" }}>
+      <h2
+        css={{ fontWeight: "bold", fontSize: "1.5rem", marginBottom: "2rem" }}
+      >
         Estimated Apartments
       </h2>
       {isLoading ? <FullPageSpinner /> : null}
@@ -63,15 +66,41 @@ export const SavedApartments = () => {
         </div>
       ) : isSuccess ? (
         <PropertyList>
-          {savedApartments.map((property: any) => (
+          {savedApartments.map((property: IApartmentProperty) => (
             <PropertyListItem key={property._id}>
-              {property.rue}{" "}
-              <Button
-                variant="primary"
-                onClick={() => remove({ id: property._id })}
-              >
-                Delete
-              </Button>
+              <PropertyCard>
+                <header className="card-header">
+                  <p className="card-header-title">
+                    <b>
+                      Addresse : {property.rue}, {property.code_postal}{" "}
+                      {property.ville}
+                    </b>
+                  </p>
+                </header>
+                <div
+                  css={{
+                    display: "flex",
+                    justifyContent: "space-around",
+                    width: "100%",
+                  }}
+                >
+                  <div>
+                    <p>Area : {property.surface}m²</p>
+                  </div>
+                  <div>
+                    <p>Construction Year : {property.annee_construction}</p>
+                  </div>
+                </div>
+                <Button
+                  css={{ width: "100%" }}
+                  variant="danger"
+                  onClick={() =>
+                    property._id ? remove({ id: property._id }) : null
+                  }
+                >
+                  Delete
+                </Button>
+              </PropertyCard>
             </PropertyListItem>
           ))}
         </PropertyList>

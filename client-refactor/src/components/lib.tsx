@@ -49,6 +49,10 @@ const buttonVariants: { [key: string]: { background: string; color: string } } =
       background: colors.emerald,
       color: colors.base,
     },
+    danger: {
+      background: colors.danger,
+      color: colors.base,
+    },
   };
 
 const Button = styled.button(
@@ -59,8 +63,8 @@ const Button = styled.button(
     borderRadius: "3px",
     fontWeight: "bold",
     ":hover": {
-      backgroundColor: colors.base,
-      color: colors.emerald,
+      backgroundColor: colors.gray20,
+      color: colors.black,
     },
   },
   ({ variant = "primary" }: { variant: string }) => buttonVariants[variant]
@@ -71,12 +75,12 @@ const Link = styled(RouterLink)({
   border: "0",
   lineHeight: "1",
   borderRadius: "3px",
-  backgroundColor: colors.gray20,
+  backgroundColor: colors.base,
   fontWeight: "bold",
   textAlign: "center",
   ":hover": {
-    backgroundColor: colors.base,
-    color: colors.emerald,
+    backgroundColor: colors.gray20,
+    color: colors.black,
   },
 });
 
@@ -85,13 +89,28 @@ const PropertyList = styled.ul({
   margin: "1.5rem 0 0 0",
   padding: 0,
   display: "flex",
-  flexDirection: "column",
-  flexFlow: "wrap",
+  flexFlow: "column wrap",
   gap: "1rem",
 });
 
 const PropertyListItem = styled.li({
   flexBasis: "100%",
+});
+
+const PropertyCard = styled.div({
+  width: "100%",
+  boxShadow: "0 5px 10px #999",
+  backgroundColor: colors.base,
+  padding: "2rem",
+  borderRadius: "4px",
+  display: "flex",
+  flexFlow: "column wrap",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "1rem",
+  ":hover": {
+    boxShadow: "0 5px 20px #999",
+  },
 });
 
 export {
@@ -101,4 +120,5 @@ export {
   PropertyList,
   PropertyListItem,
   Button,
+  PropertyCard,
 };
