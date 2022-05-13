@@ -40,8 +40,8 @@ export const MasterForm = () => {
   };
 
   const clearForm = () => {
-    setProperty(initialProperty)
-  }
+    setProperty(initialProperty);
+  };
 
   return (
     <div
@@ -82,7 +82,10 @@ export const MasterForm = () => {
             />
           }
         />
-        <Route path="/results" element={<Result property={property} clearForm={clearForm} />} />
+        <Route
+          path="/results"
+          element={<Result property={property} clearForm={clearForm} />}
+        />
       </Routes>
     </div>
   );

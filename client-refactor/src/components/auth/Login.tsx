@@ -1,19 +1,16 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
+
 import * as yup from "yup";
+import { Input } from "../atoms/Input";
+import { useForm, Form } from "../molecules/Form";
 
 import logo from "../../assets/images/logo.png";
 import { useAuth } from "../../contexts/AuthContext";
 import { Errors } from "../partials/Errors";
-import { useState } from "react";
-import { Spinner } from "../lib";
 
-interface IFormInput {
-  email: string;
-  password: string;
-}
+import { Button, Spinner } from "../lib";
+import { loginParams } from "../../services/AuthService/AuthService";
 
 interface IAuthErrors {
   data: {
@@ -26,77 +23,56 @@ const schema = yup.object({
   password: yup.string().min(6).required(),
 });
 
-//To do: update this to use the created Form and Input Components, same goes for Register
-
 export const Login = () => {
   const { login } = useAuth();
+  const form = useForm({
+    schema: schema,
+  });
   const [loginError, setLoginError] = useState<{
     [key: string]: string;
   } | null>(null);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm<IFormInput>({ resolver: yupResolver(schema) });
-  const onSubmit: SubmitHandler<IFormInput> = (data) =>
-    login(data).catch(({ response }: { response: IAuthErrors }) => {
-      setLoginError(response.data);
-      console.log(response.data);
+  const onSubmit = (values: loginParams) =>
+    login(values).catch(({ response }: { response: IAuthErrors }) => {
+      setLoginError(response?.data);
     });
 
   return (
     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 flex flex-col max-w-3xl mx-auto my-40 bg">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <Form form={form} onSubmit={onSubmit}>
         <div className="flex flex-row flex-wrap justify-center mt-6 mb-12">
           <Link to="/">
             <img src={logo} alt="Home Page" className="w-30 h-30" />
           </Link>
         </div>
-        {loginError ? <Errors data={loginError} /> : ""}
+        {loginError ? <Errors data={loginError} /> : null}
         <div className="mb-4">
-          <label
-            htmlFor="email"
-            className="block text-grey-darker text-sm font-bold mb-2"
-          >
-            Email
-          </label>
-          <input
+          <Input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+            label="Email"
             placeholder="Email"
-            {...register("email")}
+            {...form.register("email")}
           />
-          {<p className="text-sm text-red-500 mt-1">{errors.email?.message}</p>}
         </div>
 
         <div className="mb-6">
-          <label
-            htmlFor="password"
-            className="block text-grey-darker text-sm font-bold mb-2"
-          >
-            Password
-          </label>
-          <input
+          <Input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+            label="Password"
             placeholder="Password"
             type="password"
-            {...register("password")}
+            {...form.register("password")}
           />
-          {
-            <p className="text-sm text-red-500 mt-1">
-              {errors.password?.message}
-            </p>
-          }
         </div>
 
         <div className="flex items-center justify-between">
-          <button
-            className="bg-emerald-400 rounded font-bold px-6 py-2 color text-white hover:bg-emerald-600"
-            disabled={isSubmitting}
+          <Button
+            variant="secondary"
+            disabled={form.formState.isSubmitting}
             type="submit"
           >
-            {isSubmitting ? <Spinner /> : "Sign in"}
-          </button>
+            {form.formState.isSubmitting ? <Spinner /> : "Sign in"}
+          </Button>
           <Link
             to="/register"
             className="hover:text-emerald-400 underline decoration-solid"
@@ -104,7 +80,7 @@ export const Login = () => {
             Don't have an account ?
           </Link>
         </div>
-      </form>
+      </Form>
     </div>
   );
 };

@@ -36,13 +36,13 @@ AuthContext.displayName = "AuthContext";
 function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState(initialState);
   const [token, setToken] = useState<string>("");
-  const [initialLoading, setInitialLoading] = useState<boolean>(false)
-  const navigate = useNavigate()
+  const [initialLoading, setInitialLoading] = useState<boolean>(false);
+  const navigate = useNavigate();
   const auth = new AuthService();
 
   useEffect(() => {
-    void getUser()
-  }, [])
+    void getUser();
+  }, []);
 
   const handleLoginResponse = ({
     data: { name, user_type, token },
@@ -56,26 +56,25 @@ function AuthProvider({ children }: { children: ReactNode }) {
       isLoggedIn: true,
     });
     localStorage.setItem("token", token);
-    navigate('/dashboard')
+    navigate("/dashboard");
   };
 
   async function getUser() {
-    if(localStorage.getItem('token')) {
-
-        const auth = new AuthService();
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        const { data, status }: {data: ICurrentUser, status: number} = await auth.getCurrentUser();
-        if (status === 200) {
+    if (localStorage.getItem("token")) {
+      const auth = new AuthService();
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      const { data, status }: { data: ICurrentUser; status: number } =
+        await auth.getCurrentUser();
+      if (status === 200) {
         setUser({
-        name: data.name,
-        type: data.user_type,
-        isLoggedIn: true,
-        })
-        }
-        setInitialLoading(false)
+          name: data.name,
+          type: data.user_type,
+          isLoggedIn: true,
+        });
+      }
+      setInitialLoading(false);
     }
-    
-}
+  }
 
   const login = (params: loginParams) => {
     return auth.login(params).then(handleLoginResponse);
@@ -83,7 +82,7 @@ function AuthProvider({ children }: { children: ReactNode }) {
 
   const register = (params: registerParams) => {
     return auth.register(params).then((response) => {
-      console.log(response.status);
+      navigate("/login");
     });
   };
 
@@ -94,8 +93,8 @@ function AuthProvider({ children }: { children: ReactNode }) {
     setUser(initialState);
   };
 
-  if(initialLoading) {
-    return <FullPageSpinner />
+  if (initialLoading) {
+    return <FullPageSpinner />;
   }
 
   return (

@@ -2,12 +2,18 @@
 import { useEffect, useState } from "react";
 import { IProperty } from "./PropertyType";
 
-export const Result = ({ property, clearForm }: { property: IProperty, clearForm: () => void }) => {
-  const [price, setPrice] = useState<string>("")
+export const Result = ({
+  property,
+  clearForm,
+}: {
+  property: IProperty;
+  clearForm: () => void;
+}) => {
+  const [price, setPrice] = useState<string>("");
   useEffect(() => {
-    setPrice(property.prix_estimation)
-    clearForm()
-  }, [])
+    setPrice(property.prix_estimation);
+    clearForm();
+  }, []);
   return (
     <div>
       <div

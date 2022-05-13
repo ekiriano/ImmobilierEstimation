@@ -1,4 +1,4 @@
-import { useEffect} from "react";
+import { useEffect } from "react";
 import { ICurrentUser } from "./APIResponsesTypes";
 import "./App.css";
 import { AuthenticatedApp } from "./AuthenticatedApp";

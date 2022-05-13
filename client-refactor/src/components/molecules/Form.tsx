@@ -30,10 +30,10 @@ export const useForm = <T extends AnyObjectSchema>({
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-interface FormProps<T extends FieldValues = any>
+interface FormProps<TFormValues extends FieldValues = any>
   extends Omit<ComponentProps<"form">, "onSubmit"> {
-  form: UseFormReturn<T>;
-  onSubmit: SubmitHandler<FieldValues>;
+  form: UseFormReturn<TFormValues>;
+  onSubmit: SubmitHandler<TFormValues>;
 }
 
 export const Form = <T extends FieldValues>({

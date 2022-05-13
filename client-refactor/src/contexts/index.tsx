@@ -7,8 +7,8 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,
-    }
-  }
+    },
+  },
 });
 
 function AppProviders({ children }: { children: ReactNode }) {

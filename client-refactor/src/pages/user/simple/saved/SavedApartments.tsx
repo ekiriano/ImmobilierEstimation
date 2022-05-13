@@ -26,20 +26,24 @@ export const SavedApartments = () => {
   const { mutate: remove } = useMutation(
     ({ id }: { id: number }) =>
       http.delete(`/estimation/default/appartements/saved/${id}`),
-    { onMutate(removedProperty) {
-        const previousProperties = queryClient.getQueriesData("savedApartments")
+    {
+      onMutate(removedProperty) {
+        const previousProperties =
+          queryClient.getQueriesData("savedApartments");
 
         queryClient.setQueriesData("savedApartments", (old: any) => {
-          return old.filter((property: IProperty) => property._id !== removedProperty.id)
-        })
+          return old.filter(
+            (property: IProperty) => property._id !== removedProperty.id
+          );
+        });
 
-        return () => queryClient.setQueriesData("savedApartments", previousProperties)
+        return () =>
+          queryClient.setQueriesData("savedApartments", previousProperties);
       },
       onSettled: () => queryClient.invalidateQueries("savedApartments"),
       onError: (err, variables, recover) =>
-      typeof recover === 'function' ? recover() : null,
-      
-      }
+        typeof recover === "function" ? recover() : null,
+    }
   );
   //To do : style the list of saved properties
   return (
