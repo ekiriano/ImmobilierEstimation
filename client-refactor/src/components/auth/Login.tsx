@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import * as yup from "yup";
 import { Input } from "../atoms/Input";
@@ -21,6 +21,7 @@ const schema = yup.object({
 
 export const Login = () => {
   const { login } = useAuth();
+  const navigate = useNavigate();
   const form = useForm({
     schema: schema,
   });
@@ -32,9 +33,13 @@ export const Login = () => {
   >(undefined);
 
   const onSubmit = (values: loginParams) => {
-    login(values).catch((error: AxiosError<ErrorResponse>) =>
-      setLoginError(error.response?.data)
-    );
+    login(values)
+      .then(() => {
+        navigate("/dashboard");
+      })
+      .catch((error: AxiosError<ErrorResponse>) =>
+        setLoginError(error.response?.data)
+      );
   };
 
   return (

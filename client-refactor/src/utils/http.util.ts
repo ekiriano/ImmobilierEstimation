@@ -1,9 +1,10 @@
 import axios, { AxiosRequestConfig } from "axios";
+import storage from "./storage";
 
 const http = axios.create({ baseURL: "http://localhost:3000/api" });
 http.interceptors.request.use(
   (config: AxiosRequestConfig) => {
-    const token: string | null = localStorage.getItem("token");
+    const token: string | null = storage.getToken();
     if (token) {
       config.headers ? (config.headers.Authorization = token) : "";
     }
@@ -28,7 +29,7 @@ http.interceptors.response.use(
   },
   function (error: { response: { status: number } }) {
     if (error.response.status === 401) {
-      localStorage.clear();
+      storage.clearToken();
       window.location.href = "/login";
       return Promise.reject({ message: "Please re-authenticate ta mère!" });
     }

@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { ErrorResponse } from "../../APIResponsesTypes";
 
@@ -23,6 +23,7 @@ const schema = yup.object({
 
 export const Register = () => {
   const auth = useAuth();
+  const navigate = useNavigate();
   const [registerError, setRegisterError] = useState<
     | {
         [key: string]: string;
@@ -35,6 +36,9 @@ export const Register = () => {
   const onSubmit = (values: registerParams) =>
     auth
       .register(values)
+      .then(() => {
+        navigate("/login");
+      })
       .catch((error: AxiosError<ErrorResponse>) =>
         setRegisterError(error.response?.data)
       );

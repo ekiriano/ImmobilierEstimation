@@ -7,7 +7,8 @@ import { AuthService } from "../services/AuthService/auth.service";
 import { createContext } from "react";
 import { ICurrentUser, LoginAPIResponse } from "../APIResponsesTypes";
 import { FullPageSpinner } from "../components/lib";
-import { useNavigate } from "react-router-dom";
+import { AxiosResponse } from "axios";
+import storage from "../utils/storage";
 
 export interface IUser {
   name: string;
@@ -27,7 +28,7 @@ interface AuthContextType {
   token?: string;
   login: (params: loginParams) => Promise<void>;
   logout: () => void;
-  register: (params: registerParams) => Promise<void>;
+  register: (params: registerParams) => Promise<AxiosResponse>; //Todo: type the response of register
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -37,7 +38,6 @@ function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<IUser>(initialState);
   const [token, setToken] = useState<string>("");
   const [initialLoading, setInitialLoading] = useState<boolean>(false);
-  const navigate = useNavigate();
   const auth = new AuthService();
 
   useEffect(() => {
@@ -55,12 +55,11 @@ function AuthProvider({ children }: { children: ReactNode }) {
       type: user_type,
       isLoggedIn: true,
     });
-    localStorage.setItem("token", token);
-    navigate("/dashboard");
+    storage.setToken(token);
   };
 
   async function getUser() {
-    if (localStorage.getItem("token")) {
+    if (storage.getToken()) {
       const auth = new AuthService();
       const { data, status }: { data: ICurrentUser; status: number } =
         await auth.getCurrentUser();
@@ -80,14 +79,12 @@ function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const register = (params: registerParams) => {
-    return auth.register(params).then(() => {
-      navigate("/login");
-    });
+    return auth.register(params);
   };
 
   const logout = () => {
     if (token != null) {
-      localStorage.removeItem("token");
+      storage.clearToken();
     }
     setUser(initialState);
   };

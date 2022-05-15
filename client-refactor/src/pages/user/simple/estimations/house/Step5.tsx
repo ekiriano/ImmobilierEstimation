@@ -38,7 +38,7 @@ export const Step5 = ({
   const onSubmit = () => {
     http
       .post<IHouseProperty>("/estimation/default/house/save", property)
-      .then(({data}) => {
+      .then(({ data }) => {
         setProperty((previousState) => ({
           ...previousState,
           prix_estimation: data.prix_estimation,

@@ -28,7 +28,9 @@ export const SavedApartments = () => {
 
   const { mutate: remove } = useMutation(
     ({ id }: { id: number }) =>
-      http.delete<DeleteResponse>(`/estimation/default/appartements/saved/${id}`),
+      http.delete<DeleteResponse>(
+        `/estimation/default/appartements/saved/${id}`
+      ),
     {
       onMutate(removedProperty) {
         const previousProperties = queryClient.getQueryData("savedApartments");
