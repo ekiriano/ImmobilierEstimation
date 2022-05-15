@@ -32,6 +32,8 @@ http.interceptors.response.use(
       window.location.href = "/login";
       return Promise.reject({ message: "Please re-authenticate ta mère!" });
     }
+
+    return Promise.reject(error);
   }
 );
 

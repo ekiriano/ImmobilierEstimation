@@ -1,6 +1,8 @@
+import { AxiosError } from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import * as yup from "yup";
+import { ErrorResponse } from "../../APIResponsesTypes";
 
 import logo from "../../assets/images/logo.png";
 import { useAuth } from "../../contexts/AuthContext";
@@ -9,12 +11,6 @@ import { Input } from "../atoms/Input";
 import { Button, Spinner } from "../lib";
 import { Form, useForm } from "../molecules/Form";
 import { Errors } from "../partials/Errors";
-
-interface IAuthErrors {
-  data: {
-    [key: string]: string;
-  };
-}
 
 const schema = yup.object({
   name: yup.string().min(5).required(),
@@ -27,17 +23,20 @@ const schema = yup.object({
 
 export const Register = () => {
   const auth = useAuth();
-  const [registerError, setRegisterError] = useState<{
-    [key: string]: string;
-  } | null>(null);
+  const [registerError, setRegisterError] = useState<
+    | {
+        [key: string]: string;
+      }
+    | undefined
+  >(undefined);
   const form = useForm({
     schema: schema,
   });
   const onSubmit = (values: registerParams) =>
     auth
       .register(values)
-      .catch(({ response }: { response: IAuthErrors }) =>
-        setRegisterError(response?.data)
+      .catch((error: AxiosError<ErrorResponse>) =>
+        setRegisterError(error.response?.data)
       );
 
   return (

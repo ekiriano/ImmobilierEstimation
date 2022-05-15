@@ -62,7 +62,6 @@ function AuthProvider({ children }: { children: ReactNode }) {
   async function getUser() {
     if (localStorage.getItem("token")) {
       const auth = new AuthService();
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const { data, status }: { data: ICurrentUser; status: number } =
         await auth.getCurrentUser();
       if (status === 200) {
@@ -81,7 +80,7 @@ function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const register = (params: registerParams) => {
-    return auth.register(params).then((response) => {
+    return auth.register(params).then(() => {
       navigate("/login");
     });
   };
@@ -104,7 +103,7 @@ function AuthProvider({ children }: { children: ReactNode }) {
   );
 }
 
-function useAuth() {
+function useAuth(): AuthContextType {
   const context = useContext(AuthContext);
 
   if (!context) throw new Error("useAuth must be used inside of Auth Provider");

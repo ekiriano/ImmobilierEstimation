@@ -11,12 +11,8 @@ import { Errors } from "../partials/Errors";
 
 import { Button, Spinner } from "../lib";
 import { loginParams } from "../../services/AuthService/AuthService";
-
-interface IAuthErrors {
-  data: {
-    [key: string]: string;
-  };
-}
+import { AxiosError } from "axios";
+import { ErrorResponse } from "../../APIResponsesTypes";
 
 const schema = yup.object({
   email: yup.string().email().required(),
@@ -28,14 +24,18 @@ export const Login = () => {
   const form = useForm({
     schema: schema,
   });
-  const [loginError, setLoginError] = useState<{
-    [key: string]: string;
-  } | null>(null);
+  const [loginError, setLoginError] = useState<
+    | {
+        [key: string]: string;
+      }
+    | undefined
+  >(undefined);
 
-  const onSubmit = (values: loginParams) =>
-    login(values).catch(({ response }: { response: IAuthErrors }) => {
-      setLoginError(response?.data);
-    });
+  const onSubmit = (values: loginParams) => {
+    login(values).catch((error: AxiosError<ErrorResponse>) =>
+      setLoginError(error.response?.data)
+    );
+  };
 
   return (
     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 flex flex-col max-w-3xl mx-auto my-40 bg">

@@ -34,8 +34,11 @@ export const Step5 = ({
 
   const onSubmit = () => {
     http
-      .post("/estimation/default/appartement/save", property)
-      .then((response: { data: { prix_estimation: string } }) => {
+      .post<IApartmentProperty>(
+        "/estimation/default/appartement/save",
+        property
+      )
+      .then((response: { data: IApartmentProperty }) => {
         console.log(response);
         setProperty((previousState) => ({
           ...previousState,

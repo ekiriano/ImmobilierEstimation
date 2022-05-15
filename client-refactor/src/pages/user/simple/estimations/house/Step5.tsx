@@ -10,6 +10,8 @@ import { Input } from "../../../../../components/atoms/Input";
 import { http } from "../../../../../utils/http.util";
 import { ChangeEvent } from "react";
 import { Spinner } from "../../../../../components/lib";
+import { AxiosError } from "axios";
+import { ErrorResponse } from "../../../../../APIResponsesTypes";
 
 const schema = yup.object({
   calme: yup.string().required(),
@@ -35,15 +37,15 @@ export const Step5 = ({
 
   const onSubmit = () => {
     http
-      .post("/estimation/default/house/save", property)
-      .then((response: { data: { prix_estimation: string } }) => {
+      .post<IHouseProperty>("/estimation/default/house/save", property)
+      .then(({data}) => {
         setProperty((previousState) => ({
           ...previousState,
-          prix_estimation: response.data.prix_estimation,
+          prix_estimation: data.prix_estimation,
         }));
         navigate("/house/results");
       })
-      .catch((error) => console.log(error));
+      .catch((error: AxiosError<ErrorResponse>) => console.log(error));
   };
 
   return (

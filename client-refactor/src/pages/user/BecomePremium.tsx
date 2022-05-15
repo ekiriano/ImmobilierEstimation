@@ -1,10 +1,34 @@
 /** @jsxImportSource @emotion/react */
-import { PropertyCard } from "../../components/lib";
-import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-import { IUser, useAuth } from "../../contexts/AuthContext";
+import { PayPalButton } from "react-paypal-button-v2";
+
+import { PropertyCard, Spinner } from "../../components/lib";
+import { useAuth } from "../../contexts/AuthContext";
+import { useEffect, useState } from "react";
+import { http } from "../../utils/http.util";
+
+//Todo: Update this BS
 
 const BecomePremium = () => {
   const { setUser } = useAuth();
+  const [loaded, setLoaded] = useState<boolean>(false);
+
+  const loadPayPalScript = () => {
+    if (window.paypal) {
+      setLoaded(true);
+    }
+    const script = document.createElement("script");
+    script.src =
+      "https://www.paypal.com/sdk/js?client-id=AYsj6K0-lvjCCw2yiuRrgFqkyppcqOl3cRKBlxz1bWKbTaECdDfqWOuA3rOxGqUwiwnFNUyM_4WotFf6";
+    script.type = "text/javascript";
+    script.async = true;
+    script.onload = () => setLoaded(true);
+
+    document.body.appendChild(script);
+  };
+
+  useEffect(() => {
+    loadPayPalScript();
+  }, []);
 
   return (
     <div
@@ -37,30 +61,40 @@ const BecomePremium = () => {
           <li>Have access to complete and more detailed estimates</li>
           <li>Have more methods at your desposition to estimate</li>
         </ul>
-        <PayPalScriptProvider options={{ "client-id": "test" }}>
-          <PayPalButtons
-            style={{ layout: "horizontal" }}
-            /* createOrder={(data, actions) => {
-                    return actions.order.create({
-                        purchase_units: [
-                            {
-                                amount: {
-                                    value: "20",
-                                },
-                            },
-                        ],
-                    });
-                }}
-                onApprove={(data, actions) => {
-                    return actions.order.capture().then((details) => {
-                        setUser((previousState) => ({
-                            ...previousState,
-                            type: "super"
-                        }))
-                    });
-                }} */
+        {!loaded ? (
+          <Spinner />
+        ) : (
+          <PayPalButton
+            amount="20"
+            currency="USD"
+            style={{
+              layout: "horizontal",
+              color: "black",
+              shape: "pill",
+              tagline: false,
+            }}
+            // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+            onSuccess={(details: {
+              payer: { name: { given_name: string } };
+            }) => {
+              alert(
+                "Transaction completed by " + details.payer.name.given_name
+              );
+              http
+                .post("/upgradeto/super", {})
+                .then((response) => {
+                  console.log(response);
+                  setUser((previousState) => ({
+                    ...previousState,
+                    type: "super",
+                  }));
+                })
+                .catch((response) => {
+                  console.log(response);
+                });
+            }}
           />
-        </PayPalScriptProvider>
+        )}
       </PropertyCard>
     </div>
   );

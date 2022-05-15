@@ -5,6 +5,14 @@ export interface LoginAPIResponse {
   success: boolean;
 }
 
+export interface DeleteResponse {
+  success: boolean;
+}
+
+export type ErrorResponse = {
+  [x: string]: string;
+};
+
 export interface ICurrentUser {
   id: string;
   name: string;

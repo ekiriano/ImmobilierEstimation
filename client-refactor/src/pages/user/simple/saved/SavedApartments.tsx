@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { useQuery, useMutation, useQueryClient } from "react-query";
+import { DeleteResponse } from "../../../../APIResponsesTypes";
 
 import {
   Button,
@@ -20,12 +21,14 @@ export const SavedApartments = () => {
     isLoading,
     isSuccess,
   } = useQuery("savedApartments", () =>
-    http.get("/estimation/default/appartements/saved").then((res) => res.data)
+    http
+      .get<IApartmentProperty[]>("/estimation/default/appartements/saved")
+      .then((res) => res.data)
   );
 
   const { mutate: remove } = useMutation(
     ({ id }: { id: number }) =>
-      http.delete(`/estimation/default/appartements/saved/${id}`),
+      http.delete<DeleteResponse>(`/estimation/default/appartements/saved/${id}`),
     {
       onMutate(removedProperty) {
         const previousProperties = queryClient.getQueryData("savedApartments");

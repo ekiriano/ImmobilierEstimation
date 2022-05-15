@@ -7,8 +7,8 @@ export const Errors = ({ data }: { data: { [key: string]: string } }) => {
 
   return (
     <>
-      {values.map((value) => (
-        <p className="text-sm text-red-500 mt-1 my-5">{value}</p>
+      {values.map((value, index) => (
+        <p key={index} className="text-sm text-red-500 mt-1 my-5">{value} </p>
       ))}
     </>
   );
