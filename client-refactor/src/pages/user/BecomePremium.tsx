@@ -17,7 +17,7 @@ const BecomePremium = () => {
   const [errors, setErrors] = useState<undefined | { [x: string]: string }>({});
 
   const makeUserPremium = () => {
-    return http
+    http
       .post("/users/upgradeto/super")
       .then((response) => {
         console.log(response);
@@ -88,7 +88,7 @@ const BecomePremium = () => {
               return actions.order?.capture().then((details) => {
                 const name = details.payer.name?.given_name;
                 name ? alert(`Transaction completed by ${name}`) : null;
-                void makeUserPremium();
+                makeUserPremium();
               });
             }}
           />

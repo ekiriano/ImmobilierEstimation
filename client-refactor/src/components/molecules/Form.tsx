@@ -10,6 +10,7 @@ import {
   FieldValues,
   SubmitHandler,
   useFormContext,
+  FieldError as FieldHookError,
 } from "react-hook-form";
 
 import { TypeOf, AnyObjectSchema } from "yup";
@@ -29,8 +30,7 @@ export const useForm = <T extends AnyObjectSchema>({
   });
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-interface FormProps<TFormValues extends FieldValues = any>
+interface FormProps<TFormValues extends Record<string, unknown> = Record<string, unknown>>
   extends Omit<ComponentProps<"form">, "onSubmit"> {
   form: UseFormReturn<TFormValues>;
   onSubmit: SubmitHandler<TFormValues>;
@@ -59,18 +59,17 @@ export const Form = <T extends FieldValues>({
   );
 };
 
+
+
 export function FieldError({ name }: { name?: string }) {
   const {
     formState: { errors },
   } = useFormContext();
 
-  if (!name) return null;
-
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const error = errors[name];
-
-  if (!error) return null;
-
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  return <p css={{ color: "red", fontSize: "smaller" }}>{error.message}</p>;
+    if(!name) return null;
+    
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const error: FieldHookError = errors[name] ? errors[name] : null
+  
+  return <p css={{ color: "red", fontSize: "smaller" }}>{error?.message}</p>;
 }

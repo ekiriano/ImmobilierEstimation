@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import { Login } from "./components/auth/Login";
-import { Register } from "./components/auth/Register";
+import { Login } from "./pages/auth/Login";
+import { Register } from "./pages/auth/Register";
 import { HomePage } from "./components/HomePage";
 
 export const UnauthenticatedApp = () => {

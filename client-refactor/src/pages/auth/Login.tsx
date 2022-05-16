@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import * as yup from "yup";
-import { Input } from "../atoms/Input";
-import { useForm, Form } from "../molecules/Form";
+import { Input } from "../../components/atoms/Input";
+import { useForm, Form } from "../../components/molecules/Form";
 
 import logo from "../../assets/images/logo.png";
 import { useAuth } from "../../contexts/AuthContext";
-import { Errors } from "../partials/Errors";
+import { Errors } from "../../components/partials/Errors";
 
-import { Button, Spinner } from "../lib";
+import { Button, Spinner } from "../../components/lib";
 import { loginParams } from "../../services/AuthService/AuthService";
 import { AxiosError } from "axios";
 import { ErrorResponse } from "../../APIResponsesTypes";

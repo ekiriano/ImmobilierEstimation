@@ -7,10 +7,10 @@ import { ErrorResponse } from "../../APIResponsesTypes";
 import logo from "../../assets/images/logo.png";
 import { useAuth } from "../../contexts/AuthContext";
 import { registerParams } from "../../services/AuthService/AuthService";
-import { Input } from "../atoms/Input";
-import { Button, Spinner } from "../lib";
-import { Form, useForm } from "../molecules/Form";
-import { Errors } from "../partials/Errors";
+import { Input } from "../../components/atoms/Input";
+import { Button, Spinner } from "../../components/lib";
+import { Form, useForm } from "../../components/molecules/Form";
+import { Errors } from "../../components/partials/Errors";
 
 const schema = yup.object({
   name: yup.string().min(5).required(),
