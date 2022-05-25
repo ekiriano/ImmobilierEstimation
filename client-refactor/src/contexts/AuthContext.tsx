@@ -1,14 +1,25 @@
-import { Dispatch, ReactNode, useContext, useEffect, useState } from "react";
+import React, {
+  Dispatch,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import {
   loginParams,
   registerParams,
 } from "../services/AuthService/AuthService";
 import { AuthService } from "../services/AuthService/auth.service";
 import { createContext } from "react";
-import { ICurrentUser, LoginAPIResponse } from "../APIResponsesTypes";
+import {
+  ErrorResponse,
+  ICurrentUser,
+  LoginAPIResponse,
+} from "../APIResponsesTypes";
 import { FullPageSpinner } from "../components/lib";
-import { AxiosResponse } from "axios";
+import { AxiosError, AxiosResponse } from "axios";
 import storage from "../utils/storage";
+import { useNavigate } from "react-router-dom";
 
 export interface IUser {
   name: string;
@@ -28,7 +39,9 @@ interface AuthContextType {
   token?: string;
   login: (params: loginParams) => Promise<void>;
   logout: () => void;
-  register: (params: registerParams) => Promise<AxiosResponse>; //Todo: type the response of register
+  register: (params: registerParams) => Promise<void>; //Todo: type the response of register
+  errors: ErrorResponse;
+  setErrors: Dispatch<React.SetStateAction<ErrorResponse>>;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -38,25 +51,13 @@ function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<IUser>(initialState);
   const [token, setToken] = useState<string>("");
   const [initialLoading, setInitialLoading] = useState<boolean>(false);
+  const [errors, setErrors] = useState<ErrorResponse>(null);
   const auth = new AuthService();
+  const navigate = useNavigate();
 
   useEffect(() => {
     void getUser();
   }, []);
-
-  const handleLoginResponse = ({
-    data: { name, user_type, token },
-  }: {
-    data: LoginAPIResponse;
-  }) => {
-    setToken(token);
-    setUser({
-      name: name,
-      type: user_type,
-      isLoggedIn: true,
-    });
-    storage.setToken(token);
-  };
 
   async function getUser() {
     if (storage.getToken()) {
@@ -75,11 +76,32 @@ function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   const login = (params: loginParams) => {
-    return auth.login(params).then(handleLoginResponse);
+    return auth
+      .login(params)
+      .then(
+        ({ data: { name, user_type, token } }: { data: LoginAPIResponse }) => {
+          setToken(token);
+          setUser({
+            name: name,
+            type: user_type,
+            isLoggedIn: true,
+          });
+          storage.setToken(token);
+          navigate("/dashboard");
+        }
+      )
+      .catch((error: AxiosError<ErrorResponse>) => {
+        if (error.response) setErrors(error.response?.data);
+      });
   };
 
   const register = (params: registerParams) => {
-    return auth.register(params);
+    return auth
+      .register(params)
+      .then(() => navigate("/login"))
+      .catch((error: AxiosError<ErrorResponse>) => {
+        if (error.response) setErrors(error.response?.data);
+      });
   };
 
   const logout = () => {
@@ -94,7 +116,9 @@ function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <AuthContext.Provider value={{ user, setUser, login, register, logout }}>
+    <AuthContext.Provider
+      value={{ user, setUser, login, register, logout, errors, setErrors }}
+    >
       {children}
     </AuthContext.Provider>
   );

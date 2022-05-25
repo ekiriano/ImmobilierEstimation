@@ -2,16 +2,16 @@
 import { useNavigate } from "react-router-dom";
 
 import * as yup from "yup";
-import { IHouseProperty } from "../PropertyType";
+import { HouseWID } from "../PropertyType";
 import { Button } from "../../../../../components/atoms/button";
 
 import { useForm, Form } from "../../../../../components/molecules/Form";
 import { Input } from "../../../../../components/atoms/Input";
-import { http } from "../../../../../utils/http.util";
 import { ChangeEvent } from "react";
 import { Spinner } from "../../../../../components/lib";
 import { AxiosError } from "axios";
 import { ErrorResponse } from "../../../../../APIResponsesTypes";
+import { HouseService } from "../../../../../services/properties/house.service";
 
 const schema = yup.object({
   calme: yup.string().required(),
@@ -25,19 +25,20 @@ export const Step5 = ({
   property,
   onChange,
 }: {
-  setProperty: React.Dispatch<React.SetStateAction<IHouseProperty>>;
-  property: IHouseProperty;
+  setProperty: React.Dispatch<React.SetStateAction<HouseWID>>;
+  property: HouseWID;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }) => {
   const navigate = useNavigate();
+  const houseService = new HouseService();
 
   const form = useForm({
     schema: schema,
   });
 
   const onSubmit = () => {
-    http
-      .post<IHouseProperty>("/estimation/default/house/save", property)
+    houseService
+      .store(property)
       .then(({ data }) => {
         setProperty((previousState) => ({
           ...previousState,

@@ -2,14 +2,16 @@
 import { useNavigate } from "react-router-dom";
 
 import * as yup from "yup";
-import { IApartmentProperty } from "../PropertyType";
+import { ApartmentWID, IApartmentProperty } from "../PropertyType";
 import { Button } from "../../../../../components/atoms/button";
 
 import { useForm, Form } from "../../../../../components/molecules/Form";
 import { Input } from "../../../../../components/atoms/Input";
-import { http } from "../../../../../utils/http.util";
 import { ChangeEvent } from "react";
 import { Spinner } from "../../../../../components/lib";
+import { ApartmentService } from "../../../../../services/properties/apartment.service";
+import { AxiosError } from "axios";
+import { ErrorResponse } from "../../../../../APIResponsesTypes";
 
 const schema = yup.object({
   calme: yup.string().required(),
@@ -22,31 +24,28 @@ export const Step5 = ({
   property,
   onChange,
 }: {
-  setProperty: React.Dispatch<React.SetStateAction<IApartmentProperty>>;
-  property: IApartmentProperty;
+  setProperty: React.Dispatch<React.SetStateAction<ApartmentWID>>;
+  property: ApartmentWID;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }) => {
   const navigate = useNavigate();
+  const apartementService = new ApartmentService();
 
   const form = useForm({
     schema: schema,
   });
 
   const onSubmit = () => {
-    http
-      .post<IApartmentProperty>(
-        "/estimation/default/appartement/save",
-        property
-      )
-      .then((response: { data: IApartmentProperty }) => {
-        console.log(response);
+    apartementService
+      .store(property)
+      .then(({ data }: { data: IApartmentProperty }) => {
         setProperty((previousState) => ({
           ...previousState,
-          prix_estimation: response.data.prix_estimation,
+          prix_estimation: data.prix_estimation,
         }));
         navigate("/apartment/results");
       })
-      .catch((error) => console.log(error));
+      .catch((error: AxiosError<ErrorResponse>) => console.log(error));
   };
 
   return (

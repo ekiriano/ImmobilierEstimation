@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { useQuery, useMutation, useQueryClient } from "react-query";
-import { DeleteResponse } from "../../../../APIResponsesTypes";
 
 import {
   Button,
@@ -10,27 +9,21 @@ import {
   PropertyList,
   PropertyListItem,
 } from "../../../../components/lib";
-import { http } from "../../../../utils/http.util";
+import { ApartmentService } from "../../../../services/properties/apartment.service";
 import { IApartmentProperty } from "../estimations/PropertyType";
 /* eslint-disable */
 export const SavedApartments = () => {
   const queryClient = useQueryClient();
+  const apartmentService = new ApartmentService();
 
   const {
     data: savedApartments,
     isLoading,
     isSuccess,
-  } = useQuery("savedApartments", () =>
-    http
-      .get<IApartmentProperty[]>("/estimation/default/appartements/saved")
-      .then((res) => res.data)
-  );
+  } = useQuery("savedApartments", () => apartmentService.getAll());
 
   const { mutate: remove } = useMutation(
-    ({ id }: { id: number }) =>
-      http.delete<DeleteResponse>(
-        `/estimation/default/appartements/saved/${id}`
-      ),
+    ({ id }: { id: string }) => apartmentService.delete(id),
     {
       onMutate(removedProperty) {
         const previousProperties = queryClient.getQueryData("savedApartments");
@@ -58,18 +51,9 @@ export const SavedApartments = () => {
       >
         Estimated Apartments
       </h2>
-      {isLoading ? <FullPageSpinner /> : null}
+      {isLoading && <FullPageSpinner />}
 
-      {savedApartments?.length === 0 ? (
-        <div>
-          <p>
-            You don't have any estimations for now
-            <Link css={{ marginLeft: "1rem" }} to="/apartment">
-              new Estimation
-            </Link>
-          </p>
-        </div>
-      ) : isSuccess ? (
+      {isSuccess && savedApartments?.length !== 0 ? (
         <PropertyList>
           {savedApartments.map((property: IApartmentProperty) => (
             <PropertyListItem key={property._id}>
@@ -99,9 +83,7 @@ export const SavedApartments = () => {
                 <Button
                   css={{ width: "100%" }}
                   variant="danger"
-                  onClick={() =>
-                    property._id ? remove({ id: property._id }) : null
-                  }
+                  onClick={() => remove({ id: property._id })}
                 >
                   Delete
                 </Button>
@@ -109,7 +91,16 @@ export const SavedApartments = () => {
             </PropertyListItem>
           ))}
         </PropertyList>
-      ) : null}
+      ) : (
+        <div>
+          <p>
+            You don't have any estimations for now
+            <Link css={{ marginLeft: "1rem" }} to="/apartment">
+              new Estimation
+            </Link>
+          </p>
+        </div>
+      )}
     </div>
   );
 };

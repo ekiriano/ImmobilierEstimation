@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { useQuery, useMutation, useQueryClient } from "react-query";
-import { DeleteResponse } from "../../../../APIResponsesTypes";
 
 import {
   Button,
@@ -10,11 +9,12 @@ import {
   PropertyList,
   PropertyListItem,
 } from "../../../../components/lib";
-import { http } from "../../../../utils/http.util";
+import { HouseService } from "../../../../services/properties/house.service";
 import { IHouseProperty } from "../estimations/PropertyType";
 /* eslint-disable */
 export const SavedHouses = () => {
   const queryClient = useQueryClient();
+  const houseService = new HouseService();
 
   const {
     data: savedHouses,
@@ -24,15 +24,10 @@ export const SavedHouses = () => {
     data?: IHouseProperty[];
     isLoading: boolean;
     isSuccess: boolean;
-  } = useQuery("savedHouses", () =>
-    http
-      .get<IHouseProperty[]>("/estimation/default/maisons/saved")
-      .then((res) => res.data)
-  );
+  } = useQuery("savedHouses", () => houseService.getAll());
 
   const { mutate: remove } = useMutation(
-    ({ id }: { id: number }) =>
-      http.delete<DeleteResponse>(`/estimation/default/maisons/saved/${id}`),
+    ({ id }: { id: string }) => houseService.delete(id),
     {
       onMutate(removedProperty) {
         const previousProperties = queryClient.getQueriesData("savedHouses");
@@ -57,22 +52,13 @@ export const SavedHouses = () => {
 
   return (
     <div>
-      {isLoading ? <FullPageSpinner /> : null}
+      {isLoading && <FullPageSpinner />}
       <h2
         css={{ fontWeight: "bold", fontSize: "1.5rem", marginBottom: "2rem" }}
       >
         Estimated Houses
       </h2>
-      {savedHouses?.length === 0 ? (
-        <div>
-          <p>
-            You don't have any estimations for now
-            <Link css={{ marginLeft: "1rem" }} to="/house">
-              new Estimation
-            </Link>
-          </p>
-        </div>
-      ) : isSuccess ? (
+      {isSuccess && savedHouses?.length !== 0 ? (
         <PropertyList>
           {savedHouses?.map((house: IHouseProperty) => (
             <PropertyListItem key={house._id}>
@@ -101,7 +87,7 @@ export const SavedHouses = () => {
                 <Button
                   css={{ width: "100%" }}
                   variant="danger"
-                  onClick={() => (house._id ? remove({ id: house._id }) : null)}
+                  onClick={() => remove({ id: house._id })}
                 >
                   Delete
                 </Button>
@@ -109,7 +95,16 @@ export const SavedHouses = () => {
             </PropertyListItem>
           ))}
         </PropertyList>
-      ) : null}
+      ) : (
+        <div>
+          <p>
+            You don't have any estimations for now
+            <Link css={{ marginLeft: "1rem" }} to="/house">
+              new Estimation
+            </Link>
+          </p>
+        </div>
+      )}
     </div>
   );
 };

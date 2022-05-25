@@ -1,5 +1,5 @@
-export type IApartmentProperty = {
-  _id?: number;
+export interface IApartmentProperty {
+  _id: string;
   rue: string;
   code_postal: string;
   ville: string;
@@ -16,10 +16,12 @@ export type IApartmentProperty = {
   qualite_appartement: string;
   proximite_transports: string;
   prix_estimation: string;
-};
+}
 
-export type IHouseProperty = {
-  _id?: number;
+type ApartmentWID = Omit<IApartmentProperty, "_id">;
+
+export interface IHouseProperty {
+  _id: string;
   rue: string;
   code_postal: string;
   ville: string;
@@ -38,4 +40,6 @@ export type IHouseProperty = {
   proximite_transports: string;
   qualite_toiture: string;
   prix_estimation: string;
-};
+}
+
+type HouseWID = Omit<IHouseProperty, "_id">;

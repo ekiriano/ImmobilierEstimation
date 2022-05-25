@@ -14,21 +14,19 @@ import { http } from "../../utils/http.util";
 const BecomePremium = () => {
   const { setUser } = useAuth();
 
-  const [errors, setErrors] = useState<undefined | { [x: string]: string }>({});
+  const [errors, setErrors] = useState<ErrorResponse>(null);
 
   const makeUserPremium = () => {
     http
       .post("/users/upgradeto/super")
       .then((response) => {
-        console.log(response);
         setUser((previousState) => ({
           ...previousState,
           type: "super",
         }));
       })
       .catch((error: AxiosError<ErrorResponse>) => {
-        setErrors(error.response?.data);
-        console.log(error);
+        if(error.response) setErrors(error.response?.data);
       });
   };
 
@@ -69,7 +67,7 @@ const BecomePremium = () => {
           <li>Have access to complete and more detailed estimates</li>
           <li>Have more methods at your desposition to estimate</li>
         </ul>
-        {errors ? <Errors data={errors} /> : null}
+        {errors && <Errors data={errors} />}
         <PayPalScriptProvider options={initialOptions}>
           <PayPalButtons
             style={{ layout: "horizontal" }}
@@ -87,7 +85,7 @@ const BecomePremium = () => {
             onApprove={async (data, actions): Promise<void> => {
               return actions.order?.capture().then((details) => {
                 const name = details.payer.name?.given_name;
-                name ? alert(`Transaction completed by ${name}`) : null;
+                name && alert(`Transaction completed by ${name}`);
                 makeUserPremium();
               });
             }}

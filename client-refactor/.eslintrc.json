@@ -14,7 +14,6 @@
       "ecmaVersion": 2022,
       "sourceType": "module",
       "project": ["./client-refactor/tsconfig.json"],
-      "tsconfigRootDir": "c:/users/abed/desktop/estimmo-spa",
       "ecmaFeatures": {
         "jsx": true
       }

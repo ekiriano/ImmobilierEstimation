@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { useEffect, useState } from "react";
-import { IHouseProperty } from "../PropertyType";
+import { HouseWID } from "../PropertyType";
 
 export const Result = ({
   property,
   clearForm,
 }: {
-  property: IHouseProperty;
+  property: HouseWID;
   clearForm: () => void;
 }) => {
   const [price, setPrice] = useState<string>("");

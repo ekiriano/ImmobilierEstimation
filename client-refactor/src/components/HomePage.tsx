@@ -1,5 +1,4 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
 
 import logo from "../assets/images/estimmo_logo.png";
 

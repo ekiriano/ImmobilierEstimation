@@ -10,7 +10,6 @@ const ProtectedRoute = ({
   redirectPath?: string;
   children?: ReactNode;
 }) => {
-  console.log(redirectPath);
   if (!isAllowed) {
     return <Navigate to={redirectPath} replace />;
   }

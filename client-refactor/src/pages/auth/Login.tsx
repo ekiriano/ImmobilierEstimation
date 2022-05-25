@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import * as yup from "yup";
 import { Input } from "../../components/atoms/Input";
@@ -11,8 +10,7 @@ import { Errors } from "../../components/partials/Errors";
 
 import { Button, Spinner } from "../../components/lib";
 import { loginParams } from "../../services/AuthService/AuthService";
-import { AxiosError } from "axios";
-import { ErrorResponse } from "../../APIResponsesTypes";
+import { useEffect } from "react";
 
 const schema = yup.object({
   email: yup.string().email().required(),
@@ -20,27 +18,18 @@ const schema = yup.object({
 });
 
 export const Login = () => {
-  const { login } = useAuth();
-  const navigate = useNavigate();
+  const { login, errors, setErrors } = useAuth();
   const form = useForm({
     schema: schema,
   });
-  const [loginError, setLoginError] = useState<
-    | {
-        [key: string]: string;
-      }
-    | undefined
-  >(undefined);
 
-  const onSubmit = (values: loginParams) => {
-    login(values)
-      .then(() => {
-        navigate("/dashboard");
-      })
-      .catch((error: AxiosError<ErrorResponse>) =>
-        setLoginError(error.response?.data)
-      );
+  const onSubmit = async (values: loginParams) => {
+    await login(values);
   };
+
+  useEffect(() => {
+    setErrors(null);
+  }, []);
 
   return (
     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 flex flex-col max-w-3xl mx-auto my-40 bg">
@@ -50,7 +39,7 @@ export const Login = () => {
             <img src={logo} alt="Home Page" className="w-30 h-30" />
           </Link>
         </div>
-        {loginError ? <Errors data={loginError} /> : null}
+        {errors && <Errors data={errors} />}
         <div className="mb-4">
           <Input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"

@@ -1,6 +1,10 @@
 import { loginParams, registerParams } from "./AuthService";
 import { http } from "../../utils/http.util";
-import { ICurrentUser, LoginAPIResponse } from "../../APIResponsesTypes";
+import {
+  ICurrentUser,
+  LoginAPIResponse,
+  RegisterAPIResponse,
+} from "../../APIResponsesTypes";
 
 export class AuthService {
   async login(params: loginParams) {
@@ -11,7 +15,7 @@ export class AuthService {
   }
 
   async register(params: registerParams) {
-    return http.post("/users/register", {
+    return http.post<RegisterAPIResponse>("/users/register", {
       name: params.name,
       email: params.email,
       password: params.password,

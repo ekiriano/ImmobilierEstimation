@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 
 import * as yup from "yup";
-import { IApartmentProperty } from "../PropertyType";
+import { ApartmentWID } from "../PropertyType";
 import { Button } from "../../../../../components/atoms/button";
 
 import { useForm, Form } from "../../../../../components/molecules/Form";
@@ -19,7 +19,7 @@ export const Step4 = ({
   property,
   onChange,
 }: {
-  property: IApartmentProperty;
+  property: ApartmentWID;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }) => {
   const navigate = useNavigate();

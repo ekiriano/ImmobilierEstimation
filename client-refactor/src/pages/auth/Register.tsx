@@ -1,8 +1,5 @@
-import { AxiosError } from "axios";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import * as yup from "yup";
-import { ErrorResponse } from "../../APIResponsesTypes";
 
 import logo from "../../assets/images/logo.png";
 import { useAuth } from "../../contexts/AuthContext";
@@ -11,6 +8,7 @@ import { Input } from "../../components/atoms/Input";
 import { Button, Spinner } from "../../components/lib";
 import { Form, useForm } from "../../components/molecules/Form";
 import { Errors } from "../../components/partials/Errors";
+import { useEffect } from "react";
 
 const schema = yup.object({
   name: yup.string().min(5).required(),
@@ -22,26 +20,18 @@ const schema = yup.object({
 });
 
 export const Register = () => {
-  const auth = useAuth();
-  const navigate = useNavigate();
-  const [registerError, setRegisterError] = useState<
-    | {
-        [key: string]: string;
-      }
-    | undefined
-  >(undefined);
+  const { register, errors, setErrors } = useAuth();
   const form = useForm({
     schema: schema,
   });
-  const onSubmit = (values: registerParams) =>
-    auth
-      .register(values)
-      .then(() => {
-        navigate("/login");
-      })
-      .catch((error: AxiosError<ErrorResponse>) =>
-        setRegisterError(error.response?.data)
-      );
+
+  const onSubmit = async (values: registerParams) => {
+    await register(values);
+  };
+
+  useEffect(() => {
+    setErrors(null);
+  }, []);
 
   return (
     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 flex flex-col max-w-3xl mx-auto my-40 bg">
@@ -51,7 +41,7 @@ export const Register = () => {
             <img src={logo} alt="Home Page" className="w-30 h-30" />
           </Link>
         </div>
-        {registerError ? <Errors data={registerError} /> : null}
+        {errors && <Errors data={errors} />}
         <Input
           className="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
           label="Name"

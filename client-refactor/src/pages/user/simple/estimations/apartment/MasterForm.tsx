@@ -7,7 +7,7 @@ import { Step3 } from "./Step3";
 import { Step4 } from "./Step4";
 import { Step5 } from "./Step5";
 import { Result } from "./Result";
-import { IApartmentProperty } from "../PropertyType";
+import { ApartmentWID } from "../PropertyType";
 
 const initialProperty = {
   rue: "",
@@ -29,7 +29,7 @@ const initialProperty = {
 };
 
 export const MasterForm = () => {
-  const [property, setProperty] = useState<IApartmentProperty>(initialProperty);
+  const [property, setProperty] = useState<ApartmentWID>(initialProperty);
 
   const onChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
